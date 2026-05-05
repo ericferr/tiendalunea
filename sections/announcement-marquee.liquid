@@ -1,0 +1,153 @@
+{%- liquid
+  assign marquee_bg = section.settings.bg_color | default: '#512815'
+  assign marquee_text = section.settings.text_color | default: '#ffffff'
+  assign duration = section.settings.duration | default: 30
+  assign font_weight = section.settings.font_weight | default: '600'
+-%}
+
+<style>
+  .lunea-marquee {
+    background: {{ marquee_bg }};
+    color: {{ marquee_text }};
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: {{ font_weight }};
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .lunea-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: lunea-marquee-scroll {{ duration }}s linear infinite;
+    will-change: transform;
+  }
+  .lunea-marquee__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding-right: 0;
+  }
+  .lunea-marquee__item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2.5rem;
+    white-space: nowrap;
+  }
+  .lunea-marquee__sep {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+  .lunea-marquee:hover .lunea-marquee__track {
+    animation-play-state: paused;
+  }
+  @keyframes lunea-marquee-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lunea-marquee__track { animation: none; }
+    .lunea-marquee { white-space: normal; text-align: center; }
+  }
+  @media (max-width: 749px) {
+    .lunea-marquee { font-size: 12px; padding: 8px 0; }
+    .lunea-marquee__item { padding: 0 1.5rem; }
+  }
+</style>
+
+{%- if section.blocks.size > 0 -%}
+  <div class="lunea-marquee" role="region" aria-label="Anuncios de la tienda">
+    <div class="lunea-marquee__track" aria-hidden="false">
+      {%- for repeat in (1..2) -%}
+        <div class="lunea-marquee__group" {% if repeat == 2 %}aria-hidden="true"{% endif %}>
+          {%- for block in section.blocks -%}
+            <span class="lunea-marquee__item" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+            <span class="lunea-marquee__sep" aria-hidden="true"></span>
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Marquee anuncios",
+  "tag": "section",
+  "class": "lunea-marquee-section",
+  "max_blocks": 12,
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#512815"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del texto",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "duration",
+      "label": "Velocidad (segundos por ciclo)",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "s",
+      "default": 30,
+      "info": "Mayor número = más lento"
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Grosor de la fuente",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "600"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Mensaje",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "🚚 Envío Gratis"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee anuncios",
+      "blocks": [
+        { "type": "message", "settings": { "text": "🚚 Envío Gratis a toda Colombia" } },
+        { "type": "message", "settings": { "text": "💵 Pago Contra Entrega disponible" } },
+        { "type": "message", "settings": { "text": "🛡️ Garantía de 30 días" } },
+        { "type": "message", "settings": { "text": "💬 Soporte directo por WhatsApp" } },
+        { "type": "message", "settings": { "text": "🔒 Compra 100% segura" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

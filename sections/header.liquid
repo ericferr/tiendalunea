@@ -142,9 +142,12 @@
         render 'header-drawer'
       endif
 
-      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-        render 'header-search', input_id: 'Search-In-Modal-1'
-      endif
+      comment
+        Search disabled per design — Lunea theme.
+        if section.settings.logo_position == 'top-center' or section.settings.menu == blank
+          render 'header-search', input_id: 'Search-In-Modal-1'
+        endif
+      endcomment
     -%}
 
     {%- if section.settings.logo_position != 'middle-center' -%}
@@ -172,7 +175,14 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <img
+            src="{{ 'lunea-logo.png' | asset_url }}"
+            alt="{{ shop.name | escape }}"
+            class="header__heading-logo motion-reduce"
+            width="180"
+            height="auto"
+            loading="eager"
+          >
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -215,7 +225,14 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <img
+            src="{{ 'lunea-logo.png' | asset_url }}"
+            alt="{{ shop.name | escape }}"
+            class="header__heading-logo"
+            width="180"
+            height="auto"
+            loading="eager"
+          >
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -247,7 +264,8 @@
           </localization-form>
         {%- endif -%}
       </div>
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
+      {%- comment -%} Search disabled per design — Lunea theme {%- endcomment -%}
+      {%- comment -%} {% render 'header-search', input_id: 'Search-In-Modal' %} {%- endcomment -%}
 
       {%- if shop.customer_accounts_enabled -%}
         <a
