@@ -1,21 +1,51 @@
 /* ============================================================
    Lunea — Product page marketing kit
-   Shared styles for trust, urgency, guarantee, FAQ, sticky ATC.
+   Aligned with assets/lunea.css design tokens (sky + gray palette,
+   Cormorant Garamond + DM Sans typography).
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --lp-brand: #3a5894;
-  --lp-brand-2: #7a9bc4;
-  --lp-brand-soft: #f4f8fb;
-  --lp-accent: #e1edf5;
+  --lp-brand: #7BBDD0;
+  --lp-brand-2: #A8D5E2;
+  --lp-brand-soft: #EBF6FA;
+  --lp-accent: #D6EEF5;
   --lp-success: #1f8a55;
   --lp-warning: #b86412;
   --lp-danger: #c1372f;
-  --lp-text: #1a2332;
-  --lp-text-soft: #5a6478;
-  --lp-border: #e3e9f0;
+  --lp-text: #2E3F45;
+  --lp-text-soft: #6B7E85;
+  --lp-border: #E4E8EA;
   --lp-radius: 14px;
-  --lp-shadow: 0 4px 16px rgba(58, 88, 148, 0.08);
+  --lp-shadow: 0 4px 30px rgba(100, 160, 180, 0.12);
+  --lp-font-display: 'Cormorant Garamond', Georgia, serif;
+  --lp-font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+.lp-section,
+.lp-section *,
+.lp-uin,
+.lp-uin * {
+  font-family: var(--lp-font-body);
+}
+.lp-hook__title,
+.lp-features__title,
+.lp-howto__title,
+.lp-included__title,
+.lp-testimonials .lp-features__title,
+.lp-foryou__title,
+.lp-foryou__cta-headline,
+.lp-faq__title,
+.lp-guarantee__title,
+.lp-photo-tt__title {
+  font-family: var(--lp-font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.lp-hook__title em,
+.lp-foryou__cta-headline em {
+  font-style: italic;
 }
 
 .lp-section {
@@ -107,8 +137,8 @@
   flex-shrink: 0;
 }
 .lp-urgency__eta {
-  background: linear-gradient(135deg, var(--lp-brand) 0%, var(--lp-brand-2) 100%);
-  color: #fff;
+  background: var(--lp-accent);
+  color: var(--lp-text);
   padding: 0.85rem 1rem;
   border-radius: 10px;
   font-size: 14px;
@@ -116,7 +146,7 @@
   align-items: center;
   gap: 0.6rem;
 }
-.lp-urgency__eta strong { color: var(--lp-accent); }
+.lp-urgency__eta strong { color: var(--lp-text); font-weight: 700; }
 .lp-urgency__stock {
   font-size: 13px;
   color: var(--lp-warning);
@@ -295,7 +325,7 @@
   margin-left: 0.4rem;
 }
 .lp-sticky-atc__btn {
-  background: var(--lp-brand);
+  background: var(--lp-text);
   color: #fff;
   border: none;
   padding: 0.85rem 1.25rem;
@@ -310,7 +340,7 @@
   gap: 0.4rem;
   transition: background 0.2s ease;
 }
-.lp-sticky-atc__btn:hover { background: var(--lp-brand-2); }
+.lp-sticky-atc__btn:hover { background: var(--lp-brand); color: var(--lp-text); }
 @media (max-width: 749px) {
   .lp-sticky-atc { display: flex; }
   body.lp-has-sticky-atc { padding-bottom: 80px; }
@@ -397,7 +427,7 @@
 
 /* === HOWTO (numbered steps) ============================== */
 .lp-howto {
-  background: var(--lp-brand);
+  background: linear-gradient(135deg, var(--lp-text) 0%, #1a2d33 100%);
   color: #fff;
   padding: 2.5rem 1.5rem;
   border-radius: var(--lp-radius);
@@ -428,9 +458,10 @@
   margin: 0 auto 0.85rem;
   border-radius: 50%;
   background: var(--lp-accent);
-  color: var(--lp-brand);
+  color: var(--lp-text);
   display: flex; align-items: center; justify-content: center;
-  font-size: 22px; font-weight: 800;
+  font-size: 22px; font-weight: 700;
+  font-family: var(--lp-font-display);
 }
 .lp-howto__num::before { content: counter(lp-step); }
 .lp-howto__step-title {
@@ -534,22 +565,22 @@
 
 /* === PHOTO TESTIMONIALS (social proof grid) ============== */
 .lp-photo-tt {
-  background: #e1edf5;
+  background: var(--lp-accent);
   border-radius: var(--lp-radius);
   padding: 2.25rem 1.5rem;
   margin: 1rem 0;
 }
 .lp-photo-tt__head { text-align: center; margin: 0 0 1.75rem; }
 .lp-photo-tt__title {
-  font-size: clamp(24px, 3.2vw, 34px);
-  font-weight: 800;
-  color: #1d3686;
+  font-size: clamp(28px, 3.8vw, 38px);
+  font-weight: 500;
+  color: var(--lp-text);
   margin: 0;
   line-height: 1.2;
 }
 .lp-photo-tt__subtitle {
   font-size: 14px;
-  color: #4a5b80;
+  color: var(--lp-text-soft);
   margin: 0.4rem 0 0;
 }
 .lp-photo-tt__grid {
@@ -569,7 +600,7 @@
   overflow: hidden;
   aspect-ratio: 1 / 1;
   background: #fff;
-  box-shadow: 0 6px 18px rgba(29, 54, 134, 0.12);
+  box-shadow: 0 6px 18px rgba(46, 63, 69, 0.12);
 }
 .lp-photo-tt__media img {
   width: 100%;
@@ -581,23 +612,24 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: #d4e4f0;
-  color: #1d3686;
+  background: #fff;
+  color: var(--lp-text);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.45rem 0.85rem;
   border-radius: 10px;
   margin: -1rem auto 0.7rem;
   position: relative;
   z-index: 2;
-  box-shadow: 0 2px 8px rgba(29, 54, 134, 0.08);
+  box-shadow: 0 2px 8px rgba(46, 63, 69, 0.08);
   white-space: nowrap;
 }
 .lp-photo-tt__quote {
   font-size: 14px;
-  color: #2c3e60;
+  color: var(--lp-text);
   line-height: 1.5;
   font-style: italic;
+  font-family: var(--lp-font-display);
   margin: 0;
   padding: 0 0.5rem;
 }
@@ -613,7 +645,7 @@
 
 /* === FOR YOU + final CTA ================================= */
 .lp-foryou {
-  background: linear-gradient(135deg, var(--lp-brand) 0%, var(--lp-brand-2) 100%);
+  background: linear-gradient(135deg, var(--lp-text) 0%, #1a2d33 100%);
   color: #fff;
   border-radius: var(--lp-radius);
   padding: 2.25rem 1.5rem;
@@ -642,7 +674,7 @@
   content: '✓';
   width: 22px; height: 22px;
   border-radius: 50%;
-  background: var(--lp-accent); color: var(--lp-brand);
+  background: var(--lp-accent); color: var(--lp-text);
   display: inline-flex; align-items: center; justify-content: center;
   font-size: 13px; font-weight: 800; flex-shrink: 0;
   margin-top: 1px;
@@ -671,7 +703,7 @@
 .lp-foryou__cta-btn {
   display: inline-block;
   background: var(--lp-accent);
-  color: var(--lp-brand);
+  color: var(--lp-text);
   font-weight: 700; font-size: 14.5px;
   text-decoration: none;
   padding: 0.85rem 1.4rem;
@@ -680,7 +712,7 @@
 }
 .lp-foryou__cta-btn:hover {
   transform: translateY(-2px);
-  background: #cfdcec;
+  background: #fff;
 }
 
 /* === WHATSAPP FLOAT ======================================= */

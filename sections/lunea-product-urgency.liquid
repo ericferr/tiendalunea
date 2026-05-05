@@ -3,11 +3,26 @@
 {%- liquid
   assign min_days = section.settings.min_days | default: 3
   assign max_days = section.settings.max_days | default: 6
+
+  assign days_es = 'domingo,lunes,martes,miércoles,jueves,viernes,sábado' | split: ','
+  assign months_es = 'enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre' | split: ','
+
   assign now_ts = 'now' | date: '%s' | plus: 0
   assign min_offset = min_days | times: 86400
   assign max_offset = max_days | times: 86400
-  assign min_date = now_ts | plus: min_offset | date: '%A %d de %B'
-  assign max_date = now_ts | plus: max_offset | date: '%A %d de %B'
+  assign min_ts = now_ts | plus: min_offset
+  assign max_ts = now_ts | plus: max_offset
+
+  assign min_dow = min_ts | date: '%w' | plus: 0
+  assign min_d = min_ts | date: '%-d'
+  assign min_m_idx = min_ts | date: '%-m' | minus: 1
+  assign min_date = days_es[min_dow] | append: ' ' | append: min_d | append: ' de ' | append: months_es[min_m_idx]
+
+  assign max_dow = max_ts | date: '%w' | plus: 0
+  assign max_d = max_ts | date: '%-d'
+  assign max_m_idx = max_ts | date: '%-m' | minus: 1
+  assign max_date = days_es[max_dow] | append: ' ' | append: max_d | append: ' de ' | append: months_es[max_m_idx]
+
   assign show_viewers = section.settings.show_viewers
   assign show_stock = section.settings.show_stock
   assign stock_value = section.settings.stock_remaining | default: 12
