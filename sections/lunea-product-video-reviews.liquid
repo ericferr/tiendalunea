@@ -1,0 +1,190 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .lp-vr {
+    padding: 2.5rem 1rem;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .lp-vr__container { max-width: 1100px; margin: 0 auto; }
+  .lp-vr__head { text-align: center; margin-bottom: 1.75rem; }
+  .lp-vr__title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600;
+    color: var(--lp-text, #2E3F45);
+    line-height: 1.15;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.01em;
+  }
+  .lp-vr__ig {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--lp-border, #E4E8EA);
+    background: #fff;
+    border-radius: 999px;
+    padding: 8px 16px 8px 8px;
+    font-size: 14px;
+    color: var(--lp-text, #2E3F45);
+    font-weight: 500;
+  }
+  .lp-vr__ig-logo {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b 50%, #6228d7);
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .lp-vr__ig-logo svg { width: 18px; height: 18px; fill: #fff; }
+  .lp-vr__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  @media (max-width: 549px) {
+    .lp-vr__grid { grid-template-columns: 1fr; gap: 1rem; }
+  }
+  .lp-vr__card {
+    position: relative;
+    aspect-ratio: 9/16;
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(46, 63, 69, 0.12);
+  }
+  .lp-vr__video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .lp-vr__label {
+    position: absolute;
+    top: 14px; left: 14px;
+    background: var(--lp-accent, #D6EEF5);
+    color: var(--lp-text, #2E3F45);
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 1.15;
+    padding: 8px 12px;
+    border-radius: 8px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    max-width: 75%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .lp-vr__play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+  }
+  .lp-vr__play svg { width: 22px; height: 22px; fill: #fff; margin-left: 3px; }
+  .lp-vr__card.is-playing .lp-vr__play,
+  .lp-vr__card.is-playing .lp-vr__label { opacity: 0; }
+  .lp-vr__card:hover .lp-vr__play { transform: translate(-50%,-50%) scale(1.06); }
+</style>
+
+<div class="lp-vr" {{ section.shopify_attributes }}>
+  <div class="lp-vr__container">
+    <div class="lp-vr__head">
+      {%- if section.settings.title != blank -%}
+        <h2 class="lp-vr__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.ig_text != blank -%}
+        <span class="lp-vr__ig">
+          <span class="lp-vr__ig-logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 0 0-2.13 1.38A5.86 5.86 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.47 1.38 2.13a5.86 5.86 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.13-1.38 5.86 5.86 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.13A5.86 5.86 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32Zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.84a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z"/></svg>
+          </span>
+          {{ section.settings.ig_text }}
+        </span>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="lp-vr__grid">
+        {%- for block in section.blocks -%}
+          <div class="lp-vr__card" data-lp-vr-card {{ block.shopify_attributes }}>
+            {%- if block.settings.label != blank -%}
+              <div class="lp-vr__label">{{ block.settings.label }}</div>
+            {%- endif -%}
+            <video
+              class="lp-vr__video"
+              data-lp-vr-video
+              src="{{ block.settings.video_url }}"
+              {% if block.settings.poster_url != blank %}poster="{{ block.settings.poster_url }}"{% endif %}
+              playsinline
+              preload="metadata"
+              muted
+            ></video>
+            <div class="lp-vr__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  (function() {
+    var cards = document.querySelectorAll('[data-lp-vr-card]');
+    cards.forEach(function(card) {
+      var video = card.querySelector('[data-lp-vr-video]');
+      if (!video) return;
+      card.addEventListener('click', function() {
+        if (video.paused) {
+          document.querySelectorAll('[data-lp-vr-video]').forEach(function(v) {
+            if (v !== video) {
+              v.pause();
+              v.parentElement.classList.remove('is-playing');
+            }
+          });
+          video.muted = false;
+          video.play();
+          video.controls = true;
+          card.classList.add('is-playing');
+        } else {
+          video.pause();
+          card.classList.remove('is-playing');
+        }
+      });
+      video.addEventListener('pause', function() { card.classList.remove('is-playing'); });
+      video.addEventListener('play', function() { card.classList.add('is-playing'); });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Lunea · Videos reseñas",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Título", "default": "Amada por más de 5.000 mamás" },
+    { "type": "text", "id": "ig_text", "label": "Texto badge Instagram", "default": "Más de 1 millón de visitas en Instagram" }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video reseña",
+      "settings": [
+        { "type": "text", "id": "video_url", "label": "URL del video (.mp4)" },
+        { "type": "text", "id": "poster_url", "label": "URL de la imagen poster (opcional)" },
+        { "type": "text", "id": "label", "label": "Texto overlay", "default": "Reseña real" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Lunea · Videos reseñas" }
+  ]
+}
+{% endschema %}

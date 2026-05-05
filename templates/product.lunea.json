@@ -4,7 +4,7 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "text", "settings": { "text": "{{ product.vendor }}", "text_style": "uppercase" } },
+        "vendor": { "type": "text", "settings": { "text": "LUNEA", "text_style": "uppercase" } },
         "title": { "type": "title", "settings": {} },
         "price": { "type": "price", "settings": {} },
         "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
@@ -101,6 +101,85 @@
         "text": "Si no estás satisfecha en los primeros 30 días, te devolvemos tu dinero o cambiamos tu producto sin preguntas. Solo escríbenos por WhatsApp."
       }
     },
+    "video-reviews": {
+      "type": "lunea-product-video-reviews",
+      "blocks": {
+        "v1": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/990d95efff8e4c34ad7340cdb91538dc.mp4",
+            "label": "Ajustás todo sin sacártelo"
+          }
+        },
+        "v2": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/f9f4aeceb822461a89ecf508caf0703e.mp4",
+            "label": "Cambio la intensidad con un dedo"
+          }
+        }
+      },
+      "block_order": ["v1", "v2"],
+      "settings": {
+        "title": "Amada por más de 5.000 mamás",
+        "ig_text": "Más de 1 millón de visitas en Instagram"
+      }
+    },
+    "real-reviews": {
+      "type": "lunea-product-real-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0981/2574/2375/files/1.webp?v=1777436020",
+            "tag": "FOTO DEL PRODUCTO",
+            "quote": "Carga con USB-C, uso el mismo cable de mi celular",
+            "text": "No tener que andar buscando un cargador específico es una bendición. Lo enchufo con el cable de mi iPhone y listo. El diseño es súper limpio, sin botones raros que se enganchen en la ropa.",
+            "name": "Andrea M.",
+            "city": "Bogotá"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0981/2574/2375/files/3_9bbc33dd-c5f3-4b7e-979e-e79d6ab9d3f8.png?v=1777436020",
+            "tag": "RESULTADO REAL",
+            "quote": "Todo entra en el estuche y me lo llevo a todos lados",
+            "text": "El estuche que viene incluido es perfecto. Los 2 extractores entran cómodos, queda organizado y prolijo. Lo meto en la mochila junto al trabajo y nadie se da cuenta de qué es.",
+            "name": "Camila R.",
+            "city": "Medellín"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0981/2574/2375/files/4.webp?v=1777436020",
+            "tag": "RESULTADO REAL",
+            "quote": "Llegó muy bien empacado, todo organizado y listo",
+            "text": "Abrir la caja fue una experiencia en sí misma. Cada cosa en su lugar, instructivo claro, todo limpio. Lo cargué un rato y a la noche ya lo estaba usando. Cero misterio.",
+            "name": "Daniela L.",
+            "city": "Cali"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0981/2574/2375/files/5.webp?v=1777436020",
+            "tag": "RESULTADO REAL",
+            "quote": "Saqué casi 180ml en una sola sesión",
+            "text": "Bombeo mientras trabajo y la cantidad que junta es impresionante. La marca de medición se ve clara — sé exactamente cuánto saqué sin tener que pasar a un biberón.",
+            "name": "Valentina P.",
+            "city": "Cartagena"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "eyebrow": "Reseñas reales",
+        "title": "Más de <em>5.000</em> mamás ya lo usan",
+        "subtitle": "Lo eligieron para no frenar su día. La oficina, los hijos, los viajes — todo sigue su curso mientras la leche se va llenando sola."
+      }
+    },
     "testimonials": {
       "type": "lunea-product-photo-testimonials",
       "blocks": {
@@ -188,6 +267,8 @@
     "howto",
     "included",
     "guarantee",
+    "video-reviews",
+    "real-reviews",
     "testimonials",
     "foryou",
     "faq",

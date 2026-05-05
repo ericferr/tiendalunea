@@ -1,0 +1,247 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .lp-rr {
+    padding: 2rem 1rem;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .lp-rr__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--lp-brand-soft, #EBF6FA);
+    border-radius: 18px;
+    padding: 2.5rem 1.5rem;
+  }
+  .lp-rr__head { text-align: center; margin-bottom: 2rem; }
+  .lp-rr__eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lp-brand, #7BBDD0);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+  .lp-rr__title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 500;
+    color: var(--lp-text, #2E3F45);
+    line-height: 1.15;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.01em;
+  }
+  .lp-rr__title em {
+    color: var(--lp-brand, #7BBDD0);
+    font-style: normal;
+  }
+  .lp-rr__subtitle {
+    font-size: 15px;
+    color: var(--lp-text-soft, #6B7E85);
+    line-height: 1.55;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .lp-rr__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  @media (max-width: 1099px) { .lp-rr__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 549px) { .lp-rr__grid { grid-template-columns: 1fr; } }
+  .lp-rr__card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(46, 63, 69, 0.06);
+  }
+  .lp-rr__media {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: #f4f8fb;
+  }
+  .lp-rr__media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .lp-rr__tag {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: var(--lp-text, #2E3F45);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 6px 11px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .lp-rr__tag::before { content: '✦'; opacity: 0.9; }
+  .lp-rr__body {
+    padding: 1rem 1.1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+  }
+  .lp-rr__top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  .lp-rr__stars { color: #f5b301; letter-spacing: 1px; font-size: 13px; }
+  .lp-rr__verified {
+    color: var(--lp-brand, #7BBDD0);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+  }
+  .lp-rr__verified::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--lp-brand, #7BBDD0);
+  }
+  .lp-rr__quote {
+    font-size: 14.5px;
+    color: var(--lp-text, #2E3F45);
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .lp-rr__text {
+    font-size: 13.5px;
+    color: var(--lp-text-soft, #6B7E85);
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+  }
+  .lp-rr__footer {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-top: 1px solid var(--lp-border, #E4E8EA);
+    padding-top: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  .lp-rr__avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--lp-accent, #D6EEF5);
+    color: var(--lp-text, #2E3F45);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .lp-rr__person { line-height: 1.3; }
+  .lp-rr__name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--lp-text, #2E3F45);
+    margin: 0;
+  }
+  .lp-rr__compra {
+    font-size: 11.5px;
+    color: var(--lp-text-soft, #6B7E85);
+    margin: 0;
+  }
+</style>
+
+<div class="lp-rr" {{ section.shopify_attributes }}>
+  <div class="lp-rr__container">
+    <div class="lp-rr__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="lp-rr__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="lp-rr__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="lp-rr__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="lp-rr__grid">
+        {%- for block in section.blocks -%}
+          {%- assign initials = block.settings.name | split: ' ' | first | slice: 0, 1 -%}
+          {%- assign last_name = block.settings.name | split: ' ' | last | slice: 0, 1 -%}
+          {%- assign initials = initials | append: last_name | upcase -%}
+          <div class="lp-rr__card" {{ block.shopify_attributes }}>
+            <div class="lp-rr__media">
+              {%- if block.settings.tag != blank -%}
+                <span class="lp-rr__tag">{{ block.settings.tag }}</span>
+              {%- endif -%}
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.quote | default: 'Reseña' }}
+              {%- elsif block.settings.image_url != blank -%}
+                <img src="{{ block.settings.image_url }}" alt="{{ block.settings.quote | default: 'Reseña' | escape }}" loading="lazy">
+              {%- endif -%}
+            </div>
+            <div class="lp-rr__body">
+              <div class="lp-rr__top-row">
+                <span class="lp-rr__stars" aria-label="5 estrellas">★★★★★</span>
+                <span class="lp-rr__verified">Verificada</span>
+              </div>
+              {%- if block.settings.quote != blank -%}
+                <p class="lp-rr__quote">"{{ block.settings.quote }}"</p>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p class="lp-rr__text">{{ block.settings.text }}</p>
+              {%- endif -%}
+              <div class="lp-rr__footer">
+                <span class="lp-rr__avatar" aria-hidden="true">{{ initials }}</span>
+                <div class="lp-rr__person">
+                  <p class="lp-rr__name">{{ block.settings.name }} · {{ block.settings.city }}</p>
+                  <p class="lp-rr__compra">Compra verificada</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Reseñas reales",
+  "tag": "section",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Reseñas reales" },
+    { "type": "text", "id": "title", "label": "Título (usa <em>...</em> para resaltar el número)", "default": "Más de <em>5.000</em> mamás ya lo usan" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtítulo", "default": "Lo eligieron para no frenar su día. La oficina, los hijos, los viajes — todo sigue su curso mientras la leche se va llenando sola." }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Reseña",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Imagen (admin upload)" },
+        { "type": "text", "id": "image_url", "label": "URL de imagen externa (alternativo)" },
+        { "type": "text", "id": "tag", "label": "Etiqueta superior", "default": "RESULTADO REAL" },
+        { "type": "text", "id": "quote", "label": "Cita corta destacada", "default": "Cita destacada" },
+        { "type": "textarea", "id": "text", "label": "Texto", "default": "Texto de la reseña..." },
+        { "type": "text", "id": "name", "label": "Nombre", "default": "Nombre A." },
+        { "type": "text", "id": "city", "label": "Ciudad", "default": "Bogotá" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Lunea · Reseñas reales" }
+  ]
+}
+{% endschema %}
