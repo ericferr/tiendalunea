@@ -1,0 +1,30 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-hook">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="lp-hook__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="lp-hook__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <p class="lp-hook__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Hook emocional",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Lunea, hecho para mamás reales" },
+    { "type": "richtext", "id": "title", "label": "Titular", "default": "<p>Lactancia libre. <em>Sin pausar tu vida.</em></p>" },
+    { "type": "textarea", "id": "text", "label": "Subtítulo", "default": "Imagina poder seguir trabajando, manejar, atender una reunión o disfrutar a tu bebé — mientras extraes leche al mismo tiempo, sin que nadie lo note. Eso es Lunea: el extractor manos libres más discreto, silencioso y cómodo del mercado colombiano." }
+  ],
+  "presets": [ { "name": "Lunea · Hook emocional" } ]
+}
+{% endschema %}

@@ -1,0 +1,64 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }} style="padding: 2rem 0;">
+  <div class="lp-container">
+    <div class="lp-testimonials__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="lp-features__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="lp-features__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="lp-testimonials__grid">
+        {%- for block in section.blocks -%}
+          <div class="lp-testimonials__card" {{ block.shopify_attributes }}>
+            <span class="lp-testimonials__quote-mark" aria-hidden="true">“</span>
+            {%- if block.settings.show_stars -%}
+              <div class="lp-testimonials__stars" aria-label="5 estrellas">★★★★★</div>
+            {%- endif -%}
+            <p class="lp-testimonials__quote">{{ block.settings.quote }}</p>
+            <p class="lp-testimonials__name">{{ block.settings.name }}</p>
+            <p class="lp-testimonials__location">{{ block.settings.location }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Testimonios",
+  "tag": "section",
+  "max_blocks": 9,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Lo que dicen otras mamás" },
+    { "type": "text", "id": "title", "label": "Título", "default": "Mamás que ya viven con libertad" }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonio",
+      "settings": [
+        { "type": "checkbox", "id": "show_stars", "label": "Mostrar 5 estrellas", "default": true },
+        { "type": "textarea", "id": "quote", "label": "Reseña", "default": "Lunea cambió mi forma de vivir la lactancia. Lo recomiendo 100%." },
+        { "type": "text", "id": "name", "label": "Nombre", "default": "Mamá Lunea" },
+        { "type": "text", "id": "location", "label": "Ciudad / contexto", "default": "Bogotá · Mamá de 1 bebé" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea · Testimonios",
+      "blocks": [
+        { "type": "testimonial", "settings": { "show_stars": true, "quote": "No puedo creer que antes me la pasara conectada a un extractor tradicional. Con Lunea trabajo en mi computador y ni siquiera pienso en que lo tengo puesto. Un cambio de vida total.", "name": "Valentina M.", "location": "Bogotá · Mamá de 1 bebé" } },
+        { "type": "testimonial", "settings": { "show_stars": true, "quote": "Soy maestra y tenía terror de manejar la lactancia al volver al trabajo. Lo uso en mis clases y ningún alumno se ha dado cuenta. Qué nivel de discreción.", "name": "Carolina R.", "location": "Medellín · Mamá de 2" } },
+        { "type": "testimonial", "settings": { "show_stars": true, "quote": "Lo comparé con extractores de $600.000 y Lunea no les envidia nada. Llegó rapidísimo y es exactamente como en las fotos.", "name": "Laura P.", "location": "Cali · Mamá primeriza" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

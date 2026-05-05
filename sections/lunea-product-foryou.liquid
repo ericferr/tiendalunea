@@ -1,0 +1,71 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-foryou">
+      <div>
+        <h2 class="lp-foryou__title">{{ section.settings.title }}</h2>
+        {%- if section.blocks.size > 0 -%}
+          <ul class="lp-foryou__list">
+            {%- for block in section.blocks -%}
+              <li class="lp-foryou__item" {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+
+      <div class="lp-foryou__cta">
+        {%- if section.settings.cta_eyebrow != blank -%}
+          <div class="lp-foryou__cta-eyebrow">{{ section.settings.cta_eyebrow }}</div>
+        {%- endif -%}
+        {%- if section.settings.cta_headline != blank -%}
+          <h3 class="lp-foryou__cta-headline">{{ section.settings.cta_headline }}</h3>
+        {%- endif -%}
+        {%- if section.settings.cta_text != blank -%}
+          <p class="lp-foryou__cta-text">{{ section.settings.cta_text }}</p>
+        {%- endif -%}
+        {%- if section.settings.cta_button_text != blank -%}
+          <a href="{{ section.settings.cta_button_url | default: '#MainProduct' }}" class="lp-foryou__cta-btn">{{ section.settings.cta_button_text }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Para ti si...",
+  "tag": "section",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Título", "default": "Lunea es para ti si..." },
+    { "type": "header", "content": "CTA derecha" },
+    { "type": "text", "id": "cta_eyebrow", "label": "Antetítulo CTA", "default": "Sin riesgo" },
+    { "type": "text", "id": "cta_headline", "label": "Titular CTA", "default": "Pídelo hoy. Pagas cuando lo recibas." },
+    { "type": "textarea", "id": "cta_text", "label": "Texto CTA", "default": "Más de 500 mamás colombianas ya viven la lactancia con libertad. Es tu turno." },
+    { "type": "text", "id": "cta_button_text", "label": "Botón", "default": "🛒 Quiero el mío ahora" },
+    { "type": "url", "id": "cta_button_url", "label": "Link del botón" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texto", "default": "Necesitas extraer leche sin pausar tu rutina" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea · Para ti si...",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Necesitas extraer leche sin pausar tu rutina" } },
+        { "type": "item", "settings": { "text": "Vuelves al trabajo y no quieres complicaciones" } },
+        { "type": "item", "settings": { "text": "Buscas un extractor cómodo, discreto y silencioso" } },
+        { "type": "item", "settings": { "text": "Quieres calidad real sin pagar precios europeos" } },
+        { "type": "item", "settings": { "text": "Te importa la seguridad de los materiales que tocan tu leche" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

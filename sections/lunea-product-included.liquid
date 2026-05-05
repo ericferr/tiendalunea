@@ -1,0 +1,57 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-included">
+      <div class="lp-included__head">
+        <div class="lp-included__icon" aria-hidden="true">{{ section.settings.icon | default: '🎁' }}</div>
+        <h2 class="lp-included__title">{{ section.settings.title }}</h2>
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="lp-included__list">
+          {%- for block in section.blocks -%}
+            <li class="lp-included__item" {{ block.shopify_attributes }}>
+              <span class="lp-included__check" aria-hidden="true">✓</span>
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Lo que recibes",
+  "tag": "section",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "icon", "label": "Emoji del título", "default": "🎁" },
+    { "type": "text", "id": "title", "label": "Título", "default": "¿Qué recibes con tu Lunea?" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texto", "default": "Extractor eléctrico Lunea (1 unidad)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea · Lo que recibes",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Extractor eléctrico Lunea (1 unidad)" } },
+        { "type": "item", "settings": { "text": "Cable de carga tipo USB-C" } },
+        { "type": "item", "settings": { "text": "Brida universal de 0.945\" (24mm) — compatible con la mayoría de tallas" } },
+        { "type": "item", "settings": { "text": "Sistema anti-reflujo integrado" } },
+        { "type": "item", "settings": { "text": "Manual rápido en español" } },
+        { "type": "item", "settings": { "text": "Soporte directo por WhatsApp — antes y después de tu compra" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,83 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-photo-tt">
+      <div class="lp-photo-tt__head">
+        {%- if section.settings.title != blank -%}
+          <h2 class="lp-photo-tt__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <p class="lp-photo-tt__subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="lp-photo-tt__grid">
+          {%- for block in section.blocks -%}
+            <div class="lp-photo-tt__card" {{ block.shopify_attributes }}>
+              <div class="lp-photo-tt__media">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 600 | image_tag:
+                    loading: 'lazy',
+                    width: block.settings.image.width,
+                    height: block.settings.image.height,
+                    alt: block.settings.name | default: 'Testimonio'
+                  }}
+                {%- else -%}
+                  <img src="{{ 'image' | placeholder_svg_tag: 'placeholder' }}" alt="Testimonio" loading="lazy">
+                {%- endif -%}
+              </div>
+              {%- if block.settings.name != blank -%}
+                <span class="lp-photo-tt__name">
+                  {{ block.settings.name }}
+                  {%- if block.settings.flag != blank %} {{ block.settings.flag }}{% endif -%}
+                </span>
+              {%- endif -%}
+              {%- if block.settings.quote != blank -%}
+                <p class="lp-photo-tt__quote">“{{ block.settings.quote }}”</p>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Testimonios con foto",
+  "tag": "section",
+  "max_blocks": 9,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Título", "default": "Elegido por mamás en Colombia" },
+    { "type": "text", "id": "subtitle", "label": "Subtítulo (opcional)", "default": "" }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonio con foto",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Foto" },
+        { "type": "text", "id": "name", "label": "Nombre", "default": "Mamá Camilo" },
+        { "type": "text", "id": "flag", "label": "Bandera (emoji)", "default": "🇨🇴" },
+        { "type": "textarea", "id": "quote", "label": "Reseña", "default": "Cómodo y práctico, ideal para el día a día." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea · Testimonios con foto",
+      "blocks": [
+        { "type": "testimonial", "settings": { "name": "Mamá Camilo", "flag": "🇨🇴", "quote": "Cómodo y práctico, ideal para el día a día." } },
+        { "type": "testimonial", "settings": { "name": "Carolina V.", "flag": "🇨🇴", "quote": "Un antes y un después, sobre todo si trabajás y querés seguir con la lactancia." } },
+        { "type": "testimonial", "settings": { "name": "Sofía la Madre", "flag": "🇨🇴", "quote": "Es súper cómodo y no te quita tiempo. Me simplificó un montón." } },
+        { "type": "testimonial", "settings": { "name": "Mamá Diana", "flag": "🇨🇴", "quote": "Me sorprendió lo fácil que es de usar." } },
+        { "type": "testimonial", "settings": { "name": "Mamá Luisa", "flag": "🇨🇴", "quote": "Lo recomiendo si buscás algo cómodo y que funcione de verdad." } },
+        { "type": "testimonial", "settings": { "name": "Ana María M.", "flag": "🇨🇴", "quote": "Es liviano, eficiente y se adapta perfecto a tu rutina." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

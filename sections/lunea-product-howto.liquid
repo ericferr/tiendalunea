@@ -1,0 +1,60 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-howto">
+      <div class="lp-howto__head">
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="lp-howto__eyebrow">{{ section.settings.eyebrow }}</div>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="lp-howto__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="lp-howto__steps">
+          {%- for block in section.blocks -%}
+            <div class="lp-howto__step" {{ block.shopify_attributes }}>
+              <div class="lp-howto__num" aria-hidden="true"></div>
+              <h3 class="lp-howto__step-title">{{ block.settings.title }}</h3>
+              <p class="lp-howto__step-text">{{ block.settings.text }}</p>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Cómo se usa",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Así de fácil" },
+    { "type": "text", "id": "title", "label": "Título", "default": "En 3 pasos, lista para extraer" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Paso",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Título del paso", "default": "Colócalo en tu brasier" },
+        { "type": "textarea", "id": "text", "label": "Texto", "default": "Inserta Lunea dentro de tu brasier de lactancia. Compatible con la mayoría de tallas." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea · Cómo se usa",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Colócalo en tu brasier", "text": "Inserta Lunea dentro de tu brasier de lactancia. Compatible con la mayoría de tallas." } },
+        { "type": "step", "settings": { "title": "Elige tu modo", "text": "Selecciona uno de los 4 modos en la pantalla LED y ajusta la intensidad a tu punto perfecto." } },
+        { "type": "step", "settings": { "title": "Sigue con tu vida", "text": "Camina, trabaja, descansa. Lunea hace el resto, en silencio y sin que nadie lo note." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

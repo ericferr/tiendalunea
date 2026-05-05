@@ -1,0 +1,62 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-features__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="lp-features__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="lp-features__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="lp-features__grid">
+        {%- for block in section.blocks -%}
+          <div class="lp-features__card" {{ block.shopify_attributes }}>
+            <div class="lp-features__icon">{{ block.settings.icon }}</div>
+            <h3 class="lp-features__card-title">{{ block.settings.title }}</h3>
+            <p class="lp-features__card-text">{{ block.settings.text }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Beneficios",
+  "tag": "section",
+  "max_blocks": 9,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Por qué las mamás lo eligen" },
+    { "type": "text", "id": "title", "label": "Título", "default": "Diseñado para tu vida real" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Beneficio",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Emoji", "default": "🤫" },
+        { "type": "text", "id": "title", "label": "Título", "default": "Tan silencioso que ni se nota" },
+        { "type": "textarea", "id": "text", "label": "Texto", "default": "Funciona a menos de 60 decibeles. Úsalo en la oficina, en clase o mientras el bebé duerme — sin interrumpir nada." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea · Beneficios",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "🤫", "title": "Tan silencioso que ni se nota", "text": "Funciona a menos de 60 decibeles. Úsalo en la oficina, en clase o mientras el bebé duerme — sin interrumpir nada." } },
+        { "type": "feature", "settings": { "icon": "👗", "title": "Se oculta debajo de tu ropa", "text": "Diseño ergonómico que encaja perfecto dentro de tu brasier de lactancia. Nadie sabrá que lo llevas puesto." } },
+        { "type": "feature", "settings": { "icon": "🔋", "title": "Sin cables. Sin enchufes.", "text": "Batería de larga duración recargable por USB-C — el mismo cable de tu celular. Varias sesiones con una sola carga." } },
+        { "type": "feature", "settings": { "icon": "⚙️", "title": "4 modos, tú eliges", "text": "Niveles ajustables de succión que imitan el ritmo natural del bebé. Encuentra tu intensidad perfecta." } },
+        { "type": "feature", "settings": { "icon": "🌿", "title": "100% libre de BPA", "text": "Materiales seguros para ti y tu bebé. Fácil de desensamblar y limpiar en minutos." } },
+        { "type": "feature", "settings": { "icon": "📊", "title": "Pantalla LED inteligente", "text": "Modo, intensidad y batería en tiempo real. Control total con un toque." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
