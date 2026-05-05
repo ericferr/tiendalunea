@@ -1,0 +1,129 @@
+<style>
+  .lp-cd {
+    background: linear-gradient(180deg, #EBF6FA 0%, #D6EEF5 100%);
+    border: 1px solid #c9e3eb;
+    border-radius: 14px;
+    padding: 16px 20px 20px;
+    margin: 16px 0 12px;
+    text-align: center;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .lp-cd__head {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--lp-text, #2E3F45);
+    margin: 0 0 14px;
+    letter-spacing: 0.02em;
+  }
+  .lp-cd__head-icon { margin-right: 4px; }
+  .lp-cd__clock {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .lp-cd__unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 64px;
+  }
+  .lp-cd__num {
+    background: #fff;
+    color: var(--lp-text, #2E3F45);
+    font-size: 28px;
+    font-weight: 700;
+    padding: 10px 12px;
+    border-radius: 8px;
+    min-width: 64px;
+    line-height: 1;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.08), 0 2px 4px rgba(46,63,69,0.06);
+    font-variant-numeric: tabular-nums;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .lp-cd__lbl {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lp-text-soft, #6B7E85);
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .lp-cd__sep {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--lp-text-soft, #6B7E85);
+    line-height: 1;
+    align-self: center;
+    padding-top: 4px;
+  }
+  .lp-cd__divider {
+    margin: 18px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(46,63,69,0.10);
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lp-text, #2E3F45);
+    font-weight: 700;
+  }
+</style>
+
+<div class="lp-cd" data-lp-countdown>
+  <p class="lp-cd__head"><span class="lp-cd__head-icon">🔥</span> ENVÍO GRATIS SOLO POR:</p>
+  <div class="lp-cd__clock" role="timer" aria-live="polite">
+    <div class="lp-cd__unit">
+      <div class="lp-cd__num" data-lp-cd-h>00</div>
+      <div class="lp-cd__lbl">Hrs</div>
+    </div>
+    <span class="lp-cd__sep">:</span>
+    <div class="lp-cd__unit">
+      <div class="lp-cd__num" data-lp-cd-m>00</div>
+      <div class="lp-cd__lbl">Mins</div>
+    </div>
+    <span class="lp-cd__sep">:</span>
+    <div class="lp-cd__unit">
+      <div class="lp-cd__num" data-lp-cd-s>00</div>
+      <div class="lp-cd__lbl">Secs</div>
+    </div>
+  </div>
+  <p class="lp-cd__divider">Oferta por tiempo limitado</p>
+</div>
+
+<script>
+  (function() {
+    var key = 'lp_cd_end';
+    var DURATION = 24 * 60 * 60 * 1000;
+    var endTs;
+    try {
+      endTs = parseInt(sessionStorage.getItem(key), 10);
+      if (!endTs || isNaN(endTs) || endTs - Date.now() > DURATION) endTs = 0;
+    } catch (e) { endTs = 0; }
+    if (!endTs || endTs <= Date.now()) {
+      endTs = Date.now() + DURATION;
+      try { sessionStorage.setItem(key, String(endTs)); } catch (e) {}
+    }
+    var hEl = document.querySelector('[data-lp-cd-h]');
+    var mEl = document.querySelector('[data-lp-cd-m]');
+    var sEl = document.querySelector('[data-lp-cd-s]');
+    if (!hEl || !mEl || !sEl) return;
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function tick() {
+      var diff = endTs - Date.now();
+      if (diff <= 0) {
+        endTs = Date.now() + DURATION;
+        try { sessionStorage.setItem(key, String(endTs)); } catch (e) {}
+        diff = DURATION;
+      }
+      var h = Math.floor(diff / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      hEl.textContent = pad(h);
+      mEl.textContent = pad(m);
+      sEl.textContent = pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>

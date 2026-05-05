@@ -1,0 +1,55 @@
+<style>
+  .lp-fym {
+    margin: 14px 0 18px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .lp-fym__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--lp-text, #2E3F45);
+    margin: 0 0 8px;
+  }
+  .lp-fym__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 7px;
+  }
+  .lp-fym__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--lp-text, #2E3F45);
+  }
+  .lp-fym__item::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--lp-brand, #7BBDD0);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .lp-fym__more {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--lp-text-soft, #6B7E85);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
+
+<div class="lp-fym">
+  <p class="lp-fym__title">Este producto es para vos si:</p>
+  <ul class="lp-fym__list">
+    <li class="lp-fym__item">Volvés al trabajo y querés mantener tu lactancia sin sentirte atada al cable ni a un horario rígido.</li>
+    <li class="lp-fym__item">Buscás un extractor con succión real y diseño pensado para tu cuerpo.</li>
+    <li class="lp-fym__item">Tu día está lleno — entre reuniones, hijos y obligaciones — y necesitás libertad para extraerte sin frenar tu rutina.</li>
+    <li class="lp-fym__item">Querés una opción cómoda, silenciosa y discreta, sin pagar precios europeos.</li>
+  </ul>
+  <a href="#lp-photo-tt" class="lp-fym__more">Leer más reseñas</a>
+</div>

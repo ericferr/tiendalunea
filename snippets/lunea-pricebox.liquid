@@ -1,0 +1,83 @@
+<style>
+  .lp-pb {
+    background: linear-gradient(180deg, #EBF6FA 0%, #D6EEF5 100%);
+    border: 1px solid #c9e3eb;
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+    margin: 4px 0 14px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    display: grid;
+    gap: 10px;
+  }
+  .lp-pb__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .lp-pb__title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--lp-text, #2E3F45);
+    letter-spacing: 0.02em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .lp-pb__off {
+    background: var(--lp-text, #2E3F45);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+  }
+  .lp-pb__free {
+    background: #1f8a55;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .lp-pb__price {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--lp-text, #2E3F45);
+    line-height: 1;
+    text-align: right;
+  }
+  .lp-pb__compare {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--lp-text-soft, #6B7E85);
+    text-decoration: line-through;
+    margin-top: 4px;
+    display: block;
+  }
+  .lp-pb__sub {
+    font-size: 13px;
+    color: var(--lp-text-soft, #6B7E85);
+    margin: 0;
+  }
+  .lp-pb__sub strong { color: var(--lp-text, #2E3F45); font-weight: 700; }
+</style>
+
+<div class="lp-pb">
+  <div class="lp-pb__row">
+    <p class="lp-pb__title">EXTRACTOR LUNEA <span class="lp-pb__off">40% OFF</span></p>
+    <span class="lp-pb__free">ENVÍO GRATIS</span>
+  </div>
+  <div class="lp-pb__row">
+    <p class="lp-pb__sub">Set completo · <strong>Listo para usar desde el primer día</strong></p>
+    <div>
+      <span class="lp-pb__price">$199.900</span>
+      <span class="lp-pb__compare">$329.900</span>
+    </div>
+  </div>
+</div>
