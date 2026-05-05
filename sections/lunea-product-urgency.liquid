@@ -1,3 +1,11 @@
+{%- comment -%}
+  On Lunea templates the inline urgency snippet renders next to the
+  buy button, so we suppress the full-width section there even if the
+  JSON template still references it (Shopify cache safety).
+{%- endcomment -%}
+
+{%- unless template.suffix == 'lunea' -%}
+
 {{ 'lunea-product.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -74,74 +82,26 @@
   </script>
 {%- endif -%}
 
+{%- endunless -%}
+
 {% schema %}
 {
   "name": "Lunea · Urgencia + Envío",
   "tag": "section",
   "settings": [
-    {
-      "type": "header",
-      "content": "ETA de envío"
-    },
-    {
-      "type": "range",
-      "id": "min_days",
-      "label": "Días mínimos de envío",
-      "min": 1, "max": 15, "step": 1, "default": 3
-    },
-    {
-      "type": "range",
-      "id": "max_days",
-      "label": "Días máximos de envío",
-      "min": 2, "max": 30, "step": 1, "default": 6
-    },
-    {
-      "type": "header",
-      "content": "Visualizadores en vivo"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_viewers",
-      "label": "Mostrar contador de personas viendo",
-      "default": true
-    },
-    {
-      "type": "range",
-      "id": "viewers_min",
-      "label": "Mínimo simulado",
-      "min": 5, "max": 50, "step": 1, "default": 12
-    },
-    {
-      "type": "range",
-      "id": "viewers_max",
-      "label": "Máximo simulado",
-      "min": 10, "max": 99, "step": 1, "default": 38
-    },
-    {
-      "type": "header",
-      "content": "Stock"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_stock",
-      "label": "Mostrar barra de stock",
-      "default": true
-    },
-    {
-      "type": "range",
-      "id": "stock_remaining",
-      "label": "Unidades restantes",
-      "min": 1, "max": 100, "step": 1, "default": 12
-    },
-    {
-      "type": "range",
-      "id": "stock_total",
-      "label": "Stock total inicial (para barra)",
-      "min": 10, "max": 500, "step": 5, "default": 50
-    }
+    { "type": "paragraph", "content": "En el template Lunea esta sección NO se renderiza (la urgencia aparece junto al botón de compra). Quítala del template para limpieza visual." },
+    { "type": "header", "content": "ETA de envío" },
+    { "type": "range", "id": "min_days", "label": "Días mínimos de envío", "min": 1, "max": 15, "step": 1, "default": 3 },
+    { "type": "range", "id": "max_days", "label": "Días máximos de envío", "min": 2, "max": 30, "step": 1, "default": 6 },
+    { "type": "header", "content": "Visualizadores en vivo" },
+    { "type": "checkbox", "id": "show_viewers", "label": "Mostrar contador de personas viendo", "default": true },
+    { "type": "range", "id": "viewers_min", "label": "Mínimo simulado", "min": 5, "max": 50, "step": 1, "default": 12 },
+    { "type": "range", "id": "viewers_max", "label": "Máximo simulado", "min": 10, "max": 99, "step": 1, "default": 38 },
+    { "type": "header", "content": "Stock" },
+    { "type": "checkbox", "id": "show_stock", "label": "Mostrar barra de stock", "default": true },
+    { "type": "range", "id": "stock_remaining", "label": "Unidades restantes", "min": 1, "max": 100, "step": 1, "default": 12 },
+    { "type": "range", "id": "stock_total", "label": "Stock total inicial (para barra)", "min": 10, "max": 500, "step": 5, "default": 50 }
   ],
-  "presets": [
-    { "name": "Lunea · Urgencia + Envío" }
-  ]
+  "presets": [ { "name": "Lunea · Urgencia + Envío" } ]
 }
 {% endschema %}
