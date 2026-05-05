@@ -4,17 +4,18 @@
    ============================================================ */
 
 :root {
-  --lp-brand: #512815;
-  --lp-brand-soft: #f6f1ef;
-  --lp-accent: #f5cca8;
+  --lp-brand: #3a5894;
+  --lp-brand-2: #7a9bc4;
+  --lp-brand-soft: #f4f8fb;
+  --lp-accent: #e1edf5;
   --lp-success: #1f8a55;
-  --lp-warning: #d97706;
+  --lp-warning: #b86412;
   --lp-danger: #c1372f;
-  --lp-text: #140a05;
-  --lp-text-soft: #6b5b50;
-  --lp-border: #ece4dd;
+  --lp-text: #1a2332;
+  --lp-text-soft: #5a6478;
+  --lp-border: #e3e9f0;
   --lp-radius: 14px;
-  --lp-shadow: 0 4px 16px rgba(20, 10, 5, 0.06);
+  --lp-shadow: 0 4px 16px rgba(58, 88, 148, 0.08);
 }
 
 .lp-section {
@@ -106,7 +107,7 @@
   flex-shrink: 0;
 }
 .lp-urgency__eta {
-  background: linear-gradient(135deg, var(--lp-brand) 0%, #7a462e 100%);
+  background: linear-gradient(135deg, var(--lp-brand) 0%, var(--lp-brand-2) 100%);
   color: #fff;
   padding: 0.85rem 1rem;
   border-radius: 10px;
@@ -127,7 +128,7 @@
 .lp-urgency__stock-bar {
   flex: 1;
   height: 6px;
-  background: #f3e6d8;
+  background: var(--lp-accent);
   border-radius: 3px;
   overflow: hidden;
   margin-left: 0.5rem;
@@ -309,7 +310,7 @@
   gap: 0.4rem;
   transition: background 0.2s ease;
 }
-.lp-sticky-atc__btn:hover { background: #7a462e; }
+.lp-sticky-atc__btn:hover { background: var(--lp-brand-2); }
 @media (max-width: 749px) {
   .lp-sticky-atc { display: flex; }
   body.lp-has-sticky-atc { padding-bottom: 80px; }
@@ -612,7 +613,7 @@
 
 /* === FOR YOU + final CTA ================================= */
 .lp-foryou {
-  background: linear-gradient(135deg, var(--lp-brand) 0%, #7a462e 100%);
+  background: linear-gradient(135deg, var(--lp-brand) 0%, var(--lp-brand-2) 100%);
   color: #fff;
   border-radius: var(--lp-radius);
   padding: 2.25rem 1.5rem;
@@ -679,7 +680,7 @@
 }
 .lp-foryou__cta-btn:hover {
   transform: translateY(-2px);
-  background: #fad8b3;
+  background: #cfdcec;
 }
 
 /* === WHATSAPP FLOAT ======================================= */

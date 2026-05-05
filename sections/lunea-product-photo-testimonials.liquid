@@ -1,18 +1,31 @@
 {{ 'lunea-product.css' | asset_url | stylesheet_tag }}
 
+{%- assign asset_filename = section.settings.asset_image_filename | strip -%}
+
 <div class="lp-section" {{ section.shopify_attributes }}>
   <div class="lp-container">
     <div class="lp-photo-tt">
-      <div class="lp-photo-tt__head">
-        {%- if section.settings.title != blank -%}
-          <h2 class="lp-photo-tt__title">{{ section.settings.title }}</h2>
-        {%- endif -%}
-        {%- if section.settings.subtitle != blank -%}
-          <p class="lp-photo-tt__subtitle">{{ section.settings.subtitle }}</p>
-        {%- endif -%}
-      </div>
+      {%- if section.settings.show_heading -%}
+        <div class="lp-photo-tt__head">
+          {%- if section.settings.title != blank -%}
+            <h2 class="lp-photo-tt__title">{{ section.settings.title }}</h2>
+          {%- endif -%}
+          {%- if section.settings.subtitle != blank -%}
+            <p class="lp-photo-tt__subtitle">{{ section.settings.subtitle }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
 
-      {%- if section.blocks.size > 0 -%}
+      {%- if asset_filename != blank -%}
+        <div class="lp-photo-tt__single">
+          <img
+            src="{{ asset_filename | asset_url }}"
+            alt="{{ section.settings.title | default: 'Testimonios' | escape }}"
+            loading="lazy"
+            style="width: 100%; height: auto; display: block; border-radius: 12px;"
+          >
+        </div>
+      {%- elsif section.blocks.size > 0 -%}
         <div class="lp-photo-tt__grid">
           {%- for block in section.blocks -%}
             <div class="lp-photo-tt__card" {{ block.shopify_attributes }}>
@@ -47,17 +60,38 @@
 
 {% schema %}
 {
-  "name": "Lunea · Testimonios con foto",
+  "name": "Lunea · Reseñas con foto",
   "tag": "section",
   "max_blocks": 9,
   "settings": [
+    {
+      "type": "header",
+      "content": "Modo imagen única (recomendado)"
+    },
+    {
+      "type": "text",
+      "id": "asset_image_filename",
+      "label": "Nombre del archivo en /assets",
+      "info": "Si lo dejas en blanco, se mostrará la grilla editable con bloques.",
+      "default": "product-reviews.jpg"
+    },
+    {
+      "type": "header",
+      "content": "Encabezado"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Mostrar título arriba de la imagen",
+      "default": false
+    },
     { "type": "text", "id": "title", "label": "Título", "default": "Elegido por mamás en Colombia" },
     { "type": "text", "id": "subtitle", "label": "Subtítulo (opcional)", "default": "" }
   ],
   "blocks": [
     {
       "type": "testimonial",
-      "name": "Testimonio con foto",
+      "name": "Testimonio (modo grilla)",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Foto" },
         { "type": "text", "id": "name", "label": "Nombre", "default": "Mamá Camilo" },
@@ -68,15 +102,8 @@
   ],
   "presets": [
     {
-      "name": "Lunea · Testimonios con foto",
-      "blocks": [
-        { "type": "testimonial", "settings": { "name": "Mamá Camilo", "flag": "🇨🇴", "quote": "Cómodo y práctico, ideal para el día a día." } },
-        { "type": "testimonial", "settings": { "name": "Carolina V.", "flag": "🇨🇴", "quote": "Un antes y un después, sobre todo si trabajás y querés seguir con la lactancia." } },
-        { "type": "testimonial", "settings": { "name": "Sofía la Madre", "flag": "🇨🇴", "quote": "Es súper cómodo y no te quita tiempo. Me simplificó un montón." } },
-        { "type": "testimonial", "settings": { "name": "Mamá Diana", "flag": "🇨🇴", "quote": "Me sorprendió lo fácil que es de usar." } },
-        { "type": "testimonial", "settings": { "name": "Mamá Luisa", "flag": "🇨🇴", "quote": "Lo recomiendo si buscás algo cómodo y que funcione de verdad." } },
-        { "type": "testimonial", "settings": { "name": "Ana María M.", "flag": "🇨🇴", "quote": "Es liviano, eficiente y se adapta perfecto a tu rutina." } }
-      ]
+      "name": "Lunea · Reseñas con foto",
+      "settings": { "asset_image_filename": "product-reviews.jpg" }
     }
   ]
 }

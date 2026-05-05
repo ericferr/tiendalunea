@@ -40,14 +40,6 @@
       "block_order": ["t1", "t2", "t3", "t4"],
       "settings": {}
     },
-    "urgency": {
-      "type": "lunea-product-urgency",
-      "settings": {
-        "min_days": 3, "max_days": 6,
-        "show_viewers": true, "viewers_min": 12, "viewers_max": 38,
-        "show_stock": true, "stock_remaining": 12, "stock_total": 50
-      }
-    },
     "hook": {
       "type": "lunea-product-hook",
       "settings": {
@@ -191,7 +183,6 @@
   "order": [
     "main",
     "trust-row",
-    "urgency",
     "hook",
     "features",
     "howto",
