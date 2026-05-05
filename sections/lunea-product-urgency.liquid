@@ -1,0 +1,132 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign min_days = section.settings.min_days | default: 3
+  assign max_days = section.settings.max_days | default: 6
+  assign now_ts = 'now' | date: '%s' | plus: 0
+  assign min_offset = min_days | times: 86400
+  assign max_offset = max_days | times: 86400
+  assign min_date = now_ts | plus: min_offset | date: '%A %d de %B'
+  assign max_date = now_ts | plus: max_offset | date: '%A %d de %B'
+  assign show_viewers = section.settings.show_viewers
+  assign show_stock = section.settings.show_stock
+  assign stock_value = section.settings.stock_remaining | default: 12
+  assign stock_total = section.settings.stock_total | default: 50
+  assign stock_pct = stock_value | times: 100 | divided_by: stock_total
+-%}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-urgency">
+
+      {%- if show_viewers -%}
+        <div class="lp-urgency__row">
+          <span class="lp-urgency__pulse" aria-hidden="true"></span>
+          <span><strong data-lp-viewers>{{ section.settings.viewers_default | default: 23 }}</strong> personas viendo este producto ahora</span>
+        </div>
+      {%- endif -%}
+
+      {%- if show_stock -%}
+        <div class="lp-urgency__row lp-urgency__stock">
+          <span class="lp-urgency__icon">⚡</span>
+          <span>Solo quedan <strong>{{ stock_value }} unidades</strong></span>
+          <span class="lp-urgency__stock-bar"><span class="lp-urgency__stock-fill" style="width: {{ stock_pct }}%;"></span></span>
+        </div>
+      {%- endif -%}
+
+      <div class="lp-urgency__eta">
+        <span class="lp-urgency__icon">📦</span>
+        <span>Pídelo hoy y recíbelo entre el <strong>{{ min_date }}</strong> y el <strong>{{ max_date }}</strong></span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{%- if show_viewers -%}
+  <script>
+    (function() {
+      var el = document.querySelector('[data-lp-viewers]');
+      if (!el) return;
+      var min = {{ section.settings.viewers_min | default: 12 }};
+      var max = {{ section.settings.viewers_max | default: 38 }};
+      function tick() {
+        var n = Math.floor(Math.random() * (max - min + 1)) + min;
+        el.textContent = n;
+      }
+      setInterval(tick, 6500);
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Lunea · Urgencia + Envío",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "ETA de envío"
+    },
+    {
+      "type": "range",
+      "id": "min_days",
+      "label": "Días mínimos de envío",
+      "min": 1, "max": 15, "step": 1, "default": 3
+    },
+    {
+      "type": "range",
+      "id": "max_days",
+      "label": "Días máximos de envío",
+      "min": 2, "max": 30, "step": 1, "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Visualizadores en vivo"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_viewers",
+      "label": "Mostrar contador de personas viendo",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "viewers_min",
+      "label": "Mínimo simulado",
+      "min": 5, "max": 50, "step": 1, "default": 12
+    },
+    {
+      "type": "range",
+      "id": "viewers_max",
+      "label": "Máximo simulado",
+      "min": 10, "max": 99, "step": 1, "default": 38
+    },
+    {
+      "type": "header",
+      "content": "Stock"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stock",
+      "label": "Mostrar barra de stock",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "stock_remaining",
+      "label": "Unidades restantes",
+      "min": 1, "max": 100, "step": 1, "default": 12
+    },
+    {
+      "type": "range",
+      "id": "stock_total",
+      "label": "Stock total inicial (para barra)",
+      "min": 10, "max": 500, "step": 5, "default": 50
+    }
+  ],
+  "presets": [
+    { "name": "Lunea · Urgencia + Envío" }
+  ]
+}
+{% endschema %}

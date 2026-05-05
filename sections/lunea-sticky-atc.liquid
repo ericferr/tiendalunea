@@ -1,0 +1,69 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+{%- if product -%}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  <div class="lp-sticky-atc" id="LpStickyAtc" aria-hidden="true">
+    <div class="lp-sticky-atc__info">
+      <div class="lp-sticky-atc__name">{{ product.title | truncate: 38 }}</div>
+      <div class="lp-sticky-atc__price">
+        {{ current_variant.price | money }}
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <span class="lp-sticky-atc__price-compare">{{ current_variant.compare_at_price | money }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+    <a href="#MainProduct" class="lp-sticky-atc__btn" data-lp-sticky-cta>
+      🛒 {{ section.settings.cta_text | default: 'Comprar ahora' }}
+    </a>
+  </div>
+
+  <script>
+    (function() {
+      var bar = document.getElementById('LpStickyAtc');
+      if (!bar) return;
+      var trigger = 600;
+      function onScroll() {
+        if (window.scrollY > trigger) {
+          bar.classList.add('is-visible');
+          bar.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('lp-has-sticky-atc');
+        } else {
+          bar.classList.remove('is-visible');
+          bar.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('lp-has-sticky-atc');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var cta = bar.querySelector('[data-lp-sticky-cta]');
+      if (cta) {
+        cta.addEventListener('click', function(e) {
+          var form = document.querySelector('product-form form, form[action*="/cart/add"]');
+          if (form) {
+            e.preventDefault();
+            var addBtn = form.querySelector('[type="submit"], button[name="add"]');
+            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(function() {
+              if (addBtn) addBtn.focus();
+            }, 600);
+          }
+        });
+      }
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Lunea · Sticky ATC móvil",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "cta_text", "label": "Texto del botón", "default": "Comprar ahora" },
+    { "type": "paragraph", "content": "Esta barra solo se muestra en móvil cuando el usuario hace scroll." }
+  ],
+  "presets": [
+    { "name": "Lunea · Sticky ATC móvil" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,63 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }} style="padding: 2rem 0;">
+  <div class="lp-container">
+    <div class="lp-faq__heading">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="lp-faq__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="lp-faq__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="lp-faq__list">
+        {%- for block in section.blocks -%}
+          <details class="lp-faq__item" {{ block.shopify_attributes }}>
+            <summary class="lp-faq__q">
+              <span>{{ block.settings.question }}</span>
+              <span class="lp-faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="lp-faq__a">{{ block.settings.answer }}</div>
+          </details>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · FAQ producto",
+  "tag": "section",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Resolvemos tus dudas" },
+    { "type": "text", "id": "title", "label": "Título", "default": "Preguntas frecuentes" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Pregunta",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Pregunta", "default": "¿Cuándo llega mi pedido?" },
+        { "type": "textarea", "id": "answer", "label": "Respuesta", "default": "Procesamos pedidos en 24h y enviamos a toda Colombia. Recíbelo entre 3 y 6 días hábiles según tu ciudad." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea · FAQ producto",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, lo enviamos a tu casa y pagas al mensajero al recibirlo. Sin tarjetas ni transferencias previas — solo pagas cuando lo tienes en tus manos." } },
+        { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos pedidos en 24 horas hábiles. La entrega tarda entre 3 y 6 días hábiles dependiendo de tu ciudad. Te enviamos número de guía para rastrear todo el camino." } },
+        { "type": "faq", "settings": { "question": "¿Qué pasa si no me funciona o no me gusta?", "answer": "Tienes 30 días de garantía completa. Si por cualquier razón no estás satisfecha, escríbenos por WhatsApp y gestionamos cambio o devolución sin complicaciones." } },
+        { "type": "faq", "settings": { "question": "¿Es seguro comprar acá?", "answer": "Sí. Tu compra está respaldada por SSL, política de privacidad y atención humana por WhatsApp. Además puedes pagar contra entrega si prefieres no usar tarjetas en línea." } },
+        { "type": "faq", "settings": { "question": "¿Tienen tienda física?", "answer": "Por ahora operamos 100% online para mantener los precios bajos. Pero te atendemos en tiempo real por WhatsApp cualquier duda antes o después de tu compra." } },
+        { "type": "faq", "settings": { "question": "¿Cómo me contactan después de la compra?", "answer": "Te llega un correo de confirmación con tu pedido, luego un mensaje con el número de guía cuando despachemos. Y siempre puedes escribirnos por WhatsApp para cualquier consulta." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

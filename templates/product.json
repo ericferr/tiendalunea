@@ -1,1 +1,120 @@
-{"sections":{"main":{"type":"main-product","blocks":{"vendor":{"type":"text","settings":{"text":"{{ product.vendor }}","text_style":"uppercase"}},"title":{"type":"title","settings":{}},"price":{"type":"price","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"description":{"type":"description","settings":{}},"share":{"type":"share","settings":{"share_label":"Share"}}},"block_order":["vendor","title","price","variant_picker","quantity_selector","buy_buttons","description","share"],"settings":{"enable_sticky_info":true,"color_scheme":"scheme-1","media_size":"large","constrain_to_viewport":true,"media_fit":"contain","gallery_layout":"stacked","mobile_thumbnails":"hide","media_position":"left","image_zoom":"lightbox","hide_variants":true,"enable_video_looping":false,"padding_top":36,"padding_bottom":12}},"related-products":{"type":"related-products","settings":{"heading":"You may also like","heading_size":"h2","products_to_show":4,"columns_desktop":4,"columns_mobile":"2","color_scheme":"scheme-1","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"padding_top":36,"padding_bottom":28}}},"order":["main","related-products"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "text", "settings": { "text": "{{ product.vendor }}", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true } },
+        "description": { "type": "description", "settings": {} },
+        "share": { "type": "share", "settings": { "share_label": "Share" } }
+      },
+      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description", "share"],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis a Colombia" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pago contra entrega" } },
+        "t3": { "type": "trust", "settings": { "icon": "🛡️", "text": "Garantía 30 días" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "urgency": {
+      "type": "lunea-product-urgency",
+      "settings": {
+        "min_days": 3,
+        "max_days": 6,
+        "show_viewers": true,
+        "viewers_min": 12,
+        "viewers_max": 38,
+        "show_stock": true,
+        "stock_remaining": 12,
+        "stock_total": 50
+      }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 30,
+        "title": "Tu compra está 100% protegida",
+        "text": "Si no estás satisfecha en los primeros 30 días, te devolvemos tu dinero o cambiamos tu producto sin preguntas. Solo escríbenos por WhatsApp."
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, lo enviamos a tu casa y pagas al mensajero al recibirlo. Sin tarjetas ni transferencias previas — solo pagas cuando lo tienes en tus manos." } },
+        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos pedidos en 24 horas hábiles. La entrega tarda entre 3 y 6 días hábiles dependiendo de tu ciudad. Te enviamos número de guía para rastrear todo el camino." } },
+        "f3": { "type": "faq", "settings": { "question": "¿Qué pasa si no me funciona o no me gusta?", "answer": "Tienes 30 días de garantía completa. Si por cualquier razón no estás satisfecha, escríbenos por WhatsApp y gestionamos cambio o devolución sin complicaciones." } },
+        "f4": { "type": "faq", "settings": { "question": "¿Es seguro comprar acá?", "answer": "Sí. Tu compra está respaldada por SSL, política de privacidad y atención humana por WhatsApp. Además puedes pagar contra entrega si prefieres no usar tarjetas en línea." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Tienen tienda física?", "answer": "Por ahora operamos 100% online para mantener los precios bajos. Pero te atendemos en tiempo real por WhatsApp cualquier duda antes o después de tu compra." } },
+        "f6": { "type": "faq", "settings": { "question": "¿Cómo me contactan después de la compra?", "answer": "Te llega un correo de confirmación con tu pedido, luego un mensaje con el número de guía cuando despachemos. Y siempre puedes escribirnos por WhatsApp para cualquier consulta." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "title": "Preguntas frecuentes"
+      }
+    },
+    "sticky-atc": {
+      "type": "lunea-sticky-atc",
+      "settings": { "cta_text": "Comprar ahora" }
+    },
+    "whatsapp-float": {
+      "type": "lunea-whatsapp-float",
+      "settings": {
+        "phone": "573001234567",
+        "message": "Hola, quiero más información sobre el producto."
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "También te puede gustar",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "trust-row",
+    "urgency",
+    "guarantee",
+    "faq",
+    "related-products",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
+}

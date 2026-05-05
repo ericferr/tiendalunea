@@ -1,0 +1,46 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-guarantee">
+      <div class="lp-guarantee__seal" aria-hidden="true">
+        <span class="lp-guarantee__seal-num">{{ section.settings.days | default: 30 }}</span>
+        <span class="lp-guarantee__seal-lbl">Días</span>
+      </div>
+      <div>
+        <h3 class="lp-guarantee__title">{{ section.settings.title }}</h3>
+        <p class="lp-guarantee__text">{{ section.settings.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Sello garantía",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "days",
+      "label": "Días de garantía",
+      "min": 7, "max": 365, "step": 1, "default": 30
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Tu compra está 100% protegida"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Texto",
+      "default": "Si no estás satisfecha en los primeros 30 días, te devolvemos tu dinero o cambiamos tu producto sin preguntas. Solo escríbenos por WhatsApp."
+    }
+  ],
+  "presets": [
+    { "name": "Lunea · Sello garantía" }
+  ]
+}
+{% endschema %}
