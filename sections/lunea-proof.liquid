@@ -1,0 +1,180 @@
+<div class="lunea-section lunea-bg-sky lunea-pad">
+  <div class="lunea-container">
+    <div class="lunea-text-center lunea-fade lunea-mb-lg">
+      {% if section.settings.eyebrow != blank %}<span class="lunea-eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+      {% if section.settings.heading != blank %}<h2 style="margin-top:12px;">{{ section.settings.heading }}</h2>{% endif %}
+      <div class="lunea-stars" style="font-size:1.4rem;margin-top:16px;">★★★★★</div>
+      {% if section.settings.rating_text != blank %}<p class="lunea-text-muted" style="margin-top:6px;">{{ section.settings.rating_text }}</p>{% endif %}
+    </div>
+    <div class="lunea-testimonials-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'testimonial' %}
+          <div class="lunea-testimonial lunea-fade" {{ block.shopify_attributes }}>
+            <div class="lunea-stars">★★★★★</div>
+            <p class="lunea-testimonial-text">{{ block.settings.quote }}</p>
+            <div class="lunea-author">
+              <div class="lunea-avatar">{{ block.settings.name | slice: 0 }}</div>
+              <div>
+                <div class="lunea-author-name">{{ block.settings.name }}</div>
+                <div class="lunea-author-loc">{{ block.settings.location }}</div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- URGENCY -->
+<div class="lunea-section lunea-bg-dark lunea-urgency lunea-pad">
+  <div class="lunea-container">
+    {% if section.settings.urgency_eyebrow != blank %}<span class="lunea-eyebrow" style="color:var(--lunea-sky);">{{ section.settings.urgency_eyebrow }}</span>{% endif %}
+    {% if section.settings.urgency_heading != blank %}<h2 style="margin-top:12px;">{{ section.settings.urgency_heading }}</h2>{% endif %}
+    {% if section.settings.urgency_subtext != blank %}<p>{{ section.settings.urgency_subtext }}</p>{% endif %}
+    {% if section.settings.urgency_price != blank %}<div class="lunea-urgency-price">{{ section.settings.urgency_price }}</div>{% endif %}
+    {% if section.settings.urgency_note != blank %}<div class="lunea-urgency-note">{{ section.settings.urgency_note }}</div>{% endif %}
+    {% if section.settings.urgency_cta_text != blank %}
+      <a href="{{ section.settings.urgency_cta_url }}" class="lunea-btn-urgency">{{ section.settings.urgency_cta_text }}</a>
+    {% endif %}
+    <div class="lunea-urgency-perks">
+      {% for block in section.blocks %}
+        {% if block.type == 'urgency_perk' %}
+          <div class="lunea-urgency-perk" {{ block.shopify_attributes }}>
+            <span>{{ block.settings.icon }}</span>
+            <span>{{ block.settings.text }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="lunea-section lunea-bg-white lunea-pad">
+  <div class="lunea-container">
+    <div class="lunea-faq-wrap">
+      <div class="lunea-text-center lunea-fade lunea-mb-lg">
+        {% if section.settings.faq_eyebrow != blank %}<span class="lunea-eyebrow">{{ section.settings.faq_eyebrow }}</span>{% endif %}
+        {% if section.settings.faq_heading != blank %}<h2 style="margin-top:12px;">{{ section.settings.faq_heading }}</h2>{% endif %}
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'faq_item' %}
+          <div class="lunea-faq-item lunea-fade" {{ block.shopify_attributes }}>
+            <div class="lunea-faq-q">{{ block.settings.question }}<div class="lunea-faq-icon">+</div></div>
+            <div class="lunea-faq-a">{{ block.settings.answer }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- GUARANTEE -->
+<div class="lunea-section lunea-bg-sky lunea-pad">
+  <div class="lunea-container lunea-fade">
+    <div class="lunea-guarantee">
+      <div class="lunea-seal">
+        <div class="lunea-seal-days">{{ section.settings.guarantee_days }}</div>
+        <div class="lunea-seal-text">Días de<br>garantía</div>
+      </div>
+      <div>
+        {% if section.settings.guarantee_title != blank %}<h3>{{ section.settings.guarantee_title }}</h3>{% endif %}
+        {% if section.settings.guarantee_text != blank %}<p class="lunea-guarantee-text">{{ section.settings.guarantee_text }}</p>{% endif %}
+        <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;">
+          {% for block in section.blocks %}
+            {% if block.type == 'guarantee_badge' %}
+              <span style="display:flex;align-items:center;gap:6px;font-size:0.82rem;color:var(--lunea-gray-800);" {{ block.shopify_attributes }}>{{ block.settings.icon }} {{ block.settings.text }}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea Prueba Social",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Testimonios" },
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta", "default": "Lo que dicen nuestras mamás" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "Más de 500 mamás colombianas ya cambiaron su experiencia" },
+    { "type": "text", "id": "rating_text", "label": "Texto de calificación", "default": "4.9 / 5 promedio de calificación" },
+    { "type": "header", "content": "Sección de urgencia" },
+    { "type": "text", "id": "urgency_eyebrow", "label": "Etiqueta", "default": "Oferta actual" },
+    { "type": "text", "id": "urgency_heading", "label": "Título", "default": "¿Lista para recuperar tu libertad?" },
+    { "type": "text", "id": "urgency_subtext", "label": "Subtexto", "default": "Envío gratis a cualquier ciudad de Colombia · Pago seguro y contra entrega" },
+    { "type": "text", "id": "urgency_price", "label": "Precio", "default": "$200.000 COP" },
+    { "type": "text", "id": "urgency_note", "label": "Nota de precio", "default": "Precio final · Sin cobros ocultos · Sin suscripciones" },
+    { "type": "text", "id": "urgency_cta_text", "label": "Texto CTA", "default": "🛒 Pedir mi Lunea ahora" },
+    { "type": "url", "id": "urgency_cta_url", "label": "Enlace CTA" },
+    { "type": "header", "content": "FAQ" },
+    { "type": "text", "id": "faq_eyebrow", "label": "Etiqueta FAQ", "default": "Resolvemos tus dudas" },
+    { "type": "text", "id": "faq_heading", "label": "Título FAQ", "default": "Preguntas frecuentes" },
+    { "type": "header", "content": "Garantía" },
+    { "type": "number", "id": "guarantee_days", "label": "Días de garantía", "default": 30 },
+    { "type": "text", "id": "guarantee_title", "label": "Título garantía", "default": "Tu compra está protegida" },
+    { "type": "textarea", "id": "guarantee_text", "label": "Texto garantía", "default": "Entendemos que comprar en línea requiere confianza. Por eso respaldamos cada Lunea con 30 días de garantía completa. Si el producto presenta algún defecto o no cumple tus expectativas, te lo cambiamos o devolvemos tu dinero — sin complicaciones. Solo escríbenos por WhatsApp." }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonio",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Cita", "default": "¡Un cambio de vida total!" },
+        { "type": "text", "id": "name", "label": "Nombre", "default": "Valentina M." },
+        { "type": "text", "id": "location", "label": "Ciudad y descripción", "default": "Bogotá · Mamá de 1 bebé" }
+      ]
+    },
+    {
+      "type": "urgency_perk",
+      "name": "Perk de urgencia",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Ícono (emoji)", "default": "🚚" },
+        { "type": "text", "id": "text", "label": "Texto", "default": "Envío gratis" }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "Pregunta frecuente",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Pregunta", "default": "¿Cómo funciona el pago contra entrega?" },
+        { "type": "textarea", "id": "answer", "label": "Respuesta", "default": "Haces tu pedido, nosotros enviamos tu Lunea y pagas al mensajero cuando lo recibas." }
+      ]
+    },
+    {
+      "type": "guarantee_badge",
+      "name": "Badge de garantía",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Ícono (emoji)", "default": "🔒" },
+        { "type": "text", "id": "text", "label": "Texto", "default": "Compra segura" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea Prueba Social",
+      "blocks": [
+        { "type": "testimonial", "settings": { "quote": "No puedo creer que antes me la pasara conectada a un extractor tradicional. Con Lunea puedo trabajar en mi computador y ni siquiera pienso en que lo tengo puesto. ¡Un cambio de vida total!", "name": "Valentina M.", "location": "Bogotá · Mamá de 1 bebé" } },
+        { "type": "testimonial", "settings": { "quote": "Soy maestra y tenía terror de cómo iba a manejar la lactancia al volver al trabajo. Lo uso en mis clases y ningún alumno se ha dado cuenta. ¡Qué nivel de discreción!", "name": "Carolina R.", "location": "Medellín · Mamá de 2" } },
+        { "type": "testimonial", "settings": { "quote": "El envío llegó rapidísimo y el producto es exactamente como lo muestran. Lo he comparado con extractores de $600.000 y Lunea no les envidia nada.", "name": "Laura P.", "location": "Cali · Mamá primeriza" } },
+        { "type": "urgency_perk", "settings": { "icon": "🚚", "text": "Envío gratis" } },
+        { "type": "urgency_perk", "settings": { "icon": "📦", "text": "Contra entrega" } },
+        { "type": "urgency_perk", "settings": { "icon": "🛡️", "text": "Garantía 30 días" } },
+        { "type": "urgency_perk", "settings": { "icon": "💬", "text": "Soporte WhatsApp" } },
+        { "type": "faq_item", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido, nosotros enviamos tu Lunea y pagas al mensajero cuando lo recibas en la puerta de tu casa. Sin tarjetas ni transferencias previas." } },
+        { "type": "faq_item", "settings": { "question": "¿En cuántos días llega el pedido?", "answer": "Los pedidos se procesan en 1 día hábil y el envío tarda entre 3 a 7 días hábiles dependiendo de tu ciudad. Te enviamos el número de guía para rastrearlo." } },
+        { "type": "faq_item", "settings": { "question": "¿Es compatible con mi talla de pecho?", "answer": "Sí. La brida tiene 24mm de diámetro, diseñada para adaptarse a la mayoría de tamaños de pezón. Si tienes dudas escríbenos por WhatsApp." } },
+        { "type": "faq_item", "settings": { "question": "¿Cuánto ruido hace? ¿Se nota en público?", "answer": "Lunea opera a menos de 60 decibeles, equivalente a una conversación en voz baja. En ambientes con ruido normal es prácticamente imperceptible." } },
+        { "type": "faq_item", "settings": { "question": "¿Cómo funciona la garantía de 30 días?", "answer": "Si por cualquier razón no estás satisfecha en los primeros 30 días, nos contactas por WhatsApp y gestionamos la devolución o cambio sin preguntas." } },
+        { "type": "faq_item", "settings": { "question": "¿Es seguro para mí y mi bebé?", "answer": "Absolutamente. Lunea está fabricado con materiales 100% libres de BPA. Todas las partes en contacto con la leche son desmontables y fáciles de esterilizar." } },
+        { "type": "guarantee_badge", "settings": { "icon": "🔒", "text": "Compra segura" } },
+        { "type": "guarantee_badge", "settings": { "icon": "💬", "text": "Soporte real" } },
+        { "type": "guarantee_badge", "settings": { "icon": "↩️", "text": "Devolución fácil" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

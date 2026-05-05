@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --lunea-sky: #A8D5E2;
+  --lunea-sky-light: #D6EEF5;
+  --lunea-sky-dark: #7BBDD0;
+  --lunea-sky-ultra: #EBF6FA;
+  --lunea-gray-100: #F2F4F5;
+  --lunea-gray-200: #E4E8EA;
+  --lunea-gray-400: #9AACB3;
+  --lunea-gray-800: #2E3F45;
+  --lunea-text-light: #6B7E85;
+  --lunea-font-display: 'Cormorant Garamond', Georgia, serif;
+  --lunea-font-body: 'DM Sans', sans-serif;
+  --lunea-radius: 16px;
+  --lunea-radius-sm: 8px;
+  --lunea-shadow: 0 4px 30px rgba(100,160,180,0.12);
+  --lunea-shadow-lg: 0 12px 60px rgba(100,160,180,0.18);
+  --lunea-transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ===== LUNEA SECTIONS ONLY ===== */
+.lunea-section { font-family: var(--lunea-font-body); }
+.lunea-section h1, .lunea-section h2, .lunea-section h3, .lunea-section h4 {
+  font-family: var(--lunea-font-display); font-weight: 400; line-height: 1.2;
+}
+.lunea-section h1 { font-size: clamp(2.4rem,5vw,4rem); }
+.lunea-section h2 { font-size: clamp(1.8rem,3.5vw,2.8rem); }
+.lunea-section h3 { font-size: clamp(1.3rem,2.5vw,1.8rem); }
+
+.lunea-eyebrow { font-family: var(--lunea-font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lunea-sky-dark); }
+.lunea-section .lunea-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.lunea-pad { padding: 80px 0; }
+.lunea-bg-white { background: #fff; }
+.lunea-bg-sky { background: var(--lunea-sky-ultra); }
+.lunea-bg-dark { background: linear-gradient(135deg, var(--lunea-gray-800) 0%, #1a2d33 100%); }
+
+/* HERO */
+.lunea-hero { background: linear-gradient(135deg, #fff 0%, var(--lunea-sky-ultra) 60%, var(--lunea-sky-light) 100%); padding: 80px 0 60px; overflow: hidden; position: relative; }
+.lunea-hero::before { content: ''; position: absolute; top: -40%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, var(--lunea-sky-light) 0%, transparent 70%); opacity: 0.5; pointer-events: none; }
+.lunea-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+.lunea-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--lunea-sky-ultra); border: 1px solid var(--lunea-sky); padding: 6px 16px; border-radius: 100px; margin-bottom: 24px; }
+.lunea-hero-title { margin-bottom: 20px; color: var(--lunea-gray-800); }
+.lunea-hero-title em { font-style: italic; color: var(--lunea-sky-dark); }
+.lunea-hero-subtitle { font-size: 1.05rem; color: var(--lunea-text-light); margin-bottom: 32px; font-weight: 300; line-height: 1.7; }
+.lunea-price-big { font-family: var(--lunea-font-display); font-size: 2.4rem; font-weight: 600; color: var(--lunea-gray-800); }
+.lunea-price-note { font-size: 0.82rem; color: var(--lunea-text-light); margin-top: 2px; margin-bottom: 28px; }
+
+.lunea-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--lunea-gray-800); color: #fff; padding: 16px 36px; border-radius: 100px; font-size: 1rem; font-weight: 500; transition: var(--lunea-transition); border: none; width: 100%; max-width: 360px; text-decoration: none; cursor: pointer; }
+.lunea-btn-primary:hover { background: var(--lunea-sky-dark); transform: translateY(-2px); box-shadow: var(--lunea-shadow-lg); color: #fff; }
+.lunea-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: transparent; color: var(--lunea-gray-800); padding: 14px 36px; border-radius: 100px; font-size: 0.95rem; font-weight: 500; transition: var(--lunea-transition); border: 1.5px solid var(--lunea-gray-200); width: 100%; max-width: 360px; margin-top: 12px; text-decoration: none; }
+.lunea-btn-secondary:hover { border-color: var(--lunea-sky); color: var(--lunea-sky-dark); }
+.lunea-btn-urgency { display: inline-flex; align-items: center; gap: 10px; background: var(--lunea-sky); color: #fff; padding: 18px 48px; border-radius: 100px; font-size: 1.05rem; font-weight: 600; transition: var(--lunea-transition); border: none; cursor: pointer; text-decoration: none; }
+.lunea-btn-urgency:hover { background: var(--lunea-sky-dark); transform: translateY(-2px); color: #fff; }
+
+.lunea-badges { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+.lunea-badge { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--lunea-text-light); }
+.lunea-badge-icon { width: 28px; height: 28px; background: var(--lunea-sky-ultra); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+
+.lunea-hero-img-wrap { border-radius: 24px; overflow: hidden; box-shadow: var(--lunea-shadow-lg); aspect-ratio: 1/1; background: #fff; position: relative; }
+.lunea-hero-img-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+.lunea-float-badge { position: absolute; bottom: 24px; left: -20px; background: #fff; border-radius: 14px; padding: 14px 18px; box-shadow: var(--lunea-shadow-lg); display: flex; align-items: center; gap: 10px; font-size: 0.82rem; font-weight: 500; }
+.lunea-float-icon { width: 36px; height: 36px; background: var(--lunea-sky-ultra); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+
+/* TRUST BAR */
+.lunea-trust { background: #fff; border-top: 1px solid var(--lunea-gray-200); border-bottom: 1px solid var(--lunea-gray-200); padding: 20px 0; }
+.lunea-trust-inner { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.lunea-trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 500; color: var(--lunea-gray-800); }
+
+/* BENEFITS */
+.lunea-benefits-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 52px; }
+.lunea-card { background: #fff; border-radius: var(--lunea-radius); padding: 36px 28px; border: 1px solid var(--lunea-gray-200); transition: var(--lunea-transition); position: relative; overflow: hidden; }
+.lunea-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--lunea-sky), var(--lunea-sky-dark)); opacity: 0; transition: var(--lunea-transition); }
+.lunea-card:hover { transform: translateY(-4px); box-shadow: var(--lunea-shadow-lg); }
+.lunea-card:hover::before { opacity: 1; }
+.lunea-card-icon { width: 52px; height: 52px; background: var(--lunea-sky-ultra); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+.lunea-card-title { font-family: var(--lunea-font-display); font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; color: var(--lunea-gray-800); }
+.lunea-card-text { font-size: 0.88rem; color: var(--lunea-text-light); line-height: 1.65; }
+
+/* STEPS */
+.lunea-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; position: relative; }
+.lunea-steps::before { content: ''; position: absolute; top: 36px; left: 20%; right: 20%; height: 1px; background: linear-gradient(90deg,transparent,var(--lunea-sky),transparent); }
+.lunea-step { text-align: center; }
+.lunea-step-num { width: 72px; height: 72px; background: linear-gradient(135deg, var(--lunea-sky-light), var(--lunea-sky)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--lunea-font-display); font-size: 1.6rem; color: #fff; margin: 0 auto 20px; box-shadow: 0 4px 20px rgba(123,189,208,0.35); }
+.lunea-step-title { font-family: var(--lunea-font-display); font-size: 1.15rem; margin-bottom: 8px; color: var(--lunea-gray-800); }
+.lunea-step-text { font-size: 0.85rem; color: var(--lunea-text-light); line-height: 1.6; }
+
+/* GALLERY */
+.lunea-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.lunea-gallery-main { grid-row: span 2; border-radius: var(--lunea-radius); overflow: hidden; box-shadow: var(--lunea-shadow); background: var(--lunea-gray-100); }
+.lunea-gallery-main img { width: 100%; height: 100%; object-fit: contain; min-height: 420px; padding: 16px; }
+.lunea-gallery-thumb { border-radius: var(--lunea-radius-sm); overflow: hidden; box-shadow: var(--lunea-shadow); background: var(--lunea-gray-100); transition: var(--lunea-transition); }
+.lunea-gallery-thumb:hover { transform: scale(1.02); }
+.lunea-gallery-thumb img { width: 100%; height: 240px; object-fit: contain; padding: 12px; }
+
+/* FEATURES */
+.lunea-features-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.lunea-features-img { border-radius: 24px; overflow: hidden; box-shadow: var(--lunea-shadow-lg); background: var(--lunea-gray-100); }
+.lunea-features-img img { width: 100%; object-fit: contain; padding: 8px; min-height: 460px; max-height: 560px; }
+.lunea-features-list { margin-top: 32px; display: flex; flex-direction: column; gap: 20px; }
+.lunea-feature-item { display: flex; gap: 16px; align-items: flex-start; }
+.lunea-check { width: 28px; height: 28px; background: var(--lunea-sky); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.8rem; flex-shrink: 0; margin-top: 2px; }
+.lunea-feature-label { font-weight: 500; font-size: 0.95rem; color: var(--lunea-gray-800); }
+.lunea-feature-desc { font-size: 0.84rem; color: var(--lunea-text-light); margin-top: 2px; }
+
+/* SPECS */
+.lunea-specs { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 24px; }
+.lunea-spec-item { background: #fff; border: 1px solid var(--lunea-gray-200); border-radius: var(--lunea-radius-sm); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+.lunea-spec-label { font-size: 0.84rem; color: var(--lunea-text-light); }
+.lunea-spec-value { font-weight: 500; font-size: 0.9rem; color: var(--lunea-gray-800); }
+
+/* TESTIMONIALS */
+.lunea-testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 52px; }
+.lunea-testimonial { background: #fff; border-radius: var(--lunea-radius); padding: 28px; border: 1px solid var(--lunea-gray-200); position: relative; }
+.lunea-testimonial::before { content: '"'; font-family: var(--lunea-font-display); font-size: 5rem; color: var(--lunea-sky-light); position: absolute; top: 8px; left: 20px; line-height: 1; }
+.lunea-stars { color: #F5C842; letter-spacing: 2px; }
+.lunea-testimonial-text { font-size: 0.9rem; color: var(--lunea-text-light); line-height: 1.7; margin: 20px 0 16px; position: relative; z-index: 1; }
+.lunea-author { display: flex; align-items: center; gap: 12px; }
+.lunea-avatar { width: 40px; height: 40px; background: var(--lunea-sky-ultra); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--lunea-font-display); font-size: 1.1rem; color: var(--lunea-sky-dark); flex-shrink: 0; }
+.lunea-author-name { font-weight: 500; font-size: 0.88rem; color: var(--lunea-gray-800); }
+.lunea-author-loc { font-size: 0.78rem; color: var(--lunea-text-light); }
+
+/* URGENCY */
+.lunea-urgency { color: #fff; padding: 60px 0; text-align: center; }
+.lunea-urgency h2 { color: #fff; margin-bottom: 12px; }
+.lunea-urgency p { color: var(--lunea-gray-400); margin-bottom: 32px; }
+.lunea-urgency-price { font-family: var(--lunea-font-display); font-size: 3rem; font-weight: 600; color: var(--lunea-sky); margin-bottom: 8px; }
+.lunea-urgency-note { font-size: 0.82rem; color: var(--lunea-gray-400); margin-bottom: 28px; }
+.lunea-urgency-perks { display: flex; justify-content: center; gap: 32px; margin-top: 24px; flex-wrap: wrap; }
+.lunea-urgency-perk { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--lunea-gray-400); }
+
+/* FAQ */
+.lunea-faq-wrap { max-width: 760px; margin: 0 auto; }
+.lunea-faq-item { border-bottom: 1px solid var(--lunea-gray-200); padding: 20px 0; }
+.lunea-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 500; font-size: 0.95rem; color: var(--lunea-gray-800); gap: 16px; user-select: none; }
+.lunea-faq-icon { width: 28px; height: 28px; background: var(--lunea-sky-ultra); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--lunea-sky-dark); font-size: 1.2rem; flex-shrink: 0; transition: var(--lunea-transition); }
+.lunea-faq-item.open .lunea-faq-icon { transform: rotate(45deg); background: var(--lunea-sky); color: #fff; }
+.lunea-faq-a { font-size: 0.88rem; color: var(--lunea-text-light); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+.lunea-faq-item.open .lunea-faq-a { max-height: 300px; padding-top: 14px; }
+
+/* GUARANTEE */
+.lunea-guarantee { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; max-width: 800px; margin: 0 auto; background: #fff; border-radius: var(--lunea-radius); padding: 48px; border: 1px solid var(--lunea-gray-200); box-shadow: var(--lunea-shadow); }
+.lunea-seal { width: 120px; height: 120px; background: linear-gradient(135deg, var(--lunea-sky-light), var(--lunea-sky)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; font-family: var(--lunea-font-display); color: #fff; text-align: center; box-shadow: 0 8px 30px rgba(123,189,208,0.35); flex-shrink: 0; }
+.lunea-seal-days { font-size: 2rem; font-weight: 600; line-height: 1; }
+.lunea-seal-text { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+.lunea-guarantee-text { font-size: 0.9rem; color: var(--lunea-text-light); line-height: 1.7; margin-top: 12px; }
+
+/* PRODUCT PAGE */
+.lunea-product-header { background: var(--lunea-sky-ultra); border-bottom: 1px solid var(--lunea-sky-light); padding: 16px 0; }
+.lunea-product-trust { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 0.82rem; color: var(--lunea-gray-800); font-weight: 500; }
+.lunea-product-trust span { display: flex; align-items: center; gap: 6px; }
+.lunea-product-perks { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 24px; }
+.lunea-product-perk { text-align: center; padding: 16px; background: var(--lunea-sky-ultra); border-radius: var(--lunea-radius-sm); }
+.lunea-product-perk-icon { font-size: 1.4rem; margin-bottom: 6px; }
+.lunea-product-perk-text { font-size: 0.78rem; color: var(--lunea-text-light); }
+
+/* TEXT HELPERS */
+.lunea-text-center { text-align: center; }
+.lunea-mb-sm { margin-bottom: 12px; }
+.lunea-mb { margin-bottom: 24px; }
+.lunea-mb-lg { margin-bottom: 52px; }
+.lunea-text-muted { color: var(--lunea-text-light); font-size: 0.95rem; }
+
+/* FADE UP */
+.lunea-fade { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.lunea-fade.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .lunea-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .lunea-hero-img-wrap { aspect-ratio: 4/3; }
+  .lunea-float-badge { left: 16px; bottom: 16px; }
+  .lunea-benefits-grid { grid-template-columns: 1fr; }
+  .lunea-steps { grid-template-columns: 1fr; }
+  .lunea-steps::before { display: none; }
+  .lunea-gallery-grid { grid-template-columns: 1fr; }
+  .lunea-gallery-main { grid-row: span 1; }
+  .lunea-gallery-main img { min-height: 280px; }
+  .lunea-features-inner { grid-template-columns: 1fr; gap: 40px; }
+  .lunea-features-img img { min-height: 260px; max-height: 340px; }
+  .lunea-testimonials-grid { grid-template-columns: 1fr; }
+  .lunea-guarantee { grid-template-columns: 1fr; text-align: center; padding: 28px; }
+  .lunea-seal { margin: 0 auto; }
+  .lunea-specs { grid-template-columns: 1fr; }
+  .lunea-product-perks { grid-template-columns: 1fr; }
+  .lunea-trust-inner { gap: 16px; }
+  .lunea-urgency-perks { gap: 16px; flex-direction: column; align-items: center; }
+}
+@media (max-width: 600px) {
+  .lunea-pad { padding: 56px 0; }
+  .lunea-hero { padding: 48px 0 40px; }
+  .lunea-guarantee { padding: 20px; }
+}

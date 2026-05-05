@@ -1,0 +1,139 @@
+<div class="lunea-section lunea-bg-white lunea-pad">
+  <div class="lunea-container">
+    <div class="lunea-text-center lunea-fade lunea-mb-lg">
+      {% if section.settings.eyebrow != blank %}<span class="lunea-eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+      {% if section.settings.heading != blank %}<h2 style="margin-top:12px;">{{ section.settings.heading }}</h2>{% endif %}
+    </div>
+    <div class="lunea-gallery-grid">
+      <div class="lunea-gallery-main lunea-fade">
+        {% if section.settings.gallery_main_image != blank %}
+          {{ section.settings.gallery_main_image | image_url: width: 900 | image_tag: alt: section.settings.gallery_main_image.alt, loading: 'lazy', width: section.settings.gallery_main_image.width, height: section.settings.gallery_main_image.height }}
+        {% else %}
+          <img src="{{ 'product-5.jpg' | asset_url }}" alt="Extractor Lunea con caja" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="lunea-gallery-thumb lunea-fade">
+        {% if section.settings.gallery_thumb1 != blank %}
+          {{ section.settings.gallery_thumb1 | image_url: width: 600 | image_tag: alt: section.settings.gallery_thumb1.alt, loading: 'lazy', width: section.settings.gallery_thumb1.width, height: section.settings.gallery_thumb1.height }}
+        {% else %}
+          <img src="{{ 'product-3.jpg' | asset_url }}" alt="Extractor Lunea características" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="lunea-gallery-thumb lunea-fade">
+        {% if section.settings.gallery_thumb2 != blank %}
+          {{ section.settings.gallery_thumb2 | image_url: width: 600 | image_tag: alt: section.settings.gallery_thumb2.alt, loading: 'lazy', width: section.settings.gallery_thumb2.width, height: section.settings.gallery_thumb2.height }}
+        {% else %}
+          <img src="{{ 'product-2.jpg' | asset_url }}" alt="Extractor Lunea silencioso" loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lunea-section lunea-pad" style="background:#F8FAFB;">
+  <div class="lunea-container">
+    <div class="lunea-features-inner">
+      <div class="lunea-features-img lunea-fade">
+        {% if section.settings.features_image != blank %}
+          {{ section.settings.features_image | image_url: width: 700 | image_tag: alt: section.settings.features_image.alt, loading: 'lazy', width: section.settings.features_image.width, height: section.settings.features_image.height }}
+        {% else %}
+          <img src="{{ 'product-4.jpg' | asset_url }}" alt="Lunea extractor manos libres" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="lunea-fade">
+        {% if section.settings.features_eyebrow != blank %}<span class="lunea-eyebrow">{{ section.settings.features_eyebrow }}</span>{% endif %}
+        {% if section.settings.features_heading != blank %}<h2 style="margin-top:12px;">{{ section.settings.features_heading }}</h2>{% endif %}
+        {% if section.settings.features_text != blank %}<p class="lunea-text-muted" style="margin-top:14px;line-height:1.7;">{{ section.settings.features_text }}</p>{% endif %}
+        <div class="lunea-features-list">
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <div class="lunea-feature-item" {{ block.shopify_attributes }}>
+                <div class="lunea-check">✓</div>
+                <div>
+                  <div class="lunea-feature-label">{{ block.settings.label }}</div>
+                  <div class="lunea-feature-desc">{{ block.settings.desc }}</div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:64px;" class="lunea-fade">
+      {% if section.settings.specs_heading != blank %}<h3 class="lunea-text-center" style="margin-bottom:6px;">{{ section.settings.specs_heading }}</h3>{% endif %}
+      {% if section.settings.specs_subheading != blank %}<p class="lunea-text-center lunea-text-muted" style="margin-bottom:24px;">{{ section.settings.specs_subheading }}</p>{% endif %}
+      <div class="lunea-specs">
+        {% for block in section.blocks %}
+          {% if block.type == 'spec' %}
+            <div class="lunea-spec-item" {{ block.shopify_attributes }}>
+              <span class="lunea-spec-label">{{ block.settings.label }}</span>
+              <span class="lunea-spec-value">{{ block.settings.value }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea Galería",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Galería de imágenes" },
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta", "default": "El producto" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "Compacto, elegante y completamente discreto" },
+    { "type": "image_picker", "id": "gallery_main_image", "label": "Imagen principal (grande)" },
+    { "type": "image_picker", "id": "gallery_thumb1", "label": "Imagen miniatura 1" },
+    { "type": "image_picker", "id": "gallery_thumb2", "label": "Imagen miniatura 2" },
+    { "type": "header", "content": "Sección de características" },
+    { "type": "image_picker", "id": "features_image", "label": "Imagen de características" },
+    { "type": "text", "id": "features_eyebrow", "label": "Etiqueta", "default": "Especificaciones" },
+    { "type": "text", "id": "features_heading", "label": "Título", "default": "Todo lo que necesitas, nada que te sobre" },
+    { "type": "textarea", "id": "features_text", "label": "Descripción", "default": "Lunea fue diseñado pensando en cada detalle de tu día a día. Liviano, portátil y con la tecnología que las mamás modernas necesitan." },
+    { "type": "header", "content": "Tabla de especificaciones" },
+    { "type": "text", "id": "specs_heading", "label": "Título de specs", "default": "Contenido del paquete" },
+    { "type": "text", "id": "specs_subheading", "label": "Subtítulo de specs", "default": "Todo lo que recibes con tu Lunea" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Característica con check",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Etiqueta", "default": "Brida universal 0.945\" (24mm)" },
+        { "type": "text", "id": "desc", "label": "Descripción", "default": "Compatible con la mayoría de tamaños de pecho." }
+      ]
+    },
+    {
+      "type": "spec",
+      "name": "Especificación",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Nombre", "default": "Extractor eléctrico" },
+        { "type": "text", "id": "value", "label": "Valor", "default": "1 unidad" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea Galería",
+      "blocks": [
+        { "type": "feature", "settings": { "label": "Brida universal 0.945\" (24mm)", "desc": "Compatible con la mayoría de tamaños de pecho." } },
+        { "type": "feature", "settings": { "label": "Sistema anti-reflujo", "desc": "Protege la leche extraída y evita contaminación." } },
+        { "type": "feature", "settings": { "label": "4 modos con niveles ajustables", "desc": "Cada modo imita el patrón natural de succión del bebé." } },
+        { "type": "feature", "settings": { "label": "Carga USB-C incluida", "desc": "El mismo cable de tu celular. Sin adaptadores adicionales." } },
+        { "type": "feature", "settings": { "label": "Libre de BPA certificado", "desc": "Fácil desmontaje para limpieza profunda." } },
+        { "type": "spec", "settings": { "label": "Extractor eléctrico", "value": "1 unidad" } },
+        { "type": "spec", "settings": { "label": "Cable de carga", "value": "Tipo C incluido" } },
+        { "type": "spec", "settings": { "label": "Modos de extracción", "value": "4 modos" } },
+        { "type": "spec", "settings": { "label": "Nivel de ruido", "value": "< 60db (silencioso)" } },
+        { "type": "spec", "settings": { "label": "Materiales", "value": "100% libre de BPA" } },
+        { "type": "spec", "settings": { "label": "Brida incluida", "value": "0.945\" / 24mm" } },
+        { "type": "spec", "settings": { "label": "Pantalla", "value": "LED digital" } },
+        { "type": "spec", "settings": { "label": "Batería", "value": "Litio gran capacidad" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

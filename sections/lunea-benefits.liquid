@@ -1,0 +1,93 @@
+<div class="lunea-section lunea-bg-white lunea-pad" id="lunea-beneficios">
+  <div class="lunea-container">
+    <div class="lunea-text-center lunea-fade">
+      {% if section.settings.eyebrow != blank %}<span class="lunea-eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+      {% if section.settings.heading != blank %}<h2 style="margin-top:12px;">{{ section.settings.heading }}</h2>{% endif %}
+      {% if section.settings.subheading != blank %}<p class="lunea-text-muted" style="margin-top:14px;max-width:580px;margin-left:auto;margin-right:auto;">{{ section.settings.subheading }}</p>{% endif %}
+    </div>
+    <div class="lunea-benefits-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'benefit_card' %}
+          <div class="lunea-card lunea-fade" {{ block.shopify_attributes }}>
+            <div class="lunea-card-icon">{{ block.settings.icon }}</div>
+            <h3 class="lunea-card-title">{{ block.settings.title }}</h3>
+            <p class="lunea-card-text">{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="lunea-section lunea-bg-sky lunea-pad">
+  <div class="lunea-container">
+    <div class="lunea-text-center lunea-fade lunea-mb-lg">
+      {% if section.settings.steps_eyebrow != blank %}<span class="lunea-eyebrow">{{ section.settings.steps_eyebrow }}</span>{% endif %}
+      {% if section.settings.steps_heading != blank %}<h2 style="margin-top:12px;">{{ section.settings.steps_heading }}</h2>{% endif %}
+      {% if section.settings.steps_subheading != blank %}<p class="lunea-text-muted" style="margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto;">{{ section.settings.steps_subheading }}</p>{% endif %}
+    </div>
+    <div class="lunea-steps">
+      {% for block in section.blocks %}
+        {% if block.type == 'step' %}
+          <div class="lunea-step lunea-fade" {{ block.shopify_attributes }}>
+            <div class="lunea-step-num">{{ forloop.index }}</div>
+            <h3 class="lunea-step-title">{{ block.settings.title }}</h3>
+            <p class="lunea-step-text">{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea Beneficios",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Sección de beneficios" },
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta", "default": "Por qué Lunea" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "Diseñado para la mamá colombiana de hoy" },
+    { "type": "textarea", "id": "subheading", "label": "Subtítulo", "default": "Sabemos que tu tiempo es oro. Por eso creamos un extractor que se adapta a tu ritmo — no al revés." },
+    { "type": "header", "content": "Sección de pasos" },
+    { "type": "text", "id": "steps_eyebrow", "label": "Etiqueta pasos", "default": "Así de fácil" },
+    { "type": "text", "id": "steps_heading", "label": "Título pasos", "default": "En 3 pasos, lista para extraer" },
+    { "type": "textarea", "id": "steps_subheading", "label": "Subtítulo pasos", "default": "Sin complicaciones ni instrucciones interminables. Lunea está pensado para que cualquier mamá lo use desde el primer momento." }
+  ],
+  "blocks": [
+    {
+      "type": "benefit_card",
+      "name": "Tarjeta de beneficio",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Ícono (emoji)", "default": "🤫" },
+        { "type": "text", "id": "title", "label": "Título", "default": "Silencioso como un susurro" },
+        { "type": "textarea", "id": "text", "label": "Descripción", "default": "Opera a menos de 60db. Úsalo en la oficina, en reuniones o mientras el bebé duerme sin interrumpir nada." }
+      ]
+    },
+    {
+      "type": "step",
+      "name": "Paso",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Título del paso", "default": "Colócalo en tu brasier" },
+        { "type": "textarea", "id": "text", "label": "Descripción del paso", "default": "Inserta el extractor dentro de tu brasier de lactancia. Compatible con la mayoría de tallas." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea Beneficios",
+      "blocks": [
+        { "type": "benefit_card", "settings": { "icon": "🤫", "title": "Silencioso como un susurro", "text": "Opera a menos de 60db. Úsalo en la oficina, en reuniones o mientras el bebé duerme sin interrumpir nada." } },
+        { "type": "benefit_card", "settings": { "icon": "👗", "title": "Se oculta bajo tu ropa", "text": "Diseño ergonómico que encaja perfectamente dentro de tu brasier. Nadie sabrá que lo llevas puesto." } },
+        { "type": "benefit_card", "settings": { "icon": "🔋", "title": "Batería de larga duración", "text": "Recargable por USB-C. Varias sesiones con una sola carga. Sin cables que te aten." } },
+        { "type": "benefit_card", "settings": { "icon": "⚙️", "title": "4 modos, tú decides", "text": "Niveles ajustables para cada momento. Encuentra la intensidad perfecta para tu comodidad." } },
+        { "type": "benefit_card", "settings": { "icon": "🌿", "title": "100% libre de BPA", "text": "Materiales seguros para mamá y bebé. Fácil de desensamblar y limpiar en pocos minutos." } },
+        { "type": "benefit_card", "settings": { "icon": "📊", "title": "Pantalla LED inteligente", "text": "Muestra el modo, la intensidad y el nivel de batería en tiempo real. Control total con un toque." } },
+        { "type": "step", "settings": { "title": "Colócalo en tu brasier", "text": "Inserta el extractor dentro de tu brasier de lactancia. Compatible con la mayoría de tallas." } },
+        { "type": "step", "settings": { "title": "Elige tu modo", "text": "Selecciona uno de los 4 modos desde la pantalla LED y ajusta la intensidad hasta tu punto perfecto." } },
+        { "type": "step", "settings": { "title": "¡Vive tu vida!", "text": "Sigue con tu rutina mientras Lunea trabaja por ti. Camina, trabaja, descansa — Lunea lo hace todo." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,130 @@
+<div class="lunea-section lunea-hero">
+  <div class="lunea-container">
+    <div class="lunea-hero-inner">
+      <div class="lunea-fade">
+        {% if section.settings.eyebrow != blank %}
+          <div class="lunea-hero-eyebrow"><span class="lunea-eyebrow">{{ section.settings.eyebrow }}</span></div>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h1 class="lunea-hero-title">{{ section.settings.heading }}</h1>
+        {% endif %}
+        {% if section.settings.subheading != blank %}
+          <p class="lunea-hero-subtitle">{{ section.settings.subheading }}</p>
+        {% endif %}
+        {% if section.settings.price != blank %}
+          <div class="lunea-price-big">{{ section.settings.price }}</div>
+        {% endif %}
+        {% if section.settings.price_note != blank %}
+          <div class="lunea-price-note">{{ section.settings.price_note }}</div>
+        {% endif %}
+        {% if section.settings.cta_primary_text != blank %}
+          <a href="{{ section.settings.cta_primary_url }}" class="lunea-btn-primary">{{ section.settings.cta_primary_text }}</a>
+        {% endif %}
+        {% if section.settings.cta_secondary_text != blank %}
+          <a href="{{ section.settings.cta_secondary_url }}" class="lunea-btn-secondary">{{ section.settings.cta_secondary_text }}</a>
+        {% endif %}
+        <div class="lunea-badges">
+          {% for block in section.blocks %}
+            {% if block.type == 'badge' %}
+              <div class="lunea-badge" {{ block.shopify_attributes }}>
+                <div class="lunea-badge-icon">{{ block.settings.icon }}</div>
+                {{ block.settings.label }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="lunea-fade" style="position:relative;">
+        <div class="lunea-hero-img-wrap">
+          {% if section.settings.hero_image != blank %}
+            {{ section.settings.hero_image | image_url: width: 800 | image_tag: alt: section.settings.hero_image_alt, loading: 'eager', width: section.settings.hero_image.width, height: section.settings.hero_image.height }}
+          {% else %}
+            <img src="{{ 'product-hero.jpg' | asset_url }}" alt="Extractor Manos Libres Lunea" loading="eager">
+          {% endif %}
+        </div>
+        {% if section.settings.float_badge_text != blank %}
+          <div class="lunea-float-badge">
+            <div class="lunea-float-icon">{{ section.settings.float_badge_icon }}</div>
+            <div>
+              <div style="font-size:0.82rem;font-weight:600;color:var(--lunea-gray-800);">{{ section.settings.float_badge_rating }}</div>
+              <div style="font-size:0.72rem;color:var(--lunea-text-light);">{{ section.settings.float_badge_text }}</div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="lunea-section lunea-trust">
+  <div class="lunea-container">
+    <div class="lunea-trust-inner">
+      {% for block in section.blocks %}
+        {% if block.type == 'trust_item' %}
+          <div class="lunea-trust-item" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lunea Hero",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Contenido principal" },
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta superior", "default": "🌙 Nuevo en Colombia" },
+    { "type": "richtext", "id": "heading", "label": "Título", "default": "<p>Lactancia libre, <em>sin pausar tu vida</em></p>" },
+    { "type": "textarea", "id": "subheading", "label": "Subtítulo", "default": "El extractor de leche manos libres más discreto del mercado. Úsalo en casa, en el trabajo o en cualquier lugar — sin que nadie lo note. Silencioso, cómodo y recargable." },
+    { "type": "text", "id": "price", "label": "Precio", "default": "$200.000 COP" },
+    { "type": "text", "id": "price_note", "label": "Nota de precio", "default": "✅ Envío gratis · Pago contraentrega disponible" },
+    { "type": "header", "content": "Botones CTA" },
+    { "type": "text", "id": "cta_primary_text", "label": "Texto botón principal", "default": "🛒 Quiero el mío ahora" },
+    { "type": "url", "id": "cta_primary_url", "label": "Enlace botón principal" },
+    { "type": "text", "id": "cta_secondary_text", "label": "Texto botón secundario", "default": "Ver características →" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Enlace botón secundario" },
+    { "type": "header", "content": "Imagen del héroe" },
+    { "type": "image_picker", "id": "hero_image", "label": "Imagen principal" },
+    { "type": "text", "id": "hero_image_alt", "label": "Texto alternativo imagen", "default": "Extractor Manos Libres Lunea" },
+    { "type": "header", "content": "Badge flotante" },
+    { "type": "text", "id": "float_badge_icon", "label": "Ícono badge", "default": "⭐" },
+    { "type": "text", "id": "float_badge_rating", "label": "Calificación", "default": "4.9 / 5" },
+    { "type": "text", "id": "float_badge_text", "label": "Texto badge", "default": "+500 mamás satisfechas" }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge de característica",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Ícono (emoji)", "default": "🤫" },
+        { "type": "text", "id": "label", "label": "Etiqueta", "default": "Ultra silencioso" }
+      ]
+    },
+    {
+      "type": "trust_item",
+      "name": "Item de confianza",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texto", "default": "🚚 Envío gratis a Colombia" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea Hero",
+      "blocks": [
+        { "type": "badge", "settings": { "icon": "🤫", "label": "Ultra silencioso" } },
+        { "type": "badge", "settings": { "icon": "🔋", "label": "Recargable USB-C" } },
+        { "type": "badge", "settings": { "icon": "🌿", "label": "Libre de BPA" } },
+        { "type": "badge", "settings": { "icon": "📱", "label": "Pantalla LED" } },
+        { "type": "trust_item", "settings": { "text": "🚚 Envío gratis a Colombia" } },
+        { "type": "trust_item", "settings": { "text": "🛡️ Garantía 30 días" } },
+        { "type": "trust_item", "settings": { "text": "📦 Pago contra entrega" } },
+        { "type": "trust_item", "settings": { "text": "🔒 Compra 100% segura" } },
+        { "type": "trust_item", "settings": { "text": "💬 Soporte por WhatsApp" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

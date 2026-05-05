@@ -1,0 +1,7 @@
+# Reference theme copies (not part of the deployed theme)
+_dawn/
+_lunea/
+
+# OS
+.DS_Store
+Thumbs.db
