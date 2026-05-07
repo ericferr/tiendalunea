@@ -1,30 +1,52 @@
 {
   "sections": {
+    "cart-banner": {
+      "type": "lunea-cart-banner",
+      "settings": {
+        "enabled": true,
+        "message": "Tu envío gratis vence en:"
+      }
+    },
     "cart-items": {
       "type": "main-cart-items",
       "settings": {
         "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 24,
+        "padding_bottom": 12
+      }
+    },
+    "cart-trust": {
+      "type": "lunea-cart-trust",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis a Colombia" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pago contra entrega" } },
+        "t3": { "type": "trust", "settings": { "icon": "🛡️", "text": "Garantía 30 días" } },
+        "t4": { "type": "trust", "settings": { "icon": "💬", "text": "Soporte WhatsApp" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": {
+        "show_cod": true,
+        "cod_title": "Pagás cuando recibís el producto en tu puerta",
+        "cod_text": "Sin tarjetas ni transferencias previas. El mensajero recibe el pago en efectivo cuando te entrega Lunea.",
+        "show_secure": true,
+        "secure_text": "Compra 100% segura · Datos encriptados con SSL"
       }
     },
     "cart-footer": {
       "type": "main-cart-footer",
       "settings": {
         "color_scheme": "scheme-1",
-        "padding_top": 20,
+        "padding_top": 12,
         "padding_bottom": 40
       },
       "blocks": {
         "subtotal": {
           "type": "subtotal",
-          "settings": {
-          }
+          "settings": {}
         },
         "buttons": {
           "type": "buttons",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -34,7 +56,9 @@
     }
   },
   "order": [
+    "cart-banner",
     "cart-items",
+    "cart-trust",
     "cart-footer"
   ]
 }

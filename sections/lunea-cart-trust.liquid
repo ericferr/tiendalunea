@@ -1,0 +1,147 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .lp-ct-wrap {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    display: grid;
+    gap: 14px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .lp-ct-cod {
+    background: var(--lp-brand-soft, #EBF6FA);
+    border: 1px solid var(--lp-border, #E4E8EA);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    line-height: 1.4;
+  }
+  .lp-ct-cod__icon {
+    width: 44px; height: 44px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+  .lp-ct-cod__title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--lp-text, #2E3F45);
+    margin: 0;
+  }
+  .lp-ct-cod__text {
+    font-size: 13px;
+    color: var(--lp-text-soft, #6B7E85);
+    margin: 2px 0 0;
+  }
+  .lp-ct-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    background: #fff;
+    border: 1px solid var(--lp-border, #E4E8EA);
+    border-radius: 14px;
+    padding: 14px 12px;
+  }
+  .lp-ct-row__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--lp-text, #2E3F45);
+    line-height: 1.3;
+  }
+  .lp-ct-row__icon { font-size: 22px; line-height: 1; }
+  .lp-ct-secure {
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--lp-text-soft, #6B7E85);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .lp-ct-secure::before {
+    content: '🔒';
+    font-size: 14px;
+  }
+  @media (max-width: 549px) {
+    .lp-ct-row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  }
+</style>
+
+<div class="lp-ct-wrap" {{ section.shopify_attributes }}>
+
+  {%- if section.settings.show_cod -%}
+    <div class="lp-ct-cod">
+      <div class="lp-ct-cod__icon" aria-hidden="true">📦</div>
+      <div>
+        <p class="lp-ct-cod__title">{{ section.settings.cod_title }}</p>
+        <p class="lp-ct-cod__text">{{ section.settings.cod_text }}</p>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="lp-ct-row">
+      {%- for block in section.blocks -%}
+        <div class="lp-ct-row__item" {{ block.shopify_attributes }}>
+          <span class="lp-ct-row__icon">{{ block.settings.icon }}</span>
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.show_secure -%}
+    <p class="lp-ct-secure">{{ section.settings.secure_text }}</p>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Lunea · Trust carrito",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "header", "content": "Bloque pago contra entrega" },
+    { "type": "checkbox", "id": "show_cod", "label": "Mostrar bloque", "default": true },
+    { "type": "text", "id": "cod_title", "label": "Título", "default": "Pagás cuando recibís el producto en tu puerta" },
+    { "type": "textarea", "id": "cod_text", "label": "Texto", "default": "Sin tarjetas ni transferencias previas. El mensajero recibe el pago en efectivo cuando te entrega Lunea." },
+    { "type": "header", "content": "Mensaje de seguridad" },
+    { "type": "checkbox", "id": "show_secure", "label": "Mostrar", "default": true },
+    { "type": "text", "id": "secure_text", "label": "Texto", "default": "Compra 100% segura · Datos encriptados con SSL" }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Garantía",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Emoji", "default": "🚚" },
+        { "type": "text", "id": "text", "label": "Texto", "default": "Envío gratis" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lunea · Trust carrito",
+      "blocks": [
+        { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis a Colombia" } },
+        { "type": "trust", "settings": { "icon": "📦", "text": "Pago contra entrega" } },
+        { "type": "trust", "settings": { "icon": "🛡️", "text": "Garantía 30 días" } },
+        { "type": "trust", "settings": { "icon": "💬", "text": "Soporte WhatsApp" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

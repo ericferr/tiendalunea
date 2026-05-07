@@ -1,0 +1,114 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .lp-cart-banner {
+    background: linear-gradient(180deg, #EBF6FA 0%, #D6EEF5 100%);
+    border-radius: 14px;
+    padding: 14px 20px;
+    margin: 0 auto 14px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    border: 1px solid #c9e3eb;
+    flex-wrap: wrap;
+  }
+  .lp-cart-banner__msg {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--lp-text, #2E3F45);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.35;
+  }
+  .lp-cart-banner__msg span:first-child { font-size: 18px; }
+  .lp-cart-banner__clock {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .lp-cart-banner__num {
+    background: #fff;
+    color: var(--lp-text, #2E3F45);
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 6px;
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(46,63,69,0.08);
+    min-width: 32px;
+    text-align: center;
+  }
+  .lp-cart-banner__sep { font-weight: 700; color: var(--lp-text-soft, #6B7E85); }
+  @media (max-width: 549px) {
+    .lp-cart-banner { padding: 12px 14px; gap: 10px; }
+    .lp-cart-banner__msg { font-size: 13px; }
+  }
+</style>
+
+{%- if section.settings.enabled -%}
+  <div class="lp-cart-banner" data-lp-cart-cd {{ section.shopify_attributes }}>
+    <div class="lp-cart-banner__msg">
+      <span aria-hidden="true">🔥</span>
+      <span>{{ section.settings.message | default: 'Tu envío gratis vence en:' }}</span>
+    </div>
+    <div class="lp-cart-banner__clock" role="timer" aria-live="polite">
+      <span class="lp-cart-banner__num" data-lp-cb-h>00</span>
+      <span class="lp-cart-banner__sep">:</span>
+      <span class="lp-cart-banner__num" data-lp-cb-m>00</span>
+      <span class="lp-cart-banner__sep">:</span>
+      <span class="lp-cart-banner__num" data-lp-cb-s>00</span>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var key = 'lp_cd_end';
+      var DURATION = 24 * 60 * 60 * 1000;
+      var endTs;
+      try {
+        endTs = parseInt(sessionStorage.getItem(key), 10);
+        if (!endTs || isNaN(endTs) || endTs - Date.now() > DURATION) endTs = 0;
+      } catch (e) { endTs = 0; }
+      if (!endTs || endTs <= Date.now()) {
+        endTs = Date.now() + DURATION;
+        try { sessionStorage.setItem(key, String(endTs)); } catch (e) {}
+      }
+      var hEl = document.querySelector('[data-lp-cart-cd] [data-lp-cb-h]');
+      var mEl = document.querySelector('[data-lp-cart-cd] [data-lp-cb-m]');
+      var sEl = document.querySelector('[data-lp-cart-cd] [data-lp-cb-s]');
+      if (!hEl) return;
+      function pad(n) { return String(n).padStart(2, '0'); }
+      function tick() {
+        var diff = endTs - Date.now();
+        if (diff <= 0) {
+          endTs = Date.now() + DURATION;
+          try { sessionStorage.setItem(key, String(endTs)); } catch (e) {}
+          diff = DURATION;
+        }
+        hEl.textContent = pad(Math.floor(diff / 3600000));
+        mEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
+        sEl.textContent = pad(Math.floor((diff % 60000) / 1000));
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Lunea · Banner carrito",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Activar", "default": true },
+    { "type": "text", "id": "message", "label": "Mensaje", "default": "Tu envío gratis vence en:" }
+  ],
+  "presets": [
+    { "name": "Lunea · Banner carrito" }
+  ]
+}
+{% endschema %}
