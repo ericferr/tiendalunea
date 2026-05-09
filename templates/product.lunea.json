@@ -184,10 +184,10 @@
       "type": "lunea-product-photo-testimonials",
       "blocks": {
         "pt1": { "type": "testimonial", "settings": { "name": "Mamá Camilo", "flag": "🇨🇴", "quote": "Cómodo y práctico, ideal para el día a día." } },
-        "pt2": { "type": "testimonial", "settings": { "name": "Carolina V.", "flag": "🇨🇴", "quote": "Un antes y un después, sobre todo si trabajás y querés seguir con la lactancia." } },
+        "pt2": { "type": "testimonial", "settings": { "name": "Carolina V.", "flag": "🇨🇴", "quote": "Un antes y un después, sobre todo si trabajas y quieres seguir con la lactancia." } },
         "pt3": { "type": "testimonial", "settings": { "name": "Sofía la Madre", "flag": "🇨🇴", "quote": "Es súper cómodo y no te quita tiempo. Me simplificó un montón." } },
         "pt4": { "type": "testimonial", "settings": { "name": "Mamá Diana", "flag": "🇨🇴", "quote": "Me sorprendió lo fácil que es de usar." } },
-        "pt5": { "type": "testimonial", "settings": { "name": "Mamá Luisa", "flag": "🇨🇴", "quote": "Lo recomiendo si buscás algo cómodo y que funcione de verdad." } },
+        "pt5": { "type": "testimonial", "settings": { "name": "Mamá Luisa", "flag": "🇨🇴", "quote": "Lo recomiendo si buscas algo cómodo y que funcione de verdad." } },
         "pt6": { "type": "testimonial", "settings": { "name": "Ana María M.", "flag": "🇨🇴", "quote": "Es liviano, eficiente y se adapta perfecto a tu rutina." } }
       },
       "block_order": ["pt1", "pt2", "pt3", "pt4", "pt5", "pt6"],
