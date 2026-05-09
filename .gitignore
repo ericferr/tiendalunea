@@ -5,3 +5,9 @@ _lunea/
 # OS
 .DS_Store
 Thumbs.db
+
+# Secrets — never commit
+.env
+.env.*
+*.secret
+secrets/
