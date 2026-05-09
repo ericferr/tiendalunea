@@ -1,0 +1,16 @@
+{%- comment -%}
+  Bandera de Colombia como SVG inline, para evitar el bug de Windows
+  donde el emoji 🇨🇴 se renderiza como las letras "CO".
+  Usa: {% render 'lunea-flag-co' %}
+{%- endcomment -%}
+<svg
+  class="lp-flag-co"
+  viewBox="0 0 6 4"
+  role="img"
+  aria-label="Colombia"
+  style="display:inline-block;width:1.1em;height:auto;vertical-align:-0.15em;border-radius:2px;flex-shrink:0;"
+>
+  <rect width="6" height="2" y="0" fill="#FCD116"/>
+  <rect width="6" height="1" y="2" fill="#003893"/>
+  <rect width="6" height="1" y="3" fill="#CE1126"/>
+</svg>
