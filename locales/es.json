@@ -290,7 +290,7 @@
       "caption": "Artículos en el carrito",
       "remove_title": "Eliminar {{ title }}",
       "note": "Instrucciones especiales del pedido",
-      "checkout": "Pagar pedido",
+      "checkout": "Realizar pedido",
       "empty": "Tu carrito esta vacío",
       "cart_error": "Hubo un error al actualizar tu carrito de compra. Inténtalo de nuevo.",
       "cart_quantity_error_html": "Solo puedes agregar {{ quantity }} de este artículo a tu carrito.",
