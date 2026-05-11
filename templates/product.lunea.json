@@ -229,6 +229,15 @@
         "title": "Preguntas frecuentes"
       }
     },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": {
+        "eyebrow": "¿Lista para empezar?",
+        "title": "Tu lactancia merece ser libre",
+        "subtitle": "Pídelo hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
+        "button_text": "Comprar mi Lunea"
+      }
+    },
     "sticky-atc": {
       "type": "lunea-sticky-atc",
       "settings": { "cta_text": "Comprar ahora" }
@@ -273,6 +282,7 @@
     "foryou",
     "faq",
     "related-products",
+    "bottom-cta",
     "sticky-atc",
     "whatsapp-float"
   ]
