@@ -1,0 +1,122 @@
+<style>
+  .lp-fomo {
+    position: fixed;
+    bottom: 24px;
+    left: 20px;
+    z-index: 9999;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+    padding: 12px 16px 12px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 290px;
+    transform: translateX(-120%);
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    border-left: 4px solid #1f8a55;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .lp-fomo.lp-fomo--visible {
+    transform: translateX(0);
+  }
+  .lp-fomo__icon {
+    font-size: 26px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .lp-fomo__body {
+    flex: 1;
+    min-width: 0;
+  }
+  .lp-fomo__name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a2e35;
+    margin: 0 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .lp-fomo__text {
+    font-size: 12px;
+    color: #4a6572;
+    margin: 0 0 3px;
+    line-height: 1.3;
+  }
+  .lp-fomo__time {
+    font-size: 11px;
+    color: #1f8a55;
+    font-weight: 600;
+    margin: 0;
+  }
+  .lp-fomo__close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1;
+    padding: 0;
+  }
+</style>
+
+<div class="lp-fomo" id="lp-fomo" role="status" aria-live="polite">
+  <span class="lp-fomo__icon">🛍️</span>
+  <div class="lp-fomo__body">
+    <p class="lp-fomo__name" id="lp-fomo-name">Valentina M.</p>
+    <p class="lp-fomo__text">acaba de pedir su <strong>Lunea</strong></p>
+    <p class="lp-fomo__time" id="lp-fomo-time">hace 3 minutos</p>
+  </div>
+  <button class="lp-fomo__close" id="lp-fomo-close" aria-label="Cerrar">✕</button>
+</div>
+
+<script>
+(function() {
+  var purchases = [
+    { name: "Valentina M.", city: "Medellín", mins: 2 },
+    { name: "Camila R.", city: "Medellín", mins: 5 },
+    { name: "Daniela L.", city: "Bogotá", mins: 8 },
+    { name: "Sofía P.", city: "Medellín", mins: 11 },
+    { name: "Andrea C.", city: "Cali", mins: 14 },
+    { name: "Mariana V.", city: "Medellín", mins: 3 },
+    { name: "Laura T.", city: "Barranquilla", mins: 19 },
+    { name: "Natalia G.", city: "Medellín", mins: 6 },
+    { name: "Isabela M.", city: "Pereira", mins: 22 },
+    { name: "Carolina S.", city: "Medellín", mins: 9 }
+  ];
+
+  var fomo   = document.getElementById('lp-fomo');
+  var nameEl = document.getElementById('lp-fomo-name');
+  var timeEl = document.getElementById('lp-fomo-time');
+  var closeBtn = document.getElementById('lp-fomo-close');
+  var idx = 0;
+  var timer;
+
+  function show() {
+    var p = purchases[idx % purchases.length];
+    nameEl.textContent = p.name + ' · ' + p.city;
+    timeEl.textContent = 'hace ' + p.mins + ' minutos';
+    fomo.classList.add('lp-fomo--visible');
+    idx++;
+    timer = setTimeout(hide, 5000);
+  }
+
+  function hide() {
+    fomo.classList.remove('lp-fomo--visible');
+    setTimeout(show, 9000);
+  }
+
+  closeBtn.addEventListener('click', function() {
+    clearTimeout(timer);
+    fomo.classList.remove('lp-fomo--visible');
+    setTimeout(show, 20000);
+  });
+
+  // Primera aparición después de 6 segundos
+  setTimeout(show, 6000);
+})();
+</script>
