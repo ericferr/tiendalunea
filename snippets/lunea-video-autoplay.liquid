@@ -43,44 +43,40 @@
       if (btn) btn.click();
     }
 
-    /* Espera a que el video sea insertado en el DOM */
-    var attempts = 0;
-    var interval = setInterval(function () {
+    /* MutationObserver: detecta cuando Shopify inserta el <video> en el DOM */
+    var observer = new MutationObserver(function (mutations, obs) {
       var video = deferredEl.querySelector('video');
-      if (video || attempts > 20) {
-        clearInterval(interval);
-        if (!video) return;
+      if (!video) return;
+      obs.disconnect();
 
-        /* Aplica poster para evitar pantalla negra */
-        if (posterSrc) video.setAttribute('poster', posterSrc);
-        video.muted = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('preload', 'metadata');
+      /* Aplica poster para evitar pantalla negra */
+      if (posterSrc) video.setAttribute('poster', posterSrc);
+      video.muted = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('preload', 'metadata');
 
-        /* Thumbnail overlay encima del video mientras carga */
-        if (posterSrc) {
-          var parent = video.parentElement;
-          if (parent && !parent.classList.contains('lunea-video-wrap')) {
-            parent.classList.add('lunea-video-wrap');
-            var thumb = document.createElement('img');
-            thumb.src = posterSrc;
-            thumb.className = 'lunea-video-thumb';
-            thumb.setAttribute('aria-hidden', 'true');
-            parent.appendChild(thumb);
+      /* Thumbnail overlay encima del video mientras carga */
+      if (posterSrc) {
+        var parent = video.parentElement;
+        if (parent && !parent.classList.contains('lunea-video-wrap')) {
+          parent.classList.add('lunea-video-wrap');
+          var thumb = document.createElement('img');
+          thumb.src = posterSrc;
+          thumb.className = 'lunea-video-thumb';
+          thumb.setAttribute('aria-hidden', 'true');
+          parent.appendChild(thumb);
 
-            /* Oculta el overlay cuando el video tiene datos suficientes */
-            video.addEventListener('canplay', function () {
-              thumb.classList.add('lunea-hidden');
-              video.play().catch(function () {});
-            }, { once: true });
-          }
-        } else {
-          video.play().catch(function () {});
+          video.addEventListener('canplay', function () {
+            thumb.classList.add('lunea-hidden');
+            video.play().catch(function () {});
+          }, { once: true });
         }
+      } else {
+        video.play().catch(function () {});
       }
-      attempts++;
-    }, 100);
+    });
+    observer.observe(deferredEl, { childList: true, subtree: true });
   }
 
   /* ── Hero: activa el primer video del producto ── */
