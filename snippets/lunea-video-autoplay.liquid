@@ -1,63 +1,120 @@
+<style>
+  /* Wrapper para mantener el thumbnail visible mientras el video carga */
+  .lunea-video-wrap {
+    position: relative;
+    display: block;
+  }
+  .lunea-video-thumb {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+  }
+  .lunea-video-thumb.lunea-hidden {
+    opacity: 0;
+  }
+</style>
+
 <script>
 (function () {
-  /* ─── Helpers ─── */
-  function muteAndPlay(video) {
-    if (!video) return;
-    video.muted = true;
-    video.setAttribute('muted', '');
-    video.setAttribute('playsinline', '');
-    video.play().catch(function () {});
+
+  /* ── Extrae el src del thumbnail del poster-button ── */
+  function getPosterSrc(deferredEl) {
+    var img = deferredEl.querySelector('.deferred-media__poster img, .media__poster img, button img');
+    return img ? (img.src || img.dataset.src || '') : '';
   }
 
+  /* ── Activa un deferred-media, setea poster y reproduce ── */
   function triggerDeferred(deferredEl) {
     if (deferredEl.dataset.luneaTriggered) return;
     deferredEl.dataset.luneaTriggered = '1';
-    var btn = deferredEl.querySelector('.deferred-media__poster, .deferred-media__poster-button, [id^="Deferred-Poster-Modal"]');
-    if (btn) btn.click();
-    // After Shopify loads the template content, mute & play the video
-    setTimeout(function () {
-      muteAndPlay(deferredEl.querySelector('video'));
-    }, 600);
+
+    var posterSrc = getPosterSrc(deferredEl);
+
+    /* Llama a loadContent() nativo de Shopify Dawn si existe */
+    if (typeof deferredEl.loadContent === 'function') {
+      deferredEl.loadContent(false);
+    } else {
+      var btn = deferredEl.querySelector('[id^="Deferred-Poster-Modal"], .deferred-media__poster, .deferred-media__poster-button');
+      if (btn) btn.click();
+    }
+
+    /* Espera a que el video sea insertado en el DOM */
+    var attempts = 0;
+    var interval = setInterval(function () {
+      var video = deferredEl.querySelector('video');
+      if (video || attempts > 20) {
+        clearInterval(interval);
+        if (!video) return;
+
+        /* Aplica poster para evitar pantalla negra */
+        if (posterSrc) video.setAttribute('poster', posterSrc);
+        video.muted = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('preload', 'metadata');
+
+        /* Thumbnail overlay encima del video mientras carga */
+        if (posterSrc) {
+          var parent = video.parentElement;
+          if (parent && !parent.classList.contains('lunea-video-wrap')) {
+            parent.classList.add('lunea-video-wrap');
+            var thumb = document.createElement('img');
+            thumb.src = posterSrc;
+            thumb.className = 'lunea-video-thumb';
+            thumb.setAttribute('aria-hidden', 'true');
+            parent.appendChild(thumb);
+
+            /* Oculta el overlay cuando el video tiene datos suficientes */
+            video.addEventListener('canplay', function () {
+              thumb.classList.add('lunea-hidden');
+              video.play().catch(function () {});
+            }, { once: true });
+          }
+        } else {
+          video.play().catch(function () {});
+        }
+      }
+      attempts++;
+    }, 100);
   }
 
-  /* ─── 1. Hero: auto-trigger el primer video del producto ─── */
+  /* ── Hero: activa el primer video del producto ── */
   function autoplayHero() {
     var hero = document.querySelector('.product__media-list deferred-media, .product__media-item deferred-media');
     if (hero) triggerDeferred(hero);
   }
 
-  /* ─── 2. Scroll autoplay: IntersectionObserver ─── */
+  /* ── Scroll autoplay con IntersectionObserver ── */
   function setupScrollAutoplay() {
     if (!('IntersectionObserver' in window)) return;
+
+    var skippedHero = false;
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var el = entry.target;
-
-        if (el.tagName === 'VIDEO') {
-          muteAndPlay(el);
-        } else {
-          // deferred-media no cargado aún
-          triggerDeferred(el);
-        }
+        triggerDeferred(el);
         observer.unobserve(el);
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.35 });
 
-    // Observa todos los deferred-media excepto el hero (ya lo manejamos arriba)
-    var all = document.querySelectorAll('deferred-media, video');
-    var isFirst = true;
-    all.forEach(function (el) {
-      if (isFirst && el.closest('.product__media-list, .product__media-item')) {
-        isFirst = false; // skip hero
+    document.querySelectorAll('deferred-media').forEach(function (el) {
+      /* Salta el hero — ya lo manejamos con autoplayHero() */
+      if (!skippedHero && el.closest('.product__media-list, .product__media-item')) {
+        skippedHero = true;
         return;
       }
       observer.observe(el);
     });
   }
 
-  /* ─── Init ─── */
+  /* ── Init ── */
   function init() {
     setTimeout(autoplayHero, 700);
     setupScrollAutoplay();
