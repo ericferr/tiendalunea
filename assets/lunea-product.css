@@ -749,3 +749,61 @@
   .lp-wa-float { right: 14px; bottom: 92px; width: 52px; height: 52px; }
   .lp-wa-float svg { width: 26px; height: 26px; }
 }
+
+/* ============================================================
+   MOBILE READABILITY — bump all body text to ≥15px on mobile
+   ============================================================ */
+@media (max-width: 749px) {
+  /* Trust row labels */
+  .lp-trust-row__item          { font-size: 13.5px; }
+
+  /* Urgency / shipping block */
+  .lp-urgency__row             { font-size: 15px; }
+  .lp-urgency__eta             { font-size: 15px; }
+  .lp-urgency__stock           { font-size: 14px; }
+
+  /* Guarantee */
+  .lp-guarantee__title         { font-size: 18px; }
+  .lp-guarantee__text          { font-size: 15px; line-height: 1.6; }
+
+  /* Hook subtitle */
+  .lp-hook__text               { font-size: 16px; line-height: 1.65; }
+
+  /* Feature cards */
+  .lp-features__card-title     { font-size: 17px; }
+  .lp-features__card-text      { font-size: 15px; line-height: 1.55; }
+
+  /* How-to steps */
+  .lp-howto__step-title        { font-size: 17px; }
+  .lp-howto__step-text         { font-size: 15px; line-height: 1.55; }
+
+  /* What's included list */
+  .lp-included__title          { font-size: 20px; }
+  .lp-included__item           { font-size: 15.5px; line-height: 1.55; }
+
+  /* Testimonial cards */
+  .lp-testimonials__quote      { font-size: 15.5px; line-height: 1.6; }
+  .lp-testimonials__name       { font-size: 15px; }
+  .lp-testimonials__location   { font-size: 13.5px; }
+  .lp-testimonials__stars      { font-size: 16px; }
+
+  /* Photo testimonials */
+  .lp-photo-tt__name           { font-size: 14px; padding: 0.45rem 0.8rem; }
+  .lp-photo-tt__quote          { font-size: 14px; }
+
+  /* For you / final CTA block */
+  .lp-foryou__title            { font-size: 24px; }
+  .lp-foryou__item             { font-size: 15.5px; line-height: 1.55; }
+  .lp-foryou__cta-headline     { font-size: 19px; }
+  .lp-foryou__cta-text         { font-size: 14.5px; line-height: 1.6; }
+  .lp-foryou__cta-btn          { font-size: 15.5px; padding: 0.9rem 1.4rem; }
+
+  /* FAQ */
+  .lp-faq__q                   { font-size: 16px; padding: 1.1rem 1.15rem; }
+  .lp-faq__a                   { font-size: 15px; line-height: 1.65; }
+
+  /* Sticky ATC */
+  .lp-sticky-atc__name         { font-size: 13px; }
+  .lp-sticky-atc__price        { font-size: 17px; }
+  .lp-sticky-atc__btn          { font-size: 15px; padding: 0.9rem 1.3rem; }
+}
