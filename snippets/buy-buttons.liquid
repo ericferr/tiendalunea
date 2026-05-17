@@ -262,7 +262,7 @@
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
-  {%- comment -%} ── Bypass popup: ir directo a checkout al hacer clic en Comprar ── {%- endcomment -%}
+  {%- comment -%} ── Bypass popup: ir directo a checkout sin fetch a clear.js ── {%- endcomment -%}
   <script>
   (function () {
     function setupDirectCheckout() {
@@ -280,22 +280,19 @@
           if (!variantInput) return;
           btn.disabled = true;
           btn.style.opacity = '0.7';
-          fetch('/cart/clear.js', { method: 'POST' })
-            .then(function () {
-              return fetch('/cart/add.js', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id: variantInput.value, quantity: 1 })
-              });
-            })
-            .then(function () {
-              window.location.href = '/checkout';
-            })
-            .catch(function () {
-              btn.disabled = false;
-              btn.style.opacity = '';
-              form.submit();
-            });
+          fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: variantInput.value, quantity: 1 })
+          })
+          .then(function () {
+            window.location.href = '/checkout';
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btn.style.opacity = '';
+            form.submit();
+          });
         }, true);
       });
     }
