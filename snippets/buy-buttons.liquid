@@ -165,13 +165,11 @@
             {{ form | payment_button }}
           {%- endif -%}
 
-          {%- comment -%} ── Botón 2 unidades en promoción ── {%- endcomment -%}
+          {%- comment -%} ── Botón 2 unidades en promoción (link nativo, sin fetch) ── {%- endcomment -%}
           {%- if product.selected_or_first_available_variant.available -%}
-            {%- assign lp_2x_variant = product.selected_or_first_available_variant.id -%}
-            <button
-              type="button"
+            <a
+              href="/cart/{{ product.selected_or_first_available_variant.id }}:2?discount=LUNEA2X"
               class="lp-btn-2x"
-              data-variant="{{ lp_2x_variant }}"
               aria-label="Comprar 2 unidades en promoción"
             >
               <span class="lp-btn-2x__icon">🎁</span>
@@ -179,7 +177,7 @@
                 <span class="lp-btn-2x__label">Quiero 2 en promoción</span>
                 <span class="lp-btn-2x__price">$390.000 las 2 — ahorrás $48.000</span>
               </span>
-            </button>
+            </a>
             <style>
               .lp-btn-2x {
                 display: flex;
@@ -192,15 +190,15 @@
                 background: #0d6e82;
                 color: #fff;
                 font-family: 'DM Sans', system-ui, sans-serif;
-                border: none;
                 border-radius: 8px;
-                cursor: pointer;
+                text-decoration: none;
                 text-align: left;
                 transition: background 0.2s ease, transform 0.1s ease;
                 box-shadow: 0 2px 8px rgba(13, 110, 130, 0.35);
               }
               .lp-btn-2x:hover {
                 background: #0a5566;
+                color: #fff;
                 transform: translateY(-1px);
                 box-shadow: 0 4px 14px rgba(13, 110, 130, 0.45);
               }
@@ -210,41 +208,6 @@
               .lp-btn-2x__label { font-size: 15px; font-weight: 700; line-height: 1.2; }
               .lp-btn-2x__price { font-size: 13px; opacity: 0.88; font-weight: 500; }
             </style>
-            <script>
-            (function () {
-              function setup2xButton() {
-                var btn = document.querySelector('.lp-btn-2x');
-                if (!btn || btn.dataset.lunea2x) return;
-                btn.dataset.lunea2x = '1';
-                btn.addEventListener('click', function () {
-                  if (btn.disabled) return;
-                  var variantId = btn.dataset.variant;
-                  btn.disabled = true;
-                  btn.style.opacity = '0.7';
-                  fetch('/cart/clear.js', { method: 'POST' })
-                    .then(function () {
-                      return fetch('/cart/add.js', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ id: variantId, quantity: 2 })
-                      });
-                    })
-                    .then(function () {
-                      window.location.href = '/checkout?discount=LUNEA2X';
-                    })
-                    .catch(function () {
-                      btn.disabled = false;
-                      btn.style.opacity = '';
-                    });
-                });
-              }
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', setup2xButton);
-              } else {
-                setup2xButton();
-              }
-            })();
-            </script>
           {%- endif -%}
         </div>
       {%- endform -%}
