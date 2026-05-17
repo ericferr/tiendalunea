@@ -191,3 +191,108 @@
   .lunea-hero { padding: 48px 0 40px; }
   .lunea-guarantee { padding: 20px; }
 }
+
+/* ============================================================
+   FIX GLOBAL: el tema usa 62.5% en html → 1rem = 10px.
+   lunea.css fue escrito con 1rem = 16px, corregimos con px.
+   También bump de texto chico en página de producto y carrito.
+   ============================================================ */
+
+/* --- Secciones lunea (homepage / landing) --- */
+.lunea-hero-subtitle       { font-size: 15px !important; }
+.lunea-price-note          { font-size: 13px !important; }
+.lunea-price-big           { font-size: 32px !important; }
+.lunea-badge               { font-size: 13px !important; }
+.lunea-trust-item          { font-size: 14px !important; }
+
+.lunea-card-title          { font-size: 17px !important; }
+.lunea-card-text           { font-size: 14px !important; line-height: 1.65 !important; }
+
+.lunea-step-title          { font-size: 16px !important; }
+.lunea-step-text           { font-size: 14px !important; line-height: 1.6 !important; }
+
+.lunea-feature-label       { font-size: 15px !important; }
+.lunea-feature-desc        { font-size: 13px !important; }
+
+.lunea-spec-label          { font-size: 13px !important; }
+.lunea-spec-value          { font-size: 14px !important; }
+
+.lunea-testimonial-text    { font-size: 14px !important; line-height: 1.7 !important; }
+.lunea-author-name         { font-size: 14px !important; }
+.lunea-author-loc          { font-size: 12px !important; }
+
+.lunea-faq-q               { font-size: 15px !important; }
+.lunea-faq-a               { font-size: 14px !important; line-height: 1.7 !important; }
+
+.lunea-guarantee-text      { font-size: 14px !important; line-height: 1.7 !important; }
+.lunea-seal-days           { font-size: 28px !important; }
+.lunea-seal-text           { font-size: 9px !important; }
+
+.lunea-product-trust       { font-size: 13px !important; }
+.lunea-product-perk-text   { font-size: 12px !important; }
+
+.lunea-btn-primary         { font-size: 16px !important; }
+.lunea-btn-secondary       { font-size: 15px !important; }
+.lunea-btn-urgency         { font-size: 16px !important; }
+.lunea-urgency-note        { font-size: 13px !important; }
+.lunea-urgency-perk        { font-size: 13px !important; }
+.lunea-eyebrow             { font-size: 11px !important; }
+
+/* --- Página de producto (Dawn nativo) — mobile --- */
+@media (max-width: 749px) {
+  /* Descripción del producto */
+  .product__description,
+  .product__description p,
+  .product__description li  { font-size: 15px !important; line-height: 1.65 !important; }
+
+  /* Título del producto */
+  .product__title           { font-size: 22px !important; line-height: 1.2 !important; }
+
+  /* Precio */
+  .price__regular .price-item,
+  .price__sale .price-item  { font-size: 20px !important; }
+  .price__compare .price-item { font-size: 14px !important; }
+
+  /* Etiquetas de variantes */
+  .product-form__input .form__label,
+  .variant-radios label,
+  .variant-selects label     { font-size: 14px !important; }
+
+  /* Texto de política / envío bajo el botón */
+  .product__tax,
+  .product__policies a,
+  .product__policies         { font-size: 13px !important; }
+
+  /* Acordeón de detalles del producto */
+  .accordion__title          { font-size: 15px !important; }
+  .accordion__content,
+  .accordion__content p      { font-size: 14px !important; line-height: 1.6 !important; }
+}
+
+/* --- Carrito (drawer y página) — mobile --- */
+@media (max-width: 749px) {
+  /* Nombre del producto en el carrito */
+  .cart-item__name,
+  .cart-item__name a         { font-size: 15px !important; }
+
+  /* Variante / opciones */
+  .cart-item__options,
+  .product-option            { font-size: 13px !important; }
+
+  /* Precio en carrito */
+  .cart-item__price .price-item { font-size: 15px !important; }
+
+  /* Totales */
+  .totals__subtotal          { font-size: 15px !important; }
+  .totals__subtotal-value    { font-size: 16px !important; font-weight: 700 !important; }
+
+  /* Nota del carrito */
+  .cart__note                { font-size: 14px !important; }
+  .cart__note-title          { font-size: 15px !important; }
+
+  /* Botón checkout en carrito */
+  .cart__checkout-button     { font-size: 16px !important; }
+
+  /* Drawer header */
+  .cart-drawer__header h2    { font-size: 18px !important; }
+}
