@@ -1,0 +1,264 @@
+{
+  "name": "Lunea Go · Landing de conversión",
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "text", "settings": { "text": "LUNEA", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "share": { "type": "share", "settings": { "share_label": "Share" } }
+      },
+      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "share"],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pago contra entrega" } },
+        "t3": { "type": "trust", "settings": { "icon": "🛡️", "text": "Garantía de fábrica" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "hook": {
+      "type": "lunea-product-hook",
+      "settings": {
+        "eyebrow": "Lunea Go, tu primera extractor manos libres",
+        "title": "<p>Liviana. Discreta. <em>Siempre lista.</em></p>",
+        "text": "Solo 276g. Entra perfecto dentro de tu brasier de lactancia y nadie nota que la llevás puesta. El Lunea Go te da libertad real para seguir con tu rutina — trabajar, manejar, atender al bebé — mientras extraés leche al mismo tiempo, sin cables ni enchufes."
+      }
+    },
+    "features": {
+      "type": "lunea-product-features",
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "🤫", "title": "Se oculta dentro de tu brasier", "text": "Diseño compacto y redondeado que encaja perfecto en tu brasier de lactancia. Nadie sabe que lo llevás puesto — ni en la oficina ni en la calle." } },
+        "b2": { "type": "feature", "settings": { "icon": "🎛️", "title": "3 modos que imitan al bebé", "text": "Masaje → Succión → Bombeo. Tres fases que replican el ritmo natural de lactancia para una extracción cómoda y efectiva." } },
+        "b3": { "type": "feature", "settings": { "icon": "🧠", "title": "Función memoria", "text": "Recuerda tu configuración favorita de la última sesión. Sin tener que volver a ajustar nada cada vez que lo usás." } },
+        "b4": { "type": "feature", "settings": { "icon": "⚙️", "title": "9 velocidades ajustables", "text": "Encontrá tu punto exacto de extracción. De suave a intenso, con control total desde la pantalla LED." } },
+        "b5": { "type": "feature", "settings": { "icon": "🔋", "title": "Recargable por USB", "text": "Cargá donde quieras — en el auto, en la oficina, en casa. Sin adaptadores especiales, sin cable propietario." } },
+        "b6": { "type": "feature", "settings": { "icon": "🌿", "title": "100% libre de BPA", "text": "Silicona grado alimentario, amigable con la piel. Fácil de armar y lavar en minutos." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "settings": {
+        "eyebrow": "Por qué las mamás lo eligen",
+        "title": "Todo lo que necesitás, sin lo que no usás"
+      }
+    },
+    "howto": {
+      "type": "lunea-product-howto",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Instalá la válvula y el diafragma", "text": "Encajá la válvula y el diafragma de silicona en el cuerpo del extractor. En menos de 30 segundos queda listo." } },
+        "s2": { "type": "step", "settings": { "title": "Colocalo en tu brasier y elegí tu modo", "text": "Insertá el Lunea Go en tu brasier de lactancia, encendelo y seleccioná el modo que más te acomode — desde la pantalla LED." } },
+        "s3": { "type": "step", "settings": { "title": "Seguí con tu vida", "text": "Caminá, trabajá, descansá. El Lunea Go hace el resto, en silencio y sin que nadie lo note." } }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {
+        "eyebrow": "Así de fácil",
+        "title": "En 3 pasos, lista para extraer"
+      }
+    },
+    "included": {
+      "type": "lunea-product-included",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "Extractor Lunea Go (1 unidad)" } },
+        "i2": { "type": "item", "settings": { "text": "Motor con pantalla LED integrada" } },
+        "i3": { "type": "item", "settings": { "text": "Brida de silicona universal" } },
+        "i4": { "type": "item", "settings": { "text": "Válvula y diafragma de silicona grado alimentario" } },
+        "i5": { "type": "item", "settings": { "text": "Cable USB de carga" } },
+        "i6": { "type": "item", "settings": { "text": "Manual rápido en español" } },
+        "i7": { "type": "item", "settings": { "text": "Soporte directo por WhatsApp — antes y después de tu compra" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6", "i7"],
+      "settings": {
+        "icon": "🎁",
+        "title": "¿Qué recibes con tu Lunea Go?"
+      }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 30,
+        "title": "Tu compra está respaldada",
+        "text": "El Lunea Go cuenta con garantía de fábrica en el motor para defectos de fabricación. Si al recibirlo encontrás algún problema de funcionamiento, escríbenos de inmediato por WhatsApp y lo gestionamos sin vueltas. Y como podés pagar cuando lo recibís, no tenés ningún riesgo."
+      }
+    },
+    "real-reviews": {
+      "type": "lunea-product-real-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/17575270911.jpg?v=1779159113",
+            "tag": "FOTO REAL",
+            "quote": "Lo recibí y funciona perfecto desde el primer día",
+            "text": "Lo pedí sin muchas expectativas y me sorprendió. Se instala fácil, el motor es silencioso y cabe bien dentro del brasier. Para el precio que tiene, es una excelente opción.",
+            "name": "Valeria G.",
+            "city": "Bogotá"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/17575270911.jpg?v=1779159113",
+            "tag": "RESULTADO REAL",
+            "quote": "Práctico, liviano y fácil de limpiar",
+            "text": "Las partes de silicona se lavan en un minuto. El motor es compacto y no pesa nada. Llego a casa del trabajo y tengo leche extraída sin haberme parado a hacer nada.",
+            "name": "Daniela M.",
+            "city": "Medellín"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/17575270911.jpg?v=1779159113",
+            "tag": "RESULTADO REAL",
+            "quote": "La función memoria es lo mejor",
+            "text": "Me gusta que recuerda la intensidad que usé la vez anterior. No tengo que andar ajustando cada sesión. Para mamás que arrancaron a usar extractores es ideal.",
+            "name": "Camila R.",
+            "city": "Cali"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3"],
+      "settings": {
+        "eyebrow": "Reseñas reales",
+        "title": "Mamás que ya lo tienen en casa",
+        "subtitle": "Lo eligieron porque buscaban libertad sin complicaciones. Pago contra entrega, sin riesgo."
+      }
+    },
+    "testimonials": {
+      "type": "lunea-product-photo-testimonials",
+      "blocks": {
+        "pt1": { "type": "testimonial", "settings": { "name": "Juliana C.", "flag": "🇨🇴", "quote": "Llegó rápido, se arma fácil y funciona de verdad." } },
+        "pt2": { "type": "testimonial", "settings": { "name": "Stefanía R.", "flag": "🇨🇴", "quote": "No esperaba que fuera tan silencioso para lo que cuesta." } },
+        "pt3": { "type": "testimonial", "settings": { "name": "Natalia V.", "flag": "🇨🇴", "quote": "Ideal si querés empezar con algo práctico y sin complicaciones." } },
+        "pt4": { "type": "testimonial", "settings": { "name": "Lorena A.", "flag": "🇨🇴", "quote": "La batería dura bastante y carga rápido con el USB." } },
+        "pt5": { "type": "testimonial", "settings": { "name": "Paola M.", "flag": "🇨🇴", "quote": "Lo uso a diario en el trabajo y nadie se da cuenta." } },
+        "pt6": { "type": "testimonial", "settings": { "name": "Isabella T.", "flag": "🇨🇴", "quote": "Cómodo, discreto y muy liviano. Lo recomiendo." } }
+      },
+      "block_order": ["pt1", "pt2", "pt3", "pt4", "pt5", "pt6"],
+      "settings": {
+        "title": "Elegido por mamás en Colombia"
+      }
+    },
+    "foryou": {
+      "type": "lunea-product-foryou",
+      "blocks": {
+        "y1": { "type": "item", "settings": { "text": "Querés tu primera extractor manos libres sin gastar de más" } },
+        "y2": { "type": "item", "settings": { "text": "Volvés al trabajo y necesitás algo discreto para llevarte" } },
+        "y3": { "type": "item", "settings": { "text": "Buscás un extractor liviano y fácil de armar" } },
+        "y4": { "type": "item", "settings": { "text": "La función memoria te simplifica la rutina diaria" } },
+        "y5": { "type": "item", "settings": { "text": "Querés pagar contra entrega, sin riesgo ni tarjetas" } }
+      },
+      "block_order": ["y1", "y2", "y3", "y4", "y5"],
+      "settings": {
+        "title": "El Lunea Go es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Llega en 1-5 días",
+        "cta_headline": "Pídelo hoy. Pagas cuando lo recibas.",
+        "cta_text": "Compacto, liviano y pensado para tu día a día. El Lunea Go es tu aliado para seguir con la lactancia sin pausar tu vida.",
+        "cta_button_text": "🛒 Quiero el mío ahora"
+      }
+    },
+    "crosssell-lunea": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>.lp-cs-up{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#f0fafb 0%,#e8f6f8 100%);border:2px solid #0d6e82;border-radius:12px;padding:16px 20px;margin:0 auto;max-width:540px;text-decoration:none;color:inherit;transition:box-shadow .2s ease,transform .1s ease}.lp-cs-up:hover{box-shadow:0 4px 16px rgba(13,110,130,.25);transform:translateY(-1px)}.lp-cs-up__icon{font-size:26px;flex-shrink:0}.lp-cs-up__body{flex:1}.lp-cs-up__eyebrow{display:block;font-size:11px;font-weight:700;color:#0d6e82;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}.lp-cs-up__title{display:block;font-size:15px;font-weight:700;color:#1a1a1a;line-height:1.3;margin-bottom:2px}.lp-cs-up__price{display:block;font-size:13px;color:#555}.lp-cs-up__arrow{font-size:22px;color:#0d6e82;flex-shrink:0}</style><a href=\"/products/extractor-electrico-inalambrico\" class=\"lp-cs-up\"><span class=\"lp-cs-up__icon\">⭐</span><span class=\"lp-cs-up__body\"><span class=\"lp-cs-up__eyebrow\">¿Querés más funciones?</span><span class=\"lp-cs-up__title\">Conocé el Lunea — más potencia, más modos, USB-C</span><span class=\"lp-cs-up__price\">$219.000 · Pago contra entrega</span></span><span class=\"lp-cs-up__arrow\">→</span></a>",
+        "color_scheme": "scheme-1",
+        "padding_top": 8,
+        "padding_bottom": 0
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Hacés tu pedido en línea, lo enviamos a tu casa y pagás al mensajero al recibirlo. Sin tarjetas ni transferencias previas — solo pagás cuando lo tenés en tus manos." } },
+        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. La entrega llega en 1 a 5 días hábiles según tu ciudad. Te enviamos el número de guía para que rastrees todo el camino." } },
+        "f3": { "type": "faq", "settings": { "question": "¿Qué garantía tiene el Lunea Go?", "answer": "El Lunea Go tiene garantía de fábrica en el motor para defectos de fabricación. Si al recibirlo encontrás algún problema de funcionamiento, escríbenos por WhatsApp de inmediato y lo gestionamos sin complicaciones." } },
+        "f4": { "type": "faq", "settings": { "question": "¿Con qué tallas de brasier es compatible?", "answer": "La brida de silicona está diseñada para adaptarse a la mayoría de tallas. Si tenés dudas sobre tu talla, escribinos por WhatsApp y te asesoramos antes de hacer tu pedido." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Es difícil armarlo?", "answer": "Para nada. En 4 pasos simples: instalás la válvula, el diafragma de silicona, la brida y el motor. El manual viene en español y si tenés cualquier duda, estamos en WhatsApp." } },
+        "f6": { "type": "faq", "settings": { "question": "¿Cómo lo limpio?", "answer": "Las partes de silicona (brida, diafragma, válvula) se desensamblan fácilmente y se lavan con agua y jabón neutro. El motor no debe mojarse." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "title": "Preguntas frecuentes"
+      }
+    },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": {
+        "eyebrow": "¿Lista para empezar?",
+        "title": "Tu lactancia merece ser libre",
+        "subtitle": "Pedilo hoy y pagá cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
+        "button_text": "Comprar mi Lunea Go"
+      }
+    },
+    "sticky-atc": {
+      "type": "lunea-sticky-atc",
+      "settings": { "cta_text": "Comprar ahora" }
+    },
+    "whatsapp-float": {
+      "type": "lunea-whatsapp-float",
+      "settings": {
+        "phone": "5493764250518",
+        "message": "Hola, quiero más información sobre el Lunea Go."
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "También te puede gustar",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "trust-row",
+    "hook",
+    "features",
+    "howto",
+    "included",
+    "guarantee",
+    "real-reviews",
+    "testimonials",
+    "foryou",
+    "crosssell-lunea",
+    "faq",
+    "related-products",
+    "bottom-cta",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
+}

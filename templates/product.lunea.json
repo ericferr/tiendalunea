@@ -29,6 +29,15 @@
         "padding_bottom": 12
       }
     },
+    "crosssell-go": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>.lp-cs-go{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#f0fafb 0%,#e8f6f8 100%);border:2px solid #0d6e82;border-radius:12px;padding:16px 20px;margin:0 auto;max-width:540px;text-decoration:none;color:inherit;transition:box-shadow .2s ease,transform .1s ease}.lp-cs-go:hover{box-shadow:0 4px 16px rgba(13,110,130,.25);transform:translateY(-1px)}.lp-cs-go__icon{font-size:26px;flex-shrink:0}.lp-cs-go__body{flex:1}.lp-cs-go__eyebrow{display:block;font-size:11px;font-weight:700;color:#0d6e82;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}.lp-cs-go__title{display:block;font-size:15px;font-weight:700;color:#1a1a1a;line-height:1.3;margin-bottom:2px}.lp-cs-go__price{display:block;font-size:13px;color:#555}.lp-cs-go__arrow{font-size:22px;color:#0d6e82;flex-shrink:0}</style><a href=\"/products/lunea-go\" class=\"lp-cs-go\"><span class=\"lp-cs-go__icon\">💰</span><span class=\"lp-cs-go__body\"><span class=\"lp-cs-go__eyebrow\">¿Buscás una opción más accesible?</span><span class=\"lp-cs-go__title\">Conocé el Lunea Go — liviana, compacta y más económica</span><span class=\"lp-cs-go__price\">Desde $149.000 · Pago contra entrega</span></span><span class=\"lp-cs-go__arrow\">→</span></a>",
+        "color_scheme": "scheme-1",
+        "padding_top": 8,
+        "padding_bottom": 0
+      }
+    },
     "trust-row": {
       "type": "lunea-product-trust-row",
       "blocks": {
@@ -270,6 +279,7 @@
   },
   "order": [
     "main",
+    "crosssell-go",
     "trust-row",
     "hook",
     "features",

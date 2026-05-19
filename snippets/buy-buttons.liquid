@@ -167,15 +167,22 @@
 
           {%- comment -%} ── Botón 2 unidades en promoción (link nativo, sin fetch) ── {%- endcomment -%}
           {%- if product.selected_or_first_available_variant.available -%}
+            {%- if product.handle == 'lunea-go' -%}
+              {%- assign lp_2x_discount = 'LUNEA2X' -%}
+              {%- assign lp_2x_label = '$270.000 las 2 — ahorrás $30.000' -%}
+            {%- else -%}
+              {%- assign lp_2x_discount = 'LUNEA2X' -%}
+              {%- assign lp_2x_label = '$390.000 las 2 — ahorrás $48.000' -%}
+            {%- endif -%}
             <a
-              href="/cart/{{ product.selected_or_first_available_variant.id }}:2?discount=LUNEA2X"
+              href="/cart/{{ product.selected_or_first_available_variant.id }}:2?discount={{ lp_2x_discount }}"
               class="lp-btn-2x"
               aria-label="Comprar 2 unidades en promoción"
             >
               <span class="lp-btn-2x__icon">🎁</span>
               <span class="lp-btn-2x__text">
                 <span class="lp-btn-2x__label">Quiero 2 en promoción</span>
-                <span class="lp-btn-2x__price">$390.000 las 2 — ahorrás $48.000</span>
+                <span class="lp-btn-2x__price">{{ lp_2x_label }}</span>
               </span>
             </a>
             <style>
