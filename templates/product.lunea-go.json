@@ -117,38 +117,49 @@
         "r1": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/17575270911.jpg?v=1779159113",
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/A79f0d8fd25224bd497c64f443984d719h.jpg_960x960q75.jpg_.avif",
             "tag": "FOTO REAL",
-            "quote": "Lo recibí y funciona perfecto desde el primer día",
-            "text": "Lo pedí sin muchas expectativas y me sorprendió. Se instala fácil, el motor es silencioso y cabe bien dentro del brasier. Para el precio que tiene, es una excelente opción.",
-            "name": "Valeria G.",
-            "city": "Bogotá"
+            "quote": "Se instaló fácil y desde el primer uso funcionó perfecto",
+            "text": "Honestamente no esperaba mucho por el precio, pero me sorprendió. Se arma en minutos, el motor es suave y no hace ruido. Ya lo usé varias veces y extrae bien. Para llevar al trabajo es ideal.",
+            "name": "Natalia P.",
+            "city": "Bucaramanga"
           }
         },
         "r2": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/17575270911.jpg?v=1779159113",
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Ad18e2e13800c4c118b9c02a9f43164a7J.jpg_960x960q75.jpg_.avif",
             "tag": "RESULTADO REAL",
-            "quote": "Práctico, liviano y fácil de limpiar",
-            "text": "Las partes de silicona se lavan en un minuto. El motor es compacto y no pesa nada. Llego a casa del trabajo y tengo leche extraída sin haberme parado a hacer nada.",
-            "name": "Daniela M.",
-            "city": "Medellín"
+            "quote": "Lo usé en una reunión de trabajo y nadie se dio cuenta",
+            "text": "Trabajo en oficina y lo llevo puesto todo el día. La pantallita es práctica, ves el modo y la intensidad de un vistazo. La batería me duró tres sesiones con una sola carga. No lo cambio por nada.",
+            "name": "Carolina V.",
+            "city": "Barranquilla"
           }
         },
         "r3": {
           "type": "review",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/17575270911.jpg?v=1779159113",
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/A23d58d101b2c47f6b96db7d54fef65b22.jpg_960x960q75.jpg_.avif",
+            "tag": "FOTO DEL PRODUCTO",
+            "quote": "La función memoria me salvó — ya no ajusto nada cada vez",
+            "text": "Siempre uso el mismo nivel y el extractor lo recuerda solo. Puede sonar a poco, pero cuando estás apurada y con el bebé encima es una diferencia enorme. Llegó bien empacado y rápido.",
+            "name": "Andrea L.",
+            "city": "Pereira"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/A70554dd051344c72a455c37eebe8a43ae.jpg_960x960q75.jpg_.avif",
             "tag": "RESULTADO REAL",
-            "quote": "La función memoria es lo mejor",
-            "text": "Me gusta que recuerda la intensidad que usé la vez anterior. No tengo que andar ajustando cada sesión. Para mamás que arrancaron a usar extractores es ideal.",
-            "name": "Camila R.",
-            "city": "Cali"
+            "quote": "Pequeño, liviano y hace su trabajo sin complicaciones",
+            "text": "Me costaba creer que algo tan chiquito extrajera bien, pero saca bastante leche en cada sesión. Las partes de silicona se lavan en un minuto. Por el precio que tiene, no tiene nada que envidiarle a los caros.",
+            "name": "Daniela M.",
+            "city": "Manizales"
           }
         }
       },
-      "block_order": ["r1", "r2", "r3"],
+      "block_order": ["r1", "r2", "r3", "r4"],
       "settings": {
         "eyebrow": "Reseñas reales",
         "title": "Mamás que ya lo tienen en casa",
