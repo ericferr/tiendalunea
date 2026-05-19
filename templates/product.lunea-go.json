@@ -77,6 +77,15 @@
         "title": "En 3 pasos, lista para extraer"
       }
     },
+    "modes-image": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>.lp-modes-img{display:block;width:100%;max-width:540px;margin:0 auto;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}</style><img src=\"https://cdn.shopify.com/s/files/1/0811/0984/4194/files/ImageToStl.com_Gemini_Generated_Image_fjgyxefjgyxefjgy.avif\" alt=\"Modos del Lunea Go: masaje, succión y bombeo\" class=\"lp-modes-img\" loading=\"lazy\">",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "included": {
       "type": "lunea-product-included",
       "blocks": {
@@ -249,6 +258,7 @@
     "hook",
     "features",
     "howto",
+    "modes-image",
     "included",
     "guarantee",
     "real-reviews",
