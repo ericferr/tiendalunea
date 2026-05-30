@@ -29,6 +29,25 @@
         "float_badge_text": "+500 mamás satisfechas"
       }
     },
+    "product-duo": {
+      "type": "lp-product-duo",
+      "settings": {
+        "heading": "Elegí tu Lunea",
+        "padding_top": 32,
+        "padding_bottom": 24,
+        "product1_url": "/products/extractor-electrico-inalambrico",
+        "product1_img": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/preview_images/30c08e4240524eb6a58fb8214f72ffdc.thumbnail.0000000000.jpg",
+        "product1_name": "Lunea®",
+        "product1_sub": "Extractor completo con pantalla LED",
+        "product1_price": "Desde $219.000",
+        "product2_url": "/products/lunea-go",
+        "product2_img": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/ImageToStl.com_Gemini_Generated_Image_dduzd1dduzd1dduz_1.avif",
+        "product2_name": "Lunea Go®",
+        "product2_sub": "Compacto · 276g · Entra en tu corpiño",
+        "product2_price": "Desde $135.000",
+        "product2_badge": "✨ Más compacto"
+      }
+    },
     "lunea-benefits": {
       "type": "lunea-benefits",
       "blocks": {
@@ -120,5 +139,5 @@
       }
     }
   },
-  "order": ["lunea-hero", "lunea-benefits", "lunea-gallery", "lunea-proof"]
+  "order": ["lunea-hero", "product-duo", "lunea-benefits", "lunea-gallery", "lunea-proof"]
 }
