@@ -83,7 +83,7 @@
         "r1": {
           "type": "review",
           "settings": {
-            "image_url": "REEMPLAZAR_CON_URL_IMAGEN_RESENA_1",
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/321c231b-4f85-4982-81d3-0aa094db3b82.jpg",
             "tag": "RESULTADO REAL",
             "quote": "Después de 10 días ya no me hincho después del almuerzo",
             "text": "Llevo años lidiando con la hinchazón después de comer y probé de todo — tés, pastillas de farmacia, cambios de dieta. Nada me funcionó de forma consistente. Vi estas enzimas en redes y las pedí sin mucha expectativa, honestamente. La primera semana noté que el bajón de la tarde era menos intenso, y para el día 10 la diferencia en la hinchazón era clara. No digo que sea un milagro pero sí que funcionó para mí mejor que cualquier otra cosa que haya probado. El envío llegó rápido y el pago contra entrega me dio tranquilidad porque nunca había comprado suplementos por internet.",
@@ -94,7 +94,7 @@
         "r2": {
           "type": "review",
           "settings": {
-            "image_url": "REEMPLAZAR_CON_URL_IMAGEN_RESENA_2",
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/494b41c5-d92c-47d8-aff0-c5f2f52e48fd.jpg",
             "tag": "COMPRA VERIFICADA",
             "quote": "Los gases desaparecieron casi por completo",
             "text": "Mi digestión siempre fue un tema — gases todo el día, pesadez después de comer, y una incomodidad constante que ya era parte de mi vida normal. Mi nutricionista me recomendó probar enzimas digestivas y busqué opciones. Encontré Physician's Choice porque tiene probióticos y prebióticos incluidos, que es lo que ella decía que necesitaba. Llevo tres semanas tomándolas y la diferencia es notable: los gases bajaron muchísimo, me siento más liviana después de comer y ya no tengo ese adormecimiento de las tardes. Lo recomiendo especialmente si ya intentaste otras marcas sin resultado.",
@@ -105,27 +105,38 @@
         "r3": {
           "type": "review",
           "settings": {
-            "image_url": "REEMPLAZAR_CON_URL_IMAGEN_RESENA_3",
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/1816c023-46b8-47cc-b5e4-6abcdcd58952.jpg",
             "tag": "FOTO DEL PRODUCTO",
-            "quote": "Una cápsula al día cambió mi rutina digestiva",
-            "text": "Soy de las que se hinchaba con casi cualquier cosa — arroz, frijoles, ensalada. Llegaba al trabajo con el abdomen inflamado y era incómodo todo el día. Probé estas enzimas más por desesperación que por convicción, pero me sorprendieron. La clave para mí fue tomarlas justo antes de almorzar — en menos de dos semanas noté que mi abdomen estaba más plano por las tardes. También mejoró mi regularidad intestinal, que era otro problema que tenía. Son fáciles de tomar, no tienen sabor raro y me llegaron en perfectas condiciones. Vale totalmente el precio.",
-            "name": "Lorena M.",
-            "city": "Cali"
+            "quote": "Dejé el omeprazol después de 3 semanas",
+            "text": "Vine a esto porque llevaba más de dos años tomando omeprazol todos los días y el médico me dijo que no era ideal a largo plazo. Busqué alternativas naturales y di con Physician's Choice. Soy escéptico con los suplementos pero la fórmula me convenció: 16 enzimas más probióticos más prebióticos, todo en una cápsula. Las primeras dos semanas no noté mucho pero a la tercera semana empecé a reducir el omeprazol de forma gradual. Hoy llevo un mes sin tomarlo y mi digestión está bien. Claro que el proceso lo hice con supervisión médica, pero estas enzimas fueron parte clave del cambio. Muy satisfecho con el producto y con el servicio.",
+            "name": "Carlos M.",
+            "city": "Medellín"
           }
         },
         "r4": {
           "type": "review",
           "settings": {
-            "image_url": "REEMPLAZAR_CON_URL_IMAGEN_RESENA_4",
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/0fcfd523-e233-496f-8cba-d42896b39e77.jpg",
             "tag": "RESULTADO REAL",
-            "quote": "Por fin algo que funciona para el colon irritable",
-            "text": "Tengo síndrome de colon irritable diagnosticado y siempre estoy buscando cosas que me ayuden a manejarlo sin depender de medicamentos. Estas enzimas las recomendó alguien en un grupo de salud intestinal y decidí probarlas. No voy a decir que curan el colon irritable porque no es así, pero sí que redujeron significativamente mis episodios de inflamación y malestar. Llevo casi dos meses tomándolas de forma continua y es el suplemento que más me ha funcionado de todos los que probé. El precio es razonable para lo que ofrece y el servicio fue excelente.",
-            "name": "Marcela P.",
-            "city": "Barranquilla"
+            "quote": "Ya como tranquilo en el trabajo sin preocuparme",
+            "text": "Trabajo en una empresa donde almorzamos todos juntos y siempre tenía miedo de lo que me iba a pasar después — gases, pesadez, a veces hasta dolor. Eso me hacía comer menos o evitar ciertos alimentos. Desde que empecé con estas enzimas puedo almorzar normal sin andar calculando qué me va a caer mal. Las tomo antes del almuerzo y listo. La tarde la paso sin molestias y con más energía. Son fáciles de conseguir, el precio es razonable y llegaron rápido. Para mí fue exactamente la solución que buscaba.",
+            "name": "Andrés T.",
+            "city": "Bogotá"
+          }
+        },
+        "r5": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/ChatGPT_Image_13_may_2026_12_53_44.webp",
+            "tag": "MÉDICA RECOMIENDA",
+            "quote": "Es la combinación correcta para el 80% de los problemas digestivos cotidianos",
+            "text": "Como médica general veo casos de malestar digestivo todos los días — hinchazón, gases, digestión lenta, colon irritable leve. En la mayoría de casos no hay una patología grave sino simplemente una deficiencia enzimática o un desequilibrio en la microbiota. Physician's Choice tiene la fórmula más completa que conozco en esta categoría: enzimas de alta potencia, probióticos activos y prebióticos en una sola cápsula. Es lo que yo misma recomiendo antes de recurrir a medicamentos. Para personas sanas con molestias digestivas cotidianas, es un excelente punto de partida.",
+            "name": "Dra. Andrea Solano",
+            "city": "Medicina General"
           }
         }
       },
-      "block_order": ["r1","r2","r3","r4"],
+      "block_order": ["r1","r2","r3","r4","r5"],
       "settings": {
         "eyebrow": "Lo que dicen quienes ya lo probaron",
         "title": "Resultados reales de personas reales",
