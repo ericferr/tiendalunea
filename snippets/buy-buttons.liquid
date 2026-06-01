@@ -49,6 +49,11 @@
       html body .lp-wa-btn { background: #B22222 !important; box-shadow: 0 2px 8px rgba(178,34,34,0.35) !important; }
       html body .lp-wa-btn:hover { background: #8B1A1A !important; }
 
+      /* ── Transición suave entre imágenes del producto ── */
+      .product__media-item img, .product-media-container img, .product__media img {
+        transition: opacity 0.6s ease !important;
+      }
+
       /* ── Sección stats / porcentajes ── */
       .ez-stats { background:#fff; padding:48px 20px; }
       .ez-stats__inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:40px; align-items:center; }
@@ -131,7 +136,7 @@
             setTimeout(function(){ window.scrollTo(sx, sy); }, 50);
           }
           function next(){ i = (i+1) % thumbs.length; clickNoScroll(thumbs[i]); }
-          function start(){ timer = setInterval(next, 3000); }
+          function start(){ timer = setInterval(next, 5000); }
           function stop(){ clearInterval(timer); }
           var wrap = document.querySelector('.product__media-wrapper, .product-media-container, .product__media-list');
           if (wrap) { wrap.addEventListener('mouseenter', stop); wrap.addEventListener('mouseleave', start); }
