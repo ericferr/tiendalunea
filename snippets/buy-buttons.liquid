@@ -138,6 +138,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+          {%- unless product.handle == 'physicians-choice-enzimas-digestivas' -%}
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
@@ -164,15 +165,76 @@
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
+          {%- endunless -%}
+
+          {%- comment -%} ── Botones tiers enzimas digestivas ── {%- endcomment -%}
+          {%- if product.handle == 'physicians-choice-enzimas-digestivas' and product.selected_or_first_available_variant.available -%}
+            {%- assign ez_vid = product.selected_or_first_available_variant.id -%}
+            <style>
+              .lp-tiers { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+              .lp-tier {
+                display: flex; align-items: center; justify-content: space-between;
+                padding: 14px 18px; border-radius: 10px; text-decoration: none;
+                border: 2px solid #e8c4c4; background: #fff; color: #2E3F45;
+                font-family: 'DM Sans', system-ui, sans-serif;
+                transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+                position: relative;
+              }
+              .lp-tier:hover { border-color: #B22222; box-shadow: 0 4px 14px rgba(178,34,34,0.15); transform: translateY(-1px); }
+              .lp-tier--popular { border-color: #B22222; background: #FEF3F3; }
+              .lp-tier__left { display: flex; flex-direction: column; gap: 2px; }
+              .lp-tier__qty { font-size: 15px; font-weight: 700; color: #2E3F45; }
+              .lp-tier__saving { font-size: 12px; color: #B22222; font-weight: 600; }
+              .lp-tier__right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+              .lp-tier__price { font-size: 17px; font-weight: 800; color: #B22222; }
+              .lp-tier__unit { font-size: 11px; color: #888; }
+              .lp-tier__badge {
+                position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+                background: #B22222; color: #fff; font-size: 11px; font-weight: 800;
+                padding: 3px 12px; border-radius: 20px; white-space: nowrap;
+                font-family: 'DM Sans', system-ui, sans-serif; letter-spacing: 0.05em;
+              }
+            </style>
+            <div class="lp-tiers">
+              <a href="/cart/{{ ez_vid }}:1" class="lp-tier">
+                <div class="lp-tier__left">
+                  <span class="lp-tier__qty">1 frasco</span>
+                  <span class="lp-tier__saving">Precio normal</span>
+                </div>
+                <div class="lp-tier__right">
+                  <span class="lp-tier__price">$60.000</span>
+                  <span class="lp-tier__unit">$60.000 c/u</span>
+                </div>
+              </a>
+              <a href="/cart/{{ ez_vid }}:2?discount=ENZIMAS2X" class="lp-tier lp-tier--popular">
+                <span class="lp-tier__badge">⭐ MÁS POPULAR</span>
+                <div class="lp-tier__left">
+                  <span class="lp-tier__qty">2 frascos</span>
+                  <span class="lp-tier__saving">Ahorrás $10.000</span>
+                </div>
+                <div class="lp-tier__right">
+                  <span class="lp-tier__price">$110.000</span>
+                  <span class="lp-tier__unit">$55.000 c/u</span>
+                </div>
+              </a>
+              <a href="/cart/{{ ez_vid }}:3?discount=ENZIMAS3X" class="lp-tier">
+                <div class="lp-tier__left">
+                  <span class="lp-tier__qty">3 frascos</span>
+                  <span class="lp-tier__saving">Ahorrás $30.000</span>
+                </div>
+                <div class="lp-tier__right">
+                  <span class="lp-tier__price">$150.000</span>
+                  <span class="lp-tier__unit">$50.000 c/u</span>
+                </div>
+              </a>
+            </div>
+          {%- endif -%}
 
           {%- comment -%} ── Botón 2 unidades en promoción (link nativo, sin fetch) ── {%- endcomment -%}
-          {%- if product.selected_or_first_available_variant.available -%}
+          {%- if product.selected_or_first_available_variant.available and product.handle != 'physicians-choice-enzimas-digestivas' -%}
             {%- if product.handle == 'lunea-go' -%}
               {%- assign lp_2x_discount = 'LUNEAGO2X' -%}
               {%- assign lp_2x_label = '$230.000 las 2 — ahorrás $40.000' -%}
-            {%- elsif product.handle == 'physicians-choice-enzimas-digestivas' -%}
-              {%- assign lp_2x_discount = 'ENZIMAS2X' -%}
-              {%- assign lp_2x_label = '$110.000 las 2 — ahorrás $10.000' -%}
             {%- else -%}
               {%- assign lp_2x_discount = 'LUNEA2X' -%}
               {%- assign lp_2x_label = '$390.000 las 2 — ahorrás $48.000' -%}
