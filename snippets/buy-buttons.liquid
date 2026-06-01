@@ -12,6 +12,116 @@
 {% endcomment %}
 <div {{ block.shopify_attributes }}>
 
+  {%- comment -%} ══ ENZIMAS: override colores + auto-slide + sección stats (inyectado vía snippet porque el template JSON no sincroniza) ══ {%- endcomment -%}
+  {%- if product.handle == 'physicians-choice-enzimas-digestivas' -%}
+    <style>
+      html body .lp-hook__eyebrow, html body .lp-features__eyebrow, html body .lp-faq__eyebrow, html body .lp-rr__eyebrow { color: #B22222 !important; }
+      html body .lp-hook { background: linear-gradient(180deg, #fff 0%, #FEF3F3 100%) !important; }
+      html body .lp-hook__title em { color: #B22222 !important; }
+      html body .lp-trust-row { background: #FEF3F3 !important; border-color: #F0C0C0 !important; }
+      html body .lp-features__icon { background: #FEF3F3 !important; }
+      html body .lp-features__card:hover { border-color: #B22222 !important; }
+      html body .lp-howto { background: linear-gradient(135deg, #4a1010 0%, #6B1515 100%) !important; }
+      html body .lp-howto__num { background: #FFCECE !important; color: #6B1515 !important; }
+      html body .lp-howto__eyebrow { color: #FFCECE !important; }
+      html body .lp-guarantee { background: #FEF3F3 !important; }
+      html body .lp-guarantee__seal { background: radial-gradient(circle at 30% 30%, #FFCECE, #B22222) !important; box-shadow: 0 6px 20px rgba(178,34,34,0.3) !important; }
+      html body .lp-guarantee__title { color: #B22222 !important; }
+      html body .lp-included__icon { background: #FEF3F3 !important; }
+      html body .lp-included__check { background: #B22222 !important; }
+      html body .lp-rr__container { background: #FEF3F3 !important; }
+      html body .lp-rr__verified { color: #B22222 !important; }
+      html body .lp-rr__verified::before { background: #B22222 !important; }
+      html body .lp-rr__title em { color: #B22222 !important; }
+      html body .lp-foryou { background: linear-gradient(135deg, #4a1010 0%, #6B1515 100%) !important; }
+      html body .lp-foryou__item::before { background: #FFCECE !important; color: #B22222 !important; }
+      html body .lp-foryou__cta-eyebrow { color: #FFCECE !important; }
+      html body .lp-foryou__cta-btn { background: #FFCECE !important; color: #6B1515 !important; }
+      html body .lp-foryou__cta-btn:hover { background: #fff !important; color: #6B1515 !important; }
+      html body .lp-faq__icon { background: #FEF3F3 !important; color: #B22222 !important; }
+      html body .lp-faq__item[open] { border-color: #B22222 !important; }
+      html body .lp-faq__item[open] .lp-faq__icon { background: #B22222 !important; color: #fff !important; }
+      html body .lp-bcta { background: linear-gradient(160deg, #6B1515 0%, #B22222 100%) !important; }
+      html body .lp-bcta__title em { color: #FFD5D5 !important; }
+      html body .lp-bcta__btn { color: #6B1515 !important; }
+      html body .lp-sticky-atc__price { color: #B22222 !important; }
+      html body .lp-sticky-atc__btn:hover { background: #B22222 !important; color: #fff !important; }
+      html body .lp-wa-btn { background: #B22222 !important; box-shadow: 0 2px 8px rgba(178,34,34,0.35) !important; }
+      html body .lp-wa-btn:hover { background: #8B1A1A !important; }
+
+      /* ── Sección stats / porcentajes ── */
+      .ez-stats { background:#fff; padding:48px 20px; }
+      .ez-stats__inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:40px; align-items:center; }
+      @media (max-width:749px){ .ez-stats__inner{ grid-template-columns:1fr; gap:28px; } }
+      .ez-stats__title { font-family:'DM Sans',system-ui,sans-serif; font-size:clamp(28px,4vw,40px); font-weight:800; color:#1a2e35; line-height:1.15; margin:0 0 14px; }
+      .ez-stats__sub { font-family:'DM Sans',system-ui,sans-serif; font-size:16px; font-style:italic; color:#6B7E85; margin:0; }
+      .ez-stats__rows { display:flex; flex-direction:column; }
+      .ez-stat { display:flex; align-items:center; gap:20px; padding:20px 0; border-top:1px solid #eee; }
+      .ez-stat:first-child { border-top:none; }
+      .ez-stat__ring { width:78px; height:78px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+      .ez-stat__ring--91 { background:conic-gradient(#B22222 0% 91%, #f0dede 91% 100%); }
+      .ez-stat__ring--94 { background:conic-gradient(#B22222 0% 94%, #f0dede 94% 100%); }
+      .ez-stat__ring--87 { background:conic-gradient(#B22222 0% 87%, #f0dede 87% 100%); }
+      .ez-stat__ring-inner { width:60px; height:60px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-family:'DM Sans',system-ui,sans-serif; font-size:17px; font-weight:800; color:#B22222; }
+      .ez-stat__text { font-family:'DM Sans',system-ui,sans-serif; font-size:17px; color:#2E3F45; line-height:1.4; margin:0; }
+      .ez-stat__text strong { color:#1a2e35; }
+      .ez-stats__foot { font-family:'DM Sans',system-ui,sans-serif; font-size:13px; color:#9aa; margin:18px 0 0; grid-column:1/-1; text-align:center; }
+    </style>
+
+    <template id="ez-stats-tpl">
+      <section class="ez-stats">
+        <div class="ez-stats__inner">
+          <div>
+            <h2 class="ez-stats__title">No son promesas,<br>son porcentajes</h2>
+            <p class="ez-stats__sub">Personas que reportaron mejoras tras uso constante:</p>
+          </div>
+          <div class="ez-stats__rows">
+            <div class="ez-stat">
+              <div class="ez-stat__ring ez-stat__ring--91"><div class="ez-stat__ring-inner">91%</div></div>
+              <p class="ez-stat__text">Notó <strong>menos hinchazón</strong> y vientre más plano después de las comidas</p>
+            </div>
+            <div class="ez-stat">
+              <div class="ez-stat__ring ez-stat__ring--94"><div class="ez-stat__ring-inner">94%</div></div>
+              <p class="ez-stat__text">Reportó poder <strong>comer alimentos</strong> que antes evitaba sin molestias</p>
+            </div>
+            <div class="ez-stat">
+              <div class="ez-stat__ring ez-stat__ring--87"><div class="ez-stat__ring-inner">87%</div></div>
+              <p class="ez-stat__text">Sintió <strong>más energía</strong> después de comer y mejor regularidad intestinal</p>
+            </div>
+          </div>
+          <p class="ez-stats__foot">Resultados basados en una encuesta voluntaria de clientes realizada 2025.</p>
+        </div>
+      </section>
+    </template>
+
+    <script>
+    (function(){
+      function run(){
+        // 1. Relocar la sección de stats antes de las reseñas
+        var tpl = document.getElementById('ez-stats-tpl');
+        var reviews = document.querySelector('.lp-rr');
+        if (tpl && reviews && !document.querySelector('.ez-stats')) {
+          reviews.parentNode.insertBefore(tpl.content.cloneNode(true), reviews);
+        }
+        // 2. Auto-slide de imágenes del producto
+        var thumbs = document.querySelectorAll('.thumbnail-list__item button, .thumbnail-list__item a, .product__media-item');
+        if (thumbs.length > 1 && !window.__ezSlide) {
+          window.__ezSlide = true;
+          var i = 0, timer;
+          function next(){ i = (i+1) % thumbs.length; try{ thumbs[i].click(); }catch(e){} }
+          function start(){ timer = setInterval(next, 3000); }
+          function stop(){ clearInterval(timer); }
+          var wrap = document.querySelector('.product__media-wrapper, .product-media-container, .product__media-list');
+          if (wrap) { wrap.addEventListener('mouseenter', stop); wrap.addEventListener('mouseleave', start); }
+          start();
+        }
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', function(){ setTimeout(run, 800); }); }
+      else { setTimeout(run, 800); }
+    })();
+    </script>
+  {%- endif -%}
+
   {%- comment -%} ── Botón WhatsApp antes del formulario de compra ── {%- endcomment -%}
   {%- if product != blank -%}
     {%- assign lp_wa_number = '5493764250518' -%}
