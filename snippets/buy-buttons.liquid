@@ -170,6 +170,9 @@
             {%- if product.handle == 'lunea-go' -%}
               {%- assign lp_2x_discount = 'LUNEAGO2X' -%}
               {%- assign lp_2x_label = '$230.000 las 2 — ahorrás $40.000' -%}
+            {%- elsif product.handle == 'physicians-choice-enzimas-digestivas' -%}
+              {%- assign lp_2x_discount = 'ENZIMAS2X' -%}
+              {%- assign lp_2x_label = '$110.000 las 2 — ahorrás $10.000' -%}
             {%- else -%}
               {%- assign lp_2x_discount = 'LUNEA2X' -%}
               {%- assign lp_2x_label = '$390.000 las 2 — ahorrás $48.000' -%}
