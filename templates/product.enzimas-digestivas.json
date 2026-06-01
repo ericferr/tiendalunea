@@ -1,18 +1,5 @@
 {
   "sections": {
-    "auto-slide": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<script>(function(){function init(){var thumbs=document.querySelectorAll('.thumbnail-list__item button,.thumbnail-list__item a,.product__media-item');if(thumbs.length<=1)return;var i=0,timer;function next(){i=(i+1)%thumbs.length;thumbs[i].click()}function start(){timer=setInterval(next,3000)}function stop(){clearInterval(timer)}var wrap=document.querySelector('.product__media-wrapper,.product-media-container,.product__media-list');if(wrap){wrap.addEventListener('mouseenter',stop);wrap.addEventListener('mouseleave',start)}start()}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init)}else{setTimeout(init,1200)}})()</script>",
-        "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "color-override": {
-      "type": "lp-enzimas-colors",
-      "settings": {}
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -149,52 +136,7 @@
           }
         }
       },
-        "r6": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/f46d9d19-f097-4159-b686-868a181bcad3.webp",
-            "tag": "COMPRA VERIFICADA",
-            "quote": "La tomo antes de cada almuerzo y ya no siento esa pesadez",
-            "text": "Trabajo desde casa y almorzaba fuerte todos los días — y todas las tardes terminaba tirada en el sofá sin poder concentrarme. Pensé que era normal hasta que empecé con estas enzimas. La diferencia fue gradual pero clara: menos pesadez, más energía en las tardes, y el abdomen ya no se me infla como antes. Lo que más me convenció fue la combinación — enzimas más probióticos más prebióticos en una sola cápsula. No tuve que comprar tres suplementos distintos. Lleva dos meses conmigo y lo sigo tomando.",
-            "name": "Sofía L.",
-            "city": "Medellín"
-          }
-        },
-        "r7": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/2fe7ca4d-e5ec-4eae-9991-0bca498365a3.webp",
-            "tag": "RESULTADO REAL",
-            "quote": "Después de años con problemas digestivos por fin encontré algo que funciona",
-            "text": "Tengo más de 40 años lidiando con una digestión difícil. Gases, inflamación, colon irritable según algunos médicos. Probé de todo — dietas, medicamentos, tés. Physician's Choice lo encontré recomendado en un grupo de salud y lo pedí sin mucha expectativa. Al mes de uso noté que los episodios de inflamación se redujeron bastante. No desaparecieron del todo pero la frecuencia e intensidad bajaron mucho. Me da confianza que la fórmula está desarrollada con médicos y que el frasco lo dice todo: 16 enzimas, probióticos activos, prebióticos. Es lo más completo que tomé.",
-            "name": "Patricia V.",
-            "city": "Cali"
-          }
-        },
-        "r8": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/af99f8c5-5533-40ef-a01d-c947a98cea32.webp",
-            "tag": "FOTO REAL",
-            "quote": "Lo recomendé a toda mi familia y todos notaron la diferencia",
-            "text": "Empecé a tomarlo yo primero porque tenía problemas de hinchazón después de las comidas principales. En tres semanas ya notaba mejora. Convencí a mi esposo que también sufría de acidez y digestión lenta, y a mi mamá que tiene problemas intestinales crónicos. Los tres lo tomamos hace cuatro meses. Mi esposo dejó el antiácido que tomaba todos los días. Mi mamá dice que es lo mejor que probó para el intestino. Y yo estoy más que satisfecha. El precio es muy accesible para lo que ofrece y el servicio fue excelente — llegó rápido y en perfectas condiciones.",
-            "name": "Margarita O.",
-            "city": "Bucaramanga"
-          }
-        },
-        "r9": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/13cd7b6c-2805-4814-b718-7df249a67ae0_5a7b0017-20bd-4c77-949d-77ee72869c5d.webp",
-            "tag": "COMPRA VERIFICADA",
-            "quote": "Ideal para los que comen asado y comidas pesadas seguido",
-            "text": "Soy del tipo que come bien — asado los fines de semana, almuerzo fuerte, no tengo problema con la comida copiosa. Pero los últimos dos años empecé a sentir más el impacto: pesadez, gases, a veces dolor de estómago después de comer carne. Un amigo me habló de estas enzimas y las probé. La diferencia en comidas pesadas es notable — el cuerpo las procesa mejor y el malestar post-comida casi desapareció. Las tomo media hora antes de las comidas grandes y funciona muy bien. Para los que disfrutan comer sin culpa, esto es una solución práctica y sin efectos secundarios.",
-            "name": "Roberto M.",
-            "city": "Medellín"
-          }
-        }
-      },
-      "block_order": ["r1","r2","r3","r4","r5","r6","r7","r8","r9"],
+      "block_order": ["r1","r2","r3","r4","r5"],
       "settings": {
         "eyebrow": "Lo que dicen quienes ya lo probaron",
         "title": "Resultados reales de personas reales",
@@ -239,5 +181,5 @@
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre las Enzimas Digestivas Physician's Choice." } }
   },
-  "order": ["main","trust-row","hook","features","howto","included","guarantee","real-reviews","foryou","faq","bottom-cta","sticky-atc","whatsapp-float","auto-slide","color-override"]
+  "order": ["main","trust-row","hook","features","howto","included","guarantee","real-reviews","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
 }
