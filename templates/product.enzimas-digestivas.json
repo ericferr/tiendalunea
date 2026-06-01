@@ -1,5 +1,14 @@
 {
   "sections": {
+    "auto-slide": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script>(function(){function init(){var thumbs=document.querySelectorAll('.thumbnail-list__item button,.thumbnail-list__item a,.product__media-item');if(thumbs.length<=1)return;var i=0,timer;function next(){i=(i+1)%thumbs.length;thumbs[i].click()}function start(){timer=setInterval(next,3000)}function stop(){clearInterval(timer)}var wrap=document.querySelector('.product__media-wrapper,.product-media-container,.product__media-list');if(wrap){wrap.addEventListener('mouseenter',stop);wrap.addEventListener('mouseleave',start)}start()}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init)}else{setTimeout(init,1200)}})()</script>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "color-override": {
       "type": "custom-liquid",
       "settings": {
@@ -235,5 +244,5 @@
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre las Enzimas Digestivas Physician's Choice." } }
   },
-  "order": ["main","trust-row","hook","features","howto","included","guarantee","real-reviews","foryou","faq","bottom-cta","sticky-atc","whatsapp-float","color-override"]
+  "order": ["main","trust-row","hook","features","howto","included","guarantee","real-reviews","foryou","faq","bottom-cta","sticky-atc","whatsapp-float","auto-slide","color-override"]
 }
