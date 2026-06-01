@@ -1,0 +1,97 @@
+<style>
+  /* ── Enzimas Digestivas — override completo de colores ── */
+
+  /* Variables */
+  :root {
+    --lp-brand: #B22222 !important;
+    --lp-brand-soft: #FEF3F3 !important;
+    --lp-brand-2: #E88080 !important;
+    --lp-accent: #FFCECE !important;
+    --lp-border: #F0C0C0 !important;
+    --lp-success: #B22222 !important;
+  }
+
+  /* Eyebrows / labels */
+  .lp-hook__eyebrow,
+  .lp-features__eyebrow,
+  .lp-faq__eyebrow,
+  .lp-rr__eyebrow { color: #B22222 !important; }
+
+  /* Hook */
+  .lp-hook { background: linear-gradient(180deg, #fff 0%, #FEF3F3 100%) !important; }
+  .lp-hook__title em { color: #B22222 !important; }
+
+  /* Trust row */
+  .lp-trust-row { background: #FEF3F3 !important; border-color: #F0C0C0 !important; }
+
+  /* Features */
+  .lp-features__icon { background: #FEF3F3 !important; }
+  .lp-features__card:hover { border-color: #B22222 !important; }
+
+  /* How-to */
+  .lp-howto__num { background: #FFCECE !important; color: #6B1515 !important; }
+  .lp-howto__eyebrow { color: #FFCECE !important; }
+
+  /* Guarantee */
+  .lp-guarantee { background: #FEF3F3 !important; }
+  .lp-guarantee__seal {
+    background: radial-gradient(circle at 30% 30%, #FFCECE, #B22222) !important;
+    box-shadow: 0 6px 20px rgba(178, 34, 34, 0.3) !important;
+  }
+  .lp-guarantee__title { color: #B22222 !important; }
+
+  /* Included */
+  .lp-included__icon { background: #FEF3F3 !important; }
+  .lp-included__check { background: #B22222 !important; }
+
+  /* Real reviews */
+  .lp-rr__container { background: #FEF3F3 !important; }
+  .lp-rr__verified { color: #B22222 !important; }
+  .lp-rr__verified::before { background: #B22222 !important; }
+  .lp-rr__title em { color: #B22222 !important; }
+
+  /* For you */
+  .lp-foryou__item::before { background: #FFCECE !important; color: #B22222 !important; }
+  .lp-foryou__cta-eyebrow { color: #FFCECE !important; }
+  .lp-foryou__cta-btn { background: #FFCECE !important; color: #6B1515 !important; }
+  .lp-foryou__cta-btn:hover { background: #fff !important; color: #6B1515 !important; }
+
+  /* FAQ */
+  .lp-faq__icon { background: #FEF3F3 !important; color: #B22222 !important; }
+  .lp-faq__item[open] { border-color: #B22222 !important; }
+  .lp-faq__item[open] .lp-faq__icon { background: #B22222 !important; color: #fff !important; }
+  .lp-faq__q { color: #2E3F45; }
+
+  /* Bottom CTA (colores hardcodeados en la sección) */
+  .lp-bcta { background: linear-gradient(160deg, #6B1515 0%, #B22222 100%) !important; }
+  .lp-bcta__title em { color: #FFD5D5 !important; }
+  .lp-bcta__btn { color: #6B1515 !important; }
+
+  /* Sticky ATC */
+  .lp-sticky-atc__price { color: #B22222 !important; }
+  .lp-sticky-atc__btn:hover { background: #B22222 !important; color: #fff !important; }
+
+  /* Buy buttons */
+  .lp-wa-btn {
+    background: #B22222 !important;
+    box-shadow: 0 2px 8px rgba(178, 34, 34, 0.35) !important;
+  }
+  .lp-wa-btn:hover { background: #8B1A1A !important; }
+  .product-form__submit.button--primary {
+    background: #B22222 !important;
+    border-color: #B22222 !important;
+    box-shadow: 0 4px 14px rgba(178, 34, 34, 0.4) !important;
+  }
+  .product-form__submit.button--primary:hover {
+    background: #8B1A1A !important;
+    border-color: #8B1A1A !important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Enzimas — Colores",
+  "settings": [],
+  "presets": [{ "name": "Enzimas — Colores" }]
+}
+{% endschema %}
