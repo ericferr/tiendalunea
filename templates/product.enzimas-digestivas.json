@@ -1,5 +1,14 @@
 {
   "sections": {
+    "color-override": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>:root{--lp-brand:#B22222;--lp-brand-soft:#FEF3F3;--lp-accent:#F5CECE;--lp-border:#F0C0C0}.lp-wa-btn{background:#B22222 !important;box-shadow:0 2px 8px rgba(178,34,34,0.35) !important}.lp-wa-btn:hover{background:#8B1A1A !important;box-shadow:0 4px 14px rgba(178,34,34,0.45) !important}.product-form__submit.button--primary{background:#B22222 !important;border-color:#B22222 !important;box-shadow:0 4px 14px rgba(178,34,34,0.4) !important}.product-form__submit.button--primary:hover{background:#8B1A1A !important;border-color:#8B1A1A !important}.lp-btn-2x{background:#B22222 !important;box-shadow:0 2px 8px rgba(178,34,34,0.35) !important}.lp-btn-2x:hover{background:#8B1A1A !important}</style>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -181,5 +190,5 @@
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre las Enzimas Digestivas Physician's Choice." } }
   },
-  "order": ["main","trust-row","hook","features","howto","included","guarantee","real-reviews","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": ["color-override","main","trust-row","hook","features","howto","included","guarantee","real-reviews","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
 }
