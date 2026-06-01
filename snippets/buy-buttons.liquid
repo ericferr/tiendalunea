@@ -167,67 +167,116 @@
           {%- endif -%}
           {%- endunless -%}
 
-          {%- comment -%} ── Botones tiers enzimas digestivas ── {%- endcomment -%}
+          {%- comment -%} ── Selector de cantidad enzimas digestivas ── {%- endcomment -%}
           {%- if product.handle == 'physicians-choice-enzimas-digestivas' and product.selected_or_first_available_variant.available -%}
             {%- assign ez_vid = product.selected_or_first_available_variant.id -%}
             <style>
-              .lp-tiers { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
-              .lp-tier {
-                display: flex; align-items: center; justify-content: space-between;
-                padding: 14px 18px; border-radius: 10px; text-decoration: none;
+              .lp-qty-sel { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+              .lp-qty-opt {
+                display: flex; align-items: center; gap: 14px;
+                padding: 14px 18px; border-radius: 10px; cursor: pointer;
                 border: 2px solid #e8c4c4; background: #fff; color: #2E3F45;
                 font-family: 'DM Sans', system-ui, sans-serif;
-                transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
-                position: relative;
+                transition: border-color 0.2s, box-shadow 0.2s;
+                position: relative; user-select: none;
               }
-              .lp-tier:hover { border-color: #B22222; box-shadow: 0 4px 14px rgba(178,34,34,0.15); transform: translateY(-1px); }
-              .lp-tier--popular { border-color: #B22222; background: #FEF3F3; }
-              .lp-tier__left { display: flex; flex-direction: column; gap: 2px; }
-              .lp-tier__qty { font-size: 15px; font-weight: 700; color: #2E3F45; }
-              .lp-tier__saving { font-size: 12px; color: #B22222; font-weight: 600; }
-              .lp-tier__right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
-              .lp-tier__price { font-size: 17px; font-weight: 800; color: #B22222; }
-              .lp-tier__unit { font-size: 11px; color: #888; }
-              .lp-tier__badge {
+              .lp-qty-opt:hover { border-color: #B22222; }
+              .lp-qty-opt.is-selected { border-color: #B22222; background: #FEF3F3; box-shadow: 0 2px 10px rgba(178,34,34,0.15); }
+              .lp-qty-opt__radio {
+                width: 20px; height: 20px; border-radius: 50%;
+                border: 2px solid #ccc; flex-shrink: 0;
+                display: flex; align-items: center; justify-content: center;
+                transition: border-color 0.2s;
+              }
+              .lp-qty-opt.is-selected .lp-qty-opt__radio {
+                border-color: #B22222; background: #B22222;
+              }
+              .lp-qty-opt.is-selected .lp-qty-opt__radio::after {
+                content: ''; width: 8px; height: 8px;
+                border-radius: 50%; background: #fff;
+              }
+              .lp-qty-opt__info { flex: 1; }
+              .lp-qty-opt__name { font-size: 15px; font-weight: 700; color: #2E3F45; display: block; }
+              .lp-qty-opt__saving { font-size: 12px; color: #B22222; font-weight: 600; }
+              .lp-qty-opt__prices { display: flex; flex-direction: column; align-items: flex-end; }
+              .lp-qty-opt__price { font-size: 17px; font-weight: 800; color: #B22222; }
+              .lp-qty-opt__unit { font-size: 11px; color: #888; }
+              .lp-qty-opt__badge {
                 position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
                 background: #B22222; color: #fff; font-size: 11px; font-weight: 800;
                 padding: 3px 12px; border-radius: 20px; white-space: nowrap;
-                font-family: 'DM Sans', system-ui, sans-serif; letter-spacing: 0.05em;
+                letter-spacing: 0.05em;
               }
+              .lp-qty-cta {
+                display: flex; align-items: center; justify-content: center; gap: 8px;
+                width: 100%; padding: 16px 20px; margin-top: 6px;
+                background: #B22222; color: #fff; border: none; border-radius: 10px;
+                font-size: 16px; font-weight: 700; font-family: 'DM Sans', system-ui, sans-serif;
+                cursor: pointer; text-decoration: none;
+                transition: background 0.2s, transform 0.1s;
+                box-shadow: 0 4px 14px rgba(178,34,34,0.4);
+              }
+              .lp-qty-cta:hover { background: #8B1A1A; transform: translateY(-1px); color: #fff; }
+              .lp-qty-cta:active { transform: translateY(0); }
             </style>
-            <div class="lp-tiers">
-              <a href="/cart/{{ ez_vid }}:1" class="lp-tier">
-                <div class="lp-tier__left">
-                  <span class="lp-tier__qty">1 frasco</span>
-                  <span class="lp-tier__saving">Precio normal</span>
+
+            <div class="lp-qty-sel" id="lp-qty-sel-{{ section_id }}">
+              <div class="lp-qty-opt" data-url="/cart/{{ ez_vid }}:1">
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info">
+                  <span class="lp-qty-opt__name">1 frasco</span>
+                  <span class="lp-qty-opt__saving">Precio normal</span>
                 </div>
-                <div class="lp-tier__right">
-                  <span class="lp-tier__price">$60.000</span>
-                  <span class="lp-tier__unit">$60.000 c/u</span>
+                <div class="lp-qty-opt__prices">
+                  <span class="lp-qty-opt__price">$60.000</span>
+                  <span class="lp-qty-opt__unit">$60.000 c/u</span>
                 </div>
-              </a>
-              <a href="/cart/{{ ez_vid }}:2?discount=ENZIMAS2X" class="lp-tier lp-tier--popular">
-                <span class="lp-tier__badge">⭐ MÁS POPULAR</span>
-                <div class="lp-tier__left">
-                  <span class="lp-tier__qty">2 frascos</span>
-                  <span class="lp-tier__saving">Ahorrás $10.000</span>
+              </div>
+
+              <div class="lp-qty-opt is-selected" data-url="/cart/{{ ez_vid }}:2?discount=ENZIMAS2X">
+                <span class="lp-qty-opt__badge">⭐ MÁS POPULAR</span>
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info">
+                  <span class="lp-qty-opt__name">2 frascos</span>
+                  <span class="lp-qty-opt__saving">Ahorrás $10.000</span>
                 </div>
-                <div class="lp-tier__right">
-                  <span class="lp-tier__price">$110.000</span>
-                  <span class="lp-tier__unit">$55.000 c/u</span>
+                <div class="lp-qty-opt__prices">
+                  <span class="lp-qty-opt__price">$110.000</span>
+                  <span class="lp-qty-opt__unit">$55.000 c/u</span>
                 </div>
-              </a>
-              <a href="/cart/{{ ez_vid }}:3?discount=ENZIMAS3X" class="lp-tier">
-                <div class="lp-tier__left">
-                  <span class="lp-tier__qty">3 frascos</span>
-                  <span class="lp-tier__saving">Ahorrás $30.000</span>
+              </div>
+
+              <div class="lp-qty-opt" data-url="/cart/{{ ez_vid }}:3?discount=ENZIMAS3X">
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info">
+                  <span class="lp-qty-opt__name">3 frascos</span>
+                  <span class="lp-qty-opt__saving">Ahorrás $30.000</span>
                 </div>
-                <div class="lp-tier__right">
-                  <span class="lp-tier__price">$150.000</span>
-                  <span class="lp-tier__unit">$50.000 c/u</span>
+                <div class="lp-qty-opt__prices">
+                  <span class="lp-qty-opt__price">$150.000</span>
+                  <span class="lp-qty-opt__unit">$50.000 c/u</span>
                 </div>
-              </a>
+              </div>
             </div>
+
+            <a href="/cart/{{ ez_vid }}:2?discount=ENZIMAS2X" class="lp-qty-cta" id="lp-qty-cta-{{ section_id }}">
+              📦 Quiero el mío — Pago al recibirlo
+            </a>
+
+            <script>
+            (function() {
+              var sel = document.getElementById('lp-qty-sel-{{ section_id }}');
+              var cta = document.getElementById('lp-qty-cta-{{ section_id }}');
+              if (!sel || !cta) return;
+              sel.querySelectorAll('.lp-qty-opt').forEach(function(opt) {
+                opt.addEventListener('click', function() {
+                  sel.querySelectorAll('.lp-qty-opt').forEach(function(o) { o.classList.remove('is-selected'); });
+                  opt.classList.add('is-selected');
+                  cta.href = opt.dataset.url;
+                });
+              });
+            })();
+            </script>
           {%- endif -%}
 
           {%- comment -%} ── Botón 2 unidades en promoción (link nativo, sin fetch) ── {%- endcomment -%}
