@@ -149,8 +149,23 @@
     </script>
   {%- endif -%}
 
-  {%- comment -%} ── Botón WhatsApp antes del formulario de compra ── {%- endcomment -%}
+  {%- comment -%} ── Badges de confianza (enzimas) o botón WhatsApp (resto) ── {%- endcomment -%}
   {%- if product != blank -%}
+    {%- if product.handle == 'physicians-choice-enzimas-digestivas' -%}
+      <div class="ez-badges">
+        <div class="ez-badge"><span class="ez-badge__ic">🩺</span><span class="ez-badge__tx">Desarrollado<br>con médicos</span></div>
+        <div class="ez-badge"><span class="ez-badge__ic">🇺🇸</span><span class="ez-badge__tx">Marca #1<br>en EE.UU.</span></div>
+        <div class="ez-badge"><span class="ez-badge__ic">🌿</span><span class="ez-badge__tx">Fórmula<br>natural</span></div>
+        <div class="ez-badge"><span class="ez-badge__ic">🔬</span><span class="ez-badge__tx">Sin efectos<br>secundarios</span></div>
+      </div>
+      <style>
+        .ez-badges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+        .ez-badge { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 5px; padding: 12px 6px; background: #FEF3F3; border: 1px solid #F0C0C0; border-radius: 10px; }
+        .ez-badge__ic { font-size: 24px; line-height: 1; }
+        .ez-badge__tx { font-family: 'DM Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #6B1515; line-height: 1.25; }
+        @media (max-width: 480px) { .ez-badges { grid-template-columns: repeat(2, 1fr); } .ez-badge__tx { font-size: 12px; } }
+      </style>
+    {%- else -%}
     {%- assign lp_wa_number = '5493764250518' -%}
     {%- assign lp_wa_msg = 'Hola%21%20Vi%20el%20Extractor%20Lunea%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20antes%20de%20comprar.%20%C2%BFMe%20pueden%20ayudar%3F' -%}
     <a
@@ -165,6 +180,7 @@
       </svg>
       <span>¿Es el indicado para mí? Consultar gratis 💬</span>
     </a>
+    {%- endif -%}
     <style>
       .lp-wa-btn {
         display: flex;
