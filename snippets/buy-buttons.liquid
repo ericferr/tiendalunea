@@ -117,12 +117,20 @@
           grid.dataset.ezExtra = '1';
           grid.appendChild(extra.content.cloneNode(true));
         }
-        // 2. Auto-slide de imágenes del producto
+        // 2. Auto-slide de imágenes del producto (sin empujar el scroll)
         var thumbs = document.querySelectorAll('.thumbnail-list__item button, .thumbnail-list__item a, .product__media-item');
         if (thumbs.length > 1 && !window.__ezSlide) {
           window.__ezSlide = true;
           var i = 0, timer;
-          function next(){ i = (i+1) % thumbs.length; try{ thumbs[i].click(); }catch(e){} }
+          function clickNoScroll(elm){
+            var sx = window.scrollX, sy = window.scrollY;
+            try { elm.click(); } catch(e){}
+            // Restaurar posición inmediatamente y en los próximos frames
+            window.scrollTo(sx, sy);
+            requestAnimationFrame(function(){ window.scrollTo(sx, sy); });
+            setTimeout(function(){ window.scrollTo(sx, sy); }, 50);
+          }
+          function next(){ i = (i+1) % thumbs.length; clickNoScroll(thumbs[i]); }
           function start(){ timer = setInterval(next, 3000); }
           function stop(){ clearInterval(timer); }
           var wrap = document.querySelector('.product__media-wrapper, .product-media-container, .product__media-list');
