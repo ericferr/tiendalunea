@@ -15,6 +15,10 @@
   {%- comment -%} ══ ENZIMAS: override colores + auto-slide + sección stats (inyectado vía snippet porque el template JSON no sincroniza) ══ {%- endcomment -%}
   {%- if product.handle == 'physicians-choice-enzimas-digestivas' -%}
     <style>
+      /* ── Precio principal más grande y en rojo ── */
+      html body .price__sale .price-item--sale, html body .price .price-item--sale { font-size: 34px !important; font-weight: 800 !important; color: #B22222 !important; line-height: 1.05 !important; }
+      html body .price__sale .price-item--regular, html body .price s .price-item { font-size: 19px !important; color: #999 !important; }
+      html body .price__badge-sale, html body .price .badge { background: #B22222 !important; color: #fff !important; font-weight: 700 !important; }
       html body .lp-hook__eyebrow, html body .lp-features__eyebrow, html body .lp-faq__eyebrow, html body .lp-rr__eyebrow { color: #B22222 !important; }
       html body .lp-hook { background: linear-gradient(180deg, #fff 0%, #FEF3F3 100%) !important; }
       html body .lp-hook__title em { color: #B22222 !important; }
