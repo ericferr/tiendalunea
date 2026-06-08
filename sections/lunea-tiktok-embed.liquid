@@ -1,0 +1,52 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section lp-tk-wrap" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="lp-eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.title != blank -%}
+      <h2 class="lp-section-title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    <div class="lp-tk-center">
+      <blockquote
+        class="tiktok-embed"
+        cite="{{ section.settings.tiktok_url }}"
+        data-video-id="{{ section.settings.video_id }}"
+        style="max-width: 605px; min-width: 325px;"
+      >
+        <section></section>
+      </blockquote>
+    </div>
+
+  </div>
+</div>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+<style>
+.lp-tk-wrap { padding: 2rem 1rem; }
+.lp-tk-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.lp-tk-center .tiktok-embed {
+  margin: 0 auto;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Lunea · TikTok embed",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta superior", "default": "VIRAL EN TIKTOK" },
+    { "type": "text", "id": "title", "label": "Título", "default": "El video que está conquistando las redes" },
+    { "type": "text", "id": "tiktok_url", "label": "URL del video TikTok", "default": "https://www.tiktok.com/@mx09037/video/7617047443028446485" },
+    { "type": "text", "id": "video_id", "label": "ID del video (número al final de la URL)", "default": "7617047443028446485" }
+  ],
+  "presets": [{ "name": "Lunea · TikTok embed" }]
+}
+{% endschema %}
