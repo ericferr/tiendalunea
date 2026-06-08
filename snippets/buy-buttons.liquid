@@ -325,8 +325,6 @@
           {%- endunless -%}
 
           {%- comment -%} ── Selector de cantidad enzimas digestivas y crema ── {%- endcomment -%}
-          {%- assign lp_qty_handles = 'physicians-choice-enzimas-digestivas,crema-nida-youthfull-100ml,formula-juvenil-asiatica' | split: ',' -%}
-          {%- if lp_qty_handles contains product.handle and product.selected_or_first_available_variant.available -%}
           {%- assign is_crema = false -%}
           {%- if product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' -%}{%- assign is_crema = true -%}{%- endif -%}
           {%- if product.handle == 'physicians-choice-enzimas-digestivas' -%}
@@ -557,7 +555,6 @@
             })();
             </script>
 
-          {%- endif -%}
           {%- endif -%}
 
           {%- comment -%} ── Botón 2 unidades en promoción (link nativo, sin fetch) ── {%- endcomment -%}
