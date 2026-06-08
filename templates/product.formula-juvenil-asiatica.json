@@ -13,7 +13,7 @@
         "share": { "type": "share", "settings": { "share_label": "Share" } }
       },
       "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","share"],
-      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-1", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-6", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
     },
     "trust-row": {
       "type": "lunea-product-trust-row",
@@ -24,7 +24,7 @@
         "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
       },
       "block_order": ["t1","t2","t3","t4"],
-      "settings": {}
+      "settings": { "color_scheme": "scheme-7" }
     },
     "hook": {
       "type": "lunea-product-hook",
@@ -45,7 +45,7 @@
         "b6": { "type": "feature", "settings": { "icon": "🪶", "title": "Textura ultralightweight — sin residuo", "text": "Se absorbe en segundos. Sin sensación grasa, sin poros tapados, sin brillos indeseados. Funciona sola o debajo del maquillaje perfectamente." } }
       },
       "block_order": ["b1","b2","b3","b4","b5","b6"],
-      "settings": { "eyebrow": "Por qué funciona", "title": "Una crema. Cuatro activos clave." }
+      "settings": { "eyebrow": "Por qué funciona", "title": "Una crema. Cuatro activos clave.", "color_scheme": "scheme-6" }
     },
     "howto": {
       "type": "lunea-product-howto",
@@ -141,7 +141,8 @@
       "settings": {
         "eyebrow": "Lo que dicen quienes ya la probaron",
         "title": "Resultados reales de personas reales",
-        "subtitle": "Compraron con el mismo beneficio que vos: pago contra entrega, sin riesgo."
+        "subtitle": "Compraron con el mismo beneficio que vos: pago contra entrega, sin riesgo.",
+        "color_scheme": "scheme-6"
       }
     },
     "foryou": {
@@ -181,7 +182,8 @@
         "eyebrow": "¿Lista para transformar tu piel?",
         "title": "Tu rostro merece los mejores activos",
         "subtitle": "Pedila hoy y pagá cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
-        "button_text": "Comprar Fórmula Rostro Juvenil"
+        "button_text": "Comprar Fórmula Rostro Juvenil",
+        "color_scheme": "scheme-7"
       }
     },
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
