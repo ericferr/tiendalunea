@@ -449,6 +449,9 @@
             {%- if product.handle == 'lunea-go' -%}
               {%- assign lp_2x_discount = 'LUNEAGO2X' -%}
               {%- assign lp_2x_label = '$230.000 las 2 — ahorrás $40.000' -%}
+            {%- elsif product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' -%}
+              {%- assign lp_2x_discount = 'CREMA2X' -%}
+              {%- assign lp_2x_label = '$159.800 las 2 — ahorrás $20.000' -%}
             {%- else -%}
               {%- assign lp_2x_discount = 'LUNEA2X' -%}
               {%- assign lp_2x_label = '$390.000 las 2 — ahorrás $48.000' -%}
