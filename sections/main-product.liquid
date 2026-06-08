@@ -495,7 +495,8 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-                {%- if template.suffix == 'lunea' -%}
+                {%- assign lunea_suffixes = 'lunea,enzimas-digestivas,crema-nida-youthfull-100ml,formula-juvenil-asiatica' | split: ',' -%}
+                {%- if lunea_suffixes contains template.suffix -%}
                   {%- render 'lunea-urgency-inline' -%}
                 {%- endif -%}
               {%- when 'rating' -%}

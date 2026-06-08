@@ -34,19 +34,6 @@
         "text": "La piel opaca, las líneas de expresión y las manchas oscuras no son inevitables — son señales de que tu piel necesita los ingredientes correctos. Fórmula Rostro Juvenil combina Colágeno Hidrolizado + Centella Asiática + Ácido Hialurónico (x8) + Niacinamida en una sola crema liviana para que tu piel luzca más firme, hidratada y uniforme desde los primeros días."
       }
     },
-    "urgency": {
-      "type": "lunea-product-urgency",
-      "settings": {
-        "min_days": 1,
-        "max_days": 5,
-        "show_viewers": true,
-        "viewers_min": 14,
-        "viewers_max": 42,
-        "show_stock": true,
-        "stock_remaining": 18,
-        "stock_total": 50
-      }
-    },
     "features": {
       "type": "lunea-product-features",
       "blocks": {
@@ -215,5 +202,5 @@
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre la Fórmula Juvenil Asiática." } }
   },
-  "order": ["main","trust-row","hook","urgency","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": ["main","trust-row","hook","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
 }
