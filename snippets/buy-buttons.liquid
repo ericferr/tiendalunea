@@ -169,7 +169,7 @@
         .ez-badge__tx { font-family: 'DM Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #6B1515; line-height: 1.25; }
         @media (max-width: 480px) { .ez-badges { grid-template-columns: repeat(2, 1fr); } .ez-badge__tx { font-size: 12px; } }
       </style>
-    {%- else -%}
+    {%- elsif product.handle == 'extractor-electrico-inalambrico' or product.handle == 'lunea-go' -%}
     {%- assign lp_wa_number = '5493764250518' -%}
     {%- assign lp_wa_msg = 'Hola%21%20Vi%20el%20Extractor%20Lunea%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20antes%20de%20comprar.%20%C2%BFMe%20pueden%20ayudar%3F' -%}
     <a
@@ -295,7 +295,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          {%- unless product.handle == 'physicians-choice-enzimas-digestivas' -%}
+          {%- unless product.handle == 'physicians-choice-enzimas-digestivas' or product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' -%}
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
