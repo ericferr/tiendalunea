@@ -1,8 +1,5 @@
 {{ 'lunea-product.css' | asset_url | stylesheet_tag }}
 
-{%- assign before_img = section.settings.before_image_url -%}
-{%- assign after_img  = section.settings.after_image_url -%}
-
 <div class="lp-section lp-ba-wrap" {{ section.shopify_attributes }}>
   <div class="lp-container">
 
@@ -16,43 +13,44 @@
       <p class="lp-ba-subtitle">{{ section.settings.subtitle }}</p>
     {%- endif -%}
 
-    <div class="lp-ba" id="lp-ba-{{ section.id }}" aria-label="Comparación antes y después">
-
-      <!-- Imagen ANTES (fondo completo) -->
-      <div class="lp-ba__before">
-        {%- if before_img != blank -%}
-          <img src="{{ before_img }}" alt="Antes — piel con imperfecciones" loading="lazy" draggable="false">
-        {%- else -%}
-          <div class="lp-ba__placeholder lp-ba__placeholder--before">
-            <span>ANTES</span>
+    <div class="lp-ba-row">
+      {%- assign slider_count = 0 -%}
+      {%- for i in (1..3) -%}
+        {%- assign before_key = 'before_image_url_' | append: i -%}
+        {%- assign after_key  = 'after_image_url_'  | append: i -%}
+        {%- assign before_img = section.settings[before_key] -%}
+        {%- assign after_img  = section.settings[after_key]  -%}
+        {%- if before_img != blank or after_img != blank -%}
+          {%- assign slider_count = slider_count | plus: 1 -%}
+          <div class="lp-ba lp-ba--{{ slider_count }}" id="lp-ba-{{ section.id }}-{{ i }}" aria-label="Comparación antes y después {{ i }}">
+            <div class="lp-ba__before">
+              {%- if before_img != blank -%}
+                <img src="{{ before_img }}" alt="Antes {{ i }}" loading="lazy" draggable="false">
+              {%- else -%}
+                <div class="lp-ba__placeholder lp-ba__placeholder--before"><span>ANTES</span></div>
+              {%- endif -%}
+              <span class="lp-ba__label lp-ba__label--before">{{ section.settings.label_before | default: 'Antes' }}</span>
+            </div>
+            <div class="lp-ba__after" id="lp-ba-after-{{ section.id }}-{{ i }}">
+              {%- if after_img != blank -%}
+                <img src="{{ after_img }}" alt="Después {{ i }}" loading="lazy" draggable="false">
+              {%- else -%}
+                <div class="lp-ba__placeholder lp-ba__placeholder--after"><span>DESPUÉS</span></div>
+              {%- endif -%}
+              <span class="lp-ba__label lp-ba__label--after">{{ section.settings.label_after | default: 'Después' }}</span>
+            </div>
+            <div class="lp-ba__divider" id="lp-ba-divider-{{ section.id }}-{{ i }}" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+              <div class="lp-ba__line"></div>
+              <div class="lp-ba__handle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M8 5L3 12L8 19" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 5L21 12L16 19" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
           </div>
         {%- endif -%}
-        <span class="lp-ba__label lp-ba__label--before">{{ section.settings.label_before | default: 'Antes' }}</span>
-      </div>
-
-      <!-- Imagen DESPUÉS (recortada por clip) -->
-      <div class="lp-ba__after" id="lp-ba-after-{{ section.id }}">
-        {%- if after_img != blank -%}
-          <img src="{{ after_img }}" alt="Después — piel suave y luminosa" loading="lazy" draggable="false">
-        {%- else -%}
-          <div class="lp-ba__placeholder lp-ba__placeholder--after">
-            <span>DESPUÉS</span>
-          </div>
-        {%- endif -%}
-        <span class="lp-ba__label lp-ba__label--after">{{ section.settings.label_after | default: 'Después' }}</span>
-      </div>
-
-      <!-- Divisor deslizable -->
-      <div class="lp-ba__divider" id="lp-ba-divider-{{ section.id }}" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0" aria-label="Deslizá para comparar">
-        <div class="lp-ba__line"></div>
-        <div class="lp-ba__handle">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M8 5L3 12L8 19" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16 5L21 12L16 19" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-
+      {%- endfor -%}
     </div>
 
     {%- if section.settings.caption != blank -%}
@@ -63,181 +61,121 @@
 </div>
 
 <style>
-.lp-ba-subtitle {
-  text-align: center;
-  color: #4a6070;
-  font-size: 15px;
-  margin: -8px 0 24px;
-  font-family: 'DM Sans', system-ui, sans-serif;
+.lp-ba-subtitle { text-align: center; color: #4a6070; font-size: 15px; margin: -8px 0 24px; font-family: 'DM Sans', system-ui, sans-serif; }
+.lp-ba-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-start;
 }
 .lp-ba {
   position: relative;
-  width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
-  border-radius: 16px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 360px;
+  border-radius: 14px;
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
   cursor: col-resize;
-  box-shadow: 0 8px 32px rgba(42,157,197,0.18);
-  aspect-ratio: 4/3;
+  box-shadow: 0 6px 24px rgba(42,157,197,0.15);
+  aspect-ratio: 3/4;
   background: #eaf6fb;
 }
-.lp-ba__before,
-.lp-ba__after {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+@media (max-width: 600px) {
+  .lp-ba-row { gap: 8px; }
+  .lp-ba { border-radius: 10px; aspect-ratio: 2/3; }
 }
-.lp-ba__before img,
-.lp-ba__after img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  pointer-events: none;
+.lp-ba__before, .lp-ba__after {
+  position: absolute; inset: 0; width: 100%; height: 100%;
 }
-.lp-ba__after {
-  clip-path: inset(0 50% 0 0);
-  transition: clip-path 0.02s linear;
-}
-.lp-ba__placeholder {
+.lp-ba__before img, .lp-ba__after img {
   width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px; font-weight: 800; letter-spacing: 0.1em;
+  object-fit: cover; object-position: center top;
+  display: block; pointer-events: none;
 }
+.lp-ba__after { clip-path: inset(0 50% 0 0); }
+.lp-ba__placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; letter-spacing: 0.1em; }
 .lp-ba__placeholder--before { background: #d4b8a0; color: #7a5c44; }
 .lp-ba__placeholder--after  { background: #c8e6f0; color: #1a5c7a; }
 .lp-ba__label {
-  position: absolute;
-  bottom: 14px;
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  pointer-events: none;
+  position: absolute; bottom: 10px;
+  padding: 4px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; font-family: 'DM Sans', system-ui, sans-serif; pointer-events: none;
 }
-.lp-ba__label--before {
-  left: 14px;
-  background: rgba(0,0,0,0.55);
-  color: #fff;
-}
-.lp-ba__label--after {
-  right: 14px;
-  background: rgba(42,157,197,0.85);
-  color: #fff;
-}
+.lp-ba__label--before { left: 10px; background: rgba(0,0,0,0.55); color: #fff; }
+.lp-ba__label--after  { right: 10px; background: rgba(42,157,197,0.85); color: #fff; }
 .lp-ba__divider {
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 44px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  cursor: col-resize;
+  position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  z-index: 10; cursor: col-resize;
 }
-.lp-ba__line {
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  background: #fff;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-}
+.lp-ba__line { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 3px; background: #fff; box-shadow: 0 0 6px rgba(0,0,0,0.3); }
 .lp-ba__handle {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #2a9dc5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  z-index: 1;
-  transition: transform 0.1s ease, background 0.1s ease;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #2a9dc5; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25); z-index: 1;
+  transition: transform 0.1s ease;
 }
-.lp-ba__handle:hover,
-.lp-ba:active .lp-ba__handle {
-  transform: scale(1.1);
-  background: #1a7a9a;
-}
-.lp-ba-caption {
-  text-align: center;
-  font-size: 12px;
-  color: #8a9aaa;
-  margin-top: 12px;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-style: italic;
-}
-@media (max-width: 600px) {
-  .lp-ba { aspect-ratio: 3/4; border-radius: 12px; }
-  .lp-ba__handle { width: 40px; height: 40px; }
-}
+.lp-ba:active .lp-ba__handle { transform: scale(1.1); }
+.lp-ba-caption { text-align: center; font-size: 12px; color: #8a9aaa; margin-top: 14px; font-family: 'DM Sans', system-ui, sans-serif; font-style: italic; }
 </style>
 
 <script>
 (function () {
-  var wrap     = document.getElementById('lp-ba-{{ section.id }}');
-  var after    = document.getElementById('lp-ba-after-{{ section.id }}');
-  var divider  = document.getElementById('lp-ba-divider-{{ section.id }}');
-  if (!wrap || !after || !divider) return;
+  function initSlider(sectionId, idx) {
+    var wrap    = document.getElementById('lp-ba-' + sectionId + '-' + idx);
+    var after   = document.getElementById('lp-ba-after-' + sectionId + '-' + idx);
+    var divider = document.getElementById('lp-ba-divider-' + sectionId + '-' + idx);
+    if (!wrap || !after || !divider) return;
+    var dragging = false;
 
-  var dragging = false;
+    function setPos(x) {
+      var rect = wrap.getBoundingClientRect();
+      var pct  = Math.min(Math.max((x - rect.left) / rect.width * 100, 1), 99);
+      after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      divider.style.left   = pct + '%';
+      divider.setAttribute('aria-valuenow', Math.round(pct));
+    }
 
-  function setPos(x) {
-    var rect = wrap.getBoundingClientRect();
-    var pct  = Math.min(Math.max((x - rect.left) / rect.width * 100, 1), 99);
-    after.style.clipPath   = 'inset(0 ' + (100 - pct) + '% 0 0)';
-    divider.style.left     = pct + '%';
-    divider.setAttribute('aria-valuenow', Math.round(pct));
+    divider.addEventListener('mousedown', function(e) { dragging = true; e.preventDefault(); });
+    document.addEventListener('mousemove', function(e) { if (dragging) setPos(e.clientX); });
+    document.addEventListener('mouseup',   function()  { dragging = false; });
+    divider.addEventListener('touchstart', function()  { dragging = true; }, { passive: true });
+    document.addEventListener('touchmove',  function(e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    document.addEventListener('touchend',   function()  { dragging = false; });
+    wrap.addEventListener('click', function(e) { setPos(e.clientX); });
+    divider.addEventListener('keydown', function(e) {
+      var rect = wrap.getBoundingClientRect();
+      var cur  = parseFloat(divider.style.left) || 50;
+      if (e.key === 'ArrowLeft')  setPos(rect.left + (cur - 2) / 100 * rect.width);
+      if (e.key === 'ArrowRight') setPos(rect.left + (cur + 2) / 100 * rect.width);
+    });
+
+    // Hint animado al entrar en viewport
+    var hinted = false;
+    var obs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting && !hinted) {
+        hinted = true;
+        var pos = 50, dir = -1;
+        var iv = setInterval(function() {
+          pos += dir * 1.5;
+          if (pos <= 30) dir = 1;
+          if (pos >= 70) { clearInterval(iv); }
+          var rect = wrap.getBoundingClientRect();
+          setPos(rect.left + pos / 100 * rect.width);
+        }, 16);
+      }
+    }, { threshold: 0.4 });
+    obs.observe(wrap);
   }
 
-  // Mouse
-  divider.addEventListener('mousedown', function (e) { dragging = true; e.preventDefault(); });
-  document.addEventListener('mousemove', function (e) { if (dragging) setPos(e.clientX); });
-  document.addEventListener('mouseup',   function ()  { dragging = false; });
-
-  // Touch
-  divider.addEventListener('touchstart', function (e) { dragging = true; }, { passive: true });
-  document.addEventListener('touchmove',  function (e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-  document.addEventListener('touchend',   function ()  { dragging = false; });
-
-  // Click en cualquier parte del contenedor
-  wrap.addEventListener('click', function (e) { setPos(e.clientX); });
-
-  // Teclado (accesibilidad)
-  divider.addEventListener('keydown', function (e) {
-    var rect = wrap.getBoundingClientRect();
-    var cur  = parseFloat(divider.style.left) || 50;
-    if (e.key === 'ArrowLeft')  setPos(rect.left + (cur - 2) / 100 * rect.width);
-    if (e.key === 'ArrowRight') setPos(rect.left + (cur + 2) / 100 * rect.width);
-  });
-
-  // Animación de entrada (hint al usuario)
-  setTimeout(function () {
-    var rect = wrap.getBoundingClientRect();
-    var steps = 0;
-    var dir = -1;
-    var pos = 50;
-    var hint = setInterval(function () {
-      pos += dir * 1.5;
-      if (pos <= 35) dir = 1;
-      if (pos >= 65) { clearInterval(hint); return; }
-      setPos(rect.left + pos / 100 * rect.width);
-      steps++;
-    }, 16);
-  }, 800);
+  var sid = '{{ section.id }}';
+  initSlider(sid, 1);
+  initSlider(sid, 2);
+  initSlider(sid, 3);
 })();
 </script>
 
@@ -245,14 +183,22 @@
 {
   "name": "Lunea · Antes & Después",
   "settings": [
-    { "type": "text",     "id": "eyebrow",          "label": "Etiqueta superior",   "default": "RESULTADOS REALES" },
-    { "type": "text",     "id": "title",             "label": "Título",              "default": "El cambio que hace la diferencia" },
-    { "type": "text",     "id": "subtitle",          "label": "Subtítulo",           "default": "Deslizá para ver la transformación real de la piel con uso continuo de 30 días." },
-    { "type": "text",     "id": "before_image_url",  "label": "URL imagen — ANTES"  },
-    { "type": "text",     "id": "after_image_url",   "label": "URL imagen — DESPUÉS"},
-    { "type": "text",     "id": "label_before",      "label": "Etiqueta ANTES",      "default": "Antes" },
-    { "type": "text",     "id": "label_after",       "label": "Etiqueta DESPUÉS",    "default": "Después" },
-    { "type": "text",     "id": "caption",           "label": "Nota al pie (opcional)", "default": "Resultados individuales pueden variar. Uso continuo recomendado." }
+    { "type": "text",     "id": "eyebrow",           "label": "Etiqueta superior",    "default": "RESULTADOS REALES" },
+    { "type": "text",     "id": "title",              "label": "Título",               "default": "El cambio que hace la diferencia" },
+    { "type": "text",     "id": "subtitle",           "label": "Subtítulo",            "default": "Deslizá para ver la transformación real de la piel con uso continuo de 30 días." },
+    { "type": "header",   "content": "Slider 1" },
+    { "type": "text",     "id": "before_image_url_1", "label": "ANTES — URL imagen 1" },
+    { "type": "text",     "id": "after_image_url_1",  "label": "DESPUÉS — URL imagen 1" },
+    { "type": "header",   "content": "Slider 2" },
+    { "type": "text",     "id": "before_image_url_2", "label": "ANTES — URL imagen 2" },
+    { "type": "text",     "id": "after_image_url_2",  "label": "DESPUÉS — URL imagen 2" },
+    { "type": "header",   "content": "Slider 3" },
+    { "type": "text",     "id": "before_image_url_3", "label": "ANTES — URL imagen 3" },
+    { "type": "text",     "id": "after_image_url_3",  "label": "DESPUÉS — URL imagen 3" },
+    { "type": "header",   "content": "Etiquetas" },
+    { "type": "text",     "id": "label_before",       "label": "Etiqueta ANTES",       "default": "Antes" },
+    { "type": "text",     "id": "label_after",        "label": "Etiqueta DESPUÉS",     "default": "Después" },
+    { "type": "text",     "id": "caption",            "label": "Nota al pie",          "default": "Resultados individuales pueden variar. Uso continuo recomendado." }
   ],
   "presets": [{ "name": "Lunea · Antes & Después" }]
 }
