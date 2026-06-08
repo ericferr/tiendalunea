@@ -229,5 +229,5 @@
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre la Fórmula Juvenil Asiática." } }
   },
-  "order": ["main","trust-row","hook","before-after","features","howto","included","guarantee","video-reviews","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": ["main","trust-row","hook","video-reviews","before-after","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
 }

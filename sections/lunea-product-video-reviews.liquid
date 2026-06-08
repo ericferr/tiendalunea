@@ -2,94 +2,90 @@
 
 <style>
   .lp-vr {
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem;
     font-family: 'DM Sans', system-ui, sans-serif;
   }
   .lp-vr__container { max-width: 1100px; margin: 0 auto; }
-  .lp-vr__head { text-align: center; margin-bottom: 1.75rem; }
+  .lp-vr__head { text-align: center; margin-bottom: 1.25rem; }
   .lp-vr__title {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(28px, 4vw, 42px);
+    font-size: clamp(22px, 3vw, 34px);
     font-weight: 600;
     color: var(--lp-text, #2E3F45);
     line-height: 1.15;
-    margin: 0 0 0.85rem;
-    letter-spacing: -0.01em;
+    margin: 0 0 0.6rem;
   }
   .lp-vr__ig {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
     border: 1px solid var(--lp-border, #E4E8EA);
-    background: #fff;
-    border-radius: 999px;
-    padding: 8px 16px 8px 8px;
-    font-size: 14px;
-    color: var(--lp-text, #2E3F45);
-    font-weight: 500;
+    background: #fff; border-radius: 999px;
+    padding: 6px 14px 6px 8px;
+    font-size: 13px; color: var(--lp-text, #2E3F45); font-weight: 500;
   }
   .lp-vr__ig-logo {
-    width: 28px; height: 28px;
-    border-radius: 7px;
+    width: 24px; height: 24px; border-radius: 6px;
     background: linear-gradient(45deg, #f9ce34, #ee2a7b 50%, #6228d7);
-    display: inline-flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .lp-vr__ig-logo svg { width: 18px; height: 18px; fill: #fff; }
-  .lp-vr__grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+  .lp-vr__ig-logo svg { width: 14px; height: 14px; fill: #fff; }
+
+  /* ── Fila horizontal única ── */
+  .lp-vr__row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
   }
-  @media (max-width: 549px) {
-    .lp-vr__grid { grid-template-columns: 1fr; gap: 1rem; }
-  }
+  .lp-vr__row::-webkit-scrollbar { display: none; }
+
   .lp-vr__card {
     position: relative;
+    flex: 0 0 auto;
+    width: 130px;
     aspect-ratio: 9/16;
     background: #000;
-    border-radius: 14px;
+    border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 6px 24px rgba(46, 63, 69, 0.12);
+    box-shadow: 0 4px 16px rgba(46,63,69,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
+  .lp-vr__card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 28px rgba(42,157,197,0.25);
+  }
+  @media (min-width: 600px) {
+    .lp-vr__card { width: 160px; }
+  }
+
   .lp-vr__video {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
+    pointer-events: none;
   }
   .lp-vr__label {
     position: absolute;
-    top: 14px; left: 14px;
-    background: var(--lp-accent, #D6EEF5);
-    color: var(--lp-text, #2E3F45);
-    font-weight: 800;
-    font-size: 13px;
-    line-height: 1.15;
-    padding: 8px 12px;
-    border-radius: 8px;
+    bottom: 10px; left: 0; right: 0;
+    text-align: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1.2;
+    padding: 18px 8px 8px;
     letter-spacing: 0.02em;
-    text-transform: uppercase;
     font-family: 'DM Sans', system-ui, sans-serif;
-    max-width: 75%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: opacity 0.2s;
   }
-  .lp-vr__play {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(4px);
-    display: flex; align-items: center; justify-content: center;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    pointer-events: none;
-  }
-  .lp-vr__play svg { width: 22px; height: 22px; fill: #fff; margin-left: 3px; }
-  .lp-vr__card.is-playing .lp-vr__play,
-  .lp-vr__card.is-playing .lp-vr__label { opacity: 0; }
-  .lp-vr__card:hover .lp-vr__play { transform: translate(-50%,-50%) scale(1.06); }
+  /* Al hacer tap — mostrar controles */
+  .lp-vr__card.is-active .lp-vr__label { opacity: 0; }
+  .lp-vr__card.is-active .lp-vr__video { pointer-events: auto; }
 </style>
 
 <div class="lp-vr" {{ section.shopify_attributes }}>
@@ -109,24 +105,23 @@
     </div>
 
     {%- if section.blocks.size > 0 -%}
-      <div class="lp-vr__grid">
+      <div class="lp-vr__row" id="lp-vr-row-{{ section.id }}">
         {%- for block in section.blocks -%}
           <div class="lp-vr__card" data-lp-vr-card {{ block.shopify_attributes }}>
-            {%- if block.settings.label != blank -%}
-              <div class="lp-vr__label">{{ block.settings.label }}</div>
-            {%- endif -%}
             <video
               class="lp-vr__video"
               data-lp-vr-video
               src="{{ block.settings.video_url }}"
               {% if block.settings.poster_url != blank %}poster="{{ block.settings.poster_url }}"{% endif %}
-              playsinline
-              preload="metadata"
+              autoplay
               muted
+              loop
+              playsinline
+              preload="auto"
             ></video>
-            <div class="lp-vr__play" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
+            {%- if block.settings.label != blank -%}
+              <div class="lp-vr__label">{{ block.settings.label }}</div>
+            {%- endif -%}
           </div>
         {%- endfor -%}
       </div>
@@ -135,32 +130,41 @@
 </div>
 
 <script>
-  (function() {
-    var cards = document.querySelectorAll('[data-lp-vr-card]');
-    cards.forEach(function(card) {
-      var video = card.querySelector('[data-lp-vr-video]');
-      if (!video) return;
-      card.addEventListener('click', function() {
-        if (video.paused) {
-          document.querySelectorAll('[data-lp-vr-video]').forEach(function(v) {
-            if (v !== video) {
-              v.pause();
-              v.parentElement.classList.remove('is-playing');
-            }
-          });
-          video.muted = false;
-          video.play();
-          video.controls = true;
-          card.classList.add('is-playing');
-        } else {
-          video.pause();
-          card.classList.remove('is-playing');
-        }
-      });
-      video.addEventListener('pause', function() { card.classList.remove('is-playing'); });
-      video.addEventListener('play', function() { card.classList.add('is-playing'); });
+(function() {
+  // Intersection Observer — autoplay solo cuando es visible
+  var videos = document.querySelectorAll('[data-lp-vr-video]');
+  if (!('IntersectionObserver' in window)) {
+    videos.forEach(function(v) { v.play(); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.play(); }
+      else { e.target.pause(); }
     });
-  })();
+  }, { threshold: 0.3 });
+  videos.forEach(function(v) { obs.observe(v); });
+
+  // Tap para activar sonido / controles
+  document.querySelectorAll('[data-lp-vr-card]').forEach(function(card) {
+    card.addEventListener('click', function() {
+      var v = card.querySelector('[data-lp-vr-video]');
+      if (!v) return;
+      var isActive = card.classList.contains('is-active');
+      document.querySelectorAll('[data-lp-vr-card]').forEach(function(c) {
+        c.classList.remove('is-active');
+        var cv = c.querySelector('[data-lp-vr-video]');
+        if (cv) { cv.muted = true; cv.controls = false; }
+      });
+      if (!isActive) {
+        card.classList.add('is-active');
+        v.muted = false;
+        v.controls = true;
+        v.play();
+      }
+    });
+  });
+})();
 </script>
 
 {% schema %}
