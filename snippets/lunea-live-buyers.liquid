@@ -1,0 +1,100 @@
+{%- assign lunea_suffixes = 'lunea,lunea-go,enzimas-digestivas,crema-nida-youthfull-100ml,formula-juvenil-asiatica' | split: ',' -%}
+{%- if lunea_suffixes contains template.suffix -%}
+<div class="llb-wrap" id="lunea-live-buyers" aria-live="polite" aria-atomic="true">
+  <span class="llb-dot"></span>
+  <span class="llb-text" id="llb-text">Cargando...</span>
+</div>
+
+<style>
+.llb-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  margin-top: 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #166534;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 38px;
+  overflow: hidden;
+}
+.llb-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: llb-pulse 1.4s ease-in-out infinite;
+}
+@keyframes llb-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+.llb-text {
+  animation: llb-fade 0.5s ease;
+}
+@keyframes llb-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function () {
+  var buyers = [
+    { name: 'Valentina M.', city: 'Bogotá' },
+    { name: 'Camila R.', city: 'Medellín' },
+    { name: 'Daniela G.', city: 'Cali' },
+    { name: 'Sofía P.', city: 'Barranquilla' },
+    { name: 'Mariana L.', city: 'Cartagena' },
+    { name: 'Andrea T.', city: 'Bucaramanga' },
+    { name: 'Paola V.', city: 'Pereira' },
+    { name: 'Laura C.', city: 'Manizales' },
+    { name: 'Isabella S.', city: 'Cúcuta' },
+    { name: 'Natalia O.', city: 'Ibagué' },
+    { name: 'Juliana B.', city: 'Santa Marta' },
+    { name: 'Catalina H.', city: 'Villavicencio' },
+    { name: 'María F.', city: 'Pasto' },
+    { name: 'Alejandra N.', city: 'Montería' },
+    { name: 'Sara Q.', city: 'Neiva' },
+    { name: 'Paula E.', city: 'Armenia' },
+    { name: 'Ximena D.', city: 'Popayán' },
+    { name: 'Lucia A.', city: 'Tunja' },
+    { name: 'Carolina Z.', city: 'Sincelejo' },
+    { name: 'Diana W.', city: 'Valledupar' }
+  ];
+
+  var times = ['hace 1 minuto', 'hace 2 minutos', 'hace 3 minutos', 'hace 5 minutos', 'justo ahora', 'hace un momento'];
+  var actions = ['acaba de pedir', 'agregó al carrito', 'acaba de comprar', 'realizó su pedido'];
+
+  var el = document.getElementById('llb-text');
+  if (!el) return;
+
+  var idx = Math.floor(Math.random() * buyers.length);
+
+  function next() {
+    idx = (idx + 1) % buyers.length;
+    var b = buyers[idx];
+    var t = times[Math.floor(Math.random() * times.length)];
+    var a = actions[Math.floor(Math.random() * actions.length)];
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = 'llb-fade 0.5s ease';
+    el.textContent = '🛍️ ' + b.name + ' (' + b.city + ') ' + a + ' ' + t;
+  }
+
+  // Primera entrada
+  next();
+
+  // Rotar cada 4–7 segundos (aleatorio)
+  function schedule() {
+    var delay = 4000 + Math.floor(Math.random() * 3000);
+    setTimeout(function () { next(); schedule(); }, delay);
+  }
+  schedule();
+})();
+</script>
+{%- endif -%}
