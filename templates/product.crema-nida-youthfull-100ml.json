@@ -91,6 +91,20 @@
         "text": "Pedila hoy con total confianza. Pagás cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escribinos por WhatsApp de inmediato y lo gestionamos sin vueltas."
       }
     },
+    "video-reviews": {
+      "type": "lunea-product-video-reviews",
+      "blocks": {
+        "v1": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/0b24661074534ff880663ee22eca324f/0b24661074534ff880663ee22eca324f.HD-1080p-7.2Mbps-66649616.mp4?v=0", "label": "Resultado real ✨" } },
+        "v2": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/390827532b394813a5c135044523f33a/390827532b394813a5c135044523f33a.HD-1080p-7.2Mbps-66649614.mp4?v=0", "label": "Piel transformada 🌿" } },
+        "v3": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/23e053305b11445088f8932c5e137bf4/23e053305b11445088f8932c5e137bf4.HD-1080p-7.2Mbps-66649617.mp4?v=0", "label": "Lo que dicen ellas 💬" } },
+        "v4": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/14cc91d0df854d32847fb58cab99ae3d/14cc91d0df854d32847fb58cab99ae3d.HD-1080p-7.2Mbps-49661985.mp4?v=0", "label": "Hidratación visible 💧" } }
+      },
+      "block_order": ["v1","v2","v3","v4"],
+      "settings": {
+        "title": "200 millones de vistas no mienten",
+        "ig_text": "La crema coreana que está revolucionando el skincare en Colombia"
+      }
+    },
     "real-reviews": {
       "type": "lunea-product-real-reviews",
       "blocks": {
@@ -215,5 +229,5 @@
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre la Fórmula Juvenil Asiática." } }
   },
-  "order": ["main","trust-row","hook","before-after","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": ["main","trust-row","hook","before-after","features","howto","included","guarantee","video-reviews","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
 }
