@@ -1,11 +1,41 @@
 {
   "sections": {
-    "enzimas-home": {
-      "type": "enzimas-home",
+    "home": {
+      "type": "home-generic",
+      "blocks": {
+        "crema": {
+          "type": "product_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_tu1udttu1udttu1u.avif?v=1780927317",
+            "name": "Fórmula Rostro Juvenil — Crema Coreana",
+            "tagline": "Colágeno + Ácido Hialurónico + Centella + Niacinamida",
+            "anchor": "$99.900",
+            "price": "$69.900",
+            "url": "/products/crema-nida-youthfull-100ml",
+            "badge": "✨ K-Beauty"
+          }
+        },
+        "enzimas": {
+          "type": "product_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_jnfyk9jnfyk9jnfy.png?v=1780362906",
+            "name": "Physician's Choice Enzimas Digestivas",
+            "tagline": "Enzimas + Probióticos + Prebióticos · Marca #1 EE.UU.",
+            "anchor": "",
+            "price": "$60.000",
+            "url": "/products/physicians-choice-enzimas-digestivas",
+            "badge": "🩺 Digestión"
+          }
+        }
+      },
+      "block_order": ["crema", "enzimas"],
       "settings": {
-        "cta_url": "/products/physicians-choice-enzimas-digestivas"
+        "eyebrow": "Bienestar & Belleza · Colombia",
+        "heading": "Productos que cuidan de vos",
+        "subheading": "Selección de productos de salud y belleza, con envío gratis y pago contra entrega a todo el país.",
+        "products_title": "Nuestros productos"
       }
     }
   },
-  "order": ["enzimas-home"]
+  "order": ["home"]
 }
