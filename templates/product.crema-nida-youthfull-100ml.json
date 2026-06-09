@@ -1,5 +1,4 @@
 {
-  "name": "Fórmula Rostro Juvenil · Kit de conversión",
   "sections": {
     "main": {
       "type": "main-product",
@@ -24,7 +23,7 @@
         "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
       },
       "block_order": ["t1","t2","t3","t4"],
-      "settings": { "color_scheme": "scheme-7" }
+      "settings": {}
     },
     "hook": {
       "type": "lunea-product-hook",
@@ -50,11 +49,11 @@
         "title": "El cambio que hace la diferencia",
         "subtitle": "Deslizá para ver la transformación real de la piel con uso continuo de 30 días.",
         "before_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_7oau397oau397oau.avif?v=1780928531",
-        "after_image_url_1":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_g18ta2g18ta2g18t.avif?v=1780928531",
+        "after_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_g18ta2g18ta2g18t.avif?v=1780928531",
         "before_image_url_2": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_gkqhjogkqhjogkqh.avif?v=1780928531",
-        "after_image_url_2":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_97my2w97my2w97my.avif?v=1780928531",
+        "after_image_url_2": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_97my2w97my2w97my.avif?v=1780928531",
         "before_image_url_3": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_dqmntidqmntidqmn.avif?v=1780928531",
-        "after_image_url_3":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_s24kyss24kyss24k.avif?v=1780928531",
+        "after_image_url_3": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_s24kyss24kyss24k.avif?v=1780928531",
         "label_before": "Antes",
         "label_after": "Después",
         "caption": "Resultados individuales pueden variar. Uso continuo recomendado."
@@ -71,7 +70,7 @@
         "b6": { "type": "feature", "settings": { "icon": "🪶", "title": "Textura ultralightweight — sin residuo", "text": "Se absorbe en segundos. Sin sensación grasa, sin poros tapados, sin brillos indeseados. Funciona sola o debajo del maquillaje perfectamente." } }
       },
       "block_order": ["b1","b2","b3","b4","b5","b6"],
-      "settings": { "eyebrow": "Por qué funciona", "title": "Una crema. Cuatro activos clave.", "color_scheme": "scheme-6" }
+      "settings": { "eyebrow": "Por qué funciona", "title": "Una crema. Cuatro activos clave." }
     },
     "howto": {
       "type": "lunea-product-howto",
@@ -113,90 +112,19 @@
         "v4": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/14cc91d0df854d32847fb58cab99ae3d/14cc91d0df854d32847fb58cab99ae3d.HD-1080p-7.2Mbps-49661985.mp4?v=0", "label": "Hidratación visible 💧" } }
       },
       "block_order": ["v1","v2","v3","v4"],
-      "settings": {
-        "title": "200 millones de vistas no mienten",
-        "ig_text": "La crema coreana que está revolucionando el skincare en Colombia"
-      }
+      "settings": { "title": "200 millones de vistas no mienten", "ig_text": "La crema coreana que está revolucionando el skincare en Colombia" }
     },
     "real-reviews": {
       "type": "lunea-product-real-reviews",
       "blocks": {
-        "r1": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ac627452665934dad920232b6957e8b57w.jpg_960x960q75.jpg_.avif",
-            "tag": "RESULTADO REAL",
-            "quote": "En dos semanas mi piel cambió completamente",
-            "text": "Tengo 38 años y hace tiempo que buscaba una crema que realmente hidratara sin dejarme la cara brillosa. Probé mil marcas caras y ninguna me convenció. Una amiga me recomendó esta y al principio dudé porque no la conocía. La apliqué por primera vez y se absorbió al instante, sin esa sensación pesada que odio. A la semana ya notaba la piel más suave, y a las dos semanas mi esposo me preguntó si me había hecho algo — la diferencia en las ojeras y las líneas era visible. No vuelvo a otra crema.",
-            "name": "Marcela R.",
-            "city": "Bogotá"
-          }
-        },
-        "r2": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ad74ae12a77ed43ba827e2b486dfc9a92t.jpg_960x960q75.jpg_.avif",
-            "tag": "COMPRA VERIFICADA",
-            "quote": "Las manchas del sol bajaron notablemente",
-            "text": "Tengo manchas en las mejillas desde el embarazo y ya probé cremas despigmentantes carísimas sin resultado. Cuando vi que esta tiene niacinamida en una concentración real me animé a pedirla. El pago contra entrega me dio tranquilidad porque nunca había comprado por internet. Llegó en 3 días, empecé a usarla y al mes ya las manchas estaban más claras. No desaparecieron del todo pero la mejora es clara y real. Lo mejor es que la piel en general se ve mucho más pareja y luminosa.",
-            "name": "Diana P.",
-            "city": "Cali"
-          }
-        },
-        "r3": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87ca356fb9584f1db95ccde0d7fa65983.jpg_960x960q75.jpg_.avif",
-            "tag": "PIEL SENSIBLE",
-            "quote": "Por fin una crema que no me irrita",
-            "text": "Mi piel es súper reactiva — casi todo me da rojez o granitos. Siempre tuve miedo de probar cosas nuevas. Me decidí por esta porque vi que tiene centella asiática, que es justamente lo que los dermatólogos recomiendan para pieles sensibles. La empecé a usar de noche y no me causó absolutamente nada — ni irritación, ni puntos negros, nada. Solo piel más calmada, más hidratada y más pareja. Tres meses después sigue siendo lo único que uso en mi rutina de noche.",
-            "name": "Sofía M.",
-            "city": "Medellín"
-          }
-        },
-        "r4": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A7fd262d7311742ce9e761565fe9586b9i.jpg_960x960q75.jpg_.avif",
-            "tag": "RESULTADO REAL",
-            "quote": "La uso debajo del maquillaje y dura todo el día",
-            "text": "Soy maquilladora profesional y siempre estoy buscando buenas bases hidratantes para recomendar a mis clientas. Esta crema es liviana, se absorbe rápido y no deja residuo — perfecta como base antes del maquillaje. Las clientas que la probaron me escriben para conseguir más. El ácido hialurónico en 8 formas hace la diferencia: la piel queda rellena y el maquillaje encima dura mucho más. Totalmente recomendada para uso diario.",
-            "name": "Valentina C.",
-            "city": "Medellín"
-          }
-        },
-        "r5": {
-          "type": "review",
-          "settings": {
-            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87054ee6e66e4006aabbbacb42d2b3478.jpg_960x960q75.jpg_.avif",
-            "tag": "DERMATÓLOGA RECOMIENDA",
-            "quote": "La combinación correcta para la mayoría de pieles adultas",
-            "text": "Como dermatóloga veo a diario pacientes con piel deshidratada, manchas y pérdida de firmeza. El 80% de los casos no necesita un tratamiento invasivo — solo los activos correctos en la concentración adecuada. Esta fórmula tiene exactamente eso: ácido hialurónico en múltiples pesos moleculares, colágeno hidrolizado, centella asiática y niacinamida. Es lo que yo misma recomiendo antes de recurrir a procedimientos estéticos. Para mantenimiento y prevención del envejecimiento, es una de las mejores opciones que encontré en el mercado.",
-            "name": "Dra. Camila Torres",
-            "city": "Dermatología Estética"
-          }
-        }
+        "r1": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ac627452665934dad920232b6957e8b57w.jpg_960x960q75.jpg_.avif", "tag": "RESULTADO REAL", "quote": "En dos semanas mi piel cambió completamente", "text": "Tengo 38 años y hace tiempo que buscaba una crema que realmente hidratara sin dejarme la cara brillosa. Probé mil marcas caras y ninguna me convenció. Una amiga me recomendó esta y al principio dudé porque no la conocía. La apliqué por primera vez y se absorbió al instante, sin esa sensación pesada que odio. A la semana ya notaba la piel más suave, y a las dos semanas mi esposo me preguntó si me había hecho algo — la diferencia en las ojeras y las líneas era visible. No vuelvo a otra crema.", "name": "Marcela R.", "city": "Bogotá" } },
+        "r2": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ad74ae12a77ed43ba827e2b486dfc9a92t.jpg_960x960q75.jpg_.avif", "tag": "COMPRA VERIFICADA", "quote": "Las manchas del sol bajaron notablemente", "text": "Tengo manchas en las mejillas desde el embarazo y ya probé cremas despigmentantes carísimas sin resultado. Cuando vi que esta tiene niacinamida en una concentración real me animé a pedirla. El pago contra entrega me dio tranquilidad porque nunca había comprado por internet. Llegó en 3 días, empecé a usarla y al mes ya las manchas estaban más claras. No desaparecieron del todo pero la mejora es clara y real. Lo mejor es que la piel en general se ve mucho más pareja y luminosa.", "name": "Diana P.", "city": "Cali" } },
+        "r3": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87ca356fb9584f1db95ccde0d7fa65983.jpg_960x960q75.jpg_.avif", "tag": "PIEL SENSIBLE", "quote": "Por fin una crema que no me irrita", "text": "Mi piel es súper reactiva — casi todo me da rojez o granitos. Siempre tuve miedo de probar cosas nuevas. Me decidí por esta porque vi que tiene centella asiática, que es justamente lo que los dermatólogos recomiendan para pieles sensibles. La empecé a usar de noche y no me causó absolutamente nada — ni irritación, ni puntos negros, nada. Solo piel más calmada, más hidratada y más pareja. Tres meses después sigue siendo lo único que uso en mi rutina de noche.", "name": "Sofía M.", "city": "Medellín" } },
+        "r4": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A7fd262d7311742ce9e761565fe9586b9i.jpg_960x960q75.jpg_.avif", "tag": "RESULTADO REAL", "quote": "La uso debajo del maquillaje y dura todo el día", "text": "Soy maquilladora profesional y siempre estoy buscando buenas bases hidratantes para recomendar a mis clientas. Esta crema es liviana, se absorbe rápido y no deja residuo — perfecta como base antes del maquillaje. Las clientas que la probaron me escriben para conseguir más. El ácido hialurónico en 8 formas hace la diferencia: la piel queda rellena y el maquillaje encima dura mucho más. Totalmente recomendada para uso diario.", "name": "Valentina C.", "city": "Medellín" } },
+        "r5": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87054ee6e66e4006aabbbacb42d2b3478.jpg_960x960q75.jpg_.avif", "tag": "DERMATÓLOGA RECOMIENDA", "quote": "La combinación correcta para la mayoría de pieles adultas", "text": "Como dermatóloga veo a diario pacientes con piel deshidratada, manchas y pérdida de firmeza. El 80% de los casos no necesita un tratamiento invasivo — solo los activos correctos en la concentración adecuada. Esta fórmula tiene exactamente eso: ácido hialurónico en múltiples pesos moleculares, colágeno hidrolizado, centella asiática y niacinamida. Es lo que yo misma recomiendo antes de recurrir a procedimientos estéticos. Para mantenimiento y prevención del envejecimiento, es una de las mejores opciones que encontré en el mercado.", "name": "Dra. Camila Torres", "city": "Dermatología Estética" } }
       },
       "block_order": ["r1","r2","r3","r4","r5"],
-      "settings": {
-        "eyebrow": "Lo que dicen quienes ya la probaron",
-        "title": "Resultados reales de personas reales",
-        "subtitle": "Compraron con el mismo beneficio que vos: pago contra entrega, sin riesgo.",
-        "color_scheme": "scheme-6"
-      }
-    },
-    "testimonials": {
-      "type": "lunea-product-photo-testimonials",
-      "blocks": {
-        "pt1": { "type": "testimonial", "settings": { "name": "Marcela B.", "flag": "🇨🇴", "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche." } },
-        "pt2": { "type": "testimonial", "settings": { "name": "Andrea V.", "flag": "🇨🇴", "quote": "Las manchas del embarazo finalmente se están aclarando." } },
-        "pt3": { "type": "testimonial", "settings": { "name": "Camila S.", "flag": "🇨🇴", "quote": "Ligera, se absorbe rápido y no me tapa los poros. Perfecta." } },
-        "pt4": { "type": "testimonial", "settings": { "name": "Luisa M.", "flag": "🇨🇴", "quote": "La uso debajo del maquillaje todos los días. No la cambio." } },
-        "pt5": { "type": "testimonial", "settings": { "name": "Daniela R.", "flag": "🇨🇴", "quote": "Piel sensible y por fin encontré algo que no me irrita." } },
-        "pt6": { "type": "testimonial", "settings": { "name": "Paola T.", "flag": "🇨🇴", "quote": "Me sorprendió lo rápido que vi resultados. En una semana." } }
-      },
-      "block_order": ["pt1","pt2","pt3","pt4","pt5","pt6"],
-      "settings": { "title": "Elegida por mujeres en Colombia", "asset_image_filename": "", "show_heading": true }
+      "settings": { "eyebrow": "Lo que dicen quienes ya la probaron", "title": "Resultados reales de personas reales", "subtitle": "Compraron con el mismo beneficio que vos: pago contra entrega, sin riesgo." }
     },
     "foryou": {
       "type": "lunea-product-foryou",
@@ -229,18 +157,42 @@
       "block_order": ["f1","f2","f3","f4","f5","f6"],
       "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
     },
+    "testimonials": {
+      "type": "lunea-product-photo-testimonials",
+      "blocks": {
+        "pt1": { "type": "testimonial", "settings": { "name": "Marcela B.", "flag": "🇨🇴", "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche." } }
+      },
+      "block_order": ["pt1"],
+      "settings": { "asset_image_filename": "", "show_heading": true, "title": "Elegida por mujeres en Colombia" }
+    },
     "bottom-cta": {
       "type": "lunea-bottom-cta",
       "settings": {
         "eyebrow": "¿Lista para transformar tu piel?",
         "title": "Tu rostro merece los mejores activos",
         "subtitle": "Pedila hoy y pagá cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
-        "button_text": "Comprar Fórmula Rostro Juvenil",
-        "color_scheme": "scheme-7"
+        "button_text": "Comprar Fórmula Rostro Juvenil"
       }
     },
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre la Fórmula Juvenil Asiática." } }
   },
-  "order": ["main","trust-row","hook","video-reviews","tiktok","before-after","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": [
+    "main",
+    "trust-row",
+    "hook",
+    "video-reviews",
+    "tiktok",
+    "before-after",
+    "features",
+    "howto",
+    "included",
+    "guarantee",
+    "real-reviews",
+    "foryou",
+    "faq",
+    "bottom-cta",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
 }
