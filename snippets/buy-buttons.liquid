@@ -153,6 +153,90 @@
     </script>
   {%- endif -%}
 
+  {%- comment -%} ══ ASTAXANTINA: tema bordó/vino en toda la página ══ {%- endcomment -%}
+  {%- if product.handle == 'astaxantina-premium-microingredientes' -%}
+    <style>
+      html body .price__sale .price-item--sale, html body .price .price-item--sale { font-size: 34px !important; font-weight: 800 !important; color: #8C1C3F !important; line-height: 1.05 !important; }
+      html body .price__sale .price-item--regular, html body .price s .price-item { font-size: 19px !important; color: #999 !important; }
+      html body .price__badge-sale, html body .price .badge { background: #8C1C3F !important; color: #fff !important; font-weight: 700 !important; }
+      html body .lp-hook__eyebrow, html body .lp-features__eyebrow, html body .lp-faq__eyebrow, html body .lp-rr__eyebrow { color: #8C1C3F !important; }
+      html body .lp-hook { background: linear-gradient(180deg, #fff 0%, #FBEDF1 100%) !important; }
+      html body .lp-hook__title em { color: #8C1C3F !important; }
+      html body .lp-trust-row { background: #FBEDF1 !important; border-color: #E8C4D0 !important; }
+      html body .lp-features__icon { background: #FBEDF1 !important; }
+      html body .lp-features__card:hover { border-color: #8C1C3F !important; }
+      html body .lp-howto { background: linear-gradient(135deg, #4a0f22 0%, #8C1C3F 100%) !important; }
+      html body .lp-howto__num { background: #F3C9D5 !important; color: #6E1530 !important; }
+      html body .lp-howto__eyebrow { color: #F3C9D5 !important; }
+      html body .lp-guarantee { background: #FBEDF1 !important; }
+      html body .lp-guarantee__seal { background: radial-gradient(circle at 30% 30%, #F3C9D5, #8C1C3F) !important; box-shadow: 0 6px 20px rgba(140,28,63,0.3) !important; }
+      html body .lp-guarantee__title { color: #8C1C3F !important; }
+      html body .lp-included__icon { background: #FBEDF1 !important; }
+      html body .lp-included__check { background: #8C1C3F !important; }
+      html body .lp-rr__container { background: #FBEDF1 !important; }
+      html body .lp-rr__verified { color: #8C1C3F !important; }
+      html body .lp-rr__verified::before { background: #8C1C3F !important; }
+      html body .lp-rr__title em { color: #8C1C3F !important; }
+      html body .lp-foryou { background: linear-gradient(135deg, #4a0f22 0%, #8C1C3F 100%) !important; }
+      html body .lp-foryou__item::before { background: #F3C9D5 !important; color: #6E1530 !important; }
+      html body .lp-foryou__cta-eyebrow { color: #F3C9D5 !important; }
+      html body .lp-foryou__cta-btn { background: #F3C9D5 !important; color: #6E1530 !important; }
+      html body .lp-foryou__cta-btn:hover { background: #fff !important; color: #6E1530 !important; }
+      html body .lp-faq__icon { background: #FBEDF1 !important; color: #8C1C3F !important; }
+      html body .lp-faq__item[open] { border-color: #8C1C3F !important; }
+      html body .lp-faq__item[open] .lp-faq__icon { background: #8C1C3F !important; color: #fff !important; }
+      html body .lp-bcta { background: linear-gradient(160deg, #6E1530 0%, #8C1C3F 100%) !important; }
+      html body .lp-bcta__title em { color: #F3C9D5 !important; }
+      html body .lp-bcta__btn { color: #8C1C3F !important; }
+      html body .lp-sticky-atc__price { color: #8C1C3F !important; }
+      html body .lp-sticky-atc__btn:hover { background: #8C1C3F !important; color: #fff !important; }
+      html body .lp-wa-btn { background: #8C1C3F !important; box-shadow: 0 2px 8px rgba(140,28,63,0.35) !important; }
+      html body .lp-wa-btn:hover { background: #6E1530 !important; }
+    </style>
+  {%- endif -%}
+
+  {%- comment -%} ══ PROBIÓTICOS: tema rosa fuerte en toda la página ══ {%- endcomment -%}
+  {%- if product.handle == 'probiotico-vaginal-physicians-choice' -%}
+    <style>
+      html body .price__sale .price-item--sale, html body .price .price-item--sale { font-size: 34px !important; font-weight: 800 !important; color: #D6336C !important; line-height: 1.05 !important; }
+      html body .price__sale .price-item--regular, html body .price s .price-item { font-size: 19px !important; color: #999 !important; }
+      html body .price__badge-sale, html body .price .badge { background: #D6336C !important; color: #fff !important; font-weight: 700 !important; }
+      html body .lp-hook__eyebrow, html body .lp-features__eyebrow, html body .lp-faq__eyebrow, html body .lp-rr__eyebrow { color: #D6336C !important; }
+      html body .lp-hook { background: linear-gradient(180deg, #fff 0%, #FFF0F5 100%) !important; }
+      html body .lp-hook__title em { color: #D6336C !important; }
+      html body .lp-trust-row { background: #FFF0F5 !important; border-color: #F3C2D5 !important; }
+      html body .lp-features__icon { background: #FFF0F5 !important; }
+      html body .lp-features__card:hover { border-color: #D6336C !important; }
+      html body .lp-howto { background: linear-gradient(135deg, #7a1540 0%, #D6336C 100%) !important; }
+      html body .lp-howto__num { background: #F8BBD0 !important; color: #AD2456 !important; }
+      html body .lp-howto__eyebrow { color: #F8BBD0 !important; }
+      html body .lp-guarantee { background: #FFF0F5 !important; }
+      html body .lp-guarantee__seal { background: radial-gradient(circle at 30% 30%, #F8BBD0, #D6336C) !important; box-shadow: 0 6px 20px rgba(214,51,108,0.3) !important; }
+      html body .lp-guarantee__title { color: #D6336C !important; }
+      html body .lp-included__icon { background: #FFF0F5 !important; }
+      html body .lp-included__check { background: #D6336C !important; }
+      html body .lp-rr__container { background: #FFF0F5 !important; }
+      html body .lp-rr__verified { color: #D6336C !important; }
+      html body .lp-rr__verified::before { background: #D6336C !important; }
+      html body .lp-rr__title em { color: #D6336C !important; }
+      html body .lp-foryou { background: linear-gradient(135deg, #7a1540 0%, #D6336C 100%) !important; }
+      html body .lp-foryou__item::before { background: #F8BBD0 !important; color: #AD2456 !important; }
+      html body .lp-foryou__cta-eyebrow { color: #F8BBD0 !important; }
+      html body .lp-foryou__cta-btn { background: #F8BBD0 !important; color: #AD2456 !important; }
+      html body .lp-foryou__cta-btn:hover { background: #fff !important; color: #AD2456 !important; }
+      html body .lp-faq__icon { background: #FFF0F5 !important; color: #D6336C !important; }
+      html body .lp-faq__item[open] { border-color: #D6336C !important; }
+      html body .lp-faq__item[open] .lp-faq__icon { background: #D6336C !important; color: #fff !important; }
+      html body .lp-bcta { background: linear-gradient(160deg, #AD2456 0%, #D6336C 100%) !important; }
+      html body .lp-bcta__title em { color: #F8BBD0 !important; }
+      html body .lp-bcta__btn { color: #D6336C !important; }
+      html body .lp-sticky-atc__price { color: #D6336C !important; }
+      html body .lp-sticky-atc__btn:hover { background: #D6336C !important; color: #fff !important; }
+      html body .lp-wa-btn { background: #D6336C !important; box-shadow: 0 2px 8px rgba(214,51,108,0.35) !important; }
+      html body .lp-wa-btn:hover { background: #AD2456 !important; }
+    </style>
+  {%- endif -%}
+
   {%- comment -%} ── Badges de confianza (enzimas) o botón WhatsApp (resto) ── {%- endcomment -%}
   {%- if product != blank -%}
     {%- if product.handle == 'physicians-choice-enzimas-digestivas' -%}
@@ -571,23 +655,23 @@
             {%- assign as_vid = product.selected_or_first_available_variant.id -%}
             <style>
               .lp-qty-sel { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
-              .lp-qty-opt { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 10px; cursor: pointer; border: 2px solid #f3c9b3; background: #fff; color: #4a2a1a; font-family: 'DM Sans', system-ui, sans-serif; transition: border-color 0.2s, box-shadow 0.2s; position: relative; user-select: none; }
-              .lp-qty-opt:hover { border-color: #E8501E; }
-              .lp-qty-opt.is-selected { border-color: #E8501E; background: #FFF3EC; box-shadow: 0 2px 10px rgba(232,80,30,0.15); }
+              .lp-qty-opt { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 10px; cursor: pointer; border: 2px solid #E8C4D0; background: #fff; color: #4a1622; font-family: 'DM Sans', system-ui, sans-serif; transition: border-color 0.2s, box-shadow 0.2s; position: relative; user-select: none; }
+              .lp-qty-opt:hover { border-color: #8C1C3F; }
+              .lp-qty-opt.is-selected { border-color: #8C1C3F; background: #FBEDF1; box-shadow: 0 2px 10px rgba(140,28,63,0.15); }
               .lp-qty-opt__radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ccc; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
-              .lp-qty-opt.is-selected .lp-qty-opt__radio { border-color: #E8501E; background: #E8501E; }
+              .lp-qty-opt.is-selected .lp-qty-opt__radio { border-color: #8C1C3F; background: #8C1C3F; }
               .lp-qty-opt.is-selected .lp-qty-opt__radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
               .lp-qty-opt__info { flex: 1; }
-              .lp-qty-opt__name { font-size: 16px; font-weight: 700; color: #4a2a1a; display: block; }
-              .lp-qty-opt__saving { display: inline-block; font-size: 12px; color: #fff; background: #E8501E; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-top: 3px; }
+              .lp-qty-opt__name { font-size: 16px; font-weight: 700; color: #4a1622; display: block; }
+              .lp-qty-opt__saving { display: inline-block; font-size: 12px; color: #fff; background: #8C1C3F; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-top: 3px; }
               .lp-qty-opt__prices { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
               .lp-qty-opt__anchor { font-size: 13px; color: #999; text-decoration: line-through; line-height: 1; }
-              .lp-qty-opt__price { font-size: 24px; font-weight: 900; color: #E8501E; line-height: 1.05; }
+              .lp-qty-opt__price { font-size: 24px; font-weight: 900; color: #8C1C3F; line-height: 1.05; }
               .lp-qty-opt__unit { font-size: 11px; color: #888; }
-              .lp-qty-opt__badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #E8501E; color: #fff; font-size: 11px; font-weight: 800; padding: 3px 12px; border-radius: 20px; white-space: nowrap; letter-spacing: 0.05em; }
-              .lp-qty-cta { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 18px 20px; margin-top: 6px; background: #E8501E; color: #fff; border: none; border-radius: 10px; font-size: 17px; font-weight: 800; font-family: 'DM Sans', system-ui, sans-serif; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.1s; box-shadow: 0 6px 18px rgba(232,80,30,0.45); animation: lpCtaPulse 2s ease-in-out infinite; }
+              .lp-qty-opt__badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #8C1C3F; color: #fff; font-size: 11px; font-weight: 800; padding: 3px 12px; border-radius: 20px; white-space: nowrap; letter-spacing: 0.05em; }
+              .lp-qty-cta { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 18px 20px; margin-top: 6px; background: #8C1C3F; color: #fff; border: none; border-radius: 10px; font-size: 17px; font-weight: 800; font-family: 'DM Sans', system-ui, sans-serif; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.1s; box-shadow: 0 6px 18px rgba(140,28,63,0.45); animation: lpCtaPulse 2s ease-in-out infinite; }
               @keyframes lpCtaPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
-              .lp-qty-cta:hover { background: #c43f12; transform: translateY(-1px); color: #fff; animation: none; }
+              .lp-qty-cta:hover { background: #6E1530; transform: translateY(-1px); color: #fff; animation: none; }
               .lp-qty-cta:active { transform: translateY(0); }
               .lp-qty-pay { text-align: center; font-size: 12.5px; color: #6B7E85; margin: 8px 0 0; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 600; }
             </style>

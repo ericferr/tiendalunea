@@ -15,23 +15,47 @@
             "badge": "✨ K-Beauty"
           }
         },
+        "astaxantina": {
+          "type": "product_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_40xt9640xt9640xt.avif?v=1781103243",
+            "name": "Astaxantina 12mg — Antioxidante Premium",
+            "tagline": "Antioxidante 6.000x más potente que la vitamina C · Piel y energía",
+            "anchor": "$109.900",
+            "price": "$79.900",
+            "url": "/products/astaxantina-premium-microingredientes",
+            "badge": "🌟 Belleza & Energía"
+          }
+        },
+        "probioticos": {
+          "type": "product_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_q96ai9q96ai9q96a.avif?v=1781107933",
+            "name": "Physician's Choice Probióticos Vaginales",
+            "tagline": "Equilibrio y frescura de tu flora íntima · 60 cápsulas",
+            "anchor": "$110.000",
+            "price": "$80.000",
+            "url": "/products/probiotico-vaginal-physicians-choice",
+            "badge": "🌸 Salud íntima"
+          }
+        },
         "enzimas": {
           "type": "product_card",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_jnfyk9jnfyk9jnfy.png?v=1780362906",
+            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_jnfyk9jnfyk9jnfy_4709dfe2-42b2-4e56-b8d3-0cb58b6e9bf4.png?v=1781051853",
             "name": "Physician's Choice Enzimas Digestivas",
             "tagline": "Enzimas + Probióticos + Prebióticos · Marca #1 EE.UU.",
-            "anchor": "",
-            "price": "$60.000",
+            "anchor": "$89.900",
+            "price": "$67.900",
             "url": "/products/physicians-choice-enzimas-digestivas",
             "badge": "🩺 Digestión"
           }
         }
       },
-      "block_order": ["crema", "enzimas"],
+      "block_order": ["crema", "astaxantina", "probioticos", "enzimas"],
       "settings": {
         "eyebrow": "Bienestar & Belleza · Colombia",
-        "heading": "Productos que cuidan de vos",
+        "heading": "Productos que cuidan de ti",
         "subheading": "Selección de productos de salud y belleza, con envío gratis y pago contra entrega a todo el país.",
         "products_title": "Nuestros productos"
       }
