@@ -626,7 +626,7 @@
           {%- endif -%}
 
           {%- comment -%} ── Botón 2 unidades en promoción (link nativo, sin fetch) ── {%- endcomment -%}
-          {%- if product.selected_or_first_available_variant.available and product.handle != 'physicians-choice-enzimas-digestivas' and is_crema != true -%}
+          {%- if product.selected_or_first_available_variant.available and product.handle != 'physicians-choice-enzimas-digestivas' and is_crema != true and is_asta != true -%}
             {%- if product.handle == 'lunea-go' -%}
               {%- assign lp_2x_discount = 'LUNEAGO2X' -%}
               {%- assign lp_2x_label = '$230.000 las 2 — ahorrás $40.000' -%}
