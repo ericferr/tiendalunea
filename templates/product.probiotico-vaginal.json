@@ -1,0 +1,119 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "text", "settings": { "text": "PHYSICIAN'S CHOICE", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "share": { "type": "share", "settings": { "share_label": "Share" } }
+      },
+      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","share"],
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-1", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
+        "t3": { "type": "trust", "settings": { "icon": "🌿", "text": "Fórmula natural" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra discreta y segura" } }
+      },
+      "block_order": ["t1","t2","t3","t4"],
+      "settings": {}
+    },
+    "hook": {
+      "type": "lunea-product-hook",
+      "settings": {
+        "eyebrow": "Salud íntima femenina · 60 cápsulas",
+        "title": "<p>Vuelve a sentirte <em>segura</em> en tu intimidad.</p>",
+        "text": "Cuando tu flora íntima pierde el equilibrio, aparecen las molestias que siempre vuelven: flujo con olor, picazón, incomodidad. La solución no es tapar el síntoma una y otra vez — es repoblar tu flora desde adentro para que las bacterias buenas vuelvan a protegerte."
+      }
+    },
+    "features": {
+      "type": "lunea-product-features",
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "🌸", "title": "Equilibra tu flora íntima", "text": "Repuebla los lactobacilos —las bacterias buenas— que mantienen tu zona íntima sana y protegida de forma natural." } },
+        "b2": { "type": "feature", "settings": { "icon": "🛡️", "title": "Mantiene el pH que te protege", "text": "Ayuda a conservar el pH ácido natural, la barrera que impide que las bacterias malas se multipliquen." } },
+        "b3": { "type": "feature", "settings": { "icon": "🍃", "title": "Frescura y comodidad diaria", "text": "Al equilibrarse la flora, disminuyen el mal olor, la picazón y la incomodidad. Vuelve la sensación de frescura." } },
+        "b4": { "type": "feature", "settings": { "icon": "🔁", "title": "Ataca la causa, no el síntoma", "text": "Pensado para esas molestias que vuelven una y otra vez. En lugar de tapar, trabaja sobre la raíz: tu microbioma." } },
+        "b5": { "type": "feature", "settings": { "icon": "💊", "title": "Apoyo después de antibióticos", "text": "Ideal para restablecer la flora buena luego de tratamientos que también arrasan con las bacterias que te protegen." } },
+        "b6": { "type": "feature", "settings": { "icon": "🌿", "title": "Natural · 60 cápsulas", "text": "Un ciclo completo de probióticos en cápsulas, sin químicos agresivos. Una al día, fácil de incorporar a tu rutina." } }
+      },
+      "block_order": ["b1","b2","b3","b4","b5","b6"],
+      "settings": { "eyebrow": "Por qué funciona", "title": "Equilibrio íntimo, desde adentro hacia afuera." }
+    },
+    "howto": {
+      "type": "lunea-product-howto",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Toma 1 cápsula al día", "text": "Con un vaso de agua, preferiblemente con una comida. Sin horarios complicados — encaja en tu rutina." } },
+        "s2": { "type": "step", "settings": { "title": "Sé constante", "text": "Los probióticos trabajan repoblando tu flora día a día. La constancia es lo que marca la diferencia." } },
+        "s3": { "type": "step", "settings": { "title": "Siente el equilibrio volver", "text": "Con el uso continuo, muchas mujeres notan más frescura, menos molestias y la tranquilidad de sentirse seguras otra vez." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": { "eyebrow": "Así de simple", "title": "1 cápsula al día. Sin complicaciones." }
+    },
+    "included": {
+      "type": "lunea-product-included",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "1 frasco de Probióticos Vaginales (60 cápsulas)" } },
+        "i2": { "type": "item", "settings": { "text": "Lactobacilos para repoblar tu flora íntima" } },
+        "i3": { "type": "item", "settings": { "text": "Apoyo para mantener tu pH ácido natural" } },
+        "i4": { "type": "item", "settings": { "text": "Un ciclo completo de uso (60 días)" } },
+        "i5": { "type": "item", "settings": { "text": "Fórmula natural, sin químicos agresivos" } },
+        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp, con total discreción" } }
+      },
+      "block_order": ["i1","i2","i3","i4","i5","i6"],
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 30,
+        "title": "Tu compra está protegida y es discreta",
+        "text": "Pídela hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. El envío es discreto, sin referencias visibles al contenido. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp y lo resolvemos sin vueltas."
+      }
+    },
+    "foryou": {
+      "type": "lunea-product-foryou",
+      "blocks": {
+        "y1": { "type": "item", "settings": { "text": "Sientes que las molestias íntimas siempre vuelven" } },
+        "y2": { "type": "item", "settings": { "text": "Te incomoda el olor o el flujo y quieres sentirte fresca otra vez" } },
+        "y3": { "type": "item", "settings": { "text": "Acabas de tomar antibióticos y quieres restablecer tu flora" } },
+        "y4": { "type": "item", "settings": { "text": "Quieres dejar de tapar el síntoma y atacar la causa" } },
+        "y5": { "type": "item", "settings": { "text": "Buscas una solución natural, sin químicos agresivos" } }
+      },
+      "block_order": ["y1","y2","y3","y4","y5"],
+      "settings": {
+        "title": "Los Probióticos Vaginales son para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Recupera tu equilibrio y tu seguridad.",
+        "cta_text": "Cuida tu salud íntima desde adentro, de forma natural y discreta. Envío gratis a toda Colombia y pago contra entrega.",
+        "cta_button_text": "🛒 Quiero la mía ahora"
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
+        "f2": { "type": "faq", "settings": { "question": "¿El envío es discreto?", "answer": "Sí. El paquete llega en un empaque neutro, sin referencias visibles al contenido. Tu privacidad es prioridad." } },
+        "f3": { "type": "faq", "settings": { "question": "¿En cuánto tiempo se ven resultados?", "answer": "Los probióticos trabajan de forma acumulativa repoblando tu flora. Muchas mujeres notan más frescura y menos molestias a las pocas semanas de uso constante. Para mejores resultados, se recomienda uso diario continuo." } },
+        "f4": { "type": "faq", "settings": { "question": "¿Cómo se toma?", "answer": "1 cápsula al día con un vaso de agua, idealmente con una comida. Fácil de incorporar a tu rutina." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Es seguro? ¿Tiene efectos secundarios?", "answer": "Es un suplemento natural a base de probióticos, bien tolerado. No reemplaza la consulta con tu ginecólogo. Si estás embarazada, en lactancia o bajo tratamiento médico, consulta antes de empezar." } },
+        "f6": { "type": "faq", "settings": { "question": "¿Sirve si mis molestias siempre vuelven?", "answer": "Justamente para eso está pensado. Cuando el problema es recurrente, suele haber un desequilibrio de la flora; repoblar las bacterias buenas ayuda a romper ese ciclo desde la raíz." } }
+      },
+      "block_order": ["f1","f2","f3","f4","f5","f6"],
+      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+    },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": { "eyebrow": "¿Lista para sentirte segura otra vez?", "title": "Tu equilibrio íntimo empieza desde adentro", "subtitle": "Pídela hoy y paga cuando llegue a tu puerta. Natural, discreto y sin riesgo.", "button_text": "Comprar Probióticos Vaginales" }
+    },
+    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
+    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre los Probióticos Vaginales." } }
+  },
+  "order": ["main","trust-row","hook","features","howto","included","guarantee","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+}

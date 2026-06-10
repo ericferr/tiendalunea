@@ -169,10 +169,12 @@
         .ez-badge__tx { font-family: 'DM Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #6B1515; line-height: 1.25; }
         @media (max-width: 480px) { .ez-badges { grid-template-columns: repeat(2, 1fr); } .ez-badge__tx { font-size: 12px; } }
       </style>
-    {%- elsif product.handle == 'extractor-electrico-inalambrico' or product.handle == 'lunea-go' or product.handle == 'astaxantina-premium-microingredientes' -%}
+    {%- elsif product.handle == 'extractor-electrico-inalambrico' or product.handle == 'lunea-go' or product.handle == 'astaxantina-premium-microingredientes' or product.handle == 'probiotico-vaginal-physicians-choice' -%}
     {%- assign lp_wa_number = '5493764250518' -%}
     {%- if product.handle == 'astaxantina-premium-microingredientes' -%}
       {%- assign lp_wa_msg = 'Hola%21%20Vi%20la%20Astaxantina%20Premium%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20antes%20de%20comprar.%20%C2%BFMe%20pueden%20ayudar%3F' -%}
+    {%- elsif product.handle == 'probiotico-vaginal-physicians-choice' -%}
+      {%- assign lp_wa_msg = 'Hola%21%20Vi%20los%20Probi%C3%B3ticos%20Vaginales%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFMe%20pueden%20ayudar%3F' -%}
     {%- else -%}
       {%- assign lp_wa_msg = 'Hola%21%20Vi%20el%20Extractor%20Lunea%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20antes%20de%20comprar.%20%C2%BFMe%20pueden%20ayudar%3F' -%}
     {%- endif -%}
@@ -299,7 +301,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          {%- unless product.handle == 'physicians-choice-enzimas-digestivas' or product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' or product.handle == 'astaxantina-premium-microingredientes' -%}
+          {%- unless product.handle == 'physicians-choice-enzimas-digestivas' or product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' or product.handle == 'astaxantina-premium-microingredientes' or product.handle == 'probiotico-vaginal-physicians-choice' -%}
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
@@ -333,6 +335,8 @@
           {%- if product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' -%}{%- assign is_crema = true -%}{%- endif -%}
           {%- assign is_asta = false -%}
           {%- if product.handle == 'astaxantina-premium-microingredientes' -%}{%- assign is_asta = true -%}{%- endif -%}
+          {%- assign is_probi = false -%}
+          {%- if product.handle == 'probiotico-vaginal-physicians-choice' -%}{%- assign is_probi = true -%}{%- endif -%}
           {%- if product.handle == 'physicians-choice-enzimas-digestivas' -%}
             {%- assign ez_vid = product.selected_or_first_available_variant.id -%}
             <style>
@@ -627,10 +631,74 @@
             })();
             </script>
 
+          {%- elsif is_probi -%}
+            {%- assign pr_vid = product.selected_or_first_available_variant.id -%}
+            <style>
+              .lp-qty-sel { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+              .lp-qty-opt { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 10px; cursor: pointer; border: 2px solid #f3c2d5; background: #fff; color: #4a1a2e; font-family: 'DM Sans', system-ui, sans-serif; transition: border-color 0.2s, box-shadow 0.2s; position: relative; user-select: none; }
+              .lp-qty-opt:hover { border-color: #D6336C; }
+              .lp-qty-opt.is-selected { border-color: #D6336C; background: #FFF0F5; box-shadow: 0 2px 10px rgba(214,51,108,0.15); }
+              .lp-qty-opt__radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ccc; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
+              .lp-qty-opt.is-selected .lp-qty-opt__radio { border-color: #D6336C; background: #D6336C; }
+              .lp-qty-opt.is-selected .lp-qty-opt__radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+              .lp-qty-opt__info { flex: 1; }
+              .lp-qty-opt__name { font-size: 16px; font-weight: 700; color: #4a1a2e; display: block; }
+              .lp-qty-opt__saving { display: inline-block; font-size: 12px; color: #fff; background: #D6336C; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-top: 3px; }
+              .lp-qty-opt__prices { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+              .lp-qty-opt__anchor { font-size: 13px; color: #999; text-decoration: line-through; line-height: 1; }
+              .lp-qty-opt__price { font-size: 24px; font-weight: 900; color: #D6336C; line-height: 1.05; }
+              .lp-qty-opt__unit { font-size: 11px; color: #888; }
+              .lp-qty-opt__badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #D6336C; color: #fff; font-size: 11px; font-weight: 800; padding: 3px 12px; border-radius: 20px; white-space: nowrap; letter-spacing: 0.05em; }
+              .lp-qty-cta { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 18px 20px; margin-top: 6px; background: #D6336C; color: #fff; border: none; border-radius: 10px; font-size: 17px; font-weight: 800; font-family: 'DM Sans', system-ui, sans-serif; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.1s; box-shadow: 0 6px 18px rgba(214,51,108,0.45); animation: lpCtaPulse 2s ease-in-out infinite; }
+              @keyframes lpCtaPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+              .lp-qty-cta:hover { background: #ad2456; transform: translateY(-1px); color: #fff; animation: none; }
+              .lp-qty-cta:active { transform: translateY(0); }
+              .lp-qty-pay { text-align: center; font-size: 12.5px; color: #6B7E85; margin: 8px 0 0; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 600; }
+            </style>
+
+            <div class="lp-qty-sel" id="lp-qty-sel-{{ section_id }}">
+              <div class="lp-qty-opt" data-url="/cart/{{ pr_vid }}:1">
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">1 frasco</span><span class="lp-qty-opt__saving">Precio oferta</span></div>
+                <div class="lp-qty-opt__prices"><span class="lp-qty-opt__anchor">$109.900</span><span class="lp-qty-opt__price">$79.900</span><span class="lp-qty-opt__unit">$79.900 c/u</span></div>
+              </div>
+              <div class="lp-qty-opt is-selected" data-url="/cart/{{ pr_vid }}:2?discount=PROBI2X">
+                <span class="lp-qty-opt__badge">⭐ MÁS POPULAR</span>
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">2 frascos</span><span class="lp-qty-opt__saving">Ahorras $19.900</span></div>
+                <div class="lp-qty-opt__prices"><span class="lp-qty-opt__anchor">$159.800</span><span class="lp-qty-opt__price">$139.900</span><span class="lp-qty-opt__unit">$69.950 c/u</span></div>
+              </div>
+              <div class="lp-qty-opt" data-url="/cart/{{ pr_vid }}:3?discount=PROBI3X">
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">3 frascos</span><span class="lp-qty-opt__saving">Ahorras $44.800</span></div>
+                <div class="lp-qty-opt__prices"><span class="lp-qty-opt__anchor">$239.700</span><span class="lp-qty-opt__price">$194.900</span><span class="lp-qty-opt__unit">$64.967 c/u</span></div>
+              </div>
+            </div>
+
+            <a href="/cart/{{ pr_vid }}:2?discount=PROBI2X" class="lp-qty-cta" id="lp-qty-cta-{{ section_id }}">
+              🛒 Quiero la mía — Pago al recibirlo
+            </a>
+            <p class="lp-qty-pay">🚚 Envío gratis · 💵 Pago contra entrega o por Nequi</p>
+
+            <script>
+            (function() {
+              var sel = document.getElementById('lp-qty-sel-{{ section_id }}');
+              var cta = document.getElementById('lp-qty-cta-{{ section_id }}');
+              if (!sel || !cta) return;
+              sel.querySelectorAll('.lp-qty-opt').forEach(function(opt) {
+                opt.addEventListener('click', function() {
+                  sel.querySelectorAll('.lp-qty-opt').forEach(function(o) { o.classList.remove('is-selected'); });
+                  opt.classList.add('is-selected');
+                  cta.href = opt.dataset.url;
+                });
+              });
+            })();
+            </script>
+
           {%- endif -%}
 
           {%- comment -%} ── Botón 2 unidades en promoción (link nativo, sin fetch) ── {%- endcomment -%}
-          {%- if product.selected_or_first_available_variant.available and product.handle != 'physicians-choice-enzimas-digestivas' and is_crema != true and is_asta != true -%}
+          {%- if product.selected_or_first_available_variant.available and product.handle != 'physicians-choice-enzimas-digestivas' and is_crema != true and is_asta != true and is_probi != true -%}
             {%- if product.handle == 'lunea-go' -%}
               {%- assign lp_2x_discount = 'LUNEAGO2X' -%}
               {%- assign lp_2x_label = '$230.000 las 2 — ahorras $40.000' -%}
