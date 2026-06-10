@@ -1,0 +1,198 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "text", "settings": { "text": "NIDA · COREA DEL SUR", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "share": { "type": "share", "settings": { "share_label": "Share" } }
+      },
+      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","share"],
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-6", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
+        "t3": { "type": "trust", "settings": { "icon": "🇰🇷", "text": "Fórmula coreana certificada" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+      },
+      "block_order": ["t1","t2","t3","t4"],
+      "settings": {}
+    },
+    "hook": {
+      "type": "lunea-product-hook",
+      "settings": {
+        "eyebrow": "NIDA · Fórmula coreana 4 en 1",
+        "title": "<p>¿Tu piel se ve apagada, seca o con manchas? <em>Tiene solución.</em></p>",
+        "text": "La piel opaca, las líneas de expresión y las manchas oscuras no son inevitables — son señales de que tu piel necesita los ingredientes correctos. Fórmula Rostro Juvenil combina Colágeno Hidrolizado + Centella Asiática + Ácido Hialurónico (x8) + Niacinamida en una sola crema liviana para que tu piel luzca más firme, hidratada y uniforme desde los primeros días."
+      }
+    },
+    "tiktok": {
+      "type": "lunea-tiktok-embed",
+      "settings": {
+        "eyebrow": "VIRAL EN TIKTOK",
+        "title": "El video que está conquistando las redes",
+        "tiktok_url": "https://www.tiktok.com/@mx09037/video/7617047443028446485",
+        "video_id": "7617047443028446485"
+      }
+    },
+    "before-after": {
+      "type": "lunea-before-after",
+      "settings": {
+        "eyebrow": "RESULTADOS REALES",
+        "title": "El cambio que hace la diferencia",
+        "subtitle": "Deslizá para ver la transformación real de la piel con uso continuo de 30 días.",
+        "before_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_7oau397oau397oau.avif?v=1780928531",
+        "after_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_g18ta2g18ta2g18t.avif?v=1780928531",
+        "before_image_url_2": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_gkqhjogkqhjogkqh.avif?v=1780928531",
+        "after_image_url_2": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_97my2w97my2w97my.avif?v=1780928531",
+        "before_image_url_3": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_dqmntidqmntidqmn.avif?v=1780928531",
+        "after_image_url_3": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_s24kyss24kyss24k.avif?v=1780928531",
+        "label_before": "Antes",
+        "label_after": "Después",
+        "caption": "Resultados individuales pueden variar. Uso continuo recomendado."
+      }
+    },
+    "features": {
+      "type": "lunea-product-features",
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "💧", "title": "Ácido Hialurónico en 8 formas", "text": "La mayoría de cremas usa una sola forma. Esta tiene ocho. Cada molécula actúa en una capa diferente de la piel para una hidratación profunda, duradera y visible desde el primer uso." } },
+        "b2": { "type": "feature", "settings": { "icon": "✨", "title": "Colágeno Hidrolizado", "text": "Restaura la firmeza y elasticidad que la piel pierde con los años. Reduce la apariencia de líneas finas y le devuelve a tu rostro ese aspecto relleno y juvenil." } },
+        "b3": { "type": "feature", "settings": { "icon": "🌿", "title": "Centella Asiática", "text": "El ingrediente estrella de la dermatología coreana. Calma la piel irritada, reduce la rojez y potencia la regeneración celular. Ideal para pieles sensibles o reactivas." } },
+        "b4": { "type": "feature", "settings": { "icon": "🔬", "title": "Niacinamida para manchas y poros", "text": "Unifica el tono, reduce las manchas oscuras y minimiza los poros visibles. Resultados comprobados en estudios clínicos con uso continuo de 4 semanas." } },
+        "b5": { "type": "feature", "settings": { "icon": "🧬", "title": "Fermentos probióticos activos", "text": "La fórmula incluye 8 fermentos bacterianos que fortalecen la barrera cutánea. Tu piel se defiende mejor del sol, la contaminación y el estrés diario." } },
+        "b6": { "type": "feature", "settings": { "icon": "🪶", "title": "Textura ultralightweight — sin residuo", "text": "Se absorbe en segundos. Sin sensación grasa, sin poros tapados, sin brillos indeseados. Funciona sola o debajo del maquillaje perfectamente." } }
+      },
+      "block_order": ["b1","b2","b3","b4","b5","b6"],
+      "settings": { "eyebrow": "Por qué funciona", "title": "Una crema. Cuatro activos clave." }
+    },
+    "howto": {
+      "type": "lunea-product-howto",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Limpiá tu rostro", "text": "Aplica sobre la piel limpia y seca, mañana y/o noche. No necesita preparación especial — encaja perfectamente en cualquier rutina." } },
+        "s2": { "type": "step", "settings": { "title": "Aplica una pequeña cantidad", "text": "Con la punta de los dedos, distribuí una cantidad del tamaño de un garbanzo en frente, mejillas, nariz y mentón. Masajeá con movimientos suaves hacia arriba." } },
+        "s3": { "type": "step", "settings": { "title": "Notá la diferencia en los primeros días", "text": "La hidratación se siente desde el primer uso. Las mejoras visibles en tono, firmeza y manchas se notan a partir de los 14 días de uso continuo." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": { "eyebrow": "Así de simple", "title": "30 segundos. Mañana y noche." }
+    },
+    "included": {
+      "type": "lunea-product-included",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "1 tubo de Fórmula Rostro Juvenil — Crema Hidratante" } },
+        "i2": { "type": "item", "settings": { "text": "100ml / 3.38 fl oz — hasta 2 meses de uso" } },
+        "i3": { "type": "item", "settings": { "text": "Ácido Hialurónico en 8 formas moleculares" } },
+        "i4": { "type": "item", "settings": { "text": "Colágeno Hidrolizado + Centella Asiática + Niacinamida" } },
+        "i5": { "type": "item", "settings": { "text": "8 fermentos probióticos para barrera cutánea" } },
+        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+      },
+      "block_order": ["i1","i2","i3","i4","i5","i6"],
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 30,
+        "title": "Tu compra está protegida",
+        "text": "Pídela hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp de inmediato y lo gestionamos sin vueltas."
+      }
+    },
+    "video-reviews": {
+      "type": "lunea-product-video-reviews",
+      "blocks": {
+        "v1": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/0b24661074534ff880663ee22eca324f/0b24661074534ff880663ee22eca324f.HD-1080p-7.2Mbps-66649616.mp4?v=0", "label": "Resultado real ✨" } },
+        "v2": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/390827532b394813a5c135044523f33a/390827532b394813a5c135044523f33a.HD-1080p-7.2Mbps-66649614.mp4?v=0", "label": "Piel transformada 🌿" } },
+        "v3": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/23e053305b11445088f8932c5e137bf4/23e053305b11445088f8932c5e137bf4.HD-1080p-7.2Mbps-66649617.mp4?v=0", "label": "Lo que dicen ellas 💬" } },
+        "v4": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/14cc91d0df854d32847fb58cab99ae3d/14cc91d0df854d32847fb58cab99ae3d.HD-1080p-7.2Mbps-49661985.mp4?v=0", "label": "Hidratación visible 💧" } }
+      },
+      "block_order": ["v1","v2","v3","v4"],
+      "settings": { "title": "200 millones de vistas no mienten", "ig_text": "La crema coreana que está revolucionando el skincare en Colombia" }
+    },
+    "real-reviews": {
+      "type": "lunea-product-real-reviews",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ac627452665934dad920232b6957e8b57w.jpg_960x960q75.jpg_.avif", "tag": "RESULTADO REAL", "quote": "En dos semanas mi piel cambió completamente", "text": "Tengo 38 años y hace tiempo que buscaba una crema que realmente hidratara sin dejarme la cara brillosa. Probé mil marcas caras y ninguna me convenció. Una amiga me recomendó esta y al principio dudé porque no la conocía. La apliqué por primera vez y se absorbió al instante, sin esa sensación pesada que odio. A la semana ya notaba la piel más suave, y a las dos semanas mi esposo me preguntó si me había hecho algo — la diferencia en las ojeras y las líneas era visible. No vuelvo a otra crema.", "name": "Marcela R.", "city": "Bogotá" } },
+        "r2": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ad74ae12a77ed43ba827e2b486dfc9a92t.jpg_960x960q75.jpg_.avif", "tag": "COMPRA VERIFICADA", "quote": "Las manchas del sol bajaron notablemente", "text": "Tengo manchas en las mejillas desde el embarazo y ya probé cremas despigmentantes carísimas sin resultado. Cuando vi que esta tiene niacinamida en una concentración real me animé a pedirla. El pago contra entrega me dio tranquilidad porque nunca había comprado por internet. Llegó en 3 días, empecé a usarla y al mes ya las manchas estaban más claras. No desaparecieron del todo pero la mejora es clara y real. Lo mejor es que la piel en general se ve mucho más pareja y luminosa.", "name": "Diana P.", "city": "Cali" } },
+        "r3": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87ca356fb9584f1db95ccde0d7fa65983.jpg_960x960q75.jpg_.avif", "tag": "PIEL SENSIBLE", "quote": "Por fin una crema que no me irrita", "text": "Mi piel es súper reactiva — casi todo me da rojez o granitos. Siempre tuve miedo de probar cosas nuevas. Me decidí por esta porque vi que tiene centella asiática, que es justamente lo que los dermatólogos recomiendan para pieles sensibles. La empecé a usar de noche y no me causó absolutamente nada — ni irritación, ni puntos negros, nada. Solo piel más calmada, más hidratada y más pareja. Tres meses después sigue siendo lo único que uso en mi rutina de noche.", "name": "Sofía M.", "city": "Medellín" } },
+        "r4": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A7fd262d7311742ce9e761565fe9586b9i.jpg_960x960q75.jpg_.avif", "tag": "RESULTADO REAL", "quote": "La uso debajo del maquillaje y dura todo el día", "text": "Soy maquilladora profesional y siempre estoy buscando buenas bases hidratantes para recomendar a mis clientas. Esta crema es liviana, se absorbe rápido y no deja residuo — perfecta como base antes del maquillaje. Las clientas que la probaron me escriben para conseguir más. El ácido hialurónico en 8 formas hace la diferencia: la piel queda rellena y el maquillaje encima dura mucho más. Totalmente recomendada para uso diario.", "name": "Valentina C.", "city": "Medellín" } },
+        "r5": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87054ee6e66e4006aabbbacb42d2b3478.jpg_960x960q75.jpg_.avif", "tag": "DERMATÓLOGA RECOMIENDA", "quote": "La combinación correcta para la mayoría de pieles adultas", "text": "Como dermatóloga veo a diario pacientes con piel deshidratada, manchas y pérdida de firmeza. El 80% de los casos no necesita un tratamiento invasivo — solo los activos correctos en la concentración adecuada. Esta fórmula tiene exactamente eso: ácido hialurónico en múltiples pesos moleculares, colágeno hidrolizado, centella asiática y niacinamida. Es lo que yo misma recomiendo antes de recurrir a procedimientos estéticos. Para mantenimiento y prevención del envejecimiento, es una de las mejores opciones que encontré en el mercado.", "name": "Dra. Camila Torres", "city": "Dermatología Estética" } }
+      },
+      "block_order": ["r1","r2","r3","r4","r5"],
+      "settings": { "eyebrow": "Lo que dicen quienes ya la probaron", "title": "Resultados reales de personas reales", "subtitle": "Compraron con el mismo beneficio que tú: pago contra entrega, sin riesgo." }
+    },
+    "foryou": {
+      "type": "lunea-product-foryou",
+      "blocks": {
+        "y1": { "type": "item", "settings": { "text": "Tu piel se ve opaca, cansada o apagada aunque te cuides" } },
+        "y2": { "type": "item", "settings": { "text": "Tienes manchas oscuras, rojeces o tono desparejo" } },
+        "y3": { "type": "item", "settings": { "text": "Notás líneas finas, pérdida de firmeza o piel seca" } },
+        "y4": { "type": "item", "settings": { "text": "Tu piel es sensible y casi todo te irrita o da granitos" } },
+        "y5": { "type": "item", "settings": { "text": "Buscas una crema coreana real, con activos comprobados y sin químicos agresivos" } }
+      },
+      "block_order": ["y1","y2","y3","y4","y5"],
+      "settings": {
+        "title": "Fórmula Rostro Juvenil es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Pídela hoy. Siente la diferencia en tu piel.",
+        "cta_text": "Una crema liviana con los 4 activos que tu piel necesita. Fórmula coreana certificada, ahora disponible en Colombia con envío gratis y pago contra entrega.",
+        "cta_button_text": "🛒 Quiero la mía ahora"
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
+        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino." } },
+        "f3": { "type": "faq", "settings": { "question": "¿Sirve para piel grasa o mixta?", "answer": "Sí. La textura ultralightweight fue diseñada para todo tipo de piel — seca, grasa, mixta y sensible. No obstruye los poros ni genera brillos indeseados. Puedes usarla sola o debajo del maquillaje." } },
+        "f4": { "type": "faq", "settings": { "question": "¿En cuánto tiempo se ven resultados?", "answer": "La hidratación profunda se siente desde el primer uso. Las mejoras visibles en manchas, firmeza y tono se notan a partir de los 14 días de uso continuo. Los mejores resultados se ven al mes de uso diario." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Puedo usarla si tengo piel sensible?", "answer": "Sí, especialmente. La Centella Asiática es el ingrediente estrella para pieles sensibles y reactivas. La fórmula está libre de fragancias y componentes agresivos que suelen causar irritación." } },
+        "f6": { "type": "faq", "settings": { "question": "¿Cuánto dura el tubo?", "answer": "El tubo de 100ml dura entre 6 semanas y 2 meses dependiendo de si la usas una o dos veces al día. Con uso mañana y noche, un tubo te alcanza cómodamente para 6-8 semanas." } }
+      },
+      "block_order": ["f1","f2","f3","f4","f5","f6"],
+      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+    },
+    "testimonials": {
+      "type": "lunea-product-photo-testimonials",
+      "blocks": {
+        "pt1": { "type": "testimonial", "settings": { "name": "Marcela B.", "flag": "🇨🇴", "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche." } }
+      },
+      "block_order": ["pt1"],
+      "settings": { "asset_image_filename": "", "show_heading": true, "title": "Elegida por mujeres en Colombia" }
+    },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": {
+        "eyebrow": "¿Lista para transformar tu piel?",
+        "title": "Tu rostro merece los mejores activos",
+        "subtitle": "Pídela hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
+        "button_text": "Comprar Fórmula Rostro Juvenil"
+      }
+    },
+    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
+    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre la Fórmula Juvenil Asiática." } }
+  },
+  "order": [
+    "main",
+    "trust-row",
+    "hook",
+    "video-reviews",
+    "tiktok",
+    "before-after",
+    "features",
+    "howto",
+    "included",
+    "guarantee",
+    "real-reviews",
+    "foryou",
+    "faq",
+    "bottom-cta",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
+}
