@@ -59,7 +59,7 @@
     "included": {
       "type": "lunea-product-included",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "1 frasco de Astaxantina Premium 12mg" } },
+        "i1": { "type": "item", "settings": { "text": "1 bolsa de Astaxantina Premium 12mg" } },
         "i2": { "type": "item", "settings": { "text": "Antioxidante de máxima potencia" } },
         "i3": { "type": "item", "settings": { "text": "Extraída de microalga Haematococcus pluvialis" } },
         "i4": { "type": "item", "settings": { "text": "12mg de astaxantina pura por cápsula" } },
