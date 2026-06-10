@@ -295,7 +295,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          {%- unless product.handle == 'physicians-choice-enzimas-digestivas' or product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' -%}
+          {%- unless product.handle == 'physicians-choice-enzimas-digestivas' or product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' or product.handle == 'astaxantina-premium-microingredientes' -%}
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
@@ -327,6 +327,8 @@
           {%- comment -%} ── Selector de cantidad enzimas digestivas y crema ── {%- endcomment -%}
           {%- assign is_crema = false -%}
           {%- if product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' -%}{%- assign is_crema = true -%}{%- endif -%}
+          {%- assign is_asta = false -%}
+          {%- if product.handle == 'astaxantina-premium-microingredientes' -%}{%- assign is_asta = true -%}{%- endif -%}
           {%- if product.handle == 'physicians-choice-enzimas-digestivas' -%}
             {%- assign ez_vid = product.selected_or_first_available_variant.id -%}
             <style>
@@ -538,6 +540,70 @@
             </div>
 
             <a href="/cart/{{ cr_vid }}:2?discount=CREMA2X" class="lp-qty-cta" id="lp-qty-cta-{{ section_id }}">
+              🛒 Quiero la mía — Pago al recibirlo
+            </a>
+            <p class="lp-qty-pay">🚚 Envío gratis · 💵 Pago contra entrega o por Nequi</p>
+
+            <script>
+            (function() {
+              var sel = document.getElementById('lp-qty-sel-{{ section_id }}');
+              var cta = document.getElementById('lp-qty-cta-{{ section_id }}');
+              if (!sel || !cta) return;
+              sel.querySelectorAll('.lp-qty-opt').forEach(function(opt) {
+                opt.addEventListener('click', function() {
+                  sel.querySelectorAll('.lp-qty-opt').forEach(function(o) { o.classList.remove('is-selected'); });
+                  opt.classList.add('is-selected');
+                  cta.href = opt.dataset.url;
+                });
+              });
+            })();
+            </script>
+
+          {%- elsif is_asta -%}
+            {%- assign as_vid = product.selected_or_first_available_variant.id -%}
+            <style>
+              .lp-qty-sel { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+              .lp-qty-opt { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 10px; cursor: pointer; border: 2px solid #f3c9b3; background: #fff; color: #4a2a1a; font-family: 'DM Sans', system-ui, sans-serif; transition: border-color 0.2s, box-shadow 0.2s; position: relative; user-select: none; }
+              .lp-qty-opt:hover { border-color: #E8501E; }
+              .lp-qty-opt.is-selected { border-color: #E8501E; background: #FFF3EC; box-shadow: 0 2px 10px rgba(232,80,30,0.15); }
+              .lp-qty-opt__radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ccc; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
+              .lp-qty-opt.is-selected .lp-qty-opt__radio { border-color: #E8501E; background: #E8501E; }
+              .lp-qty-opt.is-selected .lp-qty-opt__radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+              .lp-qty-opt__info { flex: 1; }
+              .lp-qty-opt__name { font-size: 16px; font-weight: 700; color: #4a2a1a; display: block; }
+              .lp-qty-opt__saving { display: inline-block; font-size: 12px; color: #fff; background: #E8501E; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-top: 3px; }
+              .lp-qty-opt__prices { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+              .lp-qty-opt__anchor { font-size: 13px; color: #999; text-decoration: line-through; line-height: 1; }
+              .lp-qty-opt__price { font-size: 24px; font-weight: 900; color: #E8501E; line-height: 1.05; }
+              .lp-qty-opt__unit { font-size: 11px; color: #888; }
+              .lp-qty-opt__badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #E8501E; color: #fff; font-size: 11px; font-weight: 800; padding: 3px 12px; border-radius: 20px; white-space: nowrap; letter-spacing: 0.05em; }
+              .lp-qty-cta { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 18px 20px; margin-top: 6px; background: #E8501E; color: #fff; border: none; border-radius: 10px; font-size: 17px; font-weight: 800; font-family: 'DM Sans', system-ui, sans-serif; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.1s; box-shadow: 0 6px 18px rgba(232,80,30,0.45); animation: lpCtaPulse 2s ease-in-out infinite; }
+              @keyframes lpCtaPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+              .lp-qty-cta:hover { background: #c43f12; transform: translateY(-1px); color: #fff; animation: none; }
+              .lp-qty-cta:active { transform: translateY(0); }
+              .lp-qty-pay { text-align: center; font-size: 12.5px; color: #6B7E85; margin: 8px 0 0; font-family: 'DM Sans', system-ui, sans-serif; font-weight: 600; }
+            </style>
+
+            <div class="lp-qty-sel" id="lp-qty-sel-{{ section_id }}">
+              <div class="lp-qty-opt" data-url="/cart/{{ as_vid }}:1">
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">1 frasco</span><span class="lp-qty-opt__saving">Precio oferta</span></div>
+                <div class="lp-qty-opt__prices"><span class="lp-qty-opt__anchor">$109.900</span><span class="lp-qty-opt__price">$79.900</span><span class="lp-qty-opt__unit">$79.900 c/u</span></div>
+              </div>
+              <div class="lp-qty-opt is-selected" data-url="/cart/{{ as_vid }}:2?discount=ASTA2X">
+                <span class="lp-qty-opt__badge">⭐ MÁS POPULAR</span>
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">2 frascos</span><span class="lp-qty-opt__saving">Ahorrás $19.900</span></div>
+                <div class="lp-qty-opt__prices"><span class="lp-qty-opt__anchor">$159.800</span><span class="lp-qty-opt__price">$139.900</span><span class="lp-qty-opt__unit">$69.950 c/u</span></div>
+              </div>
+              <div class="lp-qty-opt" data-url="/cart/{{ as_vid }}:3?discount=ASTA3X">
+                <div class="lp-qty-opt__radio"></div>
+                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">3 frascos</span><span class="lp-qty-opt__saving">Ahorrás $39.800</span></div>
+                <div class="lp-qty-opt__prices"><span class="lp-qty-opt__anchor">$239.700</span><span class="lp-qty-opt__price">$199.900</span><span class="lp-qty-opt__unit">$66.633 c/u</span></div>
+              </div>
+            </div>
+
+            <a href="/cart/{{ as_vid }}:2?discount=ASTA2X" class="lp-qty-cta" id="lp-qty-cta-{{ section_id }}">
               🛒 Quiero la mía — Pago al recibirlo
             </a>
             <p class="lp-qty-pay">🚚 Envío gratis · 💵 Pago contra entrega o por Nequi</p>

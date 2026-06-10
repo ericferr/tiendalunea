@@ -1,0 +1,119 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "text", "settings": { "text": "ASTAXANTINA PREMIUM", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "share": { "type": "share", "settings": { "share_label": "Share" } }
+      },
+      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","share"],
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-1", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagás cuando te llega" } },
+        "t3": { "type": "trust", "settings": { "icon": "🌿", "text": "Antioxidante natural" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+      },
+      "block_order": ["t1","t2","t3","t4"],
+      "settings": {}
+    },
+    "hook": {
+      "type": "lunea-product-hook",
+      "settings": {
+        "eyebrow": "Astaxantina 12mg · Antioxidante Premium",
+        "title": "<p>El secreto de belleza y energía que viene <em>desde adentro.</em></p>",
+        "text": "La astaxantina es el antioxidante más potente de la naturaleza — hasta 6.000 veces más fuerte que la vitamina C. Protege tu piel del daño solar, mejora la elasticidad, te da más energía y combate el envejecimiento desde la raíz: a nivel celular."
+      }
+    },
+    "features": {
+      "type": "lunea-product-features",
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "🌟", "title": "Piel más joven desde adentro", "text": "Protege la piel del daño solar y los radicales libres, mejora la elasticidad y la hidratación. Belleza que se construye desde las células, no solo por fuera." } },
+        "b2": { "type": "feature", "settings": { "icon": "⚡", "title": "Más energía y vitalidad", "text": "Combate el estrés oxidativo que te deja cansada. Más energía durante el día y mejor recuperación después del esfuerzo." } },
+        "b3": { "type": "feature", "settings": { "icon": "🛡️", "title": "6.000x más potente que la vitamina C", "text": "La astaxantina es uno de los antioxidantes más poderosos que existen. Neutraliza los radicales libres que aceleran el envejecimiento de tu cuerpo." } },
+        "b4": { "type": "feature", "settings": { "icon": "👁️", "title": "Salud visual", "text": "Reduce la fatiga ocular causada por las pantallas y protege la salud de tus ojos en el día a día." } },
+        "b5": { "type": "feature", "settings": { "icon": "💊", "title": "12mg de alta concentración", "text": "Extraída de la microalga Haematococcus pluvialis, en una dosis premium de 12mg por cápsula. Pura, potente y de fácil absorción." } },
+        "b6": { "type": "feature", "settings": { "icon": "❤️", "title": "Bienestar integral", "text": "Apoya la salud cardiovascular, reduce la inflamación y mejora la recuperación muscular. Un solo suplemento, múltiples beneficios." } }
+      },
+      "block_order": ["b1","b2","b3","b4","b5","b6"],
+      "settings": { "eyebrow": "Por qué funciona", "title": "Una cápsula. Beneficios de adentro hacia afuera." }
+    },
+    "howto": {
+      "type": "lunea-product-howto",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Tomá 1 cápsula al día", "text": "Con una comida que contenga grasas (la astaxantina se absorbe mejor así). Sin horario complicado — encaja en tu rutina." } },
+        "s2": { "type": "step", "settings": { "title": "Seguí con tu día", "text": "No necesita preparación ni cambios en tu dieta. Una cápsula y listo, todos los días." } },
+        "s3": { "type": "step", "settings": { "title": "Sentí la diferencia con el uso constante", "text": "Más energía, piel más firme y luminosa, y bienestar general. Los antioxidantes trabajan mejor con uso continuo." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": { "eyebrow": "Así de simple", "title": "1 cápsula al día. Sin complicaciones." }
+    },
+    "included": {
+      "type": "lunea-product-included",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "1 frasco de Astaxantina Premium 12mg" } },
+        "i2": { "type": "item", "settings": { "text": "Antioxidante de máxima potencia" } },
+        "i3": { "type": "item", "settings": { "text": "Extraída de microalga Haematococcus pluvialis" } },
+        "i4": { "type": "item", "settings": { "text": "12mg de astaxantina pura por cápsula" } },
+        "i5": { "type": "item", "settings": { "text": "Sin químicos agresivos" } },
+        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+      },
+      "block_order": ["i1","i2","i3","i4","i5","i6"],
+      "settings": { "icon": "📦", "title": "¿Qué recibís?" }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 30,
+        "title": "Tu compra está protegida",
+        "text": "Pedila hoy con total confianza. Pagás cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escribinos por WhatsApp de inmediato y lo gestionamos sin vueltas."
+      }
+    },
+    "foryou": {
+      "type": "lunea-product-foryou",
+      "blocks": {
+        "y1": { "type": "item", "settings": { "text": "Querés cuidar tu piel desde adentro, no solo con cremas" } },
+        "y2": { "type": "item", "settings": { "text": "Te sentís cansada o con poca energía seguido" } },
+        "y3": { "type": "item", "settings": { "text": "Pasás muchas horas frente a pantallas" } },
+        "y4": { "type": "item", "settings": { "text": "Buscás frenar el envejecimiento a nivel celular" } },
+        "y5": { "type": "item", "settings": { "text": "Querés un antioxidante natural y potente, sin químicos" } }
+      },
+      "block_order": ["y1","y2","y3","y4","y5"],
+      "settings": {
+        "title": "La Astaxantina es para vos si...",
+        "cta_eyebrow": "Sin riesgo · Pagás cuando llega",
+        "cta_headline": "Pedila hoy. Cuidate desde adentro.",
+        "cta_text": "El antioxidante más potente de la naturaleza, ahora en Colombia con envío gratis y pago contra entrega. Belleza, energía y vitalidad en una sola cápsula.",
+        "cta_button_text": "🛒 Quiero la mía ahora"
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Hacés tu pedido en línea, nosotros enviamos el producto y pagás al mensajero cuando lo recibís en tu casa. Sin tarjeta, sin transferencia previa — solo pagás cuando lo tenés en tus manos." } },
+        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino." } },
+        "f3": { "type": "faq", "settings": { "question": "¿Cuándo se ven resultados?", "answer": "Los antioxidantes trabajan de forma acumulativa. Muchas personas notan más energía y mejor piel a las pocas semanas de uso constante. Para resultados óptimos, se recomienda uso diario continuo." } },
+        "f4": { "type": "faq", "settings": { "question": "¿Cómo se toma?", "answer": "1 cápsula al día, idealmente con una comida que tenga grasas, ya que la astaxantina se absorbe mejor junto a ellas." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Tiene efectos secundarios?", "answer": "La astaxantina es un antioxidante natural bien tolerado. Si estás embarazada, amamantando o tomás medicación, consultá con tu médico antes de empezar." } },
+        "f6": { "type": "faq", "settings": { "question": "¿Sirve tanto para hombres como mujeres?", "answer": "Sí. Aunque es muy popular por sus beneficios para la piel, la astaxantina aporta energía, recuperación muscular y protección antioxidante a cualquier persona." } }
+      },
+      "block_order": ["f1","f2","f3","f4","f5","f6"],
+      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+    },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": { "eyebrow": "¿Lista para cuidarte desde adentro?", "title": "Tu cuerpo merece el antioxidante más potente", "subtitle": "Pedila hoy y pagá cuando llegue a tu puerta. Sin riesgo, sin tarjetas.", "button_text": "Comprar Astaxantina Premium" }
+    },
+    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
+    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre la Astaxantina Premium." } }
+  },
+  "order": ["main","trust-row","hook","features","howto","included","guarantee","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+}
