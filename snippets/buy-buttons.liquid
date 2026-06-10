@@ -169,9 +169,13 @@
         .ez-badge__tx { font-family: 'DM Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #6B1515; line-height: 1.25; }
         @media (max-width: 480px) { .ez-badges { grid-template-columns: repeat(2, 1fr); } .ez-badge__tx { font-size: 12px; } }
       </style>
-    {%- elsif product.handle == 'extractor-electrico-inalambrico' or product.handle == 'lunea-go' -%}
+    {%- elsif product.handle == 'extractor-electrico-inalambrico' or product.handle == 'lunea-go' or product.handle == 'astaxantina-premium-microingredientes' -%}
     {%- assign lp_wa_number = '5493764250518' -%}
-    {%- assign lp_wa_msg = 'Hola%21%20Vi%20el%20Extractor%20Lunea%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20antes%20de%20comprar.%20%C2%BFMe%20pueden%20ayudar%3F' -%}
+    {%- if product.handle == 'astaxantina-premium-microingredientes' -%}
+      {%- assign lp_wa_msg = 'Hola%21%20Vi%20la%20Astaxantina%20Premium%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20antes%20de%20comprar.%20%C2%BFMe%20pueden%20ayudar%3F' -%}
+    {%- else -%}
+      {%- assign lp_wa_msg = 'Hola%21%20Vi%20el%20Extractor%20Lunea%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20antes%20de%20comprar.%20%C2%BFMe%20pueden%20ayudar%3F' -%}
+    {%- endif -%}
     <a
       href="https://wa.me/{{ lp_wa_number }}?text={{ lp_wa_msg }}"
       class="lp-wa-btn"
