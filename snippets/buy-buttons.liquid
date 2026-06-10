@@ -405,7 +405,7 @@
                 <div class="lp-qty-opt__radio"></div>
                 <div class="lp-qty-opt__info">
                   <span class="lp-qty-opt__name">2 frascos</span>
-                  <span class="lp-qty-opt__saving">Ahorrás $15.900</span>
+                  <span class="lp-qty-opt__saving">Ahorras $15.900</span>
                 </div>
                 <div class="lp-qty-opt__prices">
                   <span class="lp-qty-opt__anchor">$135.800</span>
@@ -418,7 +418,7 @@
                 <div class="lp-qty-opt__radio"></div>
                 <div class="lp-qty-opt__info">
                   <span class="lp-qty-opt__name">3 frascos</span>
-                  <span class="lp-qty-opt__saving">Ahorrás $33.800</span>
+                  <span class="lp-qty-opt__saving">Ahorras $33.800</span>
                 </div>
                 <div class="lp-qty-opt__prices">
                   <span class="lp-qty-opt__anchor">$203.700</span>
@@ -520,7 +520,7 @@
                 <div class="lp-qty-opt__radio"></div>
                 <div class="lp-qty-opt__info">
                   <span class="lp-qty-opt__name">2 tubos</span>
-                  <span class="lp-qty-opt__saving">Ahorrás $19.900</span>
+                  <span class="lp-qty-opt__saving">Ahorras $19.900</span>
                 </div>
                 <div class="lp-qty-opt__prices">
                   <span class="lp-qty-opt__anchor">$139.800</span>
@@ -533,7 +533,7 @@
                 <div class="lp-qty-opt__radio"></div>
                 <div class="lp-qty-opt__info">
                   <span class="lp-qty-opt__name">3 tubos</span>
-                  <span class="lp-qty-opt__saving">Ahorrás $49.800</span>
+                  <span class="lp-qty-opt__saving">Ahorras $49.800</span>
                 </div>
                 <div class="lp-qty-opt__prices">
                   <span class="lp-qty-opt__anchor">$209.700</span>
@@ -597,12 +597,12 @@
               <div class="lp-qty-opt is-selected" data-url="/cart/{{ as_vid }}:2?discount=ASTA2X">
                 <span class="lp-qty-opt__badge">⭐ MÁS POPULAR</span>
                 <div class="lp-qty-opt__radio"></div>
-                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">2 bolsas</span><span class="lp-qty-opt__saving">Ahorrás $19.900</span></div>
+                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">2 bolsas</span><span class="lp-qty-opt__saving">Ahorras $19.900</span></div>
                 <div class="lp-qty-opt__prices"><span class="lp-qty-opt__anchor">$159.800</span><span class="lp-qty-opt__price">$139.900</span><span class="lp-qty-opt__unit">$69.950 c/u</span></div>
               </div>
               <div class="lp-qty-opt" data-url="/cart/{{ as_vid }}:3?discount=ASTA3X">
                 <div class="lp-qty-opt__radio"></div>
-                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">3 bolsas</span><span class="lp-qty-opt__saving">Ahorrás $44.800</span></div>
+                <div class="lp-qty-opt__info"><span class="lp-qty-opt__name">3 bolsas</span><span class="lp-qty-opt__saving">Ahorras $44.800</span></div>
                 <div class="lp-qty-opt__prices"><span class="lp-qty-opt__anchor">$239.700</span><span class="lp-qty-opt__price">$194.900</span><span class="lp-qty-opt__unit">$64.967 c/u</span></div>
               </div>
             </div>
@@ -633,13 +633,13 @@
           {%- if product.selected_or_first_available_variant.available and product.handle != 'physicians-choice-enzimas-digestivas' and is_crema != true and is_asta != true -%}
             {%- if product.handle == 'lunea-go' -%}
               {%- assign lp_2x_discount = 'LUNEAGO2X' -%}
-              {%- assign lp_2x_label = '$230.000 las 2 — ahorrás $40.000' -%}
+              {%- assign lp_2x_label = '$230.000 las 2 — ahorras $40.000' -%}
             {%- elsif product.handle == 'crema-nida-youthfull-100ml' or product.handle == 'formula-juvenil-asiatica' -%}
               {%- assign lp_2x_discount = 'CREMA2X' -%}
-              {%- assign lp_2x_label = '$159.800 las 2 — ahorrás $20.000' -%}
+              {%- assign lp_2x_label = '$159.800 las 2 — ahorras $20.000' -%}
             {%- else -%}
               {%- assign lp_2x_discount = 'LUNEA2X' -%}
-              {%- assign lp_2x_label = '$390.000 las 2 — ahorrás $48.000' -%}
+              {%- assign lp_2x_label = '$390.000 las 2 — ahorras $48.000' -%}
             {%- endif -%}
             <a
               href="/cart/{{ product.selected_or_first_available_variant.id }}:2?discount={{ lp_2x_discount }}"

@@ -18,7 +18,7 @@
       "type": "lunea-product-trust-row",
       "blocks": {
         "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
-        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagás cuando te llega" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
         "t3": { "type": "trust", "settings": { "icon": "🇺🇸", "text": "Marca #1 en EE.UU." } },
         "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
       },
@@ -29,7 +29,7 @@
       "type": "lunea-product-hook",
       "settings": {
         "eyebrow": "Physician's Choice — fórmula 3 en 1",
-        "title": "<p>¿Te hinchás después de comer? <em>No es normal.</em></p>",
+        "title": "<p>¿Te hinchas después de comer? <em>No es normal.</em></p>",
         "text": "La hinchazón, los gases y la pesadez post-comida no son casualidad — son señales de que tu sistema digestivo necesita apoyo. Physician's Choice combina 16 enzimas digestivas activas + 2 Billones de probióticos + prebióticos en una sola cápsula para que tu digestión funcione como debería: rápido, cómodo y sin molestias."
       }
     },
@@ -49,9 +49,9 @@
     "howto": {
       "type": "lunea-product-howto",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Tomá 1 cápsula con agua", "text": "Antes o después de tu comida principal. No necesita preparación especial ni horario exacto — encaja en tu rutina como sea." } },
-        "s2": { "type": "step", "settings": { "title": "Repetí en tu segunda comida (opcional)", "text": "Podés tomar hasta 2 cápsulas por día si tenés comidas pesadas o digestión muy lenta. Empezá con 1 y ajustá según cómo te sentís." } },
-        "s3": { "type": "step", "settings": { "title": "Sentí la diferencia en los primeros días", "text": "La mayoría de personas nota mejoras en 7 a 14 días de uso continuo. Menos hinchazón, más energía y digestión más fluida." } }
+        "s1": { "type": "step", "settings": { "title": "Toma 1 cápsula con agua", "text": "Antes o después de tu comida principal. No necesita preparación especial ni horario exacto — encaja en tu rutina como sea." } },
+        "s2": { "type": "step", "settings": { "title": "Repite en tu segunda comida (opcional)", "text": "Puedes tomar hasta 2 cápsulas por día si tienes comidas pesadas o digestión muy lenta. Empieza con 1 y ajustá según cómo te sientes." } },
+        "s3": { "type": "step", "settings": { "title": "Siente la diferencia en los primeros días", "text": "La mayoría de personas nota mejoras en 7 a 14 días de uso continuo. Menos hinchazón, más energía y digestión más fluida." } }
       },
       "block_order": ["s1","s2","s3"],
       "settings": { "eyebrow": "Así de simple", "title": "Sin cambiar tu dieta. Sin complicaciones." }
@@ -67,14 +67,14 @@
         "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
       },
       "block_order": ["i1","i2","i3","i4","i5","i6"],
-      "settings": { "icon": "📦", "title": "¿Qué recibís?" }
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
     },
     "guarantee": {
       "type": "lunea-product-guarantee",
       "settings": {
         "days": 30,
         "title": "Tu compra está protegida",
-        "text": "Pedilo hoy con total confianza. Pagás cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escribinos por WhatsApp de inmediato y lo gestionamos sin vueltas."
+        "text": "Pídelo hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp de inmediato y lo gestionamos sin vueltas."
       }
     },
     "real-reviews": {
@@ -97,7 +97,7 @@
             "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/494b41c5-d92c-47d8-aff0-c5f2f52e48fd.webp",
             "tag": "COMPRA VERIFICADA",
             "quote": "Los gases desaparecieron casi por completo",
-            "text": "Mi digestión siempre fue un tema — gases todo el día, pesadez después de comer, y una incomodidad constante que ya era parte de mi vida normal. Mi nutricionista me recomendó probar enzimas digestivas y busqué opciones. Encontré Physician's Choice porque tiene probióticos y prebióticos incluidos, que es lo que ella decía que necesitaba. Llevo tres semanas tomándolas y la diferencia es notable: los gases bajaron muchísimo, me siento más liviana después de comer y ya no tengo ese adormecimiento de las tardes. Lo recomiendo especialmente si ya intentaste otras marcas sin resultado.",
+            "text": "Mi digestión siempre fue un tema — gases todo el día, pesadez después de comer, y una incomodidad constante que ya era parte de mi vida normal. Mi nutricionista me recomendó probar enzimas digestivas y busqué opciones. Encontré Physician's Choice porque tiene probióticos y prebióticos incluidos, que es lo que ella decía que necesitaba. Llevo tres semanas tomandolas y la diferencia es notable: los gases bajaron muchísimo, me siento más liviana después de comer y ya no tengo ese adormecimiento de las tardes. Lo recomiendo especialmente si ya intentaste otras marcas sin resultado.",
             "name": "Camila R.",
             "city": "Bogotá"
           }
@@ -140,34 +140,34 @@
       "settings": {
         "eyebrow": "Lo que dicen quienes ya lo probaron",
         "title": "Resultados reales de personas reales",
-        "subtitle": "Compraron con el mismo beneficio que vos: pago contra entrega, sin riesgo."
+        "subtitle": "Compraron con el mismo beneficio que tú: pago contra entrega, sin riesgo."
       }
     },
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
-        "y1": { "type": "item", "settings": { "text": "Te hinchás después de comer — sin importar qué comiste" } },
+        "y1": { "type": "item", "settings": { "text": "Te hinchas después de comer — sin importar qué comiste" } },
         "y2": { "type": "item", "settings": { "text": "Sufrís de gases frecuentes o pesadez post-almuerzo" } },
         "y3": { "type": "item", "settings": { "text": "Tu digestión es lenta o irregular desde hace tiempo" } },
-        "y4": { "type": "item", "settings": { "text": "Querés dejar de depender del omeprazol u otros medicamentos" } },
-        "y5": { "type": "item", "settings": { "text": "Buscás una solución natural, avalada por médicos y sin efectos secundarios" } }
+        "y4": { "type": "item", "settings": { "text": "Quieres dejar de depender del omeprazol u otros medicamentos" } },
+        "y5": { "type": "item", "settings": { "text": "Buscas una solución natural, avalada por médicos y sin efectos secundarios" } }
       },
       "block_order": ["y1","y2","y3","y4","y5"],
       "settings": {
-        "title": "Physician's Choice es para vos si...",
-        "cta_eyebrow": "Sin riesgo · Pagás cuando llega",
-        "cta_headline": "Pedilo hoy. Sentí la diferencia.",
-        "cta_text": "Una cápsula al día puede cambiar cómo te sentís después de cada comida. La marca #1 en enzimas digestivas en EE.UU., ahora disponible en Colombia con envío gratis y pago contra entrega.",
+        "title": "Physician's Choice es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Pídelo hoy. Siente la diferencia.",
+        "cta_text": "Una cápsula al día puede cambiar cómo te sientes después de cada comida. La marca #1 en enzimas digestivas en EE.UU., ahora disponible en Colombia con envío gratis y pago contra entrega.",
         "cta_button_text": "🛒 Quiero el mío ahora"
       }
     },
     "faq": {
       "type": "lunea-product-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Hacés tu pedido en línea, nosotros enviamos el producto y pagás al mensajero cuando lo recibís en tu casa. Sin tarjeta, sin transferencia previa — solo pagás cuando lo tenés en tus manos." } },
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
         "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino." } },
         "f3": { "type": "faq", "settings": { "question": "¿Cuánto tarda en hacer efecto?", "answer": "La mayoría de personas nota mejoras entre los 7 y 14 días de uso continuo. Para resultados óptimos se recomienda tomarlo diariamente durante al menos un mes." } },
-        "f4": { "type": "faq", "settings": { "question": "¿Puedo tomarlo si tomo otros medicamentos?", "answer": "Physician's Choice es un suplemento natural, pero si tomás medicamentos de prescripción o tenés una condición médica diagnosticada, consultá con tu médico antes de empezar. Es un suplemento, no un medicamento." } },
+        "f4": { "type": "faq", "settings": { "question": "¿Puedo tomarlo si tomo otros medicamentos?", "answer": "Physician's Choice es un suplemento natural, pero si tomas medicamentos de prescripción o tienes una condición médica diagnosticada, consulta con tu médico antes de empezar. Es un suplemento, no un medicamento." } },
         "f5": { "type": "faq", "settings": { "question": "¿Tiene efectos secundarios?", "answer": "Es una fórmula natural sin estimulantes. Algunas personas pueden notar leves cambios digestivos en los primeros días mientras el cuerpo se adapta — esto es normal y desaparece rápido." } },
         "f6": { "type": "faq", "settings": { "question": "¿Es seguro tomarlo todos los días?", "answer": "Sí. Está formulado para uso diario continuo. Las 60 cápsulas están diseñadas para un tratamiento de 1 a 2 meses de uso consistente." } }
       },
@@ -176,7 +176,7 @@
     },
     "bottom-cta": {
       "type": "lunea-bottom-cta",
-      "settings": { "eyebrow": "¿Lista para sentirte mejor?", "title": "Tu digestión merece una solución real", "subtitle": "Pedilo hoy y pagá cuando llegue a tu puerta. Sin riesgo, sin tarjetas.", "button_text": "Comprar Physician's Choice" }
+      "settings": { "eyebrow": "¿Lista para sentirte mejor?", "title": "Tu digestión merece una solución real", "subtitle": "Pídelo hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.", "button_text": "Comprar Physician's Choice" }
     },
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre las Enzimas Digestivas Physician's Choice." } }

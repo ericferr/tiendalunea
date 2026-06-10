@@ -18,7 +18,7 @@
       "type": "lunea-product-trust-row",
       "blocks": {
         "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
-        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagás cuando te llega" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
         "t3": { "type": "trust", "settings": { "icon": "🇰🇷", "text": "Fórmula coreana certificada" } },
         "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
       },
@@ -75,8 +75,8 @@
     "howto": {
       "type": "lunea-product-howto",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Limpiá tu rostro", "text": "Aplicá sobre la piel limpia y seca, mañana y/o noche. No necesita preparación especial — encaja perfectamente en cualquier rutina." } },
-        "s2": { "type": "step", "settings": { "title": "Aplicá una pequeña cantidad", "text": "Con la punta de los dedos, distribuí una cantidad del tamaño de un garbanzo en frente, mejillas, nariz y mentón. Masajeá con movimientos suaves hacia arriba." } },
+        "s1": { "type": "step", "settings": { "title": "Limpiá tu rostro", "text": "Aplica sobre la piel limpia y seca, mañana y/o noche. No necesita preparación especial — encaja perfectamente en cualquier rutina." } },
+        "s2": { "type": "step", "settings": { "title": "Aplica una pequeña cantidad", "text": "Con la punta de los dedos, distribuí una cantidad del tamaño de un garbanzo en frente, mejillas, nariz y mentón. Masajeá con movimientos suaves hacia arriba." } },
         "s3": { "type": "step", "settings": { "title": "Notá la diferencia en los primeros días", "text": "La hidratación se siente desde el primer uso. Las mejoras visibles en tono, firmeza y manchas se notan a partir de los 14 días de uso continuo." } }
       },
       "block_order": ["s1","s2","s3"],
@@ -93,14 +93,14 @@
         "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
       },
       "block_order": ["i1","i2","i3","i4","i5","i6"],
-      "settings": { "icon": "📦", "title": "¿Qué recibís?" }
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
     },
     "guarantee": {
       "type": "lunea-product-guarantee",
       "settings": {
         "days": 30,
         "title": "Tu compra está protegida",
-        "text": "Pedila hoy con total confianza. Pagás cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escribinos por WhatsApp de inmediato y lo gestionamos sin vueltas."
+        "text": "Pídela hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp de inmediato y lo gestionamos sin vueltas."
       }
     },
     "video-reviews": {
@@ -124,22 +124,22 @@
         "r5": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87054ee6e66e4006aabbbacb42d2b3478.jpg_960x960q75.jpg_.avif", "tag": "DERMATÓLOGA RECOMIENDA", "quote": "La combinación correcta para la mayoría de pieles adultas", "text": "Como dermatóloga veo a diario pacientes con piel deshidratada, manchas y pérdida de firmeza. El 80% de los casos no necesita un tratamiento invasivo — solo los activos correctos en la concentración adecuada. Esta fórmula tiene exactamente eso: ácido hialurónico en múltiples pesos moleculares, colágeno hidrolizado, centella asiática y niacinamida. Es lo que yo misma recomiendo antes de recurrir a procedimientos estéticos. Para mantenimiento y prevención del envejecimiento, es una de las mejores opciones que encontré en el mercado.", "name": "Dra. Camila Torres", "city": "Dermatología Estética" } }
       },
       "block_order": ["r1","r2","r3","r4","r5"],
-      "settings": { "eyebrow": "Lo que dicen quienes ya la probaron", "title": "Resultados reales de personas reales", "subtitle": "Compraron con el mismo beneficio que vos: pago contra entrega, sin riesgo." }
+      "settings": { "eyebrow": "Lo que dicen quienes ya la probaron", "title": "Resultados reales de personas reales", "subtitle": "Compraron con el mismo beneficio que tú: pago contra entrega, sin riesgo." }
     },
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
         "y1": { "type": "item", "settings": { "text": "Tu piel se ve opaca, cansada o apagada aunque te cuides" } },
-        "y2": { "type": "item", "settings": { "text": "Tenés manchas oscuras, rojeces o tono desparejo" } },
+        "y2": { "type": "item", "settings": { "text": "Tienes manchas oscuras, rojeces o tono desparejo" } },
         "y3": { "type": "item", "settings": { "text": "Notás líneas finas, pérdida de firmeza o piel seca" } },
         "y4": { "type": "item", "settings": { "text": "Tu piel es sensible y casi todo te irrita o da granitos" } },
-        "y5": { "type": "item", "settings": { "text": "Buscás una crema coreana real, con activos comprobados y sin químicos agresivos" } }
+        "y5": { "type": "item", "settings": { "text": "Buscas una crema coreana real, con activos comprobados y sin químicos agresivos" } }
       },
       "block_order": ["y1","y2","y3","y4","y5"],
       "settings": {
-        "title": "Fórmula Rostro Juvenil es para vos si...",
-        "cta_eyebrow": "Sin riesgo · Pagás cuando llega",
-        "cta_headline": "Pedila hoy. Sentí la diferencia en tu piel.",
+        "title": "Fórmula Rostro Juvenil es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Pídela hoy. Siente la diferencia en tu piel.",
         "cta_text": "Una crema liviana con los 4 activos que tu piel necesita. Fórmula coreana certificada, ahora disponible en Colombia con envío gratis y pago contra entrega.",
         "cta_button_text": "🛒 Quiero la mía ahora"
       }
@@ -147,12 +147,12 @@
     "faq": {
       "type": "lunea-product-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Hacés tu pedido en línea, nosotros enviamos el producto y pagás al mensajero cuando lo recibís en tu casa. Sin tarjeta, sin transferencia previa — solo pagás cuando lo tenés en tus manos." } },
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
         "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino." } },
-        "f3": { "type": "faq", "settings": { "question": "¿Sirve para piel grasa o mixta?", "answer": "Sí. La textura ultralightweight fue diseñada para todo tipo de piel — seca, grasa, mixta y sensible. No obstruye los poros ni genera brillos indeseados. Podés usarla sola o debajo del maquillaje." } },
+        "f3": { "type": "faq", "settings": { "question": "¿Sirve para piel grasa o mixta?", "answer": "Sí. La textura ultralightweight fue diseñada para todo tipo de piel — seca, grasa, mixta y sensible. No obstruye los poros ni genera brillos indeseados. Puedes usarla sola o debajo del maquillaje." } },
         "f4": { "type": "faq", "settings": { "question": "¿En cuánto tiempo se ven resultados?", "answer": "La hidratación profunda se siente desde el primer uso. Las mejoras visibles en manchas, firmeza y tono se notan a partir de los 14 días de uso continuo. Los mejores resultados se ven al mes de uso diario." } },
         "f5": { "type": "faq", "settings": { "question": "¿Puedo usarla si tengo piel sensible?", "answer": "Sí, especialmente. La Centella Asiática es el ingrediente estrella para pieles sensibles y reactivas. La fórmula está libre de fragancias y componentes agresivos que suelen causar irritación." } },
-        "f6": { "type": "faq", "settings": { "question": "¿Cuánto dura el tubo?", "answer": "El tubo de 100ml dura entre 6 semanas y 2 meses dependiendo de si la usás una o dos veces al día. Con uso mañana y noche, un tubo te alcanza cómodamente para 6-8 semanas." } }
+        "f6": { "type": "faq", "settings": { "question": "¿Cuánto dura el tubo?", "answer": "El tubo de 100ml dura entre 6 semanas y 2 meses dependiendo de si la usas una o dos veces al día. Con uso mañana y noche, un tubo te alcanza cómodamente para 6-8 semanas." } }
       },
       "block_order": ["f1","f2","f3","f4","f5","f6"],
       "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
@@ -170,7 +170,7 @@
       "settings": {
         "eyebrow": "¿Lista para transformar tu piel?",
         "title": "Tu rostro merece los mejores activos",
-        "subtitle": "Pedila hoy y pagá cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
+        "subtitle": "Pídela hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
         "button_text": "Comprar Fórmula Rostro Juvenil"
       }
     },

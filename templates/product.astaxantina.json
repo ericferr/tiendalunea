@@ -18,7 +18,7 @@
       "type": "lunea-product-trust-row",
       "blocks": {
         "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
-        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagás cuando te llega" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
         "t3": { "type": "trust", "settings": { "icon": "🌿", "text": "Antioxidante natural" } },
         "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
       },
@@ -49,9 +49,9 @@
     "howto": {
       "type": "lunea-product-howto",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Tomá 1 cápsula al día", "text": "Con una comida que contenga grasas (la astaxantina se absorbe mejor así). Sin horario complicado — encaja en tu rutina." } },
-        "s2": { "type": "step", "settings": { "title": "Seguí con tu día", "text": "No necesita preparación ni cambios en tu dieta. Una cápsula y listo, todos los días." } },
-        "s3": { "type": "step", "settings": { "title": "Sentí la diferencia con el uso constante", "text": "Más energía, piel más firme y luminosa, y bienestar general. Los antioxidantes trabajan mejor con uso continuo." } }
+        "s1": { "type": "step", "settings": { "title": "Toma 1 cápsula al día", "text": "Con una comida que contenga grasas (la astaxantina se absorbe mejor así). Sin horario complicado — encaja en tu rutina." } },
+        "s2": { "type": "step", "settings": { "title": "Sigue con tu día", "text": "No necesita preparación ni cambios en tu dieta. Una cápsula y listo, todos los días." } },
+        "s3": { "type": "step", "settings": { "title": "Siente la diferencia con el uso constante", "text": "Más energía, piel más firme y luminosa, y bienestar general. Los antioxidantes trabajan mejor con uso continuo." } }
       },
       "block_order": ["s1","s2","s3"],
       "settings": { "eyebrow": "Así de simple", "title": "1 cápsula al día. Sin complicaciones." }
@@ -67,30 +67,30 @@
         "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
       },
       "block_order": ["i1","i2","i3","i4","i5","i6"],
-      "settings": { "icon": "📦", "title": "¿Qué recibís?" }
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
     },
     "guarantee": {
       "type": "lunea-product-guarantee",
       "settings": {
         "days": 30,
         "title": "Tu compra está protegida",
-        "text": "Pedila hoy con total confianza. Pagás cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escribinos por WhatsApp de inmediato y lo gestionamos sin vueltas."
+        "text": "Pídela hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp de inmediato y lo gestionamos sin vueltas."
       }
     },
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
-        "y1": { "type": "item", "settings": { "text": "Querés cuidar tu piel desde adentro, no solo con cremas" } },
-        "y2": { "type": "item", "settings": { "text": "Te sentís cansada o con poca energía seguido" } },
-        "y3": { "type": "item", "settings": { "text": "Pasás muchas horas frente a pantallas" } },
-        "y4": { "type": "item", "settings": { "text": "Buscás frenar el envejecimiento a nivel celular" } },
-        "y5": { "type": "item", "settings": { "text": "Querés un antioxidante natural y potente, sin químicos" } }
+        "y1": { "type": "item", "settings": { "text": "Quieres cuidar tu piel desde adentro, no solo con cremas" } },
+        "y2": { "type": "item", "settings": { "text": "Te sientes cansada o con poca energía seguido" } },
+        "y3": { "type": "item", "settings": { "text": "Pasas muchas horas frente a pantallas" } },
+        "y4": { "type": "item", "settings": { "text": "Buscas frenar el envejecimiento a nivel celular" } },
+        "y5": { "type": "item", "settings": { "text": "Quieres un antioxidante natural y potente, sin químicos" } }
       },
       "block_order": ["y1","y2","y3","y4","y5"],
       "settings": {
-        "title": "La Astaxantina es para vos si...",
-        "cta_eyebrow": "Sin riesgo · Pagás cuando llega",
-        "cta_headline": "Pedila hoy. Cuidate desde adentro.",
+        "title": "La Astaxantina es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Pídela hoy. Cuídate desde adentro.",
         "cta_text": "El antioxidante más potente de la naturaleza, ahora en Colombia con envío gratis y pago contra entrega. Belleza, energía y vitalidad en una sola cápsula.",
         "cta_button_text": "🛒 Quiero la mía ahora"
       }
@@ -98,11 +98,11 @@
     "faq": {
       "type": "lunea-product-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Hacés tu pedido en línea, nosotros enviamos el producto y pagás al mensajero cuando lo recibís en tu casa. Sin tarjeta, sin transferencia previa — solo pagás cuando lo tenés en tus manos." } },
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
         "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino." } },
         "f3": { "type": "faq", "settings": { "question": "¿Cuándo se ven resultados?", "answer": "Los antioxidantes trabajan de forma acumulativa. Muchas personas notan más energía y mejor piel a las pocas semanas de uso constante. Para resultados óptimos, se recomienda uso diario continuo." } },
         "f4": { "type": "faq", "settings": { "question": "¿Cómo se toma?", "answer": "1 cápsula al día, idealmente con una comida que tenga grasas, ya que la astaxantina se absorbe mejor junto a ellas." } },
-        "f5": { "type": "faq", "settings": { "question": "¿Tiene efectos secundarios?", "answer": "La astaxantina es un antioxidante natural bien tolerado. Si estás embarazada, amamantando o tomás medicación, consultá con tu médico antes de empezar." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Tiene efectos secundarios?", "answer": "La astaxantina es un antioxidante natural bien tolerado. Si estás embarazada, amamantando o tomas medicación, consulta con tu médico antes de empezar." } },
         "f6": { "type": "faq", "settings": { "question": "¿Sirve tanto para hombres como mujeres?", "answer": "Sí. Aunque es muy popular por sus beneficios para la piel, la astaxantina aporta energía, recuperación muscular y protección antioxidante a cualquier persona." } }
       },
       "block_order": ["f1","f2","f3","f4","f5","f6"],
@@ -110,7 +110,7 @@
     },
     "bottom-cta": {
       "type": "lunea-bottom-cta",
-      "settings": { "eyebrow": "¿Lista para cuidarte desde adentro?", "title": "Tu cuerpo merece el antioxidante más potente", "subtitle": "Pedila hoy y pagá cuando llegue a tu puerta. Sin riesgo, sin tarjetas.", "button_text": "Comprar Astaxantina Premium" }
+      "settings": { "eyebrow": "¿Lista para cuidarte desde adentro?", "title": "Tu cuerpo merece el antioxidante más potente", "subtitle": "Pídela hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.", "button_text": "Comprar Astaxantina Premium" }
     },
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre la Astaxantina Premium." } }
