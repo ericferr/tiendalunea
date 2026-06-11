@@ -97,7 +97,7 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                {%- if template.suffix == 'lunea' -%}
+                {%- if template.suffix == 'lunea' or template.suffix == 'probiotico-vaginal' -%}
                   {%- render 'lunea-reviews-badge' -%}
                 {%- endif -%}
                 <div class="product__title" {{ block.shopify_attributes }}>

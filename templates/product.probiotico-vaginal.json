@@ -77,6 +77,17 @@
         "text": "Pídela hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. El envío es discreto, sin referencias visibles al contenido. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp y lo resolvemos sin vueltas."
       }
     },
+    "testimonials": {
+      "type": "lunea-product-testimonials",
+      "blocks": {
+        "r1": { "type": "testimonial", "settings": { "show_stars": true, "quote": "Llevaba meses con molestias que iban y venían. Desde que lo tomo a diario me siento mucho más fresca y tranquila. Ojalá lo hubiera conocido antes.", "name": "Daniela G.", "location": "Bogotá" } },
+        "r2": { "type": "testimonial", "settings": { "show_stars": true, "quote": "Lo empecé después de un tratamiento con antibióticos para recuperar mi flora. En pocas semanas noté la diferencia: más cómoda y segura.", "name": "Marcela T.", "location": "Medellín" } },
+        "r3": { "type": "testimonial", "settings": { "show_stars": true, "quote": "Lo pedí con algo de pena y llegó en un empaque súper discreto. Eso me encantó. Y de a poco fui sintiendo la diferencia.", "name": "Andrea P.", "location": "Cali" } },
+        "r4": { "type": "testimonial", "settings": { "show_stars": true, "quote": "Por fin algo natural que me funciona. Me siento más segura en mi día a día y en mi intimidad.", "name": "Valentina R.", "location": "Barranquilla" } }
+      },
+      "block_order": ["r1","r2","r3","r4"],
+      "settings": { "eyebrow": "Miles de mujeres ya lo probaron", "title": "Lo que cuentan otras mujeres" }
+    },
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
@@ -115,5 +126,5 @@
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
     "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre los Probióticos Vaginales." } }
   },
-  "order": ["main","trust-row","hook","features","howto","included","guarantee","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": ["main","trust-row","hook","features","howto","included","guarantee","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
 }
