@@ -78,15 +78,16 @@
       }
     },
     "testimonials": {
-      "type": "lunea-product-testimonials",
+      "type": "lunea-product-photo-testimonials",
       "blocks": {
-        "r1": { "type": "testimonial", "settings": { "show_stars": true, "quote": "El olor me tenía acomplejada. Evitaba estar con mi pareja por vergüenza, me sentía sucia aunque me cuidara todos los días. A las pocas semanas eso cambió por completo: fresca, seca y sin ese miedo constante. Volví a sentirme yo.", "name": "Daniela G.", "location": "Bogotá" } },
-        "r2": { "type": "testimonial", "settings": { "show_stars": true, "quote": "Vivía con infecciones que volvían cada mes. Antibiótico tras antibiótico y a las dos semanas otra vez lo mismo. Esto fue lo único que cortó ese círculo. Llevo meses tranquila por primera vez en años.", "name": "Marcela T.", "location": "Medellín" } },
-        "r3": { "type": "testimonial", "settings": { "show_stars": true, "quote": "La picazón y el flujo me amargaban el día entero, no me podía concentrar ni en el trabajo. En pocas semanas sentí la diferencia: seca y cómoda como hacía años no me sentía.", "name": "Andrea P.", "location": "Cali" } },
-        "r4": { "type": "testimonial", "settings": { "show_stars": true, "quote": "Dejé de tener intimidad por el olor y la incomodidad, me daba pánico que él lo notara. Esto me devolvió la seguridad. Hoy disfruto sin estar pendiente de eso todo el tiempo.", "name": "Valentina R.", "location": "Barranquilla" } }
+        "p1": { "type": "testimonial", "settings": { "image": "shopify://shop_images/probi-testimonio-1.png", "name": "Daniela G.", "flag": "🇨🇴", "quote": "El olor me tenía acomplejada, evitaba a mi pareja por vergüenza. A las pocas semanas: fresca, seca y sin ese miedo. Volví a sentirme yo." } },
+        "p2": { "type": "testimonial", "settings": { "image": "shopify://shop_images/probi-testimonio-2.jpg", "name": "Marcela T.", "flag": "🇨🇴", "quote": "Infecciones que volvían cada mes, antibiótico tras antibiótico. Esto fue lo único que cortó ese círculo. Tranquila por primera vez en años." } },
+        "p3": { "type": "testimonial", "settings": { "image": "shopify://shop_images/probi-testimonio-3.jpg", "name": "Andrea P.", "flag": "🇨🇴", "quote": "La picazón y el flujo me amargaban el día entero. En pocas semanas sentí la diferencia: seca y cómoda como hacía años no me sentía." } },
+        "p4": { "type": "testimonial", "settings": { "image": "shopify://shop_images/probi-testimonio-4.jpg", "name": "Valentina R.", "flag": "🇨🇴", "quote": "Dejé de tener intimidad por el olor y la incomodidad. Esto me devolvió la seguridad. Hoy disfruto sin estar pendiente de eso." } },
+        "p5": { "type": "testimonial", "settings": { "image": "shopify://shop_images/probi-testimonio-5.jpg", "name": "Carolina M.", "flag": "🇨🇴", "quote": "Probé de todo y nada me duraba. Por fin algo natural que me funciona. Me siento limpia, fresca y segura otra vez." } }
       },
-      "block_order": ["r1","r2","r3","r4"],
-      "settings": { "eyebrow": "Miles de mujeres ya lo probaron", "title": "Lo que cuentan otras mujeres" }
+      "block_order": ["p1","p2","p3","p4","p5"],
+      "settings": { "asset_image_filename": "", "show_heading": true, "title": "Mujeres reales que recuperaron su equilibrio", "subtitle": "Miles de mujeres ya lo probaron" }
     },
     "foryou": {
       "type": "lunea-product-foryou",
