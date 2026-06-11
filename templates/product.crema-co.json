@@ -33,21 +33,27 @@
         "text": "La piel opaca, las líneas de expresión y las manchas oscuras no son inevitables — son señales de que tu piel necesita los ingredientes correctos. Fórmula Rostro Juvenil combina Colágeno Hidrolizado + Centella Asiática + Ácido Hialurónico (x8) + Niacinamida en una sola crema liviana para que tu piel luzca más firme, hidratada y uniforme desde los primeros días."
       }
     },
+    "video-reviews": {
+      "type": "lunea-product-video-reviews",
+      "blocks": {
+        "v1": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/0b24661074534ff880663ee22eca324f/0b24661074534ff880663ee22eca324f.HD-1080p-7.2Mbps-66649616.mp4?v=0", "label": "Resultado real ✨" } },
+        "v2": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/390827532b394813a5c135044523f33a/390827532b394813a5c135044523f33a.HD-1080p-7.2Mbps-66649614.mp4?v=0", "label": "Piel transformada 🌿" } },
+        "v3": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/23e053305b11445088f8932c5e137bf4/23e053305b11445088f8932c5e137bf4.HD-1080p-7.2Mbps-66649617.mp4?v=0", "label": "Lo que dicen ellas 💬" } },
+        "v4": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/14cc91d0df854d32847fb58cab99ae3d/14cc91d0df854d32847fb58cab99ae3d.HD-1080p-7.2Mbps-49661985.mp4?v=0", "label": "Hidratación visible 💧" } }
+      },
+      "block_order": ["v1","v2","v3","v4"],
+      "settings": { "title": "200 millones de vistas no mienten", "ig_text": "La crema coreana que está revolucionando el skincare en Colombia" }
+    },
     "tiktok": {
       "type": "lunea-tiktok-embed",
-      "settings": {
-        "eyebrow": "VIRAL EN TIKTOK",
-        "title": "El video que está conquistando las redes",
-        "tiktok_url": "https://www.tiktok.com/@mx09037/video/7617047443028446485",
-        "video_id": "7617047443028446485"
-      }
+      "settings": { "eyebrow": "VIRAL EN TIKTOK", "title": "El video que está conquistando las redes", "tiktok_url": "https://www.tiktok.com/@mx09037/video/7617047443028446485", "video_id": "7617047443028446485" }
     },
     "before-after": {
       "type": "lunea-before-after",
       "settings": {
         "eyebrow": "RESULTADOS REALES",
         "title": "El cambio que hace la diferencia",
-        "subtitle": "Deslizá para ver la transformación real de la piel con uso continuo de 30 días.",
+        "subtitle": "Desliza para ver la transformación real de la piel con uso continuo de 30 días.",
         "before_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_7oau397oau397oau.avif?v=1780928531",
         "after_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_g18ta2g18ta2g18t.avif?v=1780928531",
         "before_image_url_2": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_gkqhjogkqhjogkqh.avif?v=1780928531",
@@ -75,9 +81,9 @@
     "howto": {
       "type": "lunea-product-howto",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Limpiá tu rostro", "text": "Aplica sobre la piel limpia y seca, mañana y/o noche. No necesita preparación especial — encaja perfectamente en cualquier rutina." } },
-        "s2": { "type": "step", "settings": { "title": "Aplica una pequeña cantidad", "text": "Con la punta de los dedos, distribuí una cantidad del tamaño de un garbanzo en frente, mejillas, nariz y mentón. Masajeá con movimientos suaves hacia arriba." } },
-        "s3": { "type": "step", "settings": { "title": "Notá la diferencia en los primeros días", "text": "La hidratación se siente desde el primer uso. Las mejoras visibles en tono, firmeza y manchas se notan a partir de los 14 días de uso continuo." } }
+        "s1": { "type": "step", "settings": { "title": "Limpia tu rostro", "text": "Aplica sobre la piel limpia y seca, mañana y/o noche. No necesita preparación especial — encaja perfectamente en cualquier rutina." } },
+        "s2": { "type": "step", "settings": { "title": "Aplica una pequeña cantidad", "text": "Con la punta de los dedos, distribuye una cantidad del tamaño de un garbanzo en frente, mejillas, nariz y mentón. Masajea con movimientos suaves hacia arriba." } },
+        "s3": { "type": "step", "settings": { "title": "Nota la diferencia en los primeros días", "text": "La hidratación se siente desde el primer uso. Las mejoras visibles en tono, firmeza y manchas se notan a partir de los 14 días de uso continuo." } }
       },
       "block_order": ["s1","s2","s3"],
       "settings": { "eyebrow": "Así de simple", "title": "30 segundos. Mañana y noche." }
@@ -103,17 +109,6 @@
         "text": "Pídela hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp de inmediato y lo gestionamos sin vueltas."
       }
     },
-    "video-reviews": {
-      "type": "lunea-product-video-reviews",
-      "blocks": {
-        "v1": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/0b24661074534ff880663ee22eca324f/0b24661074534ff880663ee22eca324f.HD-1080p-7.2Mbps-66649616.mp4?v=0", "label": "Resultado real ✨" } },
-        "v2": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/390827532b394813a5c135044523f33a/390827532b394813a5c135044523f33a.HD-1080p-7.2Mbps-66649614.mp4?v=0", "label": "Piel transformada 🌿" } },
-        "v3": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/23e053305b11445088f8932c5e137bf4/23e053305b11445088f8932c5e137bf4.HD-1080p-7.2Mbps-66649617.mp4?v=0", "label": "Lo que dicen ellas 💬" } },
-        "v4": { "type": "video", "settings": { "video_url": "https://nida.co/cdn/shop/videos/c/vp/14cc91d0df854d32847fb58cab99ae3d/14cc91d0df854d32847fb58cab99ae3d.HD-1080p-7.2Mbps-49661985.mp4?v=0", "label": "Hidratación visible 💧" } }
-      },
-      "block_order": ["v1","v2","v3","v4"],
-      "settings": { "title": "200 millones de vistas no mienten", "ig_text": "La crema coreana que está revolucionando el skincare en Colombia" }
-    },
     "real-reviews": {
       "type": "lunea-product-real-reviews",
       "blocks": {
@@ -126,12 +121,25 @@
       "block_order": ["r1","r2","r3","r4","r5"],
       "settings": { "eyebrow": "Lo que dicen quienes ya la probaron", "title": "Resultados reales de personas reales", "subtitle": "Compraron con el mismo beneficio que tú: pago contra entrega, sin riesgo." }
     },
+    "testimonials": {
+      "type": "lunea-product-photo-testimonials",
+      "blocks": {
+        "pt1": { "type": "testimonial", "settings": { "name": "Marcela B.", "flag": "🇨🇴", "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche." } },
+        "pt2": { "type": "testimonial", "settings": { "name": "Andrea V.", "flag": "🇨🇴", "quote": "Las manchas del embarazo finalmente se están aclarando." } },
+        "pt3": { "type": "testimonial", "settings": { "name": "Camila S.", "flag": "🇨🇴", "quote": "Ligera, se absorbe rápido y no me tapa los poros. Perfecta." } },
+        "pt4": { "type": "testimonial", "settings": { "name": "Luisa M.", "flag": "🇨🇴", "quote": "La uso debajo del maquillaje todos los días. No la cambio." } },
+        "pt5": { "type": "testimonial", "settings": { "name": "Daniela R.", "flag": "🇨🇴", "quote": "Piel sensible y por fin encontré algo que no me irrita." } },
+        "pt6": { "type": "testimonial", "settings": { "name": "Paola T.", "flag": "🇨🇴", "quote": "Me sorprendió lo rápido que vi resultados. En una semana." } }
+      },
+      "block_order": ["pt1","pt2","pt3","pt4","pt5","pt6"],
+      "settings": { "asset_image_filename": "", "show_heading": true, "title": "Elegida por mujeres en Colombia" }
+    },
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
         "y1": { "type": "item", "settings": { "text": "Tu piel se ve opaca, cansada o apagada aunque te cuides" } },
         "y2": { "type": "item", "settings": { "text": "Tienes manchas oscuras, rojeces o tono desparejo" } },
-        "y3": { "type": "item", "settings": { "text": "Notás líneas finas, pérdida de firmeza o piel seca" } },
+        "y3": { "type": "item", "settings": { "text": "Notas líneas finas, pérdida de firmeza o piel seca" } },
         "y4": { "type": "item", "settings": { "text": "Tu piel es sensible y casi todo te irrita o da granitos" } },
         "y5": { "type": "item", "settings": { "text": "Buscas una crema coreana real, con activos comprobados y sin químicos agresivos" } }
       },
@@ -157,42 +165,12 @@
       "block_order": ["f1","f2","f3","f4","f5","f6"],
       "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
     },
-    "testimonials": {
-      "type": "lunea-product-photo-testimonials",
-      "blocks": {
-        "pt1": { "type": "testimonial", "settings": { "name": "Marcela B.", "flag": "🇨🇴", "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche." } }
-      },
-      "block_order": ["pt1"],
-      "settings": { "asset_image_filename": "", "show_heading": true, "title": "Elegida por mujeres en Colombia" }
-    },
     "bottom-cta": {
       "type": "lunea-bottom-cta",
-      "settings": {
-        "eyebrow": "¿Lista para transformar tu piel?",
-        "title": "Tu rostro merece los mejores activos",
-        "subtitle": "Pídela hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
-        "button_text": "Comprar Fórmula Rostro Juvenil"
-      }
+      "settings": { "eyebrow": "¿Lista para transformar tu piel?", "title": "Tu rostro merece los mejores activos", "subtitle": "Pídela hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.", "button_text": "Comprar Fórmula Rostro Juvenil" }
     },
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
-    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764196664", "message": "Hola, quiero más información sobre la Fórmula Juvenil Asiática." } }
+    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764196664", "message": "Hola, quiero más información sobre la Fórmula Rostro Juvenil." } }
   },
-  "order": [
-    "main",
-    "trust-row",
-    "hook",
-    "video-reviews",
-    "tiktok",
-    "before-after",
-    "features",
-    "howto",
-    "included",
-    "guarantee",
-    "real-reviews",
-    "foryou",
-    "faq",
-    "bottom-cta",
-    "sticky-atc",
-    "whatsapp-float"
-  ]
+  "order": ["main","trust-row","hook","video-reviews","tiktok","before-after","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
 }
