@@ -124,14 +124,11 @@
     "testimonials": {
       "type": "lunea-product-photo-testimonials",
       "blocks": {
-        "pt1": { "type": "testimonial", "settings": { "name": "Marcela B.", "flag": "🇨🇴", "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche." } },
-        "pt2": { "type": "testimonial", "settings": { "name": "Andrea V.", "flag": "🇨🇴", "quote": "Las manchas del embarazo finalmente se están aclarando." } },
-        "pt3": { "type": "testimonial", "settings": { "name": "Camila S.", "flag": "🇨🇴", "quote": "Ligera, se absorbe rápido y no me tapa los poros. Perfecta." } },
-        "pt4": { "type": "testimonial", "settings": { "name": "Luisa M.", "flag": "🇨🇴", "quote": "La uso debajo del maquillaje todos los días. No la cambio." } },
-        "pt5": { "type": "testimonial", "settings": { "name": "Daniela R.", "flag": "🇨🇴", "quote": "Piel sensible y por fin encontré algo que no me irrita." } },
-        "pt6": { "type": "testimonial", "settings": { "name": "Paola T.", "flag": "🇨🇴", "quote": "Me sorprendió lo rápido que vi resultados. En una semana." } }
+        "pt1": { "type": "testimonial", "settings": { "image": "shopify://shop_images/crema-testimonio-1.avif", "name": "Marcela B.", "flag": "🇨🇴", "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche." } },
+        "pt2": { "type": "testimonial", "settings": { "image": "shopify://shop_images/crema-testimonio-2.avif", "name": "Andrea V.", "flag": "🇨🇴", "quote": "Las manchas del embarazo finalmente se están aclarando." } },
+        "pt3": { "type": "testimonial", "settings": { "image": "shopify://shop_images/crema-testimonio-3.avif", "name": "Camila S.", "flag": "🇨🇴", "quote": "Ligera, se absorbe rápido y no me tapa los poros. Perfecta." } }
       },
-      "block_order": ["pt1","pt2","pt3","pt4","pt5","pt6"],
+      "block_order": ["pt1","pt2","pt3"],
       "settings": { "asset_image_filename": "", "show_heading": true, "title": "Elegida por mujeres en Colombia" }
     },
     "foryou": {
