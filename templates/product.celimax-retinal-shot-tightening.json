@@ -1,0 +1,223 @@
+{
+  "name": "Retinal Shot · Kit de conversión Ecuador",
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "text", "settings": { "text": "CELIMAX · COREA DEL SUR", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "share": { "type": "share", "settings": { "share_label": "Share" } }
+      },
+      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","share"],
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-6", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 2-5 días" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando lo recibes" } },
+        "t3": { "type": "trust", "settings": { "icon": "🇰🇷", "text": "Fórmula coreana Celimax" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+      },
+      "block_order": ["t1","t2","t3","t4"],
+      "settings": { "color_scheme": "scheme-7" }
+    },
+    "hook": {
+      "type": "lunea-product-hook",
+      "settings": {
+        "eyebrow": "CELIMAX · Tecnología coreana A-Shot™",
+        "title": "<p>¿Tus arrugas siguen avanzando aunque uses cremas? <em>Esto es diferente.</em></p>",
+        "text": "La mayoría de productos antiedad contienen Retinol — pero el Retinal es hasta 11 veces más potente y actúa directamente sobre las células que producen colágeno. El Retinal Shot de Celimax combina 0.1% de Retinal liposomado con la tecnología A-Shot™: micropartículas 16 veces más pequeñas que tus poros para penetrar donde ninguna crema convencional llega. Reducción de arrugas comprobada del -28.5% en 2 semanas. No es marketing — es ciencia coreana con respaldo clínico."
+      }
+    },
+    "before-after": {
+      "type": "lunea-before-after",
+      "settings": {
+        "eyebrow": "RESULTADOS REALES",
+        "title": "El cambio que hace la diferencia",
+        "subtitle": "Desliza para ver la transformación real con uso continuo de 2 semanas.",
+        "before_image_url_1": "",
+        "after_image_url_1": "",
+        "before_image_url_2": "",
+        "after_image_url_2": "",
+        "before_image_url_3": "",
+        "after_image_url_3": "",
+        "label_before": "Antes",
+        "label_after": "Después",
+        "caption": "Resultados individuales pueden variar. Uso continuo recomendado."
+      }
+    },
+    "features": {
+      "type": "lunea-product-features",
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "🔬", "title": "Retinal 0.1% liposomado — 11x más potente que el Retinol", "text": "El Retinol se convierte en Retinal en tu piel antes de actuar — y esa conversión toma tiempo y se pierde potencia. El Retinal actúa directamente: estimula la producción de colágeno desde las capas profundas y reduce arrugas visibles desde las primeras aplicaciones." } },
+        "b2": { "type": "feature", "settings": { "icon": "⚡", "title": "Tecnología A-Shot™ — penetración 16x más profunda", "text": "Las micropartículas A-Shot™ son 16 veces más pequeñas que un poro. Eso significa que los activos no quedan en la superficie como ocurre con la mayoría de sérums — penetran directamente a las capas donde ocurre el envejecimiento real." } },
+        "b3": { "type": "feature", "settings": { "icon": "💪", "title": "3% Matrixyl — firmeza y elasticidad comprobada", "text": "El Matrixyl es el péptido más estudiado en dermatología antiedad. Al 3% de concentración activa la síntesis de colágeno tipo I, recupera la densidad de la piel y reduce visiblemente la profundidad de arrugas y surcos nasogenianos." } },
+        "b4": { "type": "feature", "settings": { "icon": "✨", "title": "Vitamina C + Niacinamida — manchas y poros cerrados", "text": "La Vitamina C neutraliza los radicales libres que aceleran el envejecimiento y unifica el tono. La Niacinamida complementa cerrando poros visibles y aclarando manchas oscuras causadas por el sol o el tiempo." } },
+        "b5": { "type": "feature", "settings": { "icon": "💧", "title": "Pantenol 1% — hidratación calmante sin irritación", "text": "El Retinal puede generar un período de adaptación inicial en pieles que nunca lo han usado. El Pantenol al 1% actúa como buffer: calma, hidrata y reduce cualquier sensación de tensión para que tu piel se adapte sin molestias." } },
+        "b6": { "type": "feature", "settings": { "icon": "🪶", "title": "Textura ligera — absorción inmediata", "text": "Fórmula en suero concentrado de rápida absorción. Sin sensación grasa, sin residuo blanco, sin poros tapados. Se puede usar sola de noche o en tu rutina existente sin conflicto con otros productos." } }
+      },
+      "block_order": ["b1","b2","b3","b4","b5","b6"],
+      "settings": { "eyebrow": "Por qué funciona de verdad", "title": "Retinal + A-Shot™. La diferencia es la ciencia.", "color_scheme": "scheme-6" }
+    },
+    "howto": {
+      "type": "lunea-product-howto",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Limpia tu rostro antes de dormir", "text": "Aplica solo en la noche, sobre piel limpia y completamente seca. Evita aplicarlo cerca de los ojos y labios. Las primeras 2 semanas úsalo día por medio para que tu piel se adapte al Retinal." } },
+        "s2": { "type": "step", "settings": { "title": "Aplica una cantidad pequeña (2mm)", "text": "Con la punta de los dedos, extiende una pequeña cantidad — del tamaño de un guisante — por frente, mejillas y mentón. Da pequeños toquecitos suaves, no arrastres. Una pequeña cantidad es suficiente para todo el rostro." } },
+        "s3": { "type": "step", "settings": { "title": "Protector solar en la mañana — siempre", "text": "El Retinal activa la renovación celular y hace tu piel más sensible a los rayos UV. El uso de protector solar SPF 30 o superior durante el día es indispensable para proteger los resultados y evitar manchas." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": { "eyebrow": "Modo de uso", "title": "3 pasos. Resultados en 2 semanas." }
+    },
+    "included": {
+      "type": "lunea-product-included",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "1 frasco de Retinal Shot Original — Sérum antiedad Celimax" } },
+        "i2": { "type": "item", "settings": { "text": "15ml de concentrado de alta potencia" } },
+        "i3": { "type": "item", "settings": { "text": "0.1% Retinal liposomado con tecnología A-Shot™" } },
+        "i4": { "type": "item", "settings": { "text": "3% Matrixyl + Vitamina C + Niacinamida + Pantenol" } },
+        "i5": { "type": "item", "settings": { "text": "Resultados clínicamente comprobados desde las 2 semanas" } },
+        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+      },
+      "block_order": ["i1","i2","i3","i4","i5","i6"],
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 30,
+        "title": "Tu compra está protegida",
+        "text": "Pide hoy con total tranquilidad. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp de inmediato y lo resolvemos sin complicaciones."
+      }
+    },
+    "real-reviews": {
+      "type": "lunea-product-real-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ac627452665934dad920232b6957e8b57w.jpg_960x960q75.jpg_.avif",
+            "tag": "RESULTADO REAL",
+            "quote": "Las arrugas de la frente se suavizaron en dos semanas",
+            "text": "Tengo 41 años y las líneas de la frente me empezaron a molestar mucho. Probé varias cremas de marcas conocidas y la diferencia era mínima. Una amiga de Quito me dijo que usaba este sérum coreano y que los resultados eran increíbles. Decidí pedirlo cuando vi que podía pagar al recibir — eso me dio mucha tranquilidad. Desde la primera semana noté que las líneas se veían más suaves. A las dos semanas mi pareja me preguntó si había ido a la esteticista. No me lo esperaba tan rápido. Ya voy por mi segunda unidad.",
+            "name": "Valentina M.",
+            "city": "Quito"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ad74ae12a77ed43ba827e2b486dfc9a92t.jpg_960x960q75.jpg_.avif",
+            "tag": "COMPRA VERIFICADA",
+            "quote": "Mis poros se ven cerrados por primera vez en años",
+            "text": "Siempre tuve los poros muy abiertos en nariz y mejillas, y nada me los cerraba. Busqué mucho tiempo algo con Retinal real — no Retinol — porque leí que es más efectivo. Este sérum me llegó en 4 días a Guayaquil y empecé a usarlo día por medio como indica. Al principio sentí una leve sensación de hormigueo que es normal, y a partir de la tercera semana los poros se veían visiblemente más cerrados. El tono de mi piel mejoró también. No esperaba que funcionara tan bien.",
+            "name": "Andrea C.",
+            "city": "Guayaquil"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87ca356fb9584f1db95ccde0d7fa65983.jpg_960x960q75.jpg_.avif",
+            "tag": "PIEL SENSIBLE",
+            "quote": "Pensé que no iba a poder usarlo — y me sorprendió",
+            "text": "Tengo piel muy reactiva y siempre tuve miedo del Retinol porque me irritaba. Leí que el Retinal es diferente y que este sérum tiene Pantenol para calmarlo. Empecé muy despacio, una vez por semana, luego cada dos días. Nunca me irritó. A las cuatro semanas la diferencia en mis arrugas de expresión era notable — especialmente las de los lados de los ojos. Mi piel se ve más joven, más firme y sin esa opacidad que tenía antes. Para piel sensible funciona si se usa bien.",
+            "name": "Daniela P.",
+            "city": "Cuenca"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A7fd262d7311742ce9e761565fe9586b9i.jpg_960x960q75.jpg_.avif",
+            "tag": "RESULTADO REAL",
+            "quote": "Las manchas del sol se aclararon notablemente",
+            "text": "Vivo en Guayaquil y el sol aquí es muy fuerte. Tenía manchas oscuras en frente y mejillas desde hace años. Probé despigmentantes de farmacia y nada funcionaba de verdad. Con el Retinal Shot vi una diferencia real en las manchas al mes de uso constante. La clave es no olvidar el protector solar en la mañana — eso es fundamental cuando usas Retinal. Mi piel se ve más pareja, más luminosa y las manchas están notablemente más claras. Vale cada centavo.",
+            "name": "María José L.",
+            "city": "Guayaquil"
+          }
+        },
+        "r5": {
+          "type": "review",
+          "settings": {
+            "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A87054ee6e66e4006aabbbacb42d2b3478.jpg_960x960q75.jpg_.avif",
+            "tag": "DERMATÓLOGA RECOMIENDA",
+            "quote": "El Retinal es lo que deberías estar usando si tienes más de 30",
+            "text": "Como dermatóloga recomiendo activos con evidencia clínica real. El Retinal es la forma más activa del Retinol — no necesita conversión en la piel, actúa directamente. La concentración de 0.1% de esta fórmula es terapéutica y el sistema liposomado mejora la tolerabilidad. El Matrixyl al 3% complementa perfectamente estimulando la síntesis de colágeno. Para mis pacientes que quieren resultados antiedad sin procedimientos invasivos, el Retinal es siempre mi primera recomendación.",
+            "name": "Dra. Paola T.",
+            "city": "Dermatología — Quito"
+          }
+        }
+      },
+      "block_order": ["r1","r2","r3","r4","r5"],
+      "settings": {
+        "eyebrow": "Lo que dicen quienes ya lo probaron",
+        "title": "Resultados reales de personas reales",
+        "subtitle": "Compraron con el mismo beneficio que tú: pago contra entrega, sin riesgo.",
+        "color_scheme": "scheme-6"
+      }
+    },
+    "testimonials": {
+      "type": "lunea-product-photo-testimonials",
+      "blocks": {
+        "pt1": { "type": "testimonial", "settings": { "name": "Valentina M.", "flag": "🇪🇨", "quote": "Las arrugas de la frente se suavizaron en dos semanas. Increíble." } },
+        "pt2": { "type": "testimonial", "settings": { "name": "Andrea C.", "flag": "🇪🇨", "quote": "Mis poros se ven cerrados por primera vez. No lo puedo creer." } },
+        "pt3": { "type": "testimonial", "settings": { "name": "Daniela P.", "flag": "🇪🇨", "quote": "Piel sensible y no me irritó nada. Ya voy por mi segunda unidad." } },
+        "pt4": { "type": "testimonial", "settings": { "name": "María José L.", "flag": "🇪🇨", "quote": "Las manchas del sol se aclararon al mes de uso. Funcionó de verdad." } },
+        "pt5": { "type": "testimonial", "settings": { "name": "Camila R.", "flag": "🇪🇨", "quote": "Lo uso de noche y la piel amanece diferente. Más firme, más luminosa." } },
+        "pt6": { "type": "testimonial", "settings": { "name": "Gabriela S.", "flag": "🇪🇨", "quote": "Probé mil sérums. Este es el único que me dio resultados reales." } }
+      },
+      "block_order": ["pt1","pt2","pt3","pt4","pt5","pt6"],
+      "settings": { "title": "Elegido por mujeres en Ecuador", "asset_image_filename": "", "show_heading": true }
+    },
+    "foryou": {
+      "type": "lunea-product-foryou",
+      "blocks": {
+        "y1": { "type": "item", "settings": { "text": "Tus arrugas siguen avanzando aunque uses cremas todos los días" } },
+        "y2": { "type": "item", "settings": { "text": "Tienes poros abiertos que se notan de cerca y nada los cierra" } },
+        "y3": { "type": "item", "settings": { "text": "Gastaste en productos caros y los resultados fueron decepcionantes" } },
+        "y4": { "type": "item", "settings": { "text": "Tu piel perdió firmeza y ese aspecto fresco que tenía antes" } },
+        "y5": { "type": "item", "settings": { "text": "Quieres un tratamiento con respaldo clínico real, no solo promesas" } }
+      },
+      "block_order": ["y1","y2","y3","y4","y5"],
+      "settings": {
+        "title": "Retinal Shot es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Pídelo hoy. Tu piel lo va a notar en 2 semanas.",
+        "cta_text": "El sérum antiedad coreano con 0.1% de Retinal liposomado y tecnología A-Shot™. Respaldo clínico real, ahora disponible en Ecuador con envío gratis y pago contra entrega.",
+        "cta_button_text": "🛒 Quiero el mío ahora"
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega en Ecuador?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
+        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega a mi ciudad?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 2 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para que puedas rastrear todo el camino." } },
+        "f3": { "type": "faq", "settings": { "question": "¿Puedo usarlo si nunca he usado Retinol o Retinal?", "answer": "Sí, pero empieza despacio. Las semanas 1 y 2 úsalo día por medio, solo de noche. Si tu piel se adapta bien, desde la semana 3 puedes usarlo todas las noches. Es normal sentir un leve hormigueo al principio — significa que está funcionando." } },
+        "f4": { "type": "faq", "settings": { "question": "¿En cuánto tiempo veo resultados?", "answer": "Los estudios clínicos de Celimax muestran reducción de poros desde la primera aplicación (-13.3%) y reducción de arrugas de -28.5% a las 2 semanas. Los resultados más completos en manchas y firmeza se ven al mes de uso continuo." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Es seguro para piel sensible?", "answer": "Sí, con la precaución de empezar gradualmente. El Pantenol al 1% de la fórmula está especialmente diseñado para calmar y minimizar la irritación. Si tienes piel muy reactiva, haz una prueba en una pequeña zona por 2-3 días antes de aplicar en todo el rostro." } },
+        "f6": { "type": "faq", "settings": { "question": "¿Por qué necesito protector solar si uso esto?", "answer": "El Retinal acelera la renovación celular, lo que hace tu piel temporalmente más sensible a los rayos UV. Sin protector solar, el sol puede causar manchas nuevas justo cuando estás tratando las anteriores. SPF 30 o más en la mañana es indispensable." } }
+      },
+      "block_order": ["f1","f2","f3","f4","f5","f6"],
+      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+    },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": {
+        "eyebrow": "¿Lista para recuperar tu piel?",
+        "title": "El Retinal que tu piel estaba esperando",
+        "subtitle": "Pídelo hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
+        "button_text": "Comprar Retinal Shot Original",
+        "color_scheme": "scheme-7"
+      }
+    },
+    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
+    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "NUMERO_ECUADOR_AQUI", "message": "Hola, quiero más información sobre el Retinal Shot Original." } }
+  },
+  "order": ["main","trust-row","hook","before-after","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+}
