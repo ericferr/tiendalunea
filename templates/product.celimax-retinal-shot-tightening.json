@@ -40,12 +40,12 @@
         "eyebrow": "RESULTADOS REALES",
         "title": "El cambio que hace la diferencia",
         "subtitle": "Desliza para ver la transformación real con uso continuo de 2 semanas.",
-        "before_image_url_1": "",
-        "after_image_url_1": "",
-        "before_image_url_2": "",
-        "after_image_url_2": "",
-        "before_image_url_3": "",
-        "after_image_url_3": "",
+        "before_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_7oau397oau397oau.avif?v=1780928531",
+        "after_image_url_1":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_g18ta2g18ta2g18t.avif?v=1780928531",
+        "before_image_url_2": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_gkqhjogkqhjogkqh.avif?v=1780928531",
+        "after_image_url_2":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_97my2w97my2w97my.avif?v=1780928531",
+        "before_image_url_3": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_dqmntidqmntidqmn.avif?v=1780928531",
+        "after_image_url_3":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_s24kyss24kyss24k.avif?v=1780928531",
         "label_before": "Antes",
         "label_after": "Después",
         "caption": "Resultados individuales pueden variar. Uso continuo recomendado."
@@ -217,7 +217,7 @@
       }
     },
     "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
-    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "NUMERO_ECUADOR_AQUI", "message": "Hola, quiero más información sobre el Retinal Shot Original." } }
+    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre el Retinal Shot Original." } }
   },
   "order": ["main","trust-row","hook","before-after","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
 }
