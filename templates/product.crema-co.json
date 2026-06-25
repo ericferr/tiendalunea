@@ -9,9 +9,10 @@
         "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
         "quantity_selector": { "type": "quantity_selector", "settings": {} },
         "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
-        "share": { "type": "share", "settings": { "share_label": "Share" } }
+        "share": { "type": "share", "settings": { "share_label": "Share" } },
+        "couriers_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-couriers' %}" } }
       },
-      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","share"],
+      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","couriers_inline","share"],
       "settings": { "enable_sticky_info": true, "color_scheme": "scheme-6", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
     },
     "trust-row": {

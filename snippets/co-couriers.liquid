@@ -1,0 +1,20 @@
+{%- comment -%}
+  CO · Transportadoras inline en el cuadro de compra (debajo del botón).
+  "Trabajamos con:" + 4 logos en cuadros chicos. Self-contained.
+{%- endcomment -%}
+<div class="co-couriers">
+  <p class="co-couriers__title">Trabajamos con:</p>
+  <div class="co-couriers__row">
+    <div class="co-couriers__box"><img src="https://cdn.shopify.com/s/files/1/0811/0984/4194/files/images_3.jpg?v=1782265633" alt="Servientrega" loading="lazy"></div>
+    <div class="co-couriers__box"><img src="https://cdn.shopify.com/s/files/1/0811/0984/4194/files/images_1.png?v=1782265633" alt="Interrapidísimo" loading="lazy"></div>
+    <div class="co-couriers__box"><img src="https://cdn.shopify.com/s/files/1/0811/0984/4194/files/logo_cliente_coordinadora.png?v=1782265632" alt="Coordinadora" loading="lazy"></div>
+    <div class="co-couriers__box"><img src="https://cdn.shopify.com/s/files/1/0811/0984/4194/files/2001.png?v=1782265633" alt="Envía" loading="lazy"></div>
+  </div>
+</div>
+<style>
+  .co-couriers { margin: 14px 0 4px; }
+  .co-couriers__title { font-family: var(--lp-font-body, system-ui, sans-serif); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--lp-text-soft, #6B7E85); margin: 0 0 8px; text-align: center; }
+  .co-couriers__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+  .co-couriers__box { display: flex; align-items: center; justify-content: center; width: 78px; height: 48px; padding: 6px 8px; background: #fff; border: 1px solid var(--lp-border, #e4e8ea); border-radius: 10px; }
+  .co-couriers__box img { max-height: 32px; max-width: 100%; width: auto; object-fit: contain; }
+</style>
