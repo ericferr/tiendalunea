@@ -90,16 +90,17 @@
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'star_rating' -%}
-                <div class="lunea-star-rating" {{ block.shopify_attributes }}>
+                <a href="#opiniones" class="lunea-star-rating" {{ block.shopify_attributes }}>
                   <span class="lunea-stars" aria-label="{{ block.settings.score }} de 5 estrellas">
                     {%- for i in (1..5) -%}<svg width="22" height="22" viewBox="0 0 24 24" fill="#f5a623" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>{%- endfor -%}
                   </span>
                   <span class="lunea-rating-text">
                     <strong>{{ block.settings.score }}</strong> &middot; {{ block.settings.count }} opiniones verificadas
                   </span>
-                </div>
+                </a>
                 <style>
-                  .lunea-star-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+                  .lunea-star-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; text-decoration: none; cursor: pointer; }
+                  .lunea-star-rating:hover .lunea-rating-text { text-decoration: underline; }
                   .lunea-stars { display: flex; gap: 3px; }
                   .lunea-rating-text { font-size: 1rem; color: #444; }
                   .lunea-rating-text strong { color: #222; font-size: 1.05rem; }
