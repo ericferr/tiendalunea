@@ -794,7 +794,8 @@
           {%- endif -%}
 
           {%- comment -%} ── Botón 2 unidades en promoción (link nativo, sin fetch) ── {%- endcomment -%}
-          {%- if product.selected_or_first_available_variant.available and product.handle != 'physicians-choice-enzimas-digestivas' and is_crema != true and is_asta != true and is_probi != true -%}
+          {%- comment -%} ALLOWLIST: el botón 2x SOLO aparece en handles con un combo 2x real (opt-in). Los productos nuevos NO lo muestran. La crema/asta/probi usan su propio selector, NO van acá. Para sumar uno, agregá su handle. {%- endcomment -%}
+          {%- if product.selected_or_first_available_variant.available and product.handle == 'lunea-go' -%}
             {%- if product.handle == 'lunea-go' -%}
               {%- assign lp_2x_discount = 'LUNEAGO2X' -%}
               {%- assign lp_2x_label = '$230.000 las 2 — ahorras $40.000' -%}
