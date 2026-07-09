@@ -29,18 +29,16 @@
         <div class="lp-photo-tt__grid">
           {%- for block in section.blocks -%}
             <div class="lp-photo-tt__card" {{ block.shopify_attributes }}>
-              <div class="lp-photo-tt__media">
-                {%- if block.settings.image != blank -%}
+              {%- if block.settings.image != blank -%}
+                <div class="lp-photo-tt__media">
                   {{ block.settings.image | image_url: width: 600 | image_tag:
                     loading: 'lazy',
                     width: block.settings.image.width,
                     height: block.settings.image.height,
                     alt: block.settings.name | default: 'Testimonio'
                   }}
-                {%- else -%}
-                  <img src="{{ 'image' | placeholder_svg_tag: 'placeholder' }}" alt="Testimonio" loading="lazy">
-                {%- endif -%}
-              </div>
+                </div>
+              {%- endif -%}
               {%- if block.settings.name != blank -%}
                 <span class="lp-photo-tt__name">
                   {{ block.settings.name }}
