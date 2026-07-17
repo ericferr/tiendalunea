@@ -1,0 +1,82 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-results">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="lp-results__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="lp-results__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      <div class="lp-results__grid">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.image_url != blank -%}
+            <div class="lp-results__item" {{ block.shopify_attributes }}>
+              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.alt | default: 'Antes y después' | escape }}" loading="lazy">
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.caption != blank -%}
+        <p class="lp-results__caption">{{ section.settings.caption }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .lp-results { text-align: center; }
+  .lp-results__eyebrow {
+    font-family: var(--lp-font-body, system-ui, sans-serif);
+    font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--lp-brand, #7BBDD0); font-weight: 700; margin: 0 0 8px;
+  }
+  .lp-results__title {
+    font-family: var(--lp-font-heading, system-ui, sans-serif);
+    font-size: clamp(1.5rem, 4vw, 2.2rem); line-height: 1.2;
+    color: var(--lp-text, #2E3F45); margin: 0 auto 22px; max-width: 640px;
+  }
+  .lp-results__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+    max-width: 920px; margin: 0 auto;
+  }
+  .lp-results__item {
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,.10);
+    background: #fff;
+  }
+  .lp-results__item img { display: block; width: 100%; height: auto; }
+  .lp-results__caption {
+    font-family: var(--lp-font-body, system-ui, sans-serif);
+    font-size: 14px; color: var(--lp-text-soft, #6B7E85);
+    margin: 16px auto 0; max-width: 560px;
+  }
+  @media (max-width: 749px) {
+    .lp-results__grid { grid-template-columns: 1fr; max-width: 420px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Lunea · Resultados (antes/después)",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "RESULTADOS REALES" },
+    { "type": "richtext", "id": "title", "label": "Titular", "default": "<p>El antes y después que habla por sí solo</p>" },
+    { "type": "text", "id": "caption", "label": "Epígrafe", "default": "Resultados con uso continuo. Los tiempos pueden variar según cada persona." }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Imagen",
+      "settings": [
+        { "type": "text", "id": "image_url", "label": "URL de la imagen" },
+        { "type": "text", "id": "alt", "label": "Texto alternativo" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Lunea · Resultados (antes/después)" } ]
+}
+{% endschema %}
