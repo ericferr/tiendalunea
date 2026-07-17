@@ -1,0 +1,119 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .lp-ing {
+    padding: 2.5rem 1rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .lp-ing__eyebrow {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a7f4b;
+    background: #e6f4ec;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+  }
+  .lp-ing__title {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 700;
+    color: var(--lp-heading, #1a1a2e);
+    margin: 0 0 2rem;
+  }
+  .lp-ing__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+  @media (min-width: 640px) {
+    .lp-ing__grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  }
+  .lp-ing__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .lp-ing__img-wrap {
+    width: 210px;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .lp-ing__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(var(--ing-zoom, 1));
+  }
+  .lp-ing__img-wrap--crop img {
+    object-fit: cover;
+    transform: scale(var(--ing-zoom, 1.25));
+  }
+  .lp-ing__name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--lp-accent, #2a7de1);
+    margin: 0;
+  }
+  .lp-ing__desc {
+    font-size: 0.82rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+  }
+</style>
+
+<div class="lp-ing" {{ section.shopify_attributes }}>
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="lp-ing__eyebrow">{{ section.settings.eyebrow }}</p>
+  {%- endif -%}
+  <h2 class="lp-ing__title">{{ section.settings.title }}</h2>
+  <div class="lp-ing__grid">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'ingredient' -%}
+        <div class="lp-ing__item" {{ block.shopify_attributes }}>
+          <div class="lp-ing__img-wrap{% if block.settings.crop %} lp-ing__img-wrap--crop{% endif %}"{% if block.settings.zoom != blank %} style="--ing-zoom: {{ block.settings.zoom }};"{% endif %}>
+            {%- if block.settings.image_url != blank -%}
+              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
+            {%- else -%}
+              <span style="font-size:2.5rem">{{ block.settings.emoji }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ingredientes",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta superior", "default": "FÓRMULA CLÍNICA" },
+    { "type": "text", "id": "title", "label": "Título", "default": "Ingredientes respaldados por la ciencia" }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingrediente",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Nombre" },
+        { "type": "text", "id": "description", "label": "Beneficio" },
+        { "type": "text", "id": "image_url", "label": "URL imagen" },
+        { "type": "checkbox", "id": "crop", "label": "Recortar/zoom imagen", "default": false },
+        { "type": "text", "id": "zoom", "label": "Nivel de zoom (ej. 1.125)" },
+        { "type": "text", "id": "emoji", "label": "Emoji (si no hay imagen)", "default": "🌿" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Ingredientes" }]
+}
+{% endschema %}

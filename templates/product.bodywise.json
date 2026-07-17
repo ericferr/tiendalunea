@@ -1,0 +1,150 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "stars": { "type": "star_rating", "settings": { "score": "4.9", "count": "+1.200" } },
+        "vendor": { "type": "text", "settings": { "text": "BODYWISE · SÉRUM CAPILAR", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "countdown_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'lunea-countdown' %}" } },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "ml_full_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-ml-full' %}" } },
+        "couriers_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-couriers' %}" } },
+        "share": { "type": "share", "settings": { "share_label": "Compartir" } }
+      },
+      "block_order": ["stars","vendor","title","price","variant_picker","quantity_selector","countdown_inline","buy_buttons","ml_full_inline","couriers_inline","share"],
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-6", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
+        "t3": { "type": "trust", "settings": { "icon": "🌿", "text": "Natural · sin efectos secundarios" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+      },
+      "block_order": ["t1","t2","t3","t4"],
+      "settings": {}
+    },
+    "ingredients": {
+      "type": "lunea-product-ingredients",
+      "blocks": {
+        "i1": { "type": "ingredient", "settings": { "name": "", "description": "", "image_url": "https://cdn.shopify.com/s/files/1/0694/6943/8036/files/Gemini_Generated_Image_a241n1a241n1a241.avif", "emoji": "", "zoom": "1.5" } },
+        "i2": { "type": "ingredient", "settings": { "name": "", "description": "", "image_url": "https://cdn.shopify.com/s/files/1/0694/6943/8036/files/Gemini_Generated_Image_h35of7h35of7h35o.avif", "emoji": "" } },
+        "i3": { "type": "ingredient", "settings": { "name": "", "description": "", "image_url": "https://cdn.shopify.com/s/files/1/0694/6943/8036/files/Gemini_Generated_Image_u2c73ku2c73ku2c7.avif", "emoji": "" } },
+        "i4": { "type": "ingredient", "settings": { "name": "", "description": "", "image_url": "https://cdn.shopify.com/s/files/1/0694/6943/8036/files/Gemini_Generated_Image_rllrburllrburllr_1.avif", "emoji": "" } }
+      },
+      "block_order": ["i1","i2","i3","i4"],
+      "settings": { "eyebrow": "FÓRMULA CLÍNICA", "title": "Ingredientes respaldados por la ciencia" }
+    },
+    "hook": {
+      "type": "lunea-product-hook",
+      "settings": {
+        "eyebrow": "Bodywise — 23% de activos para tu cabello",
+        "title": "<p>¿Tu cola de caballo cada vez más delgada? ¿Ves más pelo en el cepillo? <em>El problema está en la raíz.</em></p>",
+        "text": "La caída y el debilitamiento del cabello en la mujer —por cambios hormonales, estrés, el postparto o el paso del tiempo— empiezan en el folículo, que se va afinando hasta producir un pelo más fino y ralo. Bodywise actúa justo ahí: su sérum con romero, Redensyl, Anagain y Aminexil reactiva los folículos debilitados, frena la caída y estimula cabello nuevo, devolviéndote densidad y volumen. Natural, sin minoxidil y sin efectos secundarios."
+      }
+    },
+    "features": {
+      "type": "lunea-product-features",
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "🌿", "title": "Romero", "text": "Estimula la circulación en el cuero cabelludo y lleva más oxígeno y nutrientes al folículo. El activo natural que se volvió viral por una razón: funciona." } },
+        "b2": { "type": "feature", "settings": { "icon": "🧬", "title": "Redensyl — clínicamente probado", "text": "El activo estrella. Reactiva los folículos dormidos y dispara el crecimiento de cabello nuevo donde el pelo se te afinó o ralió." } },
+        "b3": { "type": "feature", "settings": { "icon": "🛡️", "title": "Frena la caída y densifica", "text": "Actúa sobre la caída por cambios hormonales y estrés que afina tu cabello. Fortalece la raíz para que el pelo nuevo salga más grueso y poblado." } },
+        "b4": { "type": "feature", "settings": { "icon": "💪", "title": "Anagain + Aminexil", "text": "Anagain reactiva la fase de crecimiento del pelo; Aminexil fortalece la raíz y transforma el cabello fino y quebradizo en uno más grueso y fuerte." } },
+        "b5": { "type": "feature", "settings": { "icon": "💧", "title": "No grasa · roll-on", "text": "Fórmula en base agua: no engrasa ni deja residuo. El roll-on lo aplicas directo al cuero cabelludo en segundos, sin ensuciarte las manos ni apelmazar el peinado." } },
+        "b6": { "type": "feature", "settings": { "icon": "🚫", "title": "Sin minoxidil ni finasterida", "text": "Los resultados, sin los efectos secundarios. Nada de rebote, nada de dependencia — ideal si buscas algo natural para tu cabello." } }
+      },
+      "block_order": ["b1","b2","b3","b4","b5","b6"],
+      "settings": { "eyebrow": "Por qué funciona", "title": "Frena la caída. Recupera tu densidad." }
+    },
+    "howto": {
+      "type": "lunea-product-howto",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Aplica con el roll-on", "text": "Masajea el cuero cabelludo en las zonas donde ves menos densidad (la raya, la coronilla, las sienes) durante 2 minutos. Directo a la raíz." } },
+        "s2": { "type": "step", "settings": { "title": "Dos veces al día", "text": "Mañana y noche. En base agua, no necesita enjuague: se absorbe solo y no engrasa el pelo." } },
+        "s3": { "type": "step", "settings": { "title": "Sé constante 3 meses", "text": "El cabello tiene su ciclo. Los primeros pelitos nuevos aparecen sobre el mes 2, la caída baja al mes 3, y la densidad y el volumen suben del mes 4 en adelante." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": { "eyebrow": "Así de simple", "title": "2 minutos, dos veces al día." }
+    },
+    "included": {
+      "type": "lunea-product-included",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "1 frasco de Bodywise — Sérum capilar (roll-on)" } },
+        "i2": { "type": "item", "settings": { "text": "23% de activos para el cabello en cada gota" } },
+        "i3": { "type": "item", "settings": { "text": "Romero + Redensyl + Anagain + Aminexil" } },
+        "i4": { "type": "item", "settings": { "text": "Frena la caída y densifica — sin minoxidil ni finasterida" } },
+        "i5": { "type": "item", "settings": { "text": "Aplicador roll-on · fórmula en base agua, no grasa" } },
+        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+      },
+      "block_order": ["i1","i2","i3","i4","i5","i6"],
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 30,
+        "title": "Tu compra está protegida",
+        "text": "Pídelo hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp de inmediato y lo gestionamos sin vueltas."
+      }
+    },
+    "real-reviews": {
+      "type": "lunea-product-real-reviews",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "image_url": "", "tag": "RESULTADO REAL", "quote": "Recuperé el volumen que había perdido", "text": "Después de los 35 sentía el cabello cada vez más fino y sin cuerpo; la cola de caballo se me veía delgadísima. Probé ampollas y shampoos anticaída sin resultado. Vi el romero en redes y me animé. A las 6 semanas empecé a ver pelitos nuevos en la raya, y a los 3 meses el pelo se siente con más volumen de verdad. Es natural y el roll-on es comodísimo, lo aplico y sigo con mi día.", "name": "Marcela R.", "city": "Bogotá" } },
+        "r2": { "type": "review", "settings": { "image_url": "", "tag": "COMPRA VERIFICADA", "quote": "Dejé de ver mechones en la ducha en 3 semanas", "text": "Lo que más me asustaba era la cantidad de pelo que se me quedaba en el cepillo y en la ducha. Empecé con Bodywise y a la tercera semana la caída bajó muchísimo — se notaba en el desagüe. Llevo dos meses y ahora además veo el cabello más fuerte. El pago contra entrega me dio confianza porque nunca había comprado algo así por internet.", "name": "Diana P.", "city": "Medellín" } },
+        "r3": { "type": "review", "settings": { "image_url": "", "tag": "RESULTADO REAL", "quote": "La raya se me veía cada vez más ancha, ahora se rellenó", "text": "Con el tiempo la raya del pelo se me abría cada vez más y ya me daba cosa en las fotos. Buscaba algo natural, sin minoxidil, y di con esto por el romero. Tres meses después la zona se ve visiblemente más poblada y sin ningún efecto raro. Para mí fue la decisión correcta.", "name": "Sofía M.", "city": "Cali" } },
+        "r4": { "type": "review", "settings": { "image_url": "", "tag": "RESULTADO REAL", "quote": "Después del embarazo se me caía muchísimo", "text": "El postparto me dejó una caída impresionante, me deprimía ver tanto pelo suelto. Con Bodywise, de a poco fue frenando y empezó a salir pelo nuevo en las entradas y la coronilla. No es de un día para el otro, hay que ser constante, pero a los 4 meses la diferencia está y se nota. Volví a sentirme yo.", "name": "Laura G.", "city": "Barranquilla" } },
+        "r5": { "type": "review", "settings": { "image_url": "", "tag": "COMPRA VERIFICADA", "quote": "Práctico, no engrasa y el pelo se ve más poblado", "text": "Lo que me convenció además del resultado fue lo práctico que es. El roll-on no engrasa ni apelmaza, lo aplico en la mañana y la noche en dos minutos y listo. La caída frenó y el cabello se ve con más densidad. Va por buen camino, lo voy a seguir usando.", "name": "Valentina C.", "city": "Bucaramanga" } }
+      },
+      "block_order": ["r1","r2","r3","r4","r5"],
+      "settings": {
+        "eyebrow": "Lo que dicen quienes ya lo probaron",
+        "title": "Resultados reales de mujeres reales",
+        "subtitle": "Compraron con el mismo beneficio que tú: pago contra entrega, sin riesgo."
+      }
+    },
+    "foryou": {
+      "type": "lunea-product-foryou",
+      "blocks": {
+        "y1": { "type": "item", "settings": { "text": "Notas la cola de caballo o la trenza más delgada que antes" } },
+        "y2": { "type": "item", "settings": { "text": "Encuentras mechones de pelo en el cepillo, la ducha o la almohada" } },
+        "y3": { "type": "item", "settings": { "text": "La raya del pelo se te ve cada vez más ancha o la coronilla más clara" } },
+        "y4": { "type": "item", "settings": { "text": "Tu cabello se cae más después del embarazo, por estrés o cambios hormonales" } },
+        "y5": { "type": "item", "settings": { "text": "Quieres recuperar densidad y volumen de forma natural, sin minoxidil" } }
+      },
+      "block_order": ["y1","y2","y3","y4","y5"],
+      "settings": {
+        "title": "Bodywise es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Recupera tu densidad. Recupera tu confianza.",
+        "cta_text": "Romero + Redensyl + Anagain que reactivan el folículo, frenan la caída y hacen crecer cabello nuevo. Natural, ahora en Colombia con envío gratis y pago contra entrega.",
+        "cta_button_text": "🛒 Quiero el mío ahora"
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
+        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrearlo." } },
+        "f3": { "type": "faq", "settings": { "question": "¿En cuánto tiempo se ven resultados?", "answer": "El cabello tiene su ciclo: los primeros pelitos nuevos suelen aparecer sobre el mes 2, la caída baja al mes 3 y la densidad mejora del mes 4 en adelante. La constancia es clave — por eso conviene el tratamiento de 3 frascos." } },
+        "f4": { "type": "faq", "settings": { "question": "¿Sirve para la raya ancha y la coronilla?", "answer": "Sí. Se aplica directo en las zonas donde perdiste densidad (la raya, la coronilla, las sienes) para reactivar el folículo. Funciona mejor mientras antes empieces — si el folículo todavía está vivo, se puede recuperar." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Tiene efectos secundarios como el minoxidil?", "answer": "No. Es una fórmula tópica a base de romero y activos como Redensyl, sin minoxidil ni finasterida. No genera rebote ni dependencia, y no tiene los efectos secundarios de esos tratamientos." } },
+        "f6": { "type": "faq", "settings": { "question": "¿Engrasa o apelmaza el pelo?", "answer": "No. Es una fórmula en base agua, no aceitosa. Se absorbe sola, no necesita enjuague y no deja el pelo grasoso — la puedes usar de día sin apelmazar el peinado." } }
+      },
+      "block_order": ["f1","f2","f3","f4","f5","f6"],
+      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+    },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": { "eyebrow": "¿Lista para recuperar tu cabello?", "title": "Frena la caída antes de que avance", "subtitle": "Pídelo hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.", "button_text": "Comprar Bodywise" }
+    },
+    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
+    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre el sérum capilar Bodywise." } }
+  },
+  "order": ["main","trust-row","ingredients","hook","features","howto","included","guarantee","real-reviews","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+}
