@@ -1,0 +1,163 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "stars": { "type": "star_rating", "settings": { "score": "4.9", "count": "+900" } },
+        "vendor": { "type": "text", "settings": { "text": "SNAP ON SMILE · SONRISA INSTANTÁNEA", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "countdown_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'lunea-countdown' %}" } },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "ml_full_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-ml-full' %}" } },
+        "couriers_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-couriers' %}" } },
+        "share": { "type": "share", "settings": { "share_label": "Compartir" } }
+      },
+      "block_order": ["stars","vendor","title","price","variant_picker","quantity_selector","countdown_inline","buy_buttons","ml_full_inline","couriers_inline","share"],
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-6", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío a todo el país" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
+        "t3": { "type": "trust", "settings": { "icon": "😁", "text": "Sonrisa perfecta al instante" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+      },
+      "block_order": ["t1","t2","t3","t4"],
+      "settings": {}
+    },
+    "hook": {
+      "type": "lunea-product-hook",
+      "settings": {
+        "eyebrow": "SNAP ON SMILE · Prótesis estética removible",
+        "title": "<p>¿Te tapas la boca al sonreír o evitas salir en las fotos? <em>Se acabó.</em></p>",
+        "text": "Los dientes faltantes, amarillos, torcidos o separados no tienen por qué robarte la confianza. Snap On Smile es una funda estética que se coloca sobre tus propios dientes y te devuelve una sonrisa pareja y blanca al instante — sin odontólogo, sin citas costosas y sin pegamentos. Te la pones tú mismo en casa en minutos y sonríes con seguridad en tu próxima salida, foto o evento."
+      }
+    },
+    "gif-demo": {
+      "type": "lunea-gif-demo",
+      "settings": {
+        "eyebrow": "Mira cómo funciona",
+        "title": "<p>Una sonrisa nueva en segundos</p>",
+        "gif_url": "https://cdn.shopify.com/s/files/1/0760/1068/4607/files/teeth_veneers_gif_1_480x480-ezgif.com-optiwebp.webp?v=1784067933",
+        "caption": "Se coloca sobre tus dientes y transforma tu sonrisa al instante."
+      }
+    },
+    "features": {
+      "type": "lunea-product-features",
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "😁", "title": "Sonrisa perfecta en segundos", "text": "Se coloca encima de tus dientes naturales y tapa al instante los faltantes, las manchas y las torceduras. El resultado se ve parejo, blanco y natural desde el primer momento." } },
+        "b2": { "type": "feature", "settings": { "icon": "🔄", "title": "Removible y reutilizable", "text": "La pones y la quitas cuando quieras — para un evento, una foto, una salida o el día a día. No es permanente: tú decides cuándo usarla." } },
+        "b3": { "type": "feature", "settings": { "icon": "🧬", "title": "Material hipoalergénico sin BPA", "text": "Fabricada en resina flexible de grado dental, libre de BPA. Suave con las encías, no irrita y es cómoda incluso en uso prolongado." } },
+        "b4": { "type": "feature", "settings": { "icon": "🚫", "title": "Sin pegamentos ni odontólogo", "text": "Nada de adhesivos ni citas costosas. Te la pones tú mismo en casa en pocos minutos, siguiendo tres pasos simples." } },
+        "b5": { "type": "feature", "settings": { "icon": "📏", "title": "Ajuste universal moldeable", "text": "El sistema de moldeado en agua caliente hace que se adapte a la forma exacta de tu boca. Ajuste firme, cómodo y a medida — sin importar el tamaño de tu dentadura." } },
+        "b6": { "type": "feature", "settings": { "icon": "💼", "title": "Estuche protector incluido", "text": "Viene con su estuche portátil para que la lleves a todos lados: siempre lista, higiénica y protegida cuando la necesites." } }
+      },
+      "block_order": ["b1","b2","b3","b4","b5","b6"],
+      "settings": { "eyebrow": "Por qué la vas a amar", "title": "Una sonrisa nueva, sin pasar por el odontólogo" }
+    },
+    "howto": {
+      "type": "lunea-product-howto",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Sumérgela en agua caliente", "text": "Pon la prótesis en agua caliente unos segundos para ablandarla y activar el material moldeable." } },
+        "s2": { "type": "step", "settings": { "title": "Colócala y muerde suave", "text": "Ubícala sobre tus dientes y muerde con suavidad para que tome la forma exacta de tu boca. Presiona unos segundos para un ajuste perfecto." } },
+        "s3": { "type": "step", "settings": { "title": "Sonríe con confianza", "text": "Deja enfriar unos segundos y listo. Ya tienes una sonrisa pareja y blanca, lista para tu próxima foto, salida o evento." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": { "eyebrow": "Así de simple", "title": "3 pasos. En minutos. En tu casa." }
+    },
+    "included": {
+      "type": "lunea-product-included",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "1 × Prótesis dental estética Snap On Smile" } },
+        "i2": { "type": "item", "settings": { "text": "1 × Estuche protector portátil" } },
+        "i3": { "type": "item", "settings": { "text": "Accesorio de ajuste para el moldeado" } },
+        "i4": { "type": "item", "settings": { "text": "Caja de presentación original" } },
+        "i5": { "type": "item", "settings": { "text": "Material hipoalergénico de grado dental, sin BPA" } },
+        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+      },
+      "block_order": ["i1","i2","i3","i4","i5","i6"],
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 10,
+        "title": "Compra sin riesgo",
+        "text": "Pídela hoy con total confianza. Pagas solo cuando el paquete llega a tu casa — sin tarjetas ni transferencias por adelantado. Revisas que el producto y el empaque estén perfectos al recibirlo, y si hay algún problema nos escribes por WhatsApp y lo resolvemos sin vueltas."
+      }
+    },
+    "real-reviews": {
+      "type": "lunea-product-real-reviews",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "image_url": "https://peruglow.store/cdn/shop/files/foto_optimizada_60kb.webp?v=1773181958&width=1420", "tag": "RESULTADO REAL", "quote": "Volví a sonreír en las fotos", "text": "Hace años me faltaba una muela adelante y me tapaba la boca en cada foto. No me animaba a ponerme implantes por el precio. Vi esta prótesis y decidí probar con el pago contra entrega, así no arriesgaba nada. Llegó en tres días, la moldeé en casa en cinco minutos y no lo podía creer: se ve totalmente natural. Ahora sonrío en todas las fotos sin pensarlo.", "name": "Marcela R.", "city": "Bogotá" } },
+        "r2": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/A58440d867bb246b9aedaf308fa413ec36.jpg_960x960q75.jpg_.avif", "tag": "COMPRA VERIFICADA", "quote": "La usé para el matrimonio de mi hija", "text": "Con los años y el tinto los dientes se me pusieron amarillos y desgastados. Tenía el matrimonio de mi hija y no quería salir así en las fotos. La compré justo a tiempo, me quedó firme y cómoda, y aguantó toda la fiesta sin moverse. Todos me decían lo bien que se me veía la sonrisa. Por lo que costó, es una diferencia enorme.", "name": "Diana P.", "city": "Cali" } },
+        "r3": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Abe54c726c6144e0f90171cc065f4530cl.jpg_960x960q75.jpg_.avif", "tag": "USO DIARIO", "quote": "Atiendo público y me cambió la seguridad", "text": "Tengo los dientes separados y siempre me dio pena al atender gente todo el día. No quería brackets ni gastar una fortuna en carillas. Esta funda me tapa perfecto los espacios y se ve pareja. La uso todos los días en el trabajo y nadie se dio cuenta de que la tengo puesta. Cómoda y muy natural.", "name": "Sofía M.", "city": "Medellín" } },
+        "r4": { "type": "review", "settings": { "image_url": "https://ae-pic-a1.aliexpress-media.com/kf/Ac6de03fe383f477c9bb6ed300fca3a918.jpg_960x960q75.jpg_.avif", "tag": "RESULTADO REAL", "quote": "La compré para una entrevista de trabajo", "text": "Tenía los dientes bastante feos y venía evitando sonreír en las entrevistas. Necesitaba una solución rápida y económica. La pedí, me llegó enseguida y el moldeado fue muy fácil. Me dio la confianza que necesitaba para presentarme bien. Sencillo, rápido y funciona.", "name": "Andrés G.", "city": "Barranquilla" } }
+      },
+      "block_order": ["r1","r2","r3","r4"],
+      "settings": { "eyebrow": "Lo que dicen quienes ya la probaron", "title": "Sonrisas reales de personas reales", "subtitle": "Compraron con el mismo beneficio que tú: pago contra entrega, sin riesgo." }
+    },
+    "foryou": {
+      "type": "lunea-product-foryou",
+      "blocks": {
+        "y1": { "type": "item", "settings": { "text": "Te faltan uno o más dientes y te da pena sonreír" } },
+        "y2": { "type": "item", "settings": { "text": "Tienes los dientes amarillos, manchados o desgastados con el tiempo" } },
+        "y3": { "type": "item", "settings": { "text": "Tus dientes están torcidos o separados y no quieres brackets ni carillas costosas" } },
+        "y4": { "type": "item", "settings": { "text": "Tienes un evento cerca (matrimonio, foto, entrevista) y quieres una sonrisa perfecta ya" } },
+        "y5": { "type": "item", "settings": { "text": "No quieres gastar cientos de miles en el odontólogo para verte bien" } }
+      },
+      "block_order": ["y1","y2","y3","y4","y5"],
+      "settings": {
+        "title": "Snap On Smile es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Recupera tu sonrisa hoy.",
+        "cta_text": "Una funda estética que te devuelve una sonrisa pareja y blanca al instante, sin odontólogo. Ajuste universal moldeable, material hipoalergénico y pago contra entrega en todo el país.",
+        "cta_button_text": "🛒 La quiero ahora"
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros lo enviamos y pagas al recibirlo en tu casa. Sin tarjeta y sin transferencias por adelantado — pagas solo cuando lo tienes en tus manos." } },
+        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear tu paquete." } },
+        "f3": { "type": "faq", "settings": { "question": "¿Se nota que la tengo puesta?", "answer": "No. El diseño imita el color y la forma de una dentadura natural, y al moldearse a tu boca queda pareja y discreta. La mayoría de la gente no nota que la estás usando." } },
+        "f4": { "type": "faq", "settings": { "question": "¿Puedo comer y tomar con ella puesta?", "answer": "Es una prótesis estética pensada para lucir tu sonrisa. Puedes tomar líquidos sin problema, pero para comer alimentos duros o muy calientes te recomendamos retirarla para cuidarla y que te dure más." } },
+        "f5": { "type": "faq", "settings": { "question": "¿Sirve para cualquier tamaño de boca?", "answer": "Sí. Tiene ajuste universal: al moldearse en agua caliente se adapta a la forma exacta de tu boca. Disponible para la dentadura superior, que es la más visible al sonreír." } },
+        "f6": { "type": "faq", "settings": { "question": "¿De qué material está hecha?", "answer": "De resina flexible de grado dental, hipoalergénica y libre de BPA. Es suave con las encías y está pensada para un uso cómodo y seguro." } }
+      },
+      "block_order": ["f1","f2","f3","f4","f5","f6"],
+      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+    },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": {
+        "eyebrow": "¿Listo para volver a sonreír?",
+        "title": "Tu mejor sonrisa, en minutos y sin odontólogo",
+        "subtitle": "Pídela hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
+        "button_text": "Comprar Snap On Smile"
+      }
+    },
+    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
+    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre Snap On Smile." } }
+  },
+  "order": [
+    "main",
+    "trust-row",
+    "hook",
+    "gif-demo",
+    "features",
+    "howto",
+    "included",
+    "guarantee",
+    "real-reviews",
+    "foryou",
+    "faq",
+    "bottom-cta",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
+}

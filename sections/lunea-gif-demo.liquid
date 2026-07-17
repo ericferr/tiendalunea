@@ -1,0 +1,61 @@
+{{ 'lunea-product.css' | asset_url | stylesheet_tag }}
+
+<div class="lp-section" {{ section.shopify_attributes }}>
+  <div class="lp-container">
+    <div class="lp-gifdemo">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="lp-gifdemo__eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="lp-gifdemo__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.gif_url != blank -%}
+        <div class="lp-gifdemo__media">
+          <img src="{{ section.settings.gif_url }}" alt="{{ section.settings.title | strip_html | escape }}" loading="lazy">
+        </div>
+      {%- endif -%}
+      {%- if section.settings.caption != blank -%}
+        <p class="lp-gifdemo__caption">{{ section.settings.caption }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .lp-gifdemo { text-align: center; }
+  .lp-gifdemo__eyebrow {
+    font-family: var(--lp-font-body, system-ui, sans-serif);
+    font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--lp-brand, #E5308A); font-weight: 700; margin: 0 0 8px;
+  }
+  .lp-gifdemo__title {
+    font-family: var(--lp-font-heading, system-ui, sans-serif);
+    font-size: clamp(1.5rem, 4vw, 2.2rem); line-height: 1.2;
+    color: var(--lp-text, #2E3F45); margin: 0 auto 20px; max-width: 620px;
+  }
+  .lp-gifdemo__media {
+    max-width: 480px; margin: 0 auto;
+    border-radius: 18px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  }
+  .lp-gifdemo__media img { display: block; width: 100%; height: auto; }
+  .lp-gifdemo__caption {
+    font-family: var(--lp-font-body, system-ui, sans-serif);
+    font-size: 15px; color: var(--lp-text-soft, #6B7E85);
+    margin: 16px auto 0; max-width: 520px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Lunea · GIF demo",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Mirá cómo funciona" },
+    { "type": "richtext", "id": "title", "label": "Titular", "default": "<p>Una sonrisa nueva en segundos</p>" },
+    { "type": "text", "id": "gif_url", "label": "URL del GIF/imagen", "default": "https://cdn.shopify.com/s/files/1/0760/1068/4607/files/teeth_veneers_gif_1_480x480-ezgif.com-optiwebp.webp?v=1784067933" },
+    { "type": "text", "id": "caption", "label": "Epígrafe", "default": "Se calza sobre tus dientes y transforma tu sonrisa al instante." }
+  ],
+  "presets": [ { "name": "Lunea · GIF demo" } ]
+}
+{% endschema %}
