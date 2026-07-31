@@ -3,7 +3,7 @@
   Link directo al carrito con el descuento aplicado -> checkout nativo (AstroPay/tarjeta).
   Es un <a> directo a propósito: así NO lo intercepta Releasit (que maneja el COD contra entrega).
 {%- endcomment -%}
-<a href="/cart/47869853630690:1?discount=TARJETA10" class="co-prepaid" rel="nofollow">
+<a href="/cart/{{ product.selected_or_first_available_variant.id }}:1?discount=TARJETA10" class="co-prepaid" rel="nofollow">
   <span class="co-prepaid__top">💳 Pago anticipado y ahorra 10%</span>
   <span class="co-prepaid__price"><s>$89.900</s> <strong>$79.900</strong></span>
   <span class="co-prepaid__sub">Paga ahora con tarjeta · envío gratis</span>
