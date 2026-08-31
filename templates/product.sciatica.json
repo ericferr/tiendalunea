@@ -1,0 +1,344 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "stars": { "type": "star_rating", "settings": { "score": "4.8", "count": "+940" } },
+        "vendor": { "type": "text", "settings": { "text": "CREVIP · APOYO PARA EL NERVIO CIÁTICO", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "countdown_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'lunea-countdown' %}" } },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "ml_full_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-ml-full' %}" } },
+        "couriers_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-couriers' %}" } },
+        "share": { "type": "share", "settings": { "share_label": "Compartir" } }
+      },
+      "block_order": [
+        "stars",
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "countdown_inline",
+        "buy_buttons",
+        "ml_full_inline",
+        "couriers_inline",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-6",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "trust-row": {
+      "type": "lunea-product-trust-row",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
+        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
+        "t3": { "type": "trust", "settings": { "icon": "💊", "text": "120 cápsulas · frasco sellado" } },
+        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "hook": {
+      "type": "lunea-product-hook",
+      "settings": {
+        "eyebrow": "Relieve Sciatica — apoyo nutricional para el nervio ciático",
+        "title": "<p>Ese dolor que empieza en la espalda baja y te baja por la pierna <em>no se va solo.</em></p>",
+        "text": "Primero era una molestia al levantarte. Después empezaste a sentarte de lado, a evitar las escaleras, a dormir en una sola posición porque la otra te despierta. El hormigueo, la pierna que se duerme, la puntada que te dobla cuando te agachas. Y lo peor: te fuiste acostumbrando. Dejaste de cargar a tus nietos, de manejar largo, de caminar como antes — no porque no quieras, sino porque ya sabes cómo te va a doler después. El nervio ciático es el más largo del cuerpo y cuando está comprometido, no avisa: manda. Los analgésicos tapan la señal un rato, pero el cuerpo necesita nutrientes específicos para sostener la función normal del sistema nervioso — y eso es justamente lo que la mayoría no le está dando."
+      }
+    },
+    "features": {
+      "type": "lunea-product-features",
+      "blocks": {
+        "b1": {
+          "type": "feature",
+          "settings": {
+            "icon": "🧬",
+            "title": "Ácido alfa lipoico (R-ALA)",
+            "text": "Es el activo más estudiado en salud nerviosa. Un antioxidante que el cuerpo produce en cantidades mínimas y que actúa donde otros no llegan: protege las células nerviosas del estrés oxidativo, ese desgaste silencioso que se acumula con los años."
+          }
+        },
+        "b2": {
+          "type": "feature",
+          "settings": {
+            "icon": "⚡",
+            "title": "Benfotiamina — vitamina B1 que sí se absorbe",
+            "text": "No es la B1 común. La benfotiamina es liposoluble, lo que significa que atraviesa las membranas y llega al tejido nervioso mucho mejor que la versión normal. La B1 contribuye al funcionamiento normal del sistema nervioso."
+          }
+        },
+        "b3": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔋",
+            "title": "Acetil-L-carnitina",
+            "text": "Trabaja dentro de la célula nerviosa, en la parte que produce su energía. Un nervio sin energía es un nervio que responde mal — y esta es la forma de carnitina que mejor cruza hacia el tejido nervioso."
+          }
+        },
+        "b4": {
+          "type": "feature",
+          "settings": {
+            "icon": "💊",
+            "title": "Complejo B completo",
+            "text": "B1, B6 y B12 juntas. La B12 es la que más falta en personas mayores de 50 y en quienes toman medicación crónica, y su déficit se siente justo ahí: hormigueo, adormecimiento, sensibilidad rara en piernas y pies."
+          }
+        },
+        "b5": {
+          "type": "feature",
+          "settings": {
+            "icon": "🌙",
+            "title": "Se toma y ya — sin cremas ni aparatos",
+            "text": "No hay que aplicarse nada, ni acostarse en una máquina, ni pedir turno. Es una cápsula con agua, en tu casa, todos los días. La constancia es lo que hace la diferencia y por eso importa que sea fácil."
+          }
+        },
+        "b6": {
+          "type": "feature",
+          "settings": {
+            "icon": "🚫",
+            "title": "Sin somnolencia ni dependencia",
+            "text": "No es un analgésico ni un relajante muscular. Es un suplemento nutricional: no te tumba, no te deja atontado para manejar o trabajar, y no genera el efecto rebote de los calmantes que hay que ir subiendo de dosis."
+          }
+        }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "settings": {
+        "eyebrow": "Qué lleva adentro",
+        "title": "Nutrientes que tu sistema nervioso necesita todos los días"
+      }
+    },
+    "howto": {
+      "type": "lunea-product-howto",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Tómalo con comida",
+            "text": "Con el desayuno o el almuerzo, con un vaso de agua. Con alimento se absorbe mejor y le cae bien al estómago. Sigue la dosis que indica la etiqueta de tu frasco."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Todos los días, a la misma hora",
+            "text": "Los nutrientes trabajan por acumulación, no por golpe. Saltarse días es lo que hace que la gente diga que 'no le sirvió'. Déjalo a la vista, junto al café o al cepillo de dientes."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Dale el tratamiento completo",
+            "text": "El tejido nervioso se renueva lento — más lento que la piel o el músculo. Por eso el frasco trae 120 cápsulas: para que puedas sostenerlo el tiempo que de verdad hace falta, sin cortar a mitad de camino."
+          }
+        }
+      },
+      "settings": {
+        "eyebrow": "Así de simple",
+        "title": "Una cápsula al día. Sin cremas, sin turnos, sin aparatos."
+      }
+    },
+    "included": {
+      "type": "lunea-product-included",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "1 frasco sellado de CREVIP Relieve Sciatica — 120 cápsulas" } },
+        "i2": { "type": "item", "settings": { "text": "Ácido alfa lipoico (R-ALA) + Acetil-L-carnitina" } },
+        "i3": { "type": "item", "settings": { "text": "Benfotiamina — vitamina B1 de alta absorción" } },
+        "i4": { "type": "item", "settings": { "text": "Complejo B: B1, B6 y B12 para la función nerviosa normal" } },
+        "i5": { "type": "item", "settings": { "text": "Suplemento dietario · no genera somnolencia ni dependencia" } },
+        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
+      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+    },
+    "guarantee": {
+      "type": "lunea-product-guarantee",
+      "settings": {
+        "days": 30,
+        "title": "Tu compra está protegida",
+        "text": "Pídelo hoy con total confianza. Pagas cuando el producto llega a tu puerta — sin tarjetas, sin transferencias por adelantado. Si al recibirlo hay algún problema con el empaque o el producto, escríbenos por WhatsApp y lo resolvemos."
+      }
+    },
+    "real-reviews": {
+      "type": "lunea-product-real-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "tag": "COMPRA VERIFICADA",
+            "quote": "Volví a dormir de mi lado",
+            "text": "Llevaba meses durmiendo boca arriba porque de costado el dolor me despertaba a las 3 de la mañana. Empecé el frasco por recomendación de mi cuñada. No fue de un día para el otro, pero al mes ya me acomodaba como antes. Que me llegue a la casa y pagar ahí mismo fue lo que me decidió a probarlo.",
+            "name": "Gustavo A.",
+            "city": "Bogotá"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "tag": "COMPRA VERIFICADA",
+            "quote": "Manejo todo el día y ya no llego destruido",
+            "text": "Soy conductor, paso ocho horas sentado y al bajarme del carro casi no podía estirar la pierna. Un compañero me habló de las cápsulas de alfa lipoico. Lo bueno es que no da sueño, eso para mí era clave porque no puedo tomar nada que me atonte manejando.",
+            "name": "Héctor M.",
+            "city": "Medellín"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "tag": "COMPRA VERIFICADA",
+            "quote": "El hormigueo en el pie fue lo primero que noté distinto",
+            "text": "Mi mamá tiene 68 y se quejaba del hormigueo y de que se le dormía el pie. Le compré el frasco porque leí que la B12 le suele faltar a la gente mayor. Ella dice que lo del hormigueo es lo que más cambió. Le rinde bastante el frasco, va por la mitad.",
+            "name": "Carolina R.",
+            "city": "Cali"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "tag": "COMPRA VERIFICADA",
+            "quote": "Me cansé de vivir a punta de calmantes",
+            "text": "Estaba tomando analgésicos casi todos los días y sabía que eso no podía seguir así, por el estómago sobre todo. Busqué algo nutricional para acompañar. Lo tomo con el desayuno y ya es parte de la rutina. Lo pedí un martes y el jueves lo tenía.",
+            "name": "Marta L.",
+            "city": "Barranquilla"
+          }
+        },
+        "r5": {
+          "type": "review",
+          "settings": {
+            "tag": "COMPRA VERIFICADA",
+            "quote": "La cápsula es normal, se pasa fácil",
+            "text": "Lo primero que pregunté fue el tamaño porque a mí las pastillas grandes me cuestan. Es una cápsula común, se pasa sin problema con agua. Y el frasco trae 120, o sea que no te quedas a mitad del tratamiento como me pasó con otro que compré antes.",
+            "name": "Jorge P.",
+            "city": "Bucaramanga"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5"],
+      "settings": {
+        "eyebrow": "Lo que dicen quienes ya lo probaron",
+        "title": "Personas que decidieron dejar de aguantar",
+        "subtitle": "Compraron con el mismo beneficio que tú: pago contra entrega, sin riesgo."
+      }
+    },
+    "foryou": {
+      "type": "lunea-product-foryou",
+      "blocks": {
+        "y1": { "type": "item", "settings": { "text": "El dolor te arranca en la espalda baja y te baja por el glúteo o la pierna" } },
+        "y2": { "type": "item", "settings": { "text": "Sientes hormigueo, adormecimiento o la pierna \"dormida\" sin razón" } },
+        "y3": { "type": "item", "settings": { "text": "Pasas muchas horas sentado o manejando y te levantas duro" } },
+        "y4": { "type": "item", "settings": { "text": "Ya dependes de analgésicos y quieres algo nutricional que acompañe" } },
+        "y5": { "type": "item", "settings": { "text": "Tienes más de 50 y sabes que la B12 se absorbe peor con los años" } },
+        "y6": { "type": "item", "settings": { "text": "Dejaste de hacer cosas que te gustaban por miedo a cómo vas a quedar después" } }
+      },
+      "block_order": ["y1", "y2", "y3", "y4", "y5", "y6"],
+      "settings": {
+        "title": "Relieve Sciatica es para ti si...",
+        "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
+        "cta_headline": "Deja de organizar tu vida alrededor del dolor",
+        "cta_text": "120 cápsulas con ácido alfa lipoico, acetil-L-carnitina, benfotiamina y complejo B — los nutrientes que tu sistema nervioso necesita. Ahora en Colombia con envío gratis y pago contra entrega.",
+        "cta_button_text": "🛒 Quiero el mío ahora"
+      }
+    },
+    "faq": {
+      "type": "lunea-product-faq",
+      "blocks": {
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo funciona el pago contra entrega?",
+            "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos."
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "¿En cuánto tiempo llega?",
+            "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrearlo."
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿En cuánto tiempo se notan cambios?",
+            "answer": "Es un suplemento nutricional, no un analgésico: trabaja por acumulación y no de un día para el otro. El tejido nervioso se renueva lento, por eso el frasco trae 120 cápsulas — para sostener el tratamiento el tiempo que hace falta. Los tiempos varían según cada persona."
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Da sueño o me deja atontado?",
+            "answer": "No. No es un analgésico ni un relajante muscular, así que no produce somnolencia ni te deja lento para manejar o trabajar. Tampoco genera dependencia ni efecto rebote."
+          }
+        },
+        "f5": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo tomarlo si tomo otros medicamentos?",
+            "answer": "Es un suplemento dietario de venta libre, pero si tomas medicación crónica, estás embarazada o en lactancia, consúltalo con tu médico antes de empezar. No reemplaza el tratamiento que te haya indicado un profesional."
+          }
+        },
+        "f6": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué tamaño tiene la cápsula? ¿Cuánto dura el frasco?",
+            "answer": "Es una cápsula de tamaño estándar, se pasa fácil con agua. El frasco trae 120 cápsulas; la duración depende de la dosis diaria que indica la etiqueta."
+          }
+        },
+        "f7": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es un medicamento?",
+            "answer": "No. Es un suplemento dietario de apoyo nutricional para la salud del sistema nervioso. No está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad, y no sustituye la consulta médica."
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6", "f7"],
+      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+    },
+    "bottom-cta": {
+      "type": "lunea-bottom-cta",
+      "settings": {
+        "eyebrow": "¿Cuánto tiempo más lo vas a aguantar?",
+        "title": "Tu nervio ciático necesita nutrientes, no otro calmante",
+        "subtitle": "Pídelo hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
+        "button_text": "Comprar Relieve Sciatica"
+      }
+    },
+    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
+    "whatsapp-float": {
+      "type": "lunea-whatsapp-float",
+      "settings": {
+        "phone": "5493764250518",
+        "message": "Hola, quiero más información sobre Relieve Sciatica (apoyo para el nervio ciático)."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "trust-row",
+    "hook",
+    "features",
+    "howto",
+    "included",
+    "guarantee",
+    "real-reviews",
+    "foryou",
+    "faq",
+    "bottom-cta",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
+}
