@@ -3,27 +3,123 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "text", "settings": { "text": "PHYSICIAN'S CHOICE", "text_style": "uppercase" } },
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
-        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
-        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
-        "share": { "type": "share", "settings": { "share_label": "Share" } },
-        "couriers_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-couriers' %}" } }
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "PHYSICIAN'S CHOICE",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "couriers_inline": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'co-couriers' %}"
+          }
+        },
+        "un_boton": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'lunea-un-solo-boton' %}"
+          }
+        }
       },
-      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","couriers_inline","share"],
-      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-1", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+      "block_order": [
+        "un_boton",
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "couriers_inline",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
     },
     "trust-row": {
       "type": "lunea-product-trust-row",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
-        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
-        "t3": { "type": "trust", "settings": { "icon": "🇺🇸", "text": "Marca #1 en EE.UU." } },
-        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "🚚",
+            "text": "Envío gratis · llega en 1-5 días"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "📦",
+            "text": "Pagas cuando te llega"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "🇺🇸",
+            "text": "Marca #1 en EE.UU."
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "🔒",
+            "text": "Compra 100% segura"
+          }
+        }
       },
-      "block_order": ["t1","t2","t3","t4"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
       "settings": {}
     },
     "hook": {
@@ -37,38 +133,155 @@
     "features": {
       "type": "lunea-product-features",
       "blocks": {
-        "b1": { "type": "feature", "settings": { "icon": "⚗️", "title": "16 enzimas digestivas activas", "text": "Descomponen proteínas, grasas y carbohidratos de forma eficiente. Tu cuerpo absorbe más nutrientes y trabaja menos después de comer." } },
-        "b2": { "type": "feature", "settings": { "icon": "🦠", "title": "2 Billones de probióticos (CFUs)", "text": "Restauran y mantienen el equilibrio de la flora intestinal. Menos gases, menos inflamación, mejor bienestar general." } },
-        "b3": { "type": "feature", "settings": { "icon": "🌱", "title": "Prebióticos incluidos", "text": "Alimentan las bacterias buenas del intestino para que los probióticos funcionen mejor. La mayoría de suplementos no los incluye." } },
-        "b4": { "type": "feature", "settings": { "icon": "💊", "title": "150 mg REAL AAFU — alta potencia", "text": "No es una fórmula genérica. REAL AAFU es el estándar de potencia enzimática más exigente del mercado, desarrollado con médicos." } },
-        "b5": { "type": "feature", "settings": { "icon": "📅", "title": "60 cápsulas — 1 a 2 meses", "text": "Un frasco te alcanza para uno o dos meses de tratamiento completo según tu necesidad. Una cápsula al día es suficiente para la mayoría." } },
-        "b6": { "type": "feature", "settings": { "icon": "🩺", "title": "Desarrollado con médicos", "text": "La fórmula fue creada junto a especialistas en salud digestiva. No es un suplemento más — es una solución clínica accesible." } }
+        "b1": {
+          "type": "feature",
+          "settings": {
+            "icon": "⚗️",
+            "title": "16 enzimas digestivas activas",
+            "text": "Descomponen proteínas, grasas y carbohidratos de forma eficiente. Tu cuerpo absorbe más nutrientes y trabaja menos después de comer."
+          }
+        },
+        "b2": {
+          "type": "feature",
+          "settings": {
+            "icon": "🦠",
+            "title": "2 Billones de probióticos (CFUs)",
+            "text": "Restauran y mantienen el equilibrio de la flora intestinal. Menos gases, menos inflamación, mejor bienestar general."
+          }
+        },
+        "b3": {
+          "type": "feature",
+          "settings": {
+            "icon": "🌱",
+            "title": "Prebióticos incluidos",
+            "text": "Alimentan las bacterias buenas del intestino para que los probióticos funcionen mejor. La mayoría de suplementos no los incluye."
+          }
+        },
+        "b4": {
+          "type": "feature",
+          "settings": {
+            "icon": "💊",
+            "title": "150 mg REAL AAFU — alta potencia",
+            "text": "No es una fórmula genérica. REAL AAFU es el estándar de potencia enzimática más exigente del mercado, desarrollado con médicos."
+          }
+        },
+        "b5": {
+          "type": "feature",
+          "settings": {
+            "icon": "📅",
+            "title": "60 cápsulas — 1 a 2 meses",
+            "text": "Un frasco te alcanza para uno o dos meses de tratamiento completo según tu necesidad. Una cápsula al día es suficiente para la mayoría."
+          }
+        },
+        "b6": {
+          "type": "feature",
+          "settings": {
+            "icon": "🩺",
+            "title": "Desarrollado con médicos",
+            "text": "La fórmula fue creada junto a especialistas en salud digestiva. No es un suplemento más — es una solución clínica accesible."
+          }
+        }
       },
-      "block_order": ["b1","b2","b3","b4","b5","b6"],
-      "settings": { "eyebrow": "Por qué funciona", "title": "Una cápsula. Tres soluciones." }
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {
+        "eyebrow": "Por qué funciona",
+        "title": "Una cápsula. Tres soluciones."
+      }
     },
     "howto": {
       "type": "lunea-product-howto",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Toma 1 cápsula con agua", "text": "Antes o después de tu comida principal. No necesita preparación especial ni horario exacto — encaja en tu rutina como sea." } },
-        "s2": { "type": "step", "settings": { "title": "Repite en tu segunda comida (opcional)", "text": "Puedes tomar hasta 2 cápsulas por día si tienes comidas pesadas o digestión muy lenta. Empieza con 1 y ajustá según cómo te sientes." } },
-        "s3": { "type": "step", "settings": { "title": "Siente la diferencia en los primeros días", "text": "La mayoría de personas nota mejoras en 7 a 14 días de uso continuo. Menos hinchazón, más energía y digestión más fluida." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Toma 1 cápsula con agua",
+            "text": "Antes o después de tu comida principal. No necesita preparación especial ni horario exacto — encaja en tu rutina como sea."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Repite en tu segunda comida (opcional)",
+            "text": "Puedes tomar hasta 2 cápsulas por día si tienes comidas pesadas o digestión muy lenta. Empieza con 1 y ajustá según cómo te sientes."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Siente la diferencia en los primeros días",
+            "text": "La mayoría de personas nota mejoras en 7 a 14 días de uso continuo. Menos hinchazón, más energía y digestión más fluida."
+          }
+        }
       },
-      "block_order": ["s1","s2","s3"],
-      "settings": { "eyebrow": "Así de simple", "title": "Sin cambiar tu dieta. Sin complicaciones." }
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "eyebrow": "Así de simple",
+        "title": "Sin cambiar tu dieta. Sin complicaciones."
+      }
     },
     "included": {
       "type": "lunea-product-included",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "1 frasco de Physician's Choice Digestive Enzymes" } },
-        "i2": { "type": "item", "settings": { "text": "60 cápsulas (1-2 meses de tratamiento)" } },
-        "i3": { "type": "item", "settings": { "text": "16 enzimas digestivas activas" } },
-        "i4": { "type": "item", "settings": { "text": "2 Billones de CFUs (probióticos)" } },
-        "i5": { "type": "item", "settings": { "text": "Prebióticos para flora intestinal" } },
-        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+        "i1": {
+          "type": "item",
+          "settings": {
+            "text": "1 frasco de Physician's Choice Digestive Enzymes"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "text": "60 cápsulas (1-2 meses de tratamiento)"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "text": "16 enzimas digestivas activas"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "text": "2 Billones de CFUs (probióticos)"
+          }
+        },
+        "i5": {
+          "type": "item",
+          "settings": {
+            "text": "Prebióticos para flora intestinal"
+          }
+        },
+        "i6": {
+          "type": "item",
+          "settings": {
+            "text": "Soporte por WhatsApp antes y después de tu compra"
+          }
+        }
       },
-      "block_order": ["i1","i2","i3","i4","i5","i6"],
-      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
+      "settings": {
+        "icon": "📦",
+        "title": "¿Qué recibes?"
+      }
     },
     "guarantee": {
       "type": "lunea-product-guarantee",
@@ -137,7 +350,13 @@
           }
         }
       },
-      "block_order": ["r1","r2","r3","r4","r5"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ],
       "settings": {
         "eyebrow": "Lo que dicen quienes ya lo probaron",
         "title": "Resultados reales de personas reales",
@@ -147,13 +366,44 @@
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
-        "y1": { "type": "item", "settings": { "text": "Te hinchas después de comer — sin importar qué comiste" } },
-        "y2": { "type": "item", "settings": { "text": "Sufrís de gases frecuentes o pesadez post-almuerzo" } },
-        "y3": { "type": "item", "settings": { "text": "Tu digestión es lenta o irregular desde hace tiempo" } },
-        "y4": { "type": "item", "settings": { "text": "Quieres dejar de depender del omeprazol u otros medicamentos" } },
-        "y5": { "type": "item", "settings": { "text": "Buscas una solución natural, avalada por médicos y sin efectos secundarios" } }
+        "y1": {
+          "type": "item",
+          "settings": {
+            "text": "Te hinchas después de comer — sin importar qué comiste"
+          }
+        },
+        "y2": {
+          "type": "item",
+          "settings": {
+            "text": "Sufrís de gases frecuentes o pesadez post-almuerzo"
+          }
+        },
+        "y3": {
+          "type": "item",
+          "settings": {
+            "text": "Tu digestión es lenta o irregular desde hace tiempo"
+          }
+        },
+        "y4": {
+          "type": "item",
+          "settings": {
+            "text": "Quieres dejar de depender del omeprazol u otros medicamentos"
+          }
+        },
+        "y5": {
+          "type": "item",
+          "settings": {
+            "text": "Buscas una solución natural, avalada por médicos y sin efectos secundarios"
+          }
+        }
       },
-      "block_order": ["y1","y2","y3","y4","y5"],
+      "block_order": [
+        "y1",
+        "y2",
+        "y3",
+        "y4",
+        "y5"
+      ],
       "settings": {
         "title": "Physician's Choice es para ti si...",
         "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
@@ -165,22 +415,98 @@
     "faq": {
       "type": "lunea-product-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
-        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino." } },
-        "f3": { "type": "faq", "settings": { "question": "¿Cuánto tarda en hacer efecto?", "answer": "La mayoría de personas nota mejoras entre los 7 y 14 días de uso continuo. Para resultados óptimos se recomienda tomarlo diariamente durante al menos un mes." } },
-        "f4": { "type": "faq", "settings": { "question": "¿Puedo tomarlo si tomo otros medicamentos?", "answer": "Physician's Choice es un suplemento natural, pero si tomas medicamentos de prescripción o tienes una condición médica diagnosticada, consulta con tu médico antes de empezar. Es un suplemento, no un medicamento." } },
-        "f5": { "type": "faq", "settings": { "question": "¿Tiene efectos secundarios?", "answer": "Es una fórmula natural sin estimulantes. Algunas personas pueden notar leves cambios digestivos en los primeros días mientras el cuerpo se adapta — esto es normal y desaparece rápido." } },
-        "f6": { "type": "faq", "settings": { "question": "¿Es seguro tomarlo todos los días?", "answer": "Sí. Está formulado para uso diario continuo. Las 60 cápsulas están diseñadas para un tratamiento de 1 a 2 meses de uso consistente." } }
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo funciona el pago contra entrega?",
+            "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos."
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "¿En cuánto tiempo llega?",
+            "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino."
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuánto tarda en hacer efecto?",
+            "answer": "La mayoría de personas nota mejoras entre los 7 y 14 días de uso continuo. Para resultados óptimos se recomienda tomarlo diariamente durante al menos un mes."
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo tomarlo si tomo otros medicamentos?",
+            "answer": "Physician's Choice es un suplemento natural, pero si tomas medicamentos de prescripción o tienes una condición médica diagnosticada, consulta con tu médico antes de empezar. Es un suplemento, no un medicamento."
+          }
+        },
+        "f5": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Tiene efectos secundarios?",
+            "answer": "Es una fórmula natural sin estimulantes. Algunas personas pueden notar leves cambios digestivos en los primeros días mientras el cuerpo se adapta — esto es normal y desaparece rápido."
+          }
+        },
+        "f6": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es seguro tomarlo todos los días?",
+            "answer": "Sí. Está formulado para uso diario continuo. Las 60 cápsulas están diseñadas para un tratamiento de 1 a 2 meses de uso consistente."
+          }
+        }
       },
-      "block_order": ["f1","f2","f3","f4","f5","f6"],
-      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "title": "Preguntas frecuentes"
+      }
     },
     "bottom-cta": {
       "type": "lunea-bottom-cta",
-      "settings": { "eyebrow": "¿Lista para sentirte mejor?", "title": "Tu digestión merece una solución real", "subtitle": "Pídelo hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.", "button_text": "Comprar Physician's Choice" }
+      "settings": {
+        "eyebrow": "¿Lista para sentirte mejor?",
+        "title": "Tu digestión merece una solución real",
+        "subtitle": "Pídelo hoy y paga cuando llegue a tu puerta. Sin riesgo, sin tarjetas.",
+        "button_text": "Comprar Physician's Choice"
+      }
     },
-    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
-    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre las Enzimas Digestivas Physician's Choice." } }
+    "sticky-atc": {
+      "type": "lunea-sticky-atc",
+      "settings": {
+        "cta_text": "Comprar ahora"
+      }
+    },
+    "whatsapp-float": {
+      "type": "lunea-whatsapp-float",
+      "settings": {
+        "phone": "5493764250518",
+        "message": "Hola, quiero más información sobre las Enzimas Digestivas Physician's Choice."
+      }
+    }
   },
-  "order": ["main","trust-row","hook","features","howto","included","guarantee","real-reviews","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": [
+    "main",
+    "trust-row",
+    "hook",
+    "features",
+    "howto",
+    "included",
+    "guarantee",
+    "real-reviews",
+    "foryou",
+    "faq",
+    "bottom-cta",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
 }

@@ -4,27 +4,119 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "text", "settings": { "text": "CELIMAX · COREA DEL SUR", "text_style": "uppercase" } },
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
-        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
-        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
-        "share": { "type": "share", "settings": { "share_label": "Share" } }
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "CELIMAX · COREA DEL SUR",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "un_boton": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'lunea-un-solo-boton' %}"
+          }
+        }
       },
-      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","share"],
-      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-6", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+      "block_order": [
+        "un_boton",
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-6",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
     },
     "trust-row": {
       "type": "lunea-product-trust-row",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 2-5 días" } },
-        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando lo recibes" } },
-        "t3": { "type": "trust", "settings": { "icon": "🇰🇷", "text": "Fórmula coreana Celimax" } },
-        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "🚚",
+            "text": "Envío gratis · llega en 2-5 días"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "📦",
+            "text": "Pagas cuando lo recibes"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "🇰🇷",
+            "text": "Fórmula coreana Celimax"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "🔒",
+            "text": "Compra 100% segura"
+          }
+        }
       },
-      "block_order": ["t1","t2","t3","t4"],
-      "settings": { "color_scheme": "scheme-7" }
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-7"
+      }
     },
     "hook": {
       "type": "lunea-product-hook",
@@ -41,11 +133,11 @@
         "title": "El cambio que hace la diferencia",
         "subtitle": "Desliza para ver la transformación real con uso continuo de 2 semanas.",
         "before_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_7oau397oau397oau.avif?v=1780928531",
-        "after_image_url_1":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_g18ta2g18ta2g18t.avif?v=1780928531",
+        "after_image_url_1": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_g18ta2g18ta2g18t.avif?v=1780928531",
         "before_image_url_2": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_gkqhjogkqhjogkqh.avif?v=1780928531",
-        "after_image_url_2":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_97my2w97my2w97my.avif?v=1780928531",
+        "after_image_url_2": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_97my2w97my2w97my.avif?v=1780928531",
         "before_image_url_3": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_dqmntidqmntidqmn.avif?v=1780928531",
-        "after_image_url_3":  "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_s24kyss24kyss24k.avif?v=1780928531",
+        "after_image_url_3": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_s24kyss24kyss24k.avif?v=1780928531",
         "label_before": "Antes",
         "label_after": "Después",
         "caption": "Resultados individuales pueden variar. Uso continuo recomendado."
@@ -54,38 +146,156 @@
     "features": {
       "type": "lunea-product-features",
       "blocks": {
-        "b1": { "type": "feature", "settings": { "icon": "🔬", "title": "Retinal 0.1% liposomado — 11x más potente que el Retinol", "text": "El Retinol se convierte en Retinal en tu piel antes de actuar — y esa conversión toma tiempo y se pierde potencia. El Retinal actúa directamente: estimula la producción de colágeno desde las capas profundas y reduce arrugas visibles desde las primeras aplicaciones." } },
-        "b2": { "type": "feature", "settings": { "icon": "⚡", "title": "Tecnología A-Shot™ — penetración 16x más profunda", "text": "Las micropartículas A-Shot™ son 16 veces más pequeñas que un poro. Eso significa que los activos no quedan en la superficie como ocurre con la mayoría de sérums — penetran directamente a las capas donde ocurre el envejecimiento real." } },
-        "b3": { "type": "feature", "settings": { "icon": "💪", "title": "3% Matrixyl — firmeza y elasticidad comprobada", "text": "El Matrixyl es el péptido más estudiado en dermatología antiedad. Al 3% de concentración activa la síntesis de colágeno tipo I, recupera la densidad de la piel y reduce visiblemente la profundidad de arrugas y surcos nasogenianos." } },
-        "b4": { "type": "feature", "settings": { "icon": "✨", "title": "Vitamina C + Niacinamida — manchas y poros cerrados", "text": "La Vitamina C neutraliza los radicales libres que aceleran el envejecimiento y unifica el tono. La Niacinamida complementa cerrando poros visibles y aclarando manchas oscuras causadas por el sol o el tiempo." } },
-        "b5": { "type": "feature", "settings": { "icon": "💧", "title": "Pantenol 1% — hidratación calmante sin irritación", "text": "El Retinal puede generar un período de adaptación inicial en pieles que nunca lo han usado. El Pantenol al 1% actúa como buffer: calma, hidrata y reduce cualquier sensación de tensión para que tu piel se adapte sin molestias." } },
-        "b6": { "type": "feature", "settings": { "icon": "🪶", "title": "Textura ligera — absorción inmediata", "text": "Fórmula en suero concentrado de rápida absorción. Sin sensación grasa, sin residuo blanco, sin poros tapados. Se puede usar sola de noche o en tu rutina existente sin conflicto con otros productos." } }
+        "b1": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔬",
+            "title": "Retinal 0.1% liposomado — 11x más potente que el Retinol",
+            "text": "El Retinol se convierte en Retinal en tu piel antes de actuar — y esa conversión toma tiempo y se pierde potencia. El Retinal actúa directamente: estimula la producción de colágeno desde las capas profundas y reduce arrugas visibles desde las primeras aplicaciones."
+          }
+        },
+        "b2": {
+          "type": "feature",
+          "settings": {
+            "icon": "⚡",
+            "title": "Tecnología A-Shot™ — penetración 16x más profunda",
+            "text": "Las micropartículas A-Shot™ son 16 veces más pequeñas que un poro. Eso significa que los activos no quedan en la superficie como ocurre con la mayoría de sérums — penetran directamente a las capas donde ocurre el envejecimiento real."
+          }
+        },
+        "b3": {
+          "type": "feature",
+          "settings": {
+            "icon": "💪",
+            "title": "3% Matrixyl — firmeza y elasticidad comprobada",
+            "text": "El Matrixyl es el péptido más estudiado en dermatología antiedad. Al 3% de concentración activa la síntesis de colágeno tipo I, recupera la densidad de la piel y reduce visiblemente la profundidad de arrugas y surcos nasogenianos."
+          }
+        },
+        "b4": {
+          "type": "feature",
+          "settings": {
+            "icon": "✨",
+            "title": "Vitamina C + Niacinamida — manchas y poros cerrados",
+            "text": "La Vitamina C neutraliza los radicales libres que aceleran el envejecimiento y unifica el tono. La Niacinamida complementa cerrando poros visibles y aclarando manchas oscuras causadas por el sol o el tiempo."
+          }
+        },
+        "b5": {
+          "type": "feature",
+          "settings": {
+            "icon": "💧",
+            "title": "Pantenol 1% — hidratación calmante sin irritación",
+            "text": "El Retinal puede generar un período de adaptación inicial en pieles que nunca lo han usado. El Pantenol al 1% actúa como buffer: calma, hidrata y reduce cualquier sensación de tensión para que tu piel se adapte sin molestias."
+          }
+        },
+        "b6": {
+          "type": "feature",
+          "settings": {
+            "icon": "🪶",
+            "title": "Textura ligera — absorción inmediata",
+            "text": "Fórmula en suero concentrado de rápida absorción. Sin sensación grasa, sin residuo blanco, sin poros tapados. Se puede usar sola de noche o en tu rutina existente sin conflicto con otros productos."
+          }
+        }
       },
-      "block_order": ["b1","b2","b3","b4","b5","b6"],
-      "settings": { "eyebrow": "Por qué funciona de verdad", "title": "Retinal + A-Shot™. La diferencia es la ciencia.", "color_scheme": "scheme-6" }
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {
+        "eyebrow": "Por qué funciona de verdad",
+        "title": "Retinal + A-Shot™. La diferencia es la ciencia.",
+        "color_scheme": "scheme-6"
+      }
     },
     "howto": {
       "type": "lunea-product-howto",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Limpia tu rostro antes de dormir", "text": "Aplica solo en la noche, sobre piel limpia y completamente seca. Evita aplicarlo cerca de los ojos y labios. Las primeras 2 semanas úsalo día por medio para que tu piel se adapte al Retinal." } },
-        "s2": { "type": "step", "settings": { "title": "Aplica una cantidad pequeña (2mm)", "text": "Con la punta de los dedos, extiende una pequeña cantidad — del tamaño de un guisante — por frente, mejillas y mentón. Da pequeños toquecitos suaves, no arrastres. Una pequeña cantidad es suficiente para todo el rostro." } },
-        "s3": { "type": "step", "settings": { "title": "Protector solar en la mañana — siempre", "text": "El Retinal activa la renovación celular y hace tu piel más sensible a los rayos UV. El uso de protector solar SPF 30 o superior durante el día es indispensable para proteger los resultados y evitar manchas." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Limpia tu rostro antes de dormir",
+            "text": "Aplica solo en la noche, sobre piel limpia y completamente seca. Evita aplicarlo cerca de los ojos y labios. Las primeras 2 semanas úsalo día por medio para que tu piel se adapte al Retinal."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Aplica una cantidad pequeña (2mm)",
+            "text": "Con la punta de los dedos, extiende una pequeña cantidad — del tamaño de un guisante — por frente, mejillas y mentón. Da pequeños toquecitos suaves, no arrastres. Una pequeña cantidad es suficiente para todo el rostro."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Protector solar en la mañana — siempre",
+            "text": "El Retinal activa la renovación celular y hace tu piel más sensible a los rayos UV. El uso de protector solar SPF 30 o superior durante el día es indispensable para proteger los resultados y evitar manchas."
+          }
+        }
       },
-      "block_order": ["s1","s2","s3"],
-      "settings": { "eyebrow": "Modo de uso", "title": "3 pasos. Resultados en 2 semanas." }
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "eyebrow": "Modo de uso",
+        "title": "3 pasos. Resultados en 2 semanas."
+      }
     },
     "included": {
       "type": "lunea-product-included",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "1 frasco de Retinal Shot Original — Sérum antiedad Celimax" } },
-        "i2": { "type": "item", "settings": { "text": "15ml de concentrado de alta potencia" } },
-        "i3": { "type": "item", "settings": { "text": "0.1% Retinal liposomado con tecnología A-Shot™" } },
-        "i4": { "type": "item", "settings": { "text": "3% Matrixyl + Vitamina C + Niacinamida + Pantenol" } },
-        "i5": { "type": "item", "settings": { "text": "Resultados clínicamente comprobados desde las 2 semanas" } },
-        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+        "i1": {
+          "type": "item",
+          "settings": {
+            "text": "1 frasco de Retinal Shot Original — Sérum antiedad Celimax"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "text": "15ml de concentrado de alta potencia"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "text": "0.1% Retinal liposomado con tecnología A-Shot™"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "text": "3% Matrixyl + Vitamina C + Niacinamida + Pantenol"
+          }
+        },
+        "i5": {
+          "type": "item",
+          "settings": {
+            "text": "Resultados clínicamente comprobados desde las 2 semanas"
+          }
+        },
+        "i6": {
+          "type": "item",
+          "settings": {
+            "text": "Soporte por WhatsApp antes y después de tu compra"
+          }
+        }
       },
-      "block_order": ["i1","i2","i3","i4","i5","i6"],
-      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
+      "settings": {
+        "icon": "📦",
+        "title": "¿Qué recibes?"
+      }
     },
     "guarantee": {
       "type": "lunea-product-guarantee",
@@ -154,7 +364,13 @@
           }
         }
       },
-      "block_order": ["r1","r2","r3","r4","r5"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ],
       "settings": {
         "eyebrow": "Lo que dicen quienes ya lo probaron",
         "title": "Resultados reales de personas reales",
@@ -165,26 +381,110 @@
     "testimonials": {
       "type": "lunea-product-photo-testimonials",
       "blocks": {
-        "pt1": { "type": "testimonial", "settings": { "name": "Valentina M.", "flag": "🇪🇨", "quote": "Las arrugas de la frente se suavizaron en dos semanas. Increíble." } },
-        "pt2": { "type": "testimonial", "settings": { "name": "Andrea C.", "flag": "🇪🇨", "quote": "Mis poros se ven cerrados por primera vez. No lo puedo creer." } },
-        "pt3": { "type": "testimonial", "settings": { "name": "Daniela P.", "flag": "🇪🇨", "quote": "Piel sensible y no me irritó nada. Ya voy por mi segunda unidad." } },
-        "pt4": { "type": "testimonial", "settings": { "name": "María José L.", "flag": "🇪🇨", "quote": "Las manchas del sol se aclararon al mes de uso. Funcionó de verdad." } },
-        "pt5": { "type": "testimonial", "settings": { "name": "Camila R.", "flag": "🇪🇨", "quote": "Lo uso de noche y la piel amanece diferente. Más firme, más luminosa." } },
-        "pt6": { "type": "testimonial", "settings": { "name": "Gabriela S.", "flag": "🇪🇨", "quote": "Probé mil sérums. Este es el único que me dio resultados reales." } }
+        "pt1": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Valentina M.",
+            "flag": "🇪🇨",
+            "quote": "Las arrugas de la frente se suavizaron en dos semanas. Increíble."
+          }
+        },
+        "pt2": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Andrea C.",
+            "flag": "🇪🇨",
+            "quote": "Mis poros se ven cerrados por primera vez. No lo puedo creer."
+          }
+        },
+        "pt3": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Daniela P.",
+            "flag": "🇪🇨",
+            "quote": "Piel sensible y no me irritó nada. Ya voy por mi segunda unidad."
+          }
+        },
+        "pt4": {
+          "type": "testimonial",
+          "settings": {
+            "name": "María José L.",
+            "flag": "🇪🇨",
+            "quote": "Las manchas del sol se aclararon al mes de uso. Funcionó de verdad."
+          }
+        },
+        "pt5": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Camila R.",
+            "flag": "🇪🇨",
+            "quote": "Lo uso de noche y la piel amanece diferente. Más firme, más luminosa."
+          }
+        },
+        "pt6": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Gabriela S.",
+            "flag": "🇪🇨",
+            "quote": "Probé mil sérums. Este es el único que me dio resultados reales."
+          }
+        }
       },
-      "block_order": ["pt1","pt2","pt3","pt4","pt5","pt6"],
-      "settings": { "title": "Elegido por mujeres en Ecuador", "asset_image_filename": "", "show_heading": true }
+      "block_order": [
+        "pt1",
+        "pt2",
+        "pt3",
+        "pt4",
+        "pt5",
+        "pt6"
+      ],
+      "settings": {
+        "title": "Elegido por mujeres en Ecuador",
+        "asset_image_filename": "",
+        "show_heading": true
+      }
     },
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
-        "y1": { "type": "item", "settings": { "text": "Tus arrugas siguen avanzando aunque uses cremas todos los días" } },
-        "y2": { "type": "item", "settings": { "text": "Tienes poros abiertos que se notan de cerca y nada los cierra" } },
-        "y3": { "type": "item", "settings": { "text": "Gastaste en productos caros y los resultados fueron decepcionantes" } },
-        "y4": { "type": "item", "settings": { "text": "Tu piel perdió firmeza y ese aspecto fresco que tenía antes" } },
-        "y5": { "type": "item", "settings": { "text": "Quieres un tratamiento con respaldo clínico real, no solo promesas" } }
+        "y1": {
+          "type": "item",
+          "settings": {
+            "text": "Tus arrugas siguen avanzando aunque uses cremas todos los días"
+          }
+        },
+        "y2": {
+          "type": "item",
+          "settings": {
+            "text": "Tienes poros abiertos que se notan de cerca y nada los cierra"
+          }
+        },
+        "y3": {
+          "type": "item",
+          "settings": {
+            "text": "Gastaste en productos caros y los resultados fueron decepcionantes"
+          }
+        },
+        "y4": {
+          "type": "item",
+          "settings": {
+            "text": "Tu piel perdió firmeza y ese aspecto fresco que tenía antes"
+          }
+        },
+        "y5": {
+          "type": "item",
+          "settings": {
+            "text": "Quieres un tratamiento con respaldo clínico real, no solo promesas"
+          }
+        }
       },
-      "block_order": ["y1","y2","y3","y4","y5"],
+      "block_order": [
+        "y1",
+        "y2",
+        "y3",
+        "y4",
+        "y5"
+      ],
       "settings": {
         "title": "Retinal Shot es para ti si...",
         "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
@@ -196,15 +496,61 @@
     "faq": {
       "type": "lunea-product-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega en Ecuador?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
-        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega a mi ciudad?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 2 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para que puedas rastrear todo el camino." } },
-        "f3": { "type": "faq", "settings": { "question": "¿Puedo usarlo si nunca he usado Retinol o Retinal?", "answer": "Sí, pero empieza despacio. Las semanas 1 y 2 úsalo día por medio, solo de noche. Si tu piel se adapta bien, desde la semana 3 puedes usarlo todas las noches. Es normal sentir un leve hormigueo al principio — significa que está funcionando." } },
-        "f4": { "type": "faq", "settings": { "question": "¿En cuánto tiempo veo resultados?", "answer": "Los estudios clínicos de Celimax muestran reducción de poros desde la primera aplicación (-13.3%) y reducción de arrugas de -28.5% a las 2 semanas. Los resultados más completos en manchas y firmeza se ven al mes de uso continuo." } },
-        "f5": { "type": "faq", "settings": { "question": "¿Es seguro para piel sensible?", "answer": "Sí, con la precaución de empezar gradualmente. El Pantenol al 1% de la fórmula está especialmente diseñado para calmar y minimizar la irritación. Si tienes piel muy reactiva, haz una prueba en una pequeña zona por 2-3 días antes de aplicar en todo el rostro." } },
-        "f6": { "type": "faq", "settings": { "question": "¿Por qué necesito protector solar si uso esto?", "answer": "El Retinal acelera la renovación celular, lo que hace tu piel temporalmente más sensible a los rayos UV. Sin protector solar, el sol puede causar manchas nuevas justo cuando estás tratando las anteriores. SPF 30 o más en la mañana es indispensable." } }
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo funciona el pago contra entrega en Ecuador?",
+            "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos."
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "¿En cuánto tiempo llega a mi ciudad?",
+            "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 2 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para que puedas rastrear todo el camino."
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo usarlo si nunca he usado Retinol o Retinal?",
+            "answer": "Sí, pero empieza despacio. Las semanas 1 y 2 úsalo día por medio, solo de noche. Si tu piel se adapta bien, desde la semana 3 puedes usarlo todas las noches. Es normal sentir un leve hormigueo al principio — significa que está funcionando."
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿En cuánto tiempo veo resultados?",
+            "answer": "Los estudios clínicos de Celimax muestran reducción de poros desde la primera aplicación (-13.3%) y reducción de arrugas de -28.5% a las 2 semanas. Los resultados más completos en manchas y firmeza se ven al mes de uso continuo."
+          }
+        },
+        "f5": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es seguro para piel sensible?",
+            "answer": "Sí, con la precaución de empezar gradualmente. El Pantenol al 1% de la fórmula está especialmente diseñado para calmar y minimizar la irritación. Si tienes piel muy reactiva, haz una prueba en una pequeña zona por 2-3 días antes de aplicar en todo el rostro."
+          }
+        },
+        "f6": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Por qué necesito protector solar si uso esto?",
+            "answer": "El Retinal acelera la renovación celular, lo que hace tu piel temporalmente más sensible a los rayos UV. Sin protector solar, el sol puede causar manchas nuevas justo cuando estás tratando las anteriores. SPF 30 o más en la mañana es indispensable."
+          }
+        }
       },
-      "block_order": ["f1","f2","f3","f4","f5","f6"],
-      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "title": "Preguntas frecuentes"
+      }
     },
     "bottom-cta": {
       "type": "lunea-bottom-cta",
@@ -216,8 +562,35 @@
         "color_scheme": "scheme-7"
       }
     },
-    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
-    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre el Retinal Shot Original." } }
+    "sticky-atc": {
+      "type": "lunea-sticky-atc",
+      "settings": {
+        "cta_text": "Comprar ahora"
+      }
+    },
+    "whatsapp-float": {
+      "type": "lunea-whatsapp-float",
+      "settings": {
+        "phone": "5493764250518",
+        "message": "Hola, quiero más información sobre el Retinal Shot Original."
+      }
+    }
   },
-  "order": ["main","trust-row","hook","before-after","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": [
+    "main",
+    "trust-row",
+    "hook",
+    "before-after",
+    "features",
+    "howto",
+    "included",
+    "guarantee",
+    "real-reviews",
+    "testimonials",
+    "foryou",
+    "faq",
+    "bottom-cta",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
 }

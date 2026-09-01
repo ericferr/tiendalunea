@@ -4,27 +4,119 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "text", "settings": { "text": "NIDA · COREA DEL SUR", "text_style": "uppercase" } },
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
-        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
-        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
-        "share": { "type": "share", "settings": { "share_label": "Share" } }
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "NIDA · COREA DEL SUR",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "un_boton": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'lunea-un-solo-boton' %}"
+          }
+        }
       },
-      "block_order": ["vendor","title","price","variant_picker","quantity_selector","buy_buttons","share"],
-      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-6", "media_size": "large", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail_slider", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": true, "enable_video_looping": false, "padding_top": 36, "padding_bottom": 12 }
+      "block_order": [
+        "un_boton",
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-6",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
     },
     "trust-row": {
       "type": "lunea-product-trust-row",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
-        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
-        "t3": { "type": "trust", "settings": { "icon": "🇰🇷", "text": "Fórmula coreana certificada" } },
-        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "🚚",
+            "text": "Envío gratis · llega en 1-5 días"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "📦",
+            "text": "Pagas cuando te llega"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "🇰🇷",
+            "text": "Fórmula coreana certificada"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "🔒",
+            "text": "Compra 100% segura"
+          }
+        }
       },
-      "block_order": ["t1","t2","t3","t4"],
-      "settings": { "color_scheme": "scheme-7" }
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-7"
+      }
     },
     "hook": {
       "type": "lunea-product-hook",
@@ -50,38 +142,156 @@
     "features": {
       "type": "lunea-product-features",
       "blocks": {
-        "b1": { "type": "feature", "settings": { "icon": "💧", "title": "Ácido Hialurónico en 8 formas", "text": "La mayoría de cremas usa una sola forma. Esta tiene ocho. Cada molécula actúa en una capa diferente de la piel para una hidratación profunda, duradera y visible desde el primer uso." } },
-        "b2": { "type": "feature", "settings": { "icon": "✨", "title": "Colágeno Hidrolizado", "text": "Restaura la firmeza y elasticidad que la piel pierde con los años. Reduce la apariencia de líneas finas y le devuelve a tu rostro ese aspecto relleno y juvenil." } },
-        "b3": { "type": "feature", "settings": { "icon": "🌿", "title": "Centella Asiática", "text": "El ingrediente estrella de la dermatología coreana. Calma la piel irritada, reduce la rojez y potencia la regeneración celular. Ideal para pieles sensibles o reactivas." } },
-        "b4": { "type": "feature", "settings": { "icon": "🔬", "title": "Niacinamida para manchas y poros", "text": "Unifica el tono, reduce las manchas oscuras y minimiza los poros visibles. Resultados comprobados en estudios clínicos con uso continuo de 4 semanas." } },
-        "b5": { "type": "feature", "settings": { "icon": "🧬", "title": "Fermentos probióticos activos", "text": "La fórmula incluye 8 fermentos bacterianos que fortalecen la barrera cutánea. Tu piel se defiende mejor del sol, la contaminación y el estrés diario." } },
-        "b6": { "type": "feature", "settings": { "icon": "🪶", "title": "Textura ultralightweight — sin residuo", "text": "Se absorbe en segundos. Sin sensación grasa, sin poros tapados, sin brillos indeseados. Funciona sola o debajo del maquillaje perfectamente." } }
+        "b1": {
+          "type": "feature",
+          "settings": {
+            "icon": "💧",
+            "title": "Ácido Hialurónico en 8 formas",
+            "text": "La mayoría de cremas usa una sola forma. Esta tiene ocho. Cada molécula actúa en una capa diferente de la piel para una hidratación profunda, duradera y visible desde el primer uso."
+          }
+        },
+        "b2": {
+          "type": "feature",
+          "settings": {
+            "icon": "✨",
+            "title": "Colágeno Hidrolizado",
+            "text": "Restaura la firmeza y elasticidad que la piel pierde con los años. Reduce la apariencia de líneas finas y le devuelve a tu rostro ese aspecto relleno y juvenil."
+          }
+        },
+        "b3": {
+          "type": "feature",
+          "settings": {
+            "icon": "🌿",
+            "title": "Centella Asiática",
+            "text": "El ingrediente estrella de la dermatología coreana. Calma la piel irritada, reduce la rojez y potencia la regeneración celular. Ideal para pieles sensibles o reactivas."
+          }
+        },
+        "b4": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔬",
+            "title": "Niacinamida para manchas y poros",
+            "text": "Unifica el tono, reduce las manchas oscuras y minimiza los poros visibles. Resultados comprobados en estudios clínicos con uso continuo de 4 semanas."
+          }
+        },
+        "b5": {
+          "type": "feature",
+          "settings": {
+            "icon": "🧬",
+            "title": "Fermentos probióticos activos",
+            "text": "La fórmula incluye 8 fermentos bacterianos que fortalecen la barrera cutánea. Tu piel se defiende mejor del sol, la contaminación y el estrés diario."
+          }
+        },
+        "b6": {
+          "type": "feature",
+          "settings": {
+            "icon": "🪶",
+            "title": "Textura ultralightweight — sin residuo",
+            "text": "Se absorbe en segundos. Sin sensación grasa, sin poros tapados, sin brillos indeseados. Funciona sola o debajo del maquillaje perfectamente."
+          }
+        }
       },
-      "block_order": ["b1","b2","b3","b4","b5","b6"],
-      "settings": { "eyebrow": "Por qué funciona", "title": "Una crema. Cuatro activos clave.", "color_scheme": "scheme-6" }
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {
+        "eyebrow": "Por qué funciona",
+        "title": "Una crema. Cuatro activos clave.",
+        "color_scheme": "scheme-6"
+      }
     },
     "howto": {
       "type": "lunea-product-howto",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Limpiá tu rostro", "text": "Aplica sobre la piel limpia y seca, mañana y/o noche. No necesita preparación especial — encaja perfectamente en cualquier rutina." } },
-        "s2": { "type": "step", "settings": { "title": "Aplica una pequeña cantidad", "text": "Con la punta de los dedos, distribuí una cantidad del tamaño de un garbanzo en frente, mejillas, nariz y mentón. Masajeá con movimientos suaves hacia arriba." } },
-        "s3": { "type": "step", "settings": { "title": "Notá la diferencia en los primeros días", "text": "La hidratación se siente desde el primer uso. Las mejoras visibles en tono, firmeza y manchas se notan a partir de los 14 días de uso continuo." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Limpiá tu rostro",
+            "text": "Aplica sobre la piel limpia y seca, mañana y/o noche. No necesita preparación especial — encaja perfectamente en cualquier rutina."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Aplica una pequeña cantidad",
+            "text": "Con la punta de los dedos, distribuí una cantidad del tamaño de un garbanzo en frente, mejillas, nariz y mentón. Masajeá con movimientos suaves hacia arriba."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Notá la diferencia en los primeros días",
+            "text": "La hidratación se siente desde el primer uso. Las mejoras visibles en tono, firmeza y manchas se notan a partir de los 14 días de uso continuo."
+          }
+        }
       },
-      "block_order": ["s1","s2","s3"],
-      "settings": { "eyebrow": "Así de simple", "title": "30 segundos. Mañana y noche." }
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "eyebrow": "Así de simple",
+        "title": "30 segundos. Mañana y noche."
+      }
     },
     "included": {
       "type": "lunea-product-included",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "1 tubo de Fórmula Rostro Juvenil — Crema Hidratante" } },
-        "i2": { "type": "item", "settings": { "text": "100ml / 3.38 fl oz — hasta 2 meses de uso" } },
-        "i3": { "type": "item", "settings": { "text": "Ácido Hialurónico en 8 formas moleculares" } },
-        "i4": { "type": "item", "settings": { "text": "Colágeno Hidrolizado + Centella Asiática + Niacinamida" } },
-        "i5": { "type": "item", "settings": { "text": "8 fermentos probióticos para barrera cutánea" } },
-        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+        "i1": {
+          "type": "item",
+          "settings": {
+            "text": "1 tubo de Fórmula Rostro Juvenil — Crema Hidratante"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "text": "100ml / 3.38 fl oz — hasta 2 meses de uso"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "text": "Ácido Hialurónico en 8 formas moleculares"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "text": "Colágeno Hidrolizado + Centella Asiática + Niacinamida"
+          }
+        },
+        "i5": {
+          "type": "item",
+          "settings": {
+            "text": "8 fermentos probióticos para barrera cutánea"
+          }
+        },
+        "i6": {
+          "type": "item",
+          "settings": {
+            "text": "Soporte por WhatsApp antes y después de tu compra"
+          }
+        }
       },
-      "block_order": ["i1","i2","i3","i4","i5","i6"],
-      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
+      "settings": {
+        "icon": "📦",
+        "title": "¿Qué recibes?"
+      }
     },
     "guarantee": {
       "type": "lunea-product-guarantee",
@@ -150,7 +360,13 @@
           }
         }
       },
-      "block_order": ["r1","r2","r3","r4","r5"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ],
       "settings": {
         "eyebrow": "Lo que dicen quienes ya la probaron",
         "title": "Resultados reales de personas reales",
@@ -161,26 +377,108 @@
     "testimonials": {
       "type": "lunea-product-photo-testimonials",
       "blocks": {
-        "pt1": { "type": "testimonial", "settings": { "name": "Marcela B.", "flag": "🇨🇴", "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche." } },
-        "pt2": { "type": "testimonial", "settings": { "name": "Andrea V.", "flag": "🇨🇴", "quote": "Las manchas del embarazo finalmente se están aclarando." } },
-        "pt3": { "type": "testimonial", "settings": { "name": "Camila S.", "flag": "🇨🇴", "quote": "Ligera, se absorbe rápido y no me tapa los poros. Perfecta." } },
-        "pt4": { "type": "testimonial", "settings": { "name": "Luisa M.", "flag": "🇨🇴", "quote": "La uso debajo del maquillaje todos los días. No la cambio." } },
-        "pt5": { "type": "testimonial", "settings": { "name": "Daniela R.", "flag": "🇨🇴", "quote": "Piel sensible y por fin encontré algo que no me irrita." } },
-        "pt6": { "type": "testimonial", "settings": { "name": "Paola T.", "flag": "🇨🇴", "quote": "Me sorprendió lo rápido que vi resultados. En una semana." } }
+        "pt1": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Marcela B.",
+            "flag": "🇨🇴",
+            "quote": "Mi piel nunca se vio tan bien. La uso mañana y noche."
+          }
+        },
+        "pt2": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Andrea V.",
+            "flag": "🇨🇴",
+            "quote": "Las manchas del embarazo finalmente se están aclarando."
+          }
+        },
+        "pt3": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Camila S.",
+            "flag": "🇨🇴",
+            "quote": "Ligera, se absorbe rápido y no me tapa los poros. Perfecta."
+          }
+        },
+        "pt4": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Luisa M.",
+            "flag": "🇨🇴",
+            "quote": "La uso debajo del maquillaje todos los días. No la cambio."
+          }
+        },
+        "pt5": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Daniela R.",
+            "flag": "🇨🇴",
+            "quote": "Piel sensible y por fin encontré algo que no me irrita."
+          }
+        },
+        "pt6": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Paola T.",
+            "flag": "🇨🇴",
+            "quote": "Me sorprendió lo rápido que vi resultados. En una semana."
+          }
+        }
       },
-      "block_order": ["pt1","pt2","pt3","pt4","pt5","pt6"],
-      "settings": { "title": "Elegida por mujeres en Colombia" }
+      "block_order": [
+        "pt1",
+        "pt2",
+        "pt3",
+        "pt4",
+        "pt5",
+        "pt6"
+      ],
+      "settings": {
+        "title": "Elegida por mujeres en Colombia"
+      }
     },
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
-        "y1": { "type": "item", "settings": { "text": "Tu piel se ve opaca, cansada o apagada aunque te cuides" } },
-        "y2": { "type": "item", "settings": { "text": "Tienes manchas oscuras, rojeces o tono desparejo" } },
-        "y3": { "type": "item", "settings": { "text": "Notás líneas finas, pérdida de firmeza o piel seca" } },
-        "y4": { "type": "item", "settings": { "text": "Tu piel es sensible y casi todo te irrita o da granitos" } },
-        "y5": { "type": "item", "settings": { "text": "Buscas una crema coreana real, con activos comprobados y sin químicos agresivos" } }
+        "y1": {
+          "type": "item",
+          "settings": {
+            "text": "Tu piel se ve opaca, cansada o apagada aunque te cuides"
+          }
+        },
+        "y2": {
+          "type": "item",
+          "settings": {
+            "text": "Tienes manchas oscuras, rojeces o tono desparejo"
+          }
+        },
+        "y3": {
+          "type": "item",
+          "settings": {
+            "text": "Notás líneas finas, pérdida de firmeza o piel seca"
+          }
+        },
+        "y4": {
+          "type": "item",
+          "settings": {
+            "text": "Tu piel es sensible y casi todo te irrita o da granitos"
+          }
+        },
+        "y5": {
+          "type": "item",
+          "settings": {
+            "text": "Buscas una crema coreana real, con activos comprobados y sin químicos agresivos"
+          }
+        }
       },
-      "block_order": ["y1","y2","y3","y4","y5"],
+      "block_order": [
+        "y1",
+        "y2",
+        "y3",
+        "y4",
+        "y5"
+      ],
       "settings": {
         "title": "Fórmula Rostro Juvenil es para ti si...",
         "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
@@ -192,15 +490,61 @@
     "faq": {
       "type": "lunea-product-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos." } },
-        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino." } },
-        "f3": { "type": "faq", "settings": { "question": "¿Sirve para piel grasa o mixta?", "answer": "Sí. La textura ultralightweight fue diseñada para todo tipo de piel — seca, grasa, mixta y sensible. No obstruye los poros ni genera brillos indeseados. Puedes usarla sola o debajo del maquillaje." } },
-        "f4": { "type": "faq", "settings": { "question": "¿En cuánto tiempo se ven resultados?", "answer": "La hidratación profunda se siente desde el primer uso. Las mejoras visibles en manchas, firmeza y tono se notan a partir de los 14 días de uso continuo. Los mejores resultados se ven al mes de uso diario." } },
-        "f5": { "type": "faq", "settings": { "question": "¿Puedo usarla si tengo piel sensible?", "answer": "Sí, especialmente. La Centella Asiática es el ingrediente estrella para pieles sensibles y reactivas. La fórmula está libre de fragancias y componentes agresivos que suelen causar irritación." } },
-        "f6": { "type": "faq", "settings": { "question": "¿Cuánto dura el tubo?", "answer": "El tubo de 100ml dura entre 6 semanas y 2 meses dependiendo de si la usas una o dos veces al día. Con uso mañana y noche, un tubo te alcanza cómodamente para 6-8 semanas." } }
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo funciona el pago contra entrega?",
+            "answer": "Haces tu pedido en línea, nosotros enviamos el producto y pagas al mensajero cuando lo recibes en tu casa. Sin tarjeta, sin transferencia previa — solo pagas cuando lo tienes en tus manos."
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "¿En cuánto tiempo llega?",
+            "answer": "Procesamos tu pedido en 24 horas hábiles. El envío tarda entre 1 y 5 días hábiles según tu ciudad. Te enviamos el número de guía para rastrear todo el camino."
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Sirve para piel grasa o mixta?",
+            "answer": "Sí. La textura ultralightweight fue diseñada para todo tipo de piel — seca, grasa, mixta y sensible. No obstruye los poros ni genera brillos indeseados. Puedes usarla sola o debajo del maquillaje."
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿En cuánto tiempo se ven resultados?",
+            "answer": "La hidratación profunda se siente desde el primer uso. Las mejoras visibles en manchas, firmeza y tono se notan a partir de los 14 días de uso continuo. Los mejores resultados se ven al mes de uso diario."
+          }
+        },
+        "f5": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo usarla si tengo piel sensible?",
+            "answer": "Sí, especialmente. La Centella Asiática es el ingrediente estrella para pieles sensibles y reactivas. La fórmula está libre de fragancias y componentes agresivos que suelen causar irritación."
+          }
+        },
+        "f6": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuánto dura el tubo?",
+            "answer": "El tubo de 100ml dura entre 6 semanas y 2 meses dependiendo de si la usas una o dos veces al día. Con uso mañana y noche, un tubo te alcanza cómodamente para 6-8 semanas."
+          }
+        }
       },
-      "block_order": ["f1","f2","f3","f4","f5","f6"],
-      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "title": "Preguntas frecuentes"
+      }
     },
     "bottom-cta": {
       "type": "lunea-bottom-cta",
@@ -212,8 +556,35 @@
         "color_scheme": "scheme-7"
       }
     },
-    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
-    "whatsapp-float": { "type": "lunea-whatsapp-float", "settings": { "phone": "5493764250518", "message": "Hola, quiero más información sobre la Fórmula Juvenil Asiática." } }
+    "sticky-atc": {
+      "type": "lunea-sticky-atc",
+      "settings": {
+        "cta_text": "Comprar ahora"
+      }
+    },
+    "whatsapp-float": {
+      "type": "lunea-whatsapp-float",
+      "settings": {
+        "phone": "5493764250518",
+        "message": "Hola, quiero más información sobre la Fórmula Juvenil Asiática."
+      }
+    }
   },
-  "order": ["main","trust-row","hook","urgency","features","howto","included","guarantee","real-reviews","testimonials","foryou","faq","bottom-cta","sticky-atc","whatsapp-float"]
+  "order": [
+    "main",
+    "trust-row",
+    "hook",
+    "urgency",
+    "features",
+    "howto",
+    "included",
+    "guarantee",
+    "real-reviews",
+    "testimonials",
+    "foryou",
+    "faq",
+    "bottom-cta",
+    "sticky-atc",
+    "whatsapp-float"
+  ]
 }

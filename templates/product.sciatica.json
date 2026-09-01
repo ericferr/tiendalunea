@@ -3,21 +3,91 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "estilos": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'sciatica-tema' %}{% render 'lunea-precio-destacado' %}" } },
-        "stars": { "type": "star_rating", "settings": { "score": "4.8", "count": "+940" } },
-        "vendor": { "type": "text", "settings": { "text": "CREVIP · APOYO PARA EL NERVIO CIÁTICO", "text_style": "uppercase" } },
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
-        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
-        "countdown_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'lunea-countdown' %}" } },
-        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
-        "prepaid_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-prepaid-auto' %}" } },
-        "ml_full_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-ml-full' %}" } },
-        "couriers_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-couriers' %}" } },
-        "share": { "type": "share", "settings": { "share_label": "Compartir" } }
+        "estilos": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'sciatica-tema' %}{% render 'lunea-precio-destacado' %}"
+          }
+        },
+        "stars": {
+          "type": "star_rating",
+          "settings": {
+            "score": "4.8",
+            "count": "+940"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "CREVIP · APOYO PARA EL NERVIO CIÁTICO",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "countdown_inline": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'lunea-countdown' %}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "prepaid_inline": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'co-prepaid-auto' %}"
+          }
+        },
+        "ml_full_inline": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'co-ml-full' %}"
+          }
+        },
+        "couriers_inline": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'co-couriers' %}"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Compartir"
+          }
+        },
+        "un_boton": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'lunea-un-solo-boton' %}"
+          }
+        }
       },
       "block_order": [
+        "un_boton",
         "estilos",
         "stars",
         "vendor",
@@ -51,12 +121,41 @@
     "trust-row": {
       "type": "lunea-product-trust-row",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
-        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pagas cuando te llega" } },
-        "t3": { "type": "trust", "settings": { "icon": "💊", "text": "120 cápsulas · frasco sellado" } },
-        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "🚚",
+            "text": "Envío gratis · llega en 1-5 días"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "📦",
+            "text": "Pagas cuando te llega"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "💊",
+            "text": "120 cápsulas · frasco sellado"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "🔒",
+            "text": "Compra 100% segura"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
       "settings": {}
     },
     "hook": {
@@ -119,7 +218,14 @@
           }
         }
       },
-      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
       "settings": {
         "eyebrow": "Qué lleva adentro",
         "title": "Nutrientes que tu sistema nervioso necesita todos los días"
@@ -158,15 +264,55 @@
     "included": {
       "type": "lunea-product-included",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "1 frasco sellado de CREVIP Relieve Sciatica — 120 cápsulas" } },
-        "i2": { "type": "item", "settings": { "text": "Ácido alfa lipoico (R-ALA) + Acetil-L-carnitina" } },
-        "i3": { "type": "item", "settings": { "text": "Benfotiamina — vitamina B1 de alta absorción" } },
-        "i4": { "type": "item", "settings": { "text": "Complejo B: B1, B6 y B12 para la función nerviosa normal" } },
-        "i5": { "type": "item", "settings": { "text": "Suplemento dietario · no genera somnolencia ni dependencia" } },
-        "i6": { "type": "item", "settings": { "text": "Soporte por WhatsApp antes y después de tu compra" } }
+        "i1": {
+          "type": "item",
+          "settings": {
+            "text": "1 frasco sellado de CREVIP Relieve Sciatica — 120 cápsulas"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "text": "Ácido alfa lipoico (R-ALA) + Acetil-L-carnitina"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "text": "Benfotiamina — vitamina B1 de alta absorción"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "text": "Complejo B: B1, B6 y B12 para la función nerviosa normal"
+          }
+        },
+        "i5": {
+          "type": "item",
+          "settings": {
+            "text": "Suplemento dietario · no genera somnolencia ni dependencia"
+          }
+        },
+        "i6": {
+          "type": "item",
+          "settings": {
+            "text": "Soporte por WhatsApp antes y después de tu compra"
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
-      "settings": { "icon": "📦", "title": "¿Qué recibes?" }
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
+      "settings": {
+        "icon": "📦",
+        "title": "¿Qué recibes?"
+      }
     },
     "guarantee": {
       "type": "lunea-product-guarantee",
@@ -234,7 +380,13 @@
           }
         }
       },
-      "block_order": ["r1", "r2", "r3", "r4", "r5"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ],
       "settings": {
         "eyebrow": "Lo que dicen quienes ya lo probaron",
         "title": "Personas que decidieron dejar de aguantar",
@@ -244,14 +396,51 @@
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
-        "y1": { "type": "item", "settings": { "text": "El dolor te arranca en la espalda baja y te baja por el glúteo o la pierna" } },
-        "y2": { "type": "item", "settings": { "text": "Sientes hormigueo, adormecimiento o la pierna \"dormida\" sin razón" } },
-        "y3": { "type": "item", "settings": { "text": "Pasas muchas horas sentado o manejando y te levantas duro" } },
-        "y4": { "type": "item", "settings": { "text": "Ya dependes de analgésicos y quieres algo nutricional que acompañe" } },
-        "y5": { "type": "item", "settings": { "text": "Tienes más de 50 y sabes que la B12 se absorbe peor con los años" } },
-        "y6": { "type": "item", "settings": { "text": "Dejaste de hacer cosas que te gustaban por miedo a cómo vas a quedar después" } }
+        "y1": {
+          "type": "item",
+          "settings": {
+            "text": "El dolor te arranca en la espalda baja y te baja por el glúteo o la pierna"
+          }
+        },
+        "y2": {
+          "type": "item",
+          "settings": {
+            "text": "Sientes hormigueo, adormecimiento o la pierna \"dormida\" sin razón"
+          }
+        },
+        "y3": {
+          "type": "item",
+          "settings": {
+            "text": "Pasas muchas horas sentado o manejando y te levantas duro"
+          }
+        },
+        "y4": {
+          "type": "item",
+          "settings": {
+            "text": "Ya dependes de analgésicos y quieres algo nutricional que acompañe"
+          }
+        },
+        "y5": {
+          "type": "item",
+          "settings": {
+            "text": "Tienes más de 50 y sabes que la B12 se absorbe peor con los años"
+          }
+        },
+        "y6": {
+          "type": "item",
+          "settings": {
+            "text": "Dejaste de hacer cosas que te gustaban por miedo a cómo vas a quedar después"
+          }
+        }
       },
-      "block_order": ["y1", "y2", "y3", "y4", "y5", "y6"],
+      "block_order": [
+        "y1",
+        "y2",
+        "y3",
+        "y4",
+        "y5",
+        "y6"
+      ],
       "settings": {
         "title": "Relieve Sciatica es para ti si...",
         "cta_eyebrow": "Sin riesgo · Pagas cuando llega",
@@ -313,8 +502,19 @@
           }
         }
       },
-      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6", "f7"],
-      "settings": { "eyebrow": "Resolvemos tus dudas", "title": "Preguntas frecuentes" }
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7"
+      ],
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "title": "Preguntas frecuentes"
+      }
     },
     "bottom-cta": {
       "type": "lunea-bottom-cta",
@@ -325,7 +525,12 @@
         "button_text": "Comprar Relieve Sciatica"
       }
     },
-    "sticky-atc": { "type": "lunea-sticky-atc", "settings": { "cta_text": "Comprar ahora" } },
+    "sticky-atc": {
+      "type": "lunea-sticky-atc",
+      "settings": {
+        "cta_text": "Comprar ahora"
+      }
+    },
     "whatsapp-float": {
       "type": "lunea-whatsapp-float",
       "settings": {

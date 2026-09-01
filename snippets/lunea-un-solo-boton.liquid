@@ -1,0 +1,24 @@
+{%- comment -%}
+  Deja UN solo botón de compra: el de Releasit (contra entrega) y, debajo, el
+  de pago anticipado. Oculta el botón nativo de Shopify, que en varios
+  productos aparece ADEMÁS del de Releasit y dice lo mismo.
+
+  La condición es la parte importante: oculta el nativo SOLO si el botón de
+  Releasit (#rsi_buy_now_button) existe en la página. Releasit se inyecta por
+  JavaScript, así que si su script falla, lo bloquea un adblocker o la app se
+  cae, el nativo queda visible y el cliente igual puede comprar.
+
+  Ocultarlo con un `display:none` a secas sería el error caro: el día que
+  Releasit no cargue, la página se queda SIN ningún botón de compra y nadie
+  se entera hasta ver las ventas en cero.
+
+  `:has()` se reevalúa solo cuando Releasit inserta su botón, y en un
+  navegador viejo que no lo soporte la regla entera se descarta — o sea, el
+  peor caso es volver a ver los dos botones, nunca ninguno.
+{%- endcomment -%}
+<style>
+  body:has(#rsi_buy_now_button) .product-form__buttons button[name="add"],
+  body:has(#rsi_buy_now_button) .product-form__buttons .shopify-payment-button {
+    display: none !important;
+  }
+</style>

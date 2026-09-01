@@ -4,15 +4,62 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "text", "settings": { "text": "LUNEA", "text_style": "uppercase" } },
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
-        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
-        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
-        "share": { "type": "share", "settings": { "share_label": "Share" } }
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "LUNEA",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "un_boton": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'lunea-un-solo-boton' %}"
+          }
+        }
       },
-      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "share"],
+      "block_order": [
+        "un_boton",
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -41,12 +88,41 @@
     "trust-row": {
       "type": "lunea-product-trust-row",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "🚚", "text": "Envío gratis · llega en 1-5 días" } },
-        "t2": { "type": "trust", "settings": { "icon": "📦", "text": "Pago contra entrega" } },
-        "t3": { "type": "trust", "settings": { "icon": "🛡️", "text": "Garantía 30 días" } },
-        "t4": { "type": "trust", "settings": { "icon": "🔒", "text": "Compra 100% segura" } }
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "🚚",
+            "text": "Envío gratis · llega en 1-5 días"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "📦",
+            "text": "Pago contra entrega"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "🛡️",
+            "text": "Garantía 30 días"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "🔒",
+            "text": "Compra 100% segura"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
       "settings": {}
     },
     "hook": {
@@ -60,14 +136,63 @@
     "features": {
       "type": "lunea-product-features",
       "blocks": {
-        "b1": { "type": "feature", "settings": { "icon": "🤫", "title": "Tan silencioso que ni se nota", "text": "Funciona a menos de 60 decibeles. Úsalo en la oficina, en clase o mientras el bebé duerme — sin interrumpir nada." } },
-        "b2": { "type": "feature", "settings": { "icon": "👗", "title": "Se oculta debajo de tu ropa", "text": "Diseño ergonómico que encaja perfecto dentro de tu brasier de lactancia. Nadie sabrá que lo llevas puesto." } },
-        "b3": { "type": "feature", "settings": { "icon": "🔋", "title": "Sin cables. Sin enchufes.", "text": "Batería de larga duración recargable por USB-C — el mismo cable de tu celular. Varias sesiones con una sola carga." } },
-        "b4": { "type": "feature", "settings": { "icon": "⚙️", "title": "4 modos, tú eliges", "text": "Niveles ajustables de succión que imitan el ritmo natural del bebé. Encuentra tu intensidad perfecta." } },
-        "b5": { "type": "feature", "settings": { "icon": "🌿", "title": "100% libre de BPA", "text": "Materiales seguros para ti y tu bebé. Fácil de desensamblar y limpiar en minutos." } },
-        "b6": { "type": "feature", "settings": { "icon": "📊", "title": "Pantalla LED inteligente", "text": "Modo, intensidad y batería en tiempo real. Control total con un toque." } }
+        "b1": {
+          "type": "feature",
+          "settings": {
+            "icon": "🤫",
+            "title": "Tan silencioso que ni se nota",
+            "text": "Funciona a menos de 60 decibeles. Úsalo en la oficina, en clase o mientras el bebé duerme — sin interrumpir nada."
+          }
+        },
+        "b2": {
+          "type": "feature",
+          "settings": {
+            "icon": "👗",
+            "title": "Se oculta debajo de tu ropa",
+            "text": "Diseño ergonómico que encaja perfecto dentro de tu brasier de lactancia. Nadie sabrá que lo llevas puesto."
+          }
+        },
+        "b3": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔋",
+            "title": "Sin cables. Sin enchufes.",
+            "text": "Batería de larga duración recargable por USB-C — el mismo cable de tu celular. Varias sesiones con una sola carga."
+          }
+        },
+        "b4": {
+          "type": "feature",
+          "settings": {
+            "icon": "⚙️",
+            "title": "4 modos, tú eliges",
+            "text": "Niveles ajustables de succión que imitan el ritmo natural del bebé. Encuentra tu intensidad perfecta."
+          }
+        },
+        "b5": {
+          "type": "feature",
+          "settings": {
+            "icon": "🌿",
+            "title": "100% libre de BPA",
+            "text": "Materiales seguros para ti y tu bebé. Fácil de desensamblar y limpiar en minutos."
+          }
+        },
+        "b6": {
+          "type": "feature",
+          "settings": {
+            "icon": "📊",
+            "title": "Pantalla LED inteligente",
+            "text": "Modo, intensidad y batería en tiempo real. Control total con un toque."
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
       "settings": {
         "eyebrow": "Por qué las mamás lo eligen",
         "title": "Diseñado para tu vida real"
@@ -76,11 +201,33 @@
     "howto": {
       "type": "lunea-product-howto",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Colócalo en tu brasier", "text": "Inserta Lunea dentro de tu brasier de lactancia. Compatible con la mayoría de tallas." } },
-        "s2": { "type": "step", "settings": { "title": "Elige tu modo", "text": "Selecciona uno de los 4 modos en la pantalla LED y ajusta la intensidad a tu punto perfecto." } },
-        "s3": { "type": "step", "settings": { "title": "Sigue con tu vida", "text": "Camina, trabaja, descansa. Lunea hace el resto, en silencio y sin que nadie lo note." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Colócalo en tu brasier",
+            "text": "Inserta Lunea dentro de tu brasier de lactancia. Compatible con la mayoría de tallas."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Elige tu modo",
+            "text": "Selecciona uno de los 4 modos en la pantalla LED y ajusta la intensidad a tu punto perfecto."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Sigue con tu vida",
+            "text": "Camina, trabaja, descansa. Lunea hace el resto, en silencio y sin que nadie lo note."
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
         "eyebrow": "Así de fácil",
         "title": "En 3 pasos, lista para extraer"
@@ -89,14 +236,51 @@
     "included": {
       "type": "lunea-product-included",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "Extractor eléctrico Lunea (1 unidad)" } },
-        "i2": { "type": "item", "settings": { "text": "Cable de carga tipo USB-C" } },
-        "i3": { "type": "item", "settings": { "text": "Brida universal de 0.945\" (24mm) — compatible con la mayoría de tallas" } },
-        "i4": { "type": "item", "settings": { "text": "Sistema anti-reflujo integrado" } },
-        "i5": { "type": "item", "settings": { "text": "Manual rápido en español" } },
-        "i6": { "type": "item", "settings": { "text": "Soporte directo por WhatsApp — antes y después de tu compra" } }
+        "i1": {
+          "type": "item",
+          "settings": {
+            "text": "Extractor eléctrico Lunea (1 unidad)"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "text": "Cable de carga tipo USB-C"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "text": "Brida universal de 0.945\" (24mm) — compatible con la mayoría de tallas"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "text": "Sistema anti-reflujo integrado"
+          }
+        },
+        "i5": {
+          "type": "item",
+          "settings": {
+            "text": "Manual rápido en español"
+          }
+        },
+        "i6": {
+          "type": "item",
+          "settings": {
+            "text": "Soporte directo por WhatsApp — antes y después de tu compra"
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
       "settings": {
         "icon": "🎁",
         "title": "¿Qué recibes con tu Lunea?"
@@ -128,7 +312,10 @@
           }
         }
       },
-      "block_order": ["v1", "v2"],
+      "block_order": [
+        "v1",
+        "v2"
+      ],
       "settings": {
         "title": "Amada por más de 5.000 mamás",
         "ig_text": "Más de 1 millón de visitas en Instagram"
@@ -182,7 +369,12 @@
           }
         }
       },
-      "block_order": ["r1", "r2", "r3", "r4"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
       "settings": {
         "eyebrow": "Reseñas reales",
         "title": "Más de <em>5.000</em> mamás ya lo usan",
@@ -192,14 +384,63 @@
     "testimonials": {
       "type": "lunea-product-photo-testimonials",
       "blocks": {
-        "pt1": { "type": "testimonial", "settings": { "name": "Mamá Camilo", "flag": "🇨🇴", "quote": "Cómodo y práctico, ideal para el día a día." } },
-        "pt2": { "type": "testimonial", "settings": { "name": "Carolina V.", "flag": "🇨🇴", "quote": "Un antes y un después, sobre todo si trabajas y quieres seguir con la lactancia." } },
-        "pt3": { "type": "testimonial", "settings": { "name": "Sofía la Madre", "flag": "🇨🇴", "quote": "Es súper cómodo y no te quita tiempo. Me simplificó un montón." } },
-        "pt4": { "type": "testimonial", "settings": { "name": "Mamá Diana", "flag": "🇨🇴", "quote": "Me sorprendió lo fácil que es de usar." } },
-        "pt5": { "type": "testimonial", "settings": { "name": "Mamá Luisa", "flag": "🇨🇴", "quote": "Lo recomiendo si buscas algo cómodo y que funcione de verdad." } },
-        "pt6": { "type": "testimonial", "settings": { "name": "Ana María M.", "flag": "🇨🇴", "quote": "Es liviano, eficiente y se adapta perfecto a tu rutina." } }
+        "pt1": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Mamá Camilo",
+            "flag": "🇨🇴",
+            "quote": "Cómodo y práctico, ideal para el día a día."
+          }
+        },
+        "pt2": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Carolina V.",
+            "flag": "🇨🇴",
+            "quote": "Un antes y un después, sobre todo si trabajas y quieres seguir con la lactancia."
+          }
+        },
+        "pt3": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Sofía la Madre",
+            "flag": "🇨🇴",
+            "quote": "Es súper cómodo y no te quita tiempo. Me simplificó un montón."
+          }
+        },
+        "pt4": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Mamá Diana",
+            "flag": "🇨🇴",
+            "quote": "Me sorprendió lo fácil que es de usar."
+          }
+        },
+        "pt5": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Mamá Luisa",
+            "flag": "🇨🇴",
+            "quote": "Lo recomiendo si buscas algo cómodo y que funcione de verdad."
+          }
+        },
+        "pt6": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Ana María M.",
+            "flag": "🇨🇴",
+            "quote": "Es liviano, eficiente y se adapta perfecto a tu rutina."
+          }
+        }
       },
-      "block_order": ["pt1", "pt2", "pt3", "pt4", "pt5", "pt6"],
+      "block_order": [
+        "pt1",
+        "pt2",
+        "pt3",
+        "pt4",
+        "pt5",
+        "pt6"
+      ],
       "settings": {
         "title": "Elegido por mamás en Colombia"
       }
@@ -207,13 +448,44 @@
     "foryou": {
       "type": "lunea-product-foryou",
       "blocks": {
-        "y1": { "type": "item", "settings": { "text": "Necesitas extraer leche sin pausar tu rutina" } },
-        "y2": { "type": "item", "settings": { "text": "Vuelves al trabajo y no quieres complicaciones" } },
-        "y3": { "type": "item", "settings": { "text": "Buscas un extractor cómodo, discreto y silencioso" } },
-        "y4": { "type": "item", "settings": { "text": "Quieres calidad real sin pagar precios europeos" } },
-        "y5": { "type": "item", "settings": { "text": "Te importa la seguridad de los materiales que tocan tu leche" } }
+        "y1": {
+          "type": "item",
+          "settings": {
+            "text": "Necesitas extraer leche sin pausar tu rutina"
+          }
+        },
+        "y2": {
+          "type": "item",
+          "settings": {
+            "text": "Vuelves al trabajo y no quieres complicaciones"
+          }
+        },
+        "y3": {
+          "type": "item",
+          "settings": {
+            "text": "Buscas un extractor cómodo, discreto y silencioso"
+          }
+        },
+        "y4": {
+          "type": "item",
+          "settings": {
+            "text": "Quieres calidad real sin pagar precios europeos"
+          }
+        },
+        "y5": {
+          "type": "item",
+          "settings": {
+            "text": "Te importa la seguridad de los materiales que tocan tu leche"
+          }
+        }
       },
-      "block_order": ["y1", "y2", "y3", "y4", "y5"],
+      "block_order": [
+        "y1",
+        "y2",
+        "y3",
+        "y4",
+        "y5"
+      ],
       "settings": {
         "title": "Lunea es para ti si...",
         "cta_eyebrow": "Sin riesgo · Llega en 2-5 días",
@@ -225,14 +497,57 @@
     "faq": {
       "type": "lunea-product-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "question": "¿Cómo funciona el pago contra entrega?", "answer": "Haces tu pedido en línea, lo enviamos a tu casa y pagas al mensajero al recibirlo. Sin tarjetas ni transferencias previas — solo pagas cuando lo tienes en tus manos." } },
-        "f2": { "type": "faq", "settings": { "question": "¿En cuánto tiempo llega?", "answer": "Procesamos tu pedido en 24 horas hábiles. La entrega llega en 1 a 5 días hábiles según tu ciudad. Te enviamos el número de guía para que rastrees todo el camino." } },
-        "f3": { "type": "faq", "settings": { "question": "¿Qué pasa si no me funciona o no me gusta?", "answer": "Tienes 30 días de garantía completa. Si por cualquier razón no estás satisfecha, escríbenos por WhatsApp y gestionamos cambio o devolución sin complicaciones." } },
-        "f4": { "type": "faq", "settings": { "question": "¿Es compatible con mi talla de pecho?", "answer": "La brida de 24mm está diseñada para adaptarse a la mayoría de tamaños. Si tienes dudas, escríbenos por WhatsApp y te asesoramos." } },
-        "f5": { "type": "faq", "settings": { "question": "¿Es seguro comprar acá?", "answer": "Sí. Tu compra está respaldada por SSL, política de privacidad y atención humana por WhatsApp. Además puedes pagar contra entrega si prefieres no usar tarjetas en línea." } },
-        "f6": { "type": "faq", "settings": { "question": "¿Cómo me contactan después de la compra?", "answer": "Te llega un correo de confirmación con tu pedido, luego un mensaje con el número de guía cuando despachemos. Y siempre puedes escribirnos por WhatsApp para cualquier consulta." } }
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo funciona el pago contra entrega?",
+            "answer": "Haces tu pedido en línea, lo enviamos a tu casa y pagas al mensajero al recibirlo. Sin tarjetas ni transferencias previas — solo pagas cuando lo tienes en tus manos."
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "¿En cuánto tiempo llega?",
+            "answer": "Procesamos tu pedido en 24 horas hábiles. La entrega llega en 1 a 5 días hábiles según tu ciudad. Te enviamos el número de guía para que rastrees todo el camino."
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué pasa si no me funciona o no me gusta?",
+            "answer": "Tienes 30 días de garantía completa. Si por cualquier razón no estás satisfecha, escríbenos por WhatsApp y gestionamos cambio o devolución sin complicaciones."
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es compatible con mi talla de pecho?",
+            "answer": "La brida de 24mm está diseñada para adaptarse a la mayoría de tamaños. Si tienes dudas, escríbenos por WhatsApp y te asesoramos."
+          }
+        },
+        "f5": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es seguro comprar acá?",
+            "answer": "Sí. Tu compra está respaldada por SSL, política de privacidad y atención humana por WhatsApp. Además puedes pagar contra entrega si prefieres no usar tarjetas en línea."
+          }
+        },
+        "f6": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo me contactan después de la compra?",
+            "answer": "Te llega un correo de confirmación con tu pedido, luego un mensaje con el número de guía cuando despachemos. Y siempre puedes escribirnos por WhatsApp para cualquier consulta."
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
       "settings": {
         "eyebrow": "Resolvemos tus dudas",
         "title": "Preguntas frecuentes"
@@ -249,7 +564,9 @@
     },
     "sticky-atc": {
       "type": "lunea-sticky-atc",
-      "settings": { "cta_text": "Comprar ahora" }
+      "settings": {
+        "cta_text": "Comprar ahora"
+      }
     },
     "whatsapp-float": {
       "type": "lunea-whatsapp-float",
