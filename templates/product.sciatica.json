@@ -3,6 +3,7 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "estilos": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'lunea-precio-destacado' %}" } },
         "stars": { "type": "star_rating", "settings": { "score": "4.8", "count": "+940" } },
         "vendor": { "type": "text", "settings": { "text": "CREVIP · APOYO PARA EL NERVIO CIÁTICO", "text_style": "uppercase" } },
         "title": { "type": "title", "settings": {} },
@@ -17,6 +18,7 @@
         "share": { "type": "share", "settings": { "share_label": "Compartir" } }
       },
       "block_order": [
+        "estilos",
         "stars",
         "vendor",
         "title",

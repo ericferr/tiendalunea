@@ -1,0 +1,55 @@
+{%- comment -%}
+  Precio y título con peso, para la caja de compra.
+
+  Dawn trae el precio en 18px con peso 400 y el título en 40px también con
+  peso 400: el precio se pierde al lado del botón y el título se lee plano.
+  En una página que existe para vender, el precio es el segundo dato que la
+  persona busca después del nombre — tiene que verse.
+
+  Es un snippet aparte y no un cambio al CSS del tema a propósito: así se
+  agrega producto por producto (como el color por producto que ya se hace) y
+  no toca las landings que hoy están funcionando.
+
+  Para usarlo en otro producto, agregar un bloque custom_liquid al template
+  con {% render 'lunea-precio-destacado' %}.
+{%- endcomment -%}
+<style>
+  /* El precio: el dato que decide la compra */
+  .product__info-wrapper .price,
+  .product__info-container .price {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+  }
+  .product__info-wrapper .price .price-item,
+  .product__info-container .price .price-item {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  /* "Precio habitual" es una etiqueta de Dawn que acá solo mete ruido:
+     no hay precio comparativo, así que no aporta nada y roba atención. */
+  .product__info-wrapper .price__regular .visually-hidden,
+  .product__info-wrapper .price .price__label,
+  .product__info-container .price__regular .visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+
+  /* El título: mismo tamaño, con peso para que deje de leerse plano */
+  .product__info-wrapper .product__title h1,
+  .product__info-wrapper .product__title > h1,
+  .product__info-container .product__title h1 {
+    font-weight: 700;
+    letter-spacing: -.015em;
+    line-height: 1.12;
+  }
+
+  @media (max-width: 749px) {
+    .product__info-wrapper .price,
+    .product__info-container .price { font-size: 30px; }
+  }
+</style>
