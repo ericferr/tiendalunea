@@ -11,6 +11,7 @@
         "quantity_selector": { "type": "quantity_selector", "settings": {} },
         "countdown_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'lunea-countdown' %}" } },
         "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "prepaid_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-prepaid-auto' %}" } },
         "ml_full_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-ml-full' %}" } },
         "couriers_inline": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'co-couriers' %}" } },
         "share": { "type": "share", "settings": { "share_label": "Compartir" } }
@@ -24,6 +25,7 @@
         "quantity_selector",
         "countdown_inline",
         "buy_buttons",
+        "prepaid_inline",
         "ml_full_inline",
         "couriers_inline",
         "share"

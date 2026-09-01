@@ -1,0 +1,61 @@
+{%- comment -%}
+  CO · Botón de pago anticipado con tarjeta, vía AstroPay.
+
+  Igual que co-prepaid-btn pero SIN precios escritos a mano: los calcula del
+  producto. El de Crema los tiene fijos ($89.900 → $79.900), así que sirve
+  para ese producto y para ninguno más — en otro mostraría un precio que no
+  es el que después se cobra.
+
+  El cupón TARJETA10 es de MONTO FIJO ($10.000 COP), no un porcentaje, a
+  pesar de su nombre. Por eso acá se anuncia el ahorro en pesos, que es
+  siempre cierto, en vez de un "10%" que solo es exacto si el producto vale
+  $100.000 (sobre la crema de $89.900 el descuento real es del 11%).
+
+  Es un <a> directo a propósito: así NO lo intercepta Releasit, que maneja el
+  contra entrega. El link lleva el descuento aplicado al checkout nativo.
+{%- endcomment -%}
+
+{%- assign descuento_cop = 1000000 -%}{%- comment -%} $10.000 en centavos {%- endcomment -%}
+{%- assign precio_final = product.price | minus: descuento_cop -%}
+
+{%- comment -%}
+  Guarda: si el producto no vale más que el descuento, el link mostraría un
+  precio de cero o negativo. Mejor no mostrar el botón.
+{%- endcomment -%}
+{%- if precio_final > 0 -%}
+<a href="/cart/{{ product.selected_or_first_available_variant.id }}:1?discount=TARJETA10" class="co-prepaid" rel="nofollow">
+  <span class="co-prepaid__top">💳 Pago anticipado y ahorra {{ descuento_cop | money_without_trailing_zeros }}</span>
+  <span class="co-prepaid__price"><s>{{ product.price | money_without_trailing_zeros }}</s> <strong>{{ precio_final | money_without_trailing_zeros }}</strong></span>
+  <span class="co-prepaid__sub">Paga ahora con tarjeta · envío gratis</span>
+</a>
+<style>
+  .co-prepaid {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    text-decoration: none; text-align: center;
+    margin: 0 0 6px; padding: 16px 18px;
+    border-radius: 26px;
+    background: #1f8a55;
+    border: none;
+    box-shadow: 0 4px 14px rgba(31,138,85,.28);
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    font-family: var(--lp-font-body, system-ui, sans-serif);
+    cursor: pointer;
+    animation: co-prepaid-pulse 2.4s ease-in-out infinite;
+    will-change: transform;
+  }
+  @keyframes co-prepaid-pulse {
+    0%, 82%, 100% { transform: scale(1); }
+    86% { transform: scale(1.035) rotate(-.6deg); }
+    90% { transform: scale(1.035) rotate(.6deg); }
+    94% { transform: scale(1.035) rotate(-.4deg); }
+    98% { transform: scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce) { .co-prepaid { animation: none; } }
+  .co-prepaid:hover { transform: translateY(-1px) scale(1.01); background: #1a7a4a; box-shadow: 0 6px 18px rgba(31,138,85,.36); animation: none; }
+  .co-prepaid__top { font-size: 15px; font-weight: 800; color: #fff; letter-spacing: .01em; }
+  .co-prepaid__price { font-size: 19px; color: #fff; font-weight: 700; }
+  .co-prepaid__price s { color: rgba(255,255,255,.7); font-weight: 500; font-size: 15px; margin-right: 5px; }
+  .co-prepaid__price strong { color: #fff; font-weight: 800; }
+  .co-prepaid__sub { font-size: 12px; color: rgba(255,255,255,.9); }
+</style>
+{%- endif -%}
