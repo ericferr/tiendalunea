@@ -1,0 +1,22 @@
+{%- comment -%}
+  Paleta violeta para Relieve Sciatica, tomada del arte del propio producto
+  (etiqueta y creativos: violeta profundo con acento magenta).
+
+  Va como snippet de un solo <style> y se agrega SOLO al template de este
+  producto: assets/lunea-product.css es compartido, así que editarlo ahí
+  cambiaría el color de las 8 landings. Es el mismo mecanismo que ya se usa
+  para el color por producto.
+
+  El violeta base (#7C3AED) da 5.9:1 contra blanco, así que el texto blanco
+  encima se lee — el celeste de Lunea (#7BBDD0) no llegaba ni a 2:1 y por eso
+  varios textos sobre color se veían lavados.
+{%- endcomment -%}
+<style>
+  :root {
+    --lp-brand: #7C3AED !important;
+    --lp-brand-2: #A78BFA !important;
+    --lp-brand-soft: #F4EFFF !important;
+    --lp-accent: #DDD0FF !important;
+    --lp-shadow: 0 4px 30px rgba(124, 58, 237, 0.16) !important;
+  }
+</style>
