@@ -26,7 +26,7 @@
       "block_order": ["t1", "t2", "t3", "t4"],
       "settings": {
         "show_cod": true,
-        "cod_title": "Pagás cuando recibís el producto en tu puerta",
+        "cod_title": "Pagas cuando recibes el producto en tu puerta",
         "cod_text": "Sin tarjetas ni transferencias previas. El mensajero recibe el pago en efectivo cuando te entrega Lunea.",
         "show_secure": true,
         "secure_text": "Compra 100% segura · Datos encriptados con SSL"
