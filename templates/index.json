@@ -50,9 +50,66 @@
             "url": "/products/physicians-choice-enzimas-digestivas",
             "badge": "🩺 Digestión"
           }
+        },
+        "serum_capilar": {
+          "type": "product_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0798/0430/1412/files/Gemini_Generated_Image_z388ooz388ooz388.jpg?v=1785528482",
+            "name": "Bodywise — Sérum Capilar Anticaída",
+            "tagline": "Roll-On contra la caída · Aplicación directa en el cuero cabelludo",
+            "anchor": "$119.900",
+            "price": "$80.000",
+            "url": "/products/dropi-cup-serum-capilar-be-bodywise",
+            "badge": "💧 Cabello"
+          }
+        },
+        "retinal": {
+          "type": "product_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0798/0430/1412/files/Gemini_Generated_Image_tiyup3tiyup3tiyu.jpg?v=1785528492",
+            "name": "Sérum Retinal SHOT — Anti Arrugas",
+            "tagline": "Rejuvenecedor con retinal · Incluye obsequio",
+            "anchor": "",
+            "price": "$69.900",
+            "url": "/products/retinal-shot-obsequio",
+            "badge": "✨ Antiedad"
+          }
+        },
+        "sciatica": {
+          "type": "product_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0798/0430/1412/files/1782575303creativorelieve-sciatica-5.jpg?v=1788277912",
+            "name": "Relieve Sciatica — Nervio Ciático",
+            "tagline": "Complejo B + Ácido Alfa Lipoico · 120 cápsulas",
+            "anchor": "",
+            "price": "$100.000",
+            "url": "/products/relieve-sciatica-120-caps-nerve-health",
+            "badge": "🦵 Alivio"
+          }
+        },
+        "carillas": {
+          "type": "product_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0798/0430/1412/files/ChatGPTImage6jun2026_07_47_10p.m._1.webp?v=1785528483",
+            "name": "Carillas Dentales Snap On Smile",
+            "tagline": "Sonrisa pareja al instante · Se coloca y se retira",
+            "anchor": "$99.900",
+            "price": "$70.000",
+            "url": "/products/carillas-dentales-snap-on-smile",
+            "badge": "🦷 Sonrisa"
+          }
         }
       },
-      "block_order": ["crema", "astaxantina", "probioticos", "enzimas"],
+      "block_order": [
+        "crema",
+        "astaxantina",
+        "probioticos",
+        "enzimas",
+        "serum_capilar",
+        "retinal",
+        "sciatica",
+        "carillas"
+      ],
       "settings": {
         "eyebrow": "Bienestar & Belleza · Colombia",
         "heading": "Productos que cuidan de ti",
@@ -61,5 +118,7 @@
       }
     }
   },
-  "order": ["home"]
+  "order": [
+    "home"
+  ]
 }
