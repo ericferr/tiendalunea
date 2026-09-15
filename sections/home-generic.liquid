@@ -19,7 +19,7 @@
           {%- comment -%} Si el bloque tiene producto elegido, nombre/imagen/precio salen de Shopify (nunca quedan desactualizados). {%- endcomment -%}
           {%- assign pr = block.settings.product -%}
           {%- if pr != blank -%}
-            {%- assign url = pr.url -%}{%- assign nombre = pr.title -%}{%- assign imagen = pr.featured_image | image_url: width: 600 -%}
+            {%- assign url = pr.url -%}{%- if block.settings.name != blank -%}{%- assign nombre = block.settings.name -%}{%- else -%}{%- assign nombre = pr.title -%}{%- endif -%}{%- assign imagen = pr.featured_image | image_url: width: 600 -%}
             {%- assign precio = pr.price | money_without_trailing_zeros -%}
             {%- if pr.compare_at_price > pr.price -%}{%- assign tachado = pr.compare_at_price | money_without_trailing_zeros -%}{%- else -%}{%- assign tachado = '' -%}{%- endif -%}
           {%- else -%}
@@ -132,7 +132,7 @@
       "settings": [
         { "type": "product", "id": "product", "label": "Producto (nombre, foto y precio salen de Shopify)" },
         { "type": "text", "id": "image_url", "label": "URL de imagen (solo si no hay producto elegido)" },
-        { "type": "text", "id": "name", "label": "Nombre" },
+        { "type": "text", "id": "name", "label": "Nombre corto (opcional; si está vacío usa el título del producto)" },
         { "type": "text", "id": "tagline", "label": "Frase corta" },
         { "type": "text", "id": "anchor", "label": "Precio tachado (opcional)" },
         { "type": "text", "id": "price", "label": "Precio" },

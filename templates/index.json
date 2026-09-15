@@ -8,7 +8,8 @@
           "settings": {
             "tagline": "Colágeno + Ácido Hialurónico + Centella + Niacinamida",
             "badge": "✨ K-Beauty",
-            "product": "crema-nida-youthfull-100ml"
+            "product": "crema-nida-youthfull-100ml",
+            "name": "Fórmula Rostro Juvenil — Crema Coreana"
           }
         },
         "astaxantina": {
@@ -16,7 +17,8 @@
           "settings": {
             "tagline": "Antioxidante 6.000x más potente que la vitamina C · Piel y energía",
             "badge": "🌟 Belleza & Energía",
-            "product": "astaxantina-premium-microingredientes"
+            "product": "astaxantina-premium-microingredientes",
+            "name": "Astaxantina 12mg — Antioxidante Premium"
           }
         },
         "probioticos": {
@@ -24,7 +26,8 @@
           "settings": {
             "tagline": "Equilibrio y frescura de tu flora íntima · 60 cápsulas",
             "badge": "🌸 Salud íntima",
-            "product": "probiotico-vaginal-physicians-choice"
+            "product": "probiotico-vaginal-physicians-choice",
+            "name": "Physician's Choice Probióticos Vaginales"
           }
         },
         "enzimas": {
@@ -32,7 +35,8 @@
           "settings": {
             "tagline": "Enzimas + Probióticos + Prebióticos · Marca #1 EE.UU.",
             "badge": "🩺 Digestión",
-            "product": "physicians-choice-enzimas-digestivas"
+            "product": "physicians-choice-enzimas-digestivas",
+            "name": "Physician's Choice Enzimas Digestivas"
           }
         },
         "serum_capilar": {
@@ -40,7 +44,8 @@
           "settings": {
             "tagline": "Roll-On contra la caída · Aplicación directa en el cuero cabelludo",
             "badge": "💧 Cabello",
-            "product": "dropi-cup-serum-capilar-be-bodywise"
+            "product": "dropi-cup-serum-capilar-be-bodywise",
+            "name": "Bodywise — Sérum Capilar Anticaída"
           }
         },
         "sciatica": {
@@ -48,7 +53,8 @@
           "settings": {
             "tagline": "Complejo B + Ácido Alfa Lipoico · 120 cápsulas",
             "badge": "🦵 Alivio",
-            "product": "relieve-sciatica-120-caps-nerve-health"
+            "product": "relieve-sciatica-120-caps-nerve-health",
+            "name": "Relieve Sciatica — Nervio Ciático"
           }
         },
         "carillas": {
@@ -56,7 +62,8 @@
           "settings": {
             "tagline": "Sonrisa pareja al instante · Se coloca y se retira",
             "badge": "🦷 Sonrisa",
-            "product": "carillas-dentales-snap-on-smile"
+            "product": "carillas-dentales-snap-on-smile",
+            "name": "Carillas Dentales Snap On Smile"
           }
         }
       },
