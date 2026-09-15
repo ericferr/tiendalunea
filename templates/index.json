@@ -6,97 +6,57 @@
         "crema": {
           "type": "product_card",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_tu1udttu1udttu1u.avif?v=1780927317",
-            "name": "Fórmula Rostro Juvenil — Crema Coreana",
             "tagline": "Colágeno + Ácido Hialurónico + Centella + Niacinamida",
-            "anchor": "$99.900",
-            "price": "$79.900",
-            "url": "/products/crema-nida-youthfull-100ml",
-            "badge": "✨ K-Beauty"
+            "badge": "✨ K-Beauty",
+            "product": "crema-nida-youthfull-100ml"
           }
         },
         "astaxantina": {
           "type": "product_card",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_40xt9640xt9640xt.avif?v=1781103243",
-            "name": "Astaxantina 12mg — Antioxidante Premium",
             "tagline": "Antioxidante 6.000x más potente que la vitamina C · Piel y energía",
-            "anchor": "$109.900",
-            "price": "$79.900",
-            "url": "/products/astaxantina-premium-microingredientes",
-            "badge": "🌟 Belleza & Energía"
+            "badge": "🌟 Belleza & Energía",
+            "product": "astaxantina-premium-microingredientes"
           }
         },
         "probioticos": {
           "type": "product_card",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_q96ai9q96ai9q96a.avif?v=1781107933",
-            "name": "Physician's Choice Probióticos Vaginales",
             "tagline": "Equilibrio y frescura de tu flora íntima · 60 cápsulas",
-            "anchor": "$110.000",
-            "price": "$80.000",
-            "url": "/products/probiotico-vaginal-physicians-choice",
-            "badge": "🌸 Salud íntima"
+            "badge": "🌸 Salud íntima",
+            "product": "probiotico-vaginal-physicians-choice"
           }
         },
         "enzimas": {
           "type": "product_card",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_jnfyk9jnfyk9jnfy_4709dfe2-42b2-4e56-b8d3-0cb58b6e9bf4.png?v=1781051853",
-            "name": "Physician's Choice Enzimas Digestivas",
             "tagline": "Enzimas + Probióticos + Prebióticos · Marca #1 EE.UU.",
-            "anchor": "$89.900",
-            "price": "$67.900",
-            "url": "/products/physicians-choice-enzimas-digestivas",
-            "badge": "🩺 Digestión"
+            "badge": "🩺 Digestión",
+            "product": "physicians-choice-enzimas-digestivas"
           }
         },
         "serum_capilar": {
           "type": "product_card",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0798/0430/1412/files/Gemini_Generated_Image_z388ooz388ooz388.jpg?v=1785528482",
-            "name": "Bodywise — Sérum Capilar Anticaída",
             "tagline": "Roll-On contra la caída · Aplicación directa en el cuero cabelludo",
-            "anchor": "$119.900",
-            "price": "$80.000",
-            "url": "/products/dropi-cup-serum-capilar-be-bodywise",
-            "badge": "💧 Cabello"
-          }
-        },
-        "retinal": {
-          "type": "product_card",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0798/0430/1412/files/Gemini_Generated_Image_tiyup3tiyup3tiyu.jpg?v=1785528492",
-            "name": "Sérum Retinal SHOT — Anti Arrugas",
-            "tagline": "Rejuvenecedor con retinal · Incluye obsequio",
-            "anchor": "",
-            "price": "$69.900",
-            "url": "/products/retinal-shot-obsequio",
-            "badge": "✨ Antiedad"
+            "badge": "💧 Cabello",
+            "product": "dropi-cup-serum-capilar-be-bodywise"
           }
         },
         "sciatica": {
           "type": "product_card",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0798/0430/1412/files/1782575303creativorelieve-sciatica-5.jpg?v=1788277912",
-            "name": "Relieve Sciatica — Nervio Ciático",
             "tagline": "Complejo B + Ácido Alfa Lipoico · 120 cápsulas",
-            "anchor": "",
-            "price": "$100.000",
-            "url": "/products/relieve-sciatica-120-caps-nerve-health",
-            "badge": "🦵 Alivio"
+            "badge": "🦵 Alivio",
+            "product": "relieve-sciatica-120-caps-nerve-health"
           }
         },
         "carillas": {
           "type": "product_card",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0798/0430/1412/files/ChatGPTImage6jun2026_07_47_10p.m._1.webp?v=1785528483",
-            "name": "Carillas Dentales Snap On Smile",
             "tagline": "Sonrisa pareja al instante · Se coloca y se retira",
-            "anchor": "$99.900",
-            "price": "$70.000",
-            "url": "/products/carillas-dentales-snap-on-smile",
-            "badge": "🦷 Sonrisa"
+            "badge": "🦷 Sonrisa",
+            "product": "carillas-dentales-snap-on-smile"
           }
         }
       },
@@ -106,7 +66,6 @@
         "probioticos",
         "enzimas",
         "serum_capilar",
-        "retinal",
         "sciatica",
         "carillas"
       ],
