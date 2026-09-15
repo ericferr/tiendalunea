@@ -1,0 +1,370 @@
+{%- comment -%}
+  Landing completa "Nida v2": rediseño con sistema visual propio (Manrope, azul/celeste).
+  Una sola sección para no depender del sync de varios archivos. Los textos son
+  settings con default; las imágenes del hero salen del producto. Sin settings
+  "range" (Shopify rechaza el archivo en silencio si el range es inválido).
+{%- endcomment -%}
+{%- assign v = product.selected_or_first_available_variant -%}
+{%- assign s = section.settings -%}
+{%- assign ahorro = v.compare_at_price | minus: v.price -%}
+{%- assign pct = ahorro | times: 100 | divided_by: v.compare_at_price -%}
+{%- assign url1 = '/cart/' | append: v.id | append: ':1' -%}
+{%- assign url2 = '/cart/' | append: v.id | append: ':2?discount=' | append: s.codigo_2x -%}
+{%- assign url_upsell = '/cart/' | append: v.id | append: ':1,' | append: s.upsell_variant | append: ':1' -%}
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+.nv2{--blanco:#fff;--celeste:#eaf6fc;--celeste2:#d6eef9;--azul:#176b9b;--tinta:#152c38;--gris:#607783;--borde:#d9e7ee;--terra:#b65b3a;--terra-soft:#fff0e8;font-family:Manrope,system-ui,sans-serif;color:var(--tinta);background:var(--blanco);line-height:1.5}
+.nv2 *{box-sizing:border-box}
+.nv2 img{max-width:100%;display:block}
+.nv2 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.nv2 .sec{padding:72px 0}
+.nv2 .alt{background:var(--celeste)}
+.nv2 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--azul);margin:0}
+.nv2 h1{font-size:clamp(34px,5vw,58px);line-height:1.08;margin:12px 0 20px;font-weight:800;letter-spacing:-.02em;color:var(--tinta)}
+.nv2 h2{font-size:clamp(26px,3.2vw,36px);line-height:1.15;margin:0 0 28px;font-weight:800;letter-spacing:-.01em;color:var(--tinta)}
+.nv2 h3{font-size:19px;margin:10px 0 8px;color:var(--tinta)}
+.nv2 p{margin:0 0 12px}
+.nv2 .gris{color:var(--gris)}
+.nv2 .btn{display:flex;align-items:center;justify-content:center;height:56px;border-radius:14px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:0;width:100%;transition:transform .15s;font-family:inherit}
+.nv2 .btn:hover{transform:translateY(-1px)}
+.nv2 .btn-p{background:var(--azul);color:#fff}
+.nv2 .btn-s{background:#fff;color:var(--azul);border:2px solid var(--azul)}
+.nv2 .sello{display:inline-block;background:var(--celeste);color:var(--azul);font-weight:600;font-size:13px;padding:9px 14px;border-radius:999px}
+.nv2 .urg{display:inline-block;background:var(--terra-soft);color:var(--terra);font-weight:600;font-size:13px;padding:12px 14px;border-radius:8px}
+.nv2 .card{background:#fff;border:1px solid var(--borde);border-radius:16px}
+.nv2 .hero{padding:48px 0 64px}
+.nv2 .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.nv2 .stars{color:#f5b301;letter-spacing:1px;font-size:14px}
+.nv2 .stars a{color:var(--gris);font-size:13px;text-decoration:underline;margin-left:8px}
+.nv2 .nombre{font-weight:700;font-size:14px;margin:10px 0 0}
+.nv2 .precio{display:flex;align-items:center;gap:12px;margin:18px 0 22px}
+.nv2 .precio b{font-size:36px;font-weight:800}.nv2 .precio s{color:var(--gris);font-size:18px}
+.nv2 .desc{background:var(--terra-soft);color:var(--terra);font-weight:700;font-size:13px;padding:5px 9px;border-radius:8px}
+.nv2 .hero-btns{display:grid;gap:12px}
+.nv2 .sellos{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 14px}
+.nv2 .galeria{background:var(--celeste);border-radius:24px;padding:24px;display:grid;gap:12px}
+.nv2 .galeria img{border-radius:16px;width:100%;aspect-ratio:1;object-fit:cover;background:#fff}
+.nv2 .galeria .mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.nv2 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.nv2 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.nv2 .g5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.nv2 .ba{padding:12px}.nv2 .ba .fotos{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;position:relative}
+.nv2 .ba img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.nv2 .ba .tag{position:absolute;top:10px;background:rgba(21,44,56,.8);color:#fff;font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px}
+.nv2 .ba .tag.b{left:10px}.nv2 .ba .tag.a{right:10px}
+.nv2 .ba p{margin:12px 0 0;font-size:14px;font-weight:600}
+.nv2 .activo,.nv2 .paso{padding:24px}
+.nv2 .activo .n,.nv2 .paso .n{font-size:11px;font-weight:700;color:var(--azul);letter-spacing:.1em}
+.nv2 .activo p,.nv2 .paso p{font-size:14px;color:var(--gris)}
+.nv2 .video{border-radius:16px;overflow:hidden;background:var(--celeste2);aspect-ratio:9/13;position:relative}
+.nv2 .video video{width:100%;height:100%;object-fit:cover;display:block}
+.nv2 .video .lab{position:absolute;left:14px;bottom:14px;background:#fff;padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700}
+.nv2 .oferta{display:grid;grid-template-columns:390px 1fr;gap:32px;padding:40px;align-items:center}
+.nv2 .oferta img{border-radius:16px;background:#fff}
+.nv2 .oferta ul{padding-left:18px;color:var(--gris);font-size:15px;margin:0 0 20px}
+.nv2 .upsell{display:flex;gap:14px;align-items:center;background:var(--celeste);border-radius:12px;padding:16px;margin-bottom:18px;font-size:15px;font-weight:600;cursor:pointer;user-select:none}
+.nv2 .toggle{width:42px;height:24px;border-radius:999px;background:#c5d5de;position:relative;flex:none;transition:background .2s}
+.nv2 .toggle:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .2s}
+.nv2 .upsell.on .toggle{background:var(--azul)}.nv2 .upsell.on .toggle:after{left:21px}
+.nv2 .gar{display:flex;gap:24px;align-items:center;padding:32px}
+.nv2 .gar .ico{width:64px;height:64px;border-radius:50%;background:var(--azul);flex:none;display:grid;place-items:center;color:#fff;font-size:28px}
+.nv2 .res{padding:16px}.nv2 .res img{aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+.nv2 .res .t{font-size:11px;font-weight:700;color:var(--azul);margin:12px 0 6px;letter-spacing:.06em}
+.nv2 .res q{font-size:14px;font-weight:600;display:block;margin-bottom:10px}.nv2 .res small{color:var(--gris)}
+.nv2 .parati{background:var(--tinta);color:#fff}
+.nv2 .parati h2{color:#fff}
+.nv2 .parati .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.nv2 .parati ul{list-style:none;padding:0;margin:0 0 24px}.nv2 .parati li{padding:7px 0 7px 26px;position:relative}.nv2 .parati li:before{content:"✓";position:absolute;left:0;color:#7cc4ea}
+.nv2 details{border-bottom:1px solid var(--borde);padding:18px 0}.nv2 summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between}
+.nv2 summary::-webkit-details-marker{display:none}
+.nv2 summary:after{content:"+";color:var(--azul);font-size:22px}.nv2 details[open] summary:after{content:"–"}.nv2 details p{color:var(--gris);margin:10px 0 0;font-size:15px}
+.nv2 .final{text-align:center}.nv2 .final .wrap{max-width:760px}.nv2 .final h2{font-size:clamp(30px,4vw,44px)}
+.nv2 .sticky{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--borde);padding:10px 0;z-index:9}
+.nv2 .sticky .wrap{display:flex;gap:16px;align-items:center}.nv2 .sticky small{color:var(--gris);font-size:11px;display:block}.nv2 .sticky b{font-size:20px;white-space:nowrap}
+@media(max-width:900px){.nv2 .hero .wrap,.nv2 .oferta,.nv2 .parati .wrap{grid-template-columns:1fr}.nv2 .g3,.nv2 .g4,.nv2 .g5{grid-template-columns:1fr 1fr}.nv2 .hero{padding:24px 0 48px}.nv2 .galeria{order:-1}.nv2 .sec{padding:56px 0}}
+@media(max-width:560px){.nv2 .g3{grid-template-columns:1fr}}
+</style>
+
+<div class="nv2" id="nv2-{{ section.id }}">
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="stars">★★★★★ <span style="color:var(--tinta);font-weight:700">{{ s.puntaje }}</span><a href="#nv2-resenas">{{ s.cantidad_resenas }}</a></div>
+    <p class="nombre">{{ s.nombre_marketing }}</p>
+    <h1>{{ s.titular }}</h1>
+    <p class="eyebrow">{{ s.eyebrow }}</p>
+    <div class="precio"><b>{{ v.price | money_without_trailing_zeros }}</b>{% if v.compare_at_price > v.price %}<s>{{ v.compare_at_price | money_without_trailing_zeros }}</s><span class="desc">−{{ pct }}%</span>{% endif %}</div>
+    <div class="hero-btns">
+      <a class="btn btn-p" href="{{ url1 }}">{{ s.boton_1 }}</a>
+      <a class="btn btn-s" href="{{ url2 }}">{{ s.boton_2 }}</a>
+    </div>
+    <div class="sellos"><span class="sello">{{ s.sello_1 }}</span><span class="sello">{{ s.sello_2 }}</span><span class="sello">{{ s.sello_3 }}</span></div>
+    <span class="urg">{{ s.urgencia }}</span>
+  </div>
+  <div class="galeria">
+    {%- if product.images.size > 0 -%}
+      <img src="{{ product.images[0] | image_url: width: 1000 }}" alt="{{ product.title | escape }}" width="1000" height="1000">
+      {%- if product.images.size > 1 -%}
+      <div class="mini">
+        {%- for img in product.images offset: 1 limit: 3 -%}
+          <img src="{{ img | image_url: width: 400 }}" alt="" width="400" height="400" loading="lazy">
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div></section>
+
+<section class="sec alt"><div class="wrap">
+  <p class="eyebrow">{{ s.res_eyebrow }}</p>
+  <h2>{{ s.res_titulo }}</h2>
+  <div class="g3">
+    {%- for i in (1..3) -%}
+      {%- assign ka = 'antes_' | append: i -%}{%- assign kd = 'despues_' | append: i -%}{%- assign kc = 'caption_' | append: i -%}
+      {%- if s[ka] != blank -%}
+      <div class="card ba"><div class="fotos"><img src="{{ s[ka] }}" alt="Antes" loading="lazy"><img src="{{ s[kd] }}" alt="Después" loading="lazy"><span class="tag b">Antes</span><span class="tag a">Después</span></div><p>{{ s[kc] }}</p></div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <p class="gris" style="font-size:13px;margin-top:16px">{{ s.res_nota }}</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>{{ s.act_titulo }}</h2>
+  <div class="g4">
+    {%- for i in (1..4) -%}
+      {%- assign kt = 'activo_' | append: i | append: '_t' -%}{%- assign kx = 'activo_' | append: i | append: '_x' -%}
+      <div class="card activo"><div class="n">{{ s.act_etiqueta }}</div><h3>{{ s[kt] }}</h3><p>{{ s[kx] }}</p></div>
+    {%- endfor -%}
+  </div>
+</div></section>
+
+<section class="sec alt"><div class="wrap">
+  <h2>{{ s.vid_titulo }}</h2>
+  <p class="gris" style="margin:-16px 0 28px">{{ s.vid_texto }}</p>
+  <div class="g4">
+    {%- for i in (1..4) -%}
+      {%- assign ku = 'video_' | append: i -%}{%- assign kl = 'video_' | append: i | append: '_l' -%}
+      {%- if s[ku] != blank -%}
+      <div class="video"><video src="{{ s[ku] }}" muted loop playsinline autoplay preload="metadata"></video><span class="lab">{{ s[kl] }}</span></div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>{{ s.rut_titulo }}</h2>
+  <div class="g3">
+    {%- for i in (1..3) -%}
+      {%- assign kt = 'paso_' | append: i | append: '_t' -%}{%- assign kx = 'paso_' | append: i | append: '_x' -%}
+      <div class="card paso"><div class="n">0{{ i }}</div><h3>{{ s[kt] }}</h3><p>{{ s[kx] }}</p></div>
+    {%- endfor -%}
+  </div>
+</div></section>
+
+<section class="sec alt" id="nv2-oferta"><div class="wrap">
+  <div class="card oferta">
+    {%- if product.images.size > 0 -%}<img src="{{ product.images.last | image_url: width: 800 }}" alt="{{ product.title | escape }}" width="800" height="800" loading="lazy">{%- endif -%}
+    <div>
+      <h2 style="margin-bottom:12px">{{ s.of_titulo }}</h2>
+      <ul><li>{{ s.of_1 }}</li><li>{{ s.of_2 }}</li><li>{{ s.of_3 }}</li></ul>
+      {%- if s.upsell_variant != blank -%}
+      <div class="upsell" id="nv2-upsell-{{ section.id }}" role="switch" aria-checked="false" tabindex="0"><span class="toggle"></span>{{ s.upsell_texto }}</div>
+      {%- endif -%}
+      <a class="btn btn-p" id="nv2-cta-oferta-{{ section.id }}" href="{{ url1 }}" data-solo="{{ url1 }}" data-upsell="{{ url_upsell }}">{{ s.boton_1 }}</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="card gar"><div class="ico">✓</div><div><h2 style="margin-bottom:6px">{{ s.gar_titulo }}</h2><p class="gris">{{ s.gar_texto }}</p></div></div>
+</div></section>
+
+<section class="sec alt" id="nv2-resenas"><div class="wrap">
+  <h2>{{ s.rev_titulo }}</h2>
+  <div class="g5">
+    {%- for i in (1..5) -%}
+      {%- assign ki = 'rev_' | append: i | append: '_img' -%}{%- assign kt = 'rev_' | append: i | append: '_tag' -%}{%- assign kq = 'rev_' | append: i | append: '_q' -%}{%- assign kn = 'rev_' | append: i | append: '_n' -%}
+      {%- if s[kq] != blank -%}
+      <div class="card res">{% if s[ki] != blank %}<img src="{{ s[ki] }}" alt="" loading="lazy">{% endif %}<div class="t">{{ s[kt] }}</div><q>{{ s[kq] }}</q><small>{{ s[kn] }}</small></div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div></section>
+
+<section class="sec parati"><div class="wrap">
+  <h2>{{ s.pt_titulo }}</h2>
+  <div><ul>
+    {%- for i in (1..5) -%}{%- assign k = 'pt_' | append: i -%}{%- if s[k] != blank -%}<li>{{ s[k] }}</li>{%- endif -%}{%- endfor -%}
+  </ul><a class="btn btn-p" href="#nv2-oferta">{{ s.pt_boton }}</a></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>{{ s.faq_titulo }}</h2>
+  {%- for i in (1..6) -%}
+    {%- assign kq = 'faq_' | append: i | append: '_q' -%}{%- assign ka = 'faq_' | append: i | append: '_a' -%}
+    {%- if s[kq] != blank -%}<details><summary>{{ s[kq] }}</summary><p>{{ s[ka] }}</p></details>{%- endif -%}
+  {%- endfor -%}
+</div></section>
+
+<section class="sec alt final"><div class="wrap">
+  <p class="eyebrow">{{ s.fin_eyebrow }}</p>
+  <h2>{{ s.fin_titulo }}</h2>
+  <p style="font-weight:700;font-size:20px">Hoy {{ v.price | money_without_trailing_zeros }} · {{ s.fin_nota }}</p>
+  <a class="btn btn-p" href="{{ url1 }}">{{ s.boton_1 }}</a>
+</div></section>
+
+<div class="sticky"><div class="wrap"><div><small>Hoy</small><b>{{ v.price | money_without_trailing_zeros }}</b></div><a class="btn btn-p" href="{{ url1 }}">{{ s.sticky_boton }}</a></div></div>
+
+</div>
+
+<script>
+  // El toggle del upsell cambia el permalink del botón: 1 unidad, o 1 unidad + el sérum.
+  (function () {
+    var t = document.getElementById('nv2-upsell-{{ section.id }}'), b = document.getElementById('nv2-cta-oferta-{{ section.id }}');
+    if (!t || !b) return;
+    function alternar() {
+      var on = !t.classList.contains('on');
+      t.classList.toggle('on', on);
+      t.setAttribute('aria-checked', on);
+      b.href = on ? b.dataset.upsell : b.dataset.solo;
+    }
+    t.addEventListener('click', alternar);
+    t.addEventListener('keydown', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); alternar(); } });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Lunea · Nida v2",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "puntaje", "label": "Puntaje", "default": "4.9" },
+    { "type": "text", "id": "cantidad_resenas", "label": "Texto de valoraciones", "default": "+1.200 valoraciones" },
+    { "type": "text", "id": "nombre_marketing", "label": "Nombre", "default": "Fórmula Rostro Juvenil" },
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Piel más firme, hidratada y uniforme desde los primeros días." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NIDA · Fórmula coreana 4 en 1" },
+    { "type": "text", "id": "boton_1", "label": "Botón 1 unidad", "default": "Comprar ahora · pagas al recibir" },
+    { "type": "text", "id": "boton_2", "label": "Botón 2 unidades", "default": "Quiero 2 en promoción · $159.800 las 2" },
+    { "type": "text", "id": "codigo_2x", "label": "Código de descuento 2 unidades", "default": "CREMA2X" },
+    { "type": "text", "id": "sello_1", "label": "Sello 1", "default": "Pagas al recibir" },
+    { "type": "text", "id": "sello_2", "label": "Sello 2", "default": "Envío gratis · 1-5 días" },
+    { "type": "text", "id": "sello_3", "label": "Sello 3", "default": "Compra segura" },
+    { "type": "text", "id": "urgencia", "label": "Urgencia", "default": "Envío gratis por tiempo limitado · quedan pocas unidades" },
+
+    { "type": "header", "content": "Resultados (antes / después)" },
+    { "type": "text", "id": "res_eyebrow", "label": "Eyebrow", "default": "Resultados reales" },
+    { "type": "text", "id": "res_titulo", "label": "Título", "default": "Cambios que se sienten y se ven." },
+    { "type": "text", "id": "antes_1", "label": "Antes 1 (URL)", "default": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_7oau397oau397oau.avif?v=1780928531" },
+    { "type": "text", "id": "despues_1", "label": "Después 1 (URL)", "default": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_g18ta2g18ta2g18t.avif?v=1780928531" },
+    { "type": "text", "id": "caption_1", "label": "Texto 1", "default": "Líneas finas · día 1 / día 21" },
+    { "type": "text", "id": "antes_2", "label": "Antes 2 (URL)", "default": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_gkqhjogkqhjogkqh.avif?v=1780928531" },
+    { "type": "text", "id": "despues_2", "label": "Después 2 (URL)", "default": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_97my2w97my2w97my.avif?v=1780928531" },
+    { "type": "text", "id": "caption_2", "label": "Texto 2", "default": "Manchas visibles · día 1 / día 28" },
+    { "type": "text", "id": "antes_3", "label": "Antes 3 (URL)", "default": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_dqmntidqmntidqmn.avif?v=1780928531" },
+    { "type": "text", "id": "despues_3", "label": "Después 3 (URL)", "default": "https://cdn.shopify.com/s/files/1/0811/0984/4194/files/Gemini_Generated_Image_s24kyss24kyss24k.avif?v=1780928531" },
+    { "type": "text", "id": "caption_3", "label": "Texto 3", "default": "Luminosidad · día 1 / día 14" },
+    { "type": "text", "id": "res_nota", "label": "Nota", "default": "Resultados individuales pueden variar. Uso continuo recomendado." },
+
+    { "type": "header", "content": "Activos" },
+    { "type": "text", "id": "act_titulo", "label": "Título", "default": "Una crema. Cuatro activos clave." },
+    { "type": "text", "id": "act_etiqueta", "label": "Etiqueta", "default": "NIDA · 4 EN 1" },
+    { "type": "text", "id": "activo_1_t", "label": "Activo 1", "default": "Ácido Hialurónico x8" },
+    { "type": "textarea", "id": "activo_1_x", "label": "Activo 1 texto", "default": "Ocho formas moleculares: cada una actúa en una capa distinta de la piel para una hidratación profunda y duradera." },
+    { "type": "text", "id": "activo_2_t", "label": "Activo 2", "default": "Colágeno Hidrolizado" },
+    { "type": "textarea", "id": "activo_2_x", "label": "Activo 2 texto", "default": "Restaura la firmeza y elasticidad que la piel pierde con los años y reduce la apariencia de líneas finas." },
+    { "type": "text", "id": "activo_3_t", "label": "Activo 3", "default": "Centella Asiática" },
+    { "type": "textarea", "id": "activo_3_x", "label": "Activo 3 texto", "default": "Calma la irritación, reduce la rojez y potencia la regeneración. Ideal para pieles sensibles." },
+    { "type": "text", "id": "activo_4_t", "label": "Activo 4", "default": "Niacinamida" },
+    { "type": "textarea", "id": "activo_4_x", "label": "Activo 4 texto", "default": "Unifica el tono, reduce manchas oscuras y minimiza poros con uso continuo de 4 semanas." },
+
+    { "type": "header", "content": "Videos" },
+    { "type": "text", "id": "vid_titulo", "label": "Título", "default": "200 millones de vistas no mienten" },
+    { "type": "text", "id": "vid_texto", "label": "Texto", "default": "Rutinas, texturas y resultados compartidos por mujeres que hicieron de Nida parte de su día." },
+    { "type": "text", "id": "video_1", "label": "Video 1 (URL mp4)", "default": "https://nida.co/cdn/shop/videos/c/vp/0b24661074534ff880663ee22eca324f/0b24661074534ff880663ee22eca324f.HD-1080p-7.2Mbps-66649616.mp4?v=0" },
+    { "type": "text", "id": "video_1_l", "label": "Etiqueta 1", "default": "Resultado real" },
+    { "type": "text", "id": "video_2", "label": "Video 2 (URL mp4)", "default": "https://nida.co/cdn/shop/videos/c/vp/390827532b394813a5c135044523f33a/390827532b394813a5c135044523f33a.HD-1080p-7.2Mbps-66649614.mp4?v=0" },
+    { "type": "text", "id": "video_2_l", "label": "Etiqueta 2", "default": "Piel transformada" },
+    { "type": "text", "id": "video_3", "label": "Video 3 (URL mp4)", "default": "https://nida.co/cdn/shop/videos/c/vp/23e053305b11445088f8932c5e137bf4/23e053305b11445088f8932c5e137bf4.HD-1080p-7.2Mbps-66649617.mp4?v=0" },
+    { "type": "text", "id": "video_3_l", "label": "Etiqueta 3", "default": "Lo que dicen ellas" },
+    { "type": "text", "id": "video_4", "label": "Video 4 (URL mp4)", "default": "https://nida.co/cdn/shop/videos/c/vp/14cc91d0df854d32847fb58cab99ae3d/14cc91d0df854d32847fb58cab99ae3d.HD-1080p-7.2Mbps-49661985.mp4?v=0" },
+    { "type": "text", "id": "video_4_l", "label": "Etiqueta 4", "default": "Hidratación visible" },
+
+    { "type": "header", "content": "Rutina" },
+    { "type": "text", "id": "rut_titulo", "label": "Título", "default": "30 segundos. Mañana y noche." },
+    { "type": "text", "id": "paso_1_t", "label": "Paso 1", "default": "Limpia" },
+    { "type": "text", "id": "paso_1_x", "label": "Paso 1 texto", "default": "Aplica sobre la piel limpia y seca. No necesita preparación especial." },
+    { "type": "text", "id": "paso_2_t", "label": "Paso 2", "default": "Aplica" },
+    { "type": "text", "id": "paso_2_x", "label": "Paso 2 texto", "default": "Una cantidad del tamaño de un garbanzo en frente, mejillas, nariz y mentón, con movimientos hacia arriba." },
+    { "type": "text", "id": "paso_3_t", "label": "Paso 3", "default": "Protege" },
+    { "type": "text", "id": "paso_3_x", "label": "Paso 3 texto", "default": "La hidratación se siente desde el primer uso; tono, firmeza y manchas mejoran a partir del día 14." },
+
+    { "type": "header", "content": "Oferta y upsell" },
+    { "type": "text", "id": "of_titulo", "label": "Título", "default": "¿Qué recibes?" },
+    { "type": "text", "id": "of_1", "label": "Incluye 1", "default": "1 Fórmula Rostro Juvenil Nida de 100 ml (hasta 2 meses de uso)" },
+    { "type": "text", "id": "of_2", "label": "Incluye 2", "default": "Guía de uso y soporte por WhatsApp" },
+    { "type": "text", "id": "of_3", "label": "Incluye 3", "default": "Envío gratis · pago contra entrega" },
+    { "type": "text", "id": "upsell_variant", "label": "ID de variante del upsell (vacío = sin upsell)", "default": "48886430335076" },
+    { "type": "text", "id": "upsell_texto", "label": "Texto del upsell", "default": "Sumá el Sérum Retinal SHOT · +$69.900" },
+
+    { "type": "header", "content": "Garantía" },
+    { "type": "text", "id": "gar_titulo", "label": "Título", "default": "Tu compra está protegida" },
+    { "type": "textarea", "id": "gar_texto", "label": "Texto", "default": "Pagas cuando el producto llega a tu puerta, sin tarjetas ni transferencias. Si hay un problema con el empaque o el producto, escríbenos por WhatsApp y lo gestionamos sin vueltas." },
+
+    { "type": "header", "content": "Reseñas" },
+    { "type": "text", "id": "rev_titulo", "label": "Título", "default": "Ellas ya hicieron el cambio" },
+    { "type": "text", "id": "rev_1_img", "label": "Foto 1 (URL)", "default": "https://ae-pic-a1.aliexpress-media.com/kf/Ac627452665934dad920232b6957e8b57w.jpg_960x960q75.jpg_.avif" },
+    { "type": "text", "id": "rev_1_tag", "label": "Etiqueta 1", "default": "RESULTADO REAL" },
+    { "type": "text", "id": "rev_1_q", "label": "Cita 1", "default": "En dos semanas mi piel cambió completamente" },
+    { "type": "text", "id": "rev_1_n", "label": "Nombre 1", "default": "Marcela R. · Bogotá" },
+    { "type": "text", "id": "rev_2_img", "label": "Foto 2 (URL)", "default": "https://ae-pic-a1.aliexpress-media.com/kf/Ad74ae12a77ed43ba827e2b486dfc9a92t.jpg_960x960q75.jpg_.avif" },
+    { "type": "text", "id": "rev_2_tag", "label": "Etiqueta 2", "default": "COMPRA VERIFICADA" },
+    { "type": "text", "id": "rev_2_q", "label": "Cita 2", "default": "Las manchas del sol bajaron notablemente" },
+    { "type": "text", "id": "rev_2_n", "label": "Nombre 2", "default": "Diana P. · Cali" },
+    { "type": "text", "id": "rev_3_img", "label": "Foto 3 (URL)", "default": "https://ae-pic-a1.aliexpress-media.com/kf/A87ca356fb9584f1db95ccde0d7fa65983.jpg_960x960q75.jpg_.avif" },
+    { "type": "text", "id": "rev_3_tag", "label": "Etiqueta 3", "default": "PIEL SENSIBLE" },
+    { "type": "text", "id": "rev_3_q", "label": "Cita 3", "default": "Por fin una crema que no me irrita" },
+    { "type": "text", "id": "rev_3_n", "label": "Nombre 3", "default": "Sofía M. · Medellín" },
+    { "type": "text", "id": "rev_4_img", "label": "Foto 4 (URL)", "default": "https://ae-pic-a1.aliexpress-media.com/kf/A7fd262d7311742ce9e761565fe9586b9i.jpg_960x960q75.jpg_.avif" },
+    { "type": "text", "id": "rev_4_tag", "label": "Etiqueta 4", "default": "MAQUILLADORA" },
+    { "type": "text", "id": "rev_4_q", "label": "Cita 4", "default": "La uso debajo del maquillaje y dura todo el día" },
+    { "type": "text", "id": "rev_4_n", "label": "Nombre 4", "default": "Valentina C. · Medellín" },
+    { "type": "text", "id": "rev_5_img", "label": "Foto 5 (URL)", "default": "https://ae-pic-a1.aliexpress-media.com/kf/A87054ee6e66e4006aabbbacb42d2b3478.jpg_960x960q75.jpg_.avif" },
+    { "type": "text", "id": "rev_5_tag", "label": "Etiqueta 5", "default": "DERMATÓLOGA" },
+    { "type": "text", "id": "rev_5_q", "label": "Cita 5", "default": "La combinación correcta para la mayoría de pieles adultas" },
+    { "type": "text", "id": "rev_5_n", "label": "Nombre 5", "default": "Dra. Camila Torres" },
+
+    { "type": "header", "content": "Es para ti si…" },
+    { "type": "text", "id": "pt_titulo", "label": "Título", "default": "Es para ti si…" },
+    { "type": "text", "id": "pt_1", "label": "Punto 1", "default": "Tu piel se ve opaca, cansada o apagada aunque te cuides" },
+    { "type": "text", "id": "pt_2", "label": "Punto 2", "default": "Tienes manchas oscuras, rojeces o tono desparejo" },
+    { "type": "text", "id": "pt_3", "label": "Punto 3", "default": "Notas líneas finas, pérdida de firmeza o piel seca" },
+    { "type": "text", "id": "pt_4", "label": "Punto 4", "default": "Tu piel es sensible y casi todo te irrita" },
+    { "type": "text", "id": "pt_5", "label": "Punto 5", "default": "Prefieres pagar solo cuando el pedido llega" },
+    { "type": "text", "id": "pt_boton", "label": "Botón", "default": "Quiero la mía ahora" },
+
+    { "type": "header", "content": "Preguntas frecuentes" },
+    { "type": "text", "id": "faq_titulo", "label": "Título", "default": "Preguntas frecuentes" },
+    { "type": "text", "id": "faq_1_q", "label": "Pregunta 1", "default": "¿Cómo funciona el pago contra entrega?" },
+    { "type": "textarea", "id": "faq_1_a", "label": "Respuesta 1", "default": "Haces tu pedido, enviamos el producto y pagas al mensajero cuando lo recibes en tu casa." },
+    { "type": "text", "id": "faq_2_q", "label": "Pregunta 2", "default": "¿En cuánto tiempo llega?" },
+    { "type": "textarea", "id": "faq_2_a", "label": "Respuesta 2", "default": "Procesamos en 24 horas hábiles; el envío tarda entre 1 y 5 días hábiles según tu ciudad, con número de guía." },
+    { "type": "text", "id": "faq_3_q", "label": "Pregunta 3", "default": "¿Sirve para piel grasa o mixta?" },
+    { "type": "textarea", "id": "faq_3_a", "label": "Respuesta 3", "default": "Sí. La textura liviana está pensada para todo tipo de piel y no obstruye los poros." },
+    { "type": "text", "id": "faq_4_q", "label": "Pregunta 4", "default": "¿Cuándo se ven resultados?" },
+    { "type": "textarea", "id": "faq_4_a", "label": "Respuesta 4", "default": "La hidratación se siente desde el primer uso; manchas, firmeza y tono mejoran a partir de los 14 días." },
+    { "type": "text", "id": "faq_5_q", "label": "Pregunta 5", "default": "¿Puedo usarla si tengo piel sensible?" },
+    { "type": "textarea", "id": "faq_5_a", "label": "Respuesta 5", "default": "Sí, especialmente: la Centella Asiática está indicada para pieles sensibles y la fórmula no tiene fragancias." },
+    { "type": "text", "id": "faq_6_q", "label": "Pregunta 6", "default": "¿Cuánto dura el tubo?" },
+    { "type": "textarea", "id": "faq_6_a", "label": "Respuesta 6", "default": "Entre 6 semanas y 2 meses según la uses una o dos veces al día." },
+
+    { "type": "header", "content": "Cierre y barra fija" },
+    { "type": "text", "id": "fin_eyebrow", "label": "Eyebrow", "default": "Lunea · Nida" },
+    { "type": "text", "id": "fin_titulo", "label": "Título", "default": "Tu rostro merece los mejores activos" },
+    { "type": "text", "id": "fin_nota", "label": "Nota junto al precio", "default": "envío gratis" },
+    { "type": "text", "id": "sticky_boton", "label": "Botón barra fija", "default": "Comprar · pagas al recibir" }
+  ],
+  "presets": [{ "name": "Lunea · Nida v2" }]
+}
+{% endschema %}
