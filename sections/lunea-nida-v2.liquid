@@ -16,7 +16,8 @@
 <style>
 .nv2{--blanco:#fff;--celeste:#eaf6fc;--celeste2:#d6eef9;--azul:#176b9b;--tinta:#152c38;--gris:#607783;--borde:#d9e7ee;--terra:#b65b3a;--terra-soft:#fff0e8;font-family:Manrope,system-ui,sans-serif;color:var(--tinta);background:var(--blanco);line-height:1.5}
 .nv2 *{box-sizing:border-box}
-.nv2 img{max-width:100%;display:block}
+.nv2 img{max-width:100%;height:auto;display:block}
+.nv2 h1,.nv2 h2,.nv2 h3,.nv2 p,.nv2 a,.nv2 summary,.nv2 li,.nv2 q,.nv2 small{font-family:inherit}
 .nv2 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 .nv2 .sec{padding:72px 0}
 .nv2 .alt{background:var(--celeste)}
@@ -44,7 +45,7 @@
 .nv2 .hero-btns{display:grid;gap:12px}
 .nv2 .sellos{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 14px}
 .nv2 .galeria{background:var(--celeste);border-radius:24px;padding:24px;display:grid;gap:12px}
-.nv2 .galeria img{border-radius:16px;width:100%;aspect-ratio:1;object-fit:cover;background:#fff}
+.nv2 .galeria img{border-radius:16px;width:100%;aspect-ratio:1;object-fit:contain;background:#fff}
 .nv2 .galeria .mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .nv2 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .nv2 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -61,7 +62,7 @@
 .nv2 .video video{width:100%;height:100%;object-fit:cover;display:block}
 .nv2 .video .lab{position:absolute;left:14px;bottom:14px;background:#fff;padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700}
 .nv2 .oferta{display:grid;grid-template-columns:390px 1fr;gap:32px;padding:40px;align-items:center}
-.nv2 .oferta img{border-radius:16px;background:#fff}
+.nv2 .oferta img{border-radius:16px;background:#fff;width:100%;aspect-ratio:1;object-fit:contain}
 .nv2 .oferta ul{padding-left:18px;color:var(--gris);font-size:15px;margin:0 0 20px}
 .nv2 .upsell{display:flex;gap:14px;align-items:center;background:var(--celeste);border-radius:12px;padding:16px;margin-bottom:18px;font-size:15px;font-weight:600;cursor:pointer;user-select:none}
 .nv2 .toggle{width:42px;height:24px;border-radius:999px;background:#c5d5de;position:relative;flex:none;transition:background .2s}
@@ -84,6 +85,11 @@
 .nv2 .sticky .wrap{display:flex;gap:16px;align-items:center}.nv2 .sticky small{color:var(--gris);font-size:11px;display:block}.nv2 .sticky b{font-size:20px;white-space:nowrap}
 @media(max-width:900px){.nv2 .hero .wrap,.nv2 .oferta,.nv2 .parati .wrap{grid-template-columns:1fr}.nv2 .g3,.nv2 .g4,.nv2 .g5{grid-template-columns:1fr 1fr}.nv2 .hero{padding:24px 0 48px}.nv2 .galeria{order:-1}.nv2 .sec{padding:56px 0}}
 @media(max-width:560px){.nv2 .g3{grid-template-columns:1fr}}
+.nv2-pop{position:fixed;left:16px;bottom:96px;z-index:40;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #d9e7ee;border-radius:14px;padding:12px 14px;box-shadow:0 10px 30px rgba(21,44,56,.18);font-family:Manrope,system-ui,sans-serif;font-size:13px;color:#152c38;max-width:300px;transform:translateY(20px);opacity:0;transition:opacity .35s,transform .35s;pointer-events:none}
+.nv2-pop.on{opacity:1;transform:none}
+.nv2-pop img{width:48px;height:48px;border-radius:10px;object-fit:contain;background:#eaf6fc;flex:none}
+.nv2-pop b{display:block;font-weight:700}.nv2-pop span{color:#607783;font-size:12px}
+@media(max-width:600px){.nv2-pop{left:10px;right:10px;max-width:none;bottom:88px}}
 </style>
 
 <div class="nv2" id="nv2-{{ section.id }}">
@@ -219,6 +225,10 @@
 
 </div>
 
+{%- if s.pop_activo -%}
+<div class="nv2-pop" id="nv2-pop-{{ section.id }}" aria-live="polite">{% if product.featured_image %}<img src="{{ product.featured_image | image_url: width: 96 }}" alt="" width="48" height="48">{% endif %}<div><b id="nv2-pop-t-{{ section.id }}"></b><span id="nv2-pop-s-{{ section.id }}"></span></div></div>
+{%- endif -%}
+
 <script>
   // El toggle del upsell cambia el permalink del botón: 1 unidad, o 1 unidad + el sérum.
   (function () {
@@ -232,6 +242,24 @@
     }
     t.addEventListener('click', alternar);
     t.addEventListener('keydown', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); alternar(); } });
+  })();
+  // Aviso de compras recientes: nombres y ciudades cargados en la sección, tiempos al azar.
+  (function () {
+    var pop = document.getElementById('nv2-pop-{{ section.id }}'); if (!pop) return;
+    var lista = {{ s.pop_nombres | json }}.split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+    if (!lista.length) return;
+    var t = document.getElementById('nv2-pop-t-{{ section.id }}'), sub = document.getElementById('nv2-pop-s-{{ section.id }}');
+    var producto = {{ s.pop_producto | json }}, i = Math.floor(Math.random() * lista.length);
+    function azar(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+    function mostrar() {
+      var partes = lista[i % lista.length].split('·'); i++;
+      t.textContent = partes[0].trim() + (partes[1] ? ' de ' + partes[1].trim() : '') + ' compró ' + producto;
+      sub.textContent = 'hace ' + azar(2, 48) + ' minutos · pago contra entrega';
+      pop.classList.add('on');
+      setTimeout(function () { pop.classList.remove('on'); }, 5000);
+      setTimeout(mostrar, azar(14000, 32000));
+    }
+    setTimeout(mostrar, 7000);
   })();
 </script>
 
@@ -358,6 +386,11 @@
     { "type": "textarea", "id": "faq_5_a", "label": "Respuesta 5", "default": "Sí, especialmente: la Centella Asiática está indicada para pieles sensibles y la fórmula no tiene fragancias." },
     { "type": "text", "id": "faq_6_q", "label": "Pregunta 6", "default": "¿Cuánto dura el tubo?" },
     { "type": "textarea", "id": "faq_6_a", "label": "Respuesta 6", "default": "Entre 6 semanas y 2 meses según la uses una o dos veces al día." },
+
+    { "type": "header", "content": "Aviso de compras recientes" },
+    { "type": "checkbox", "id": "pop_activo", "label": "Mostrar aviso", "default": true },
+    { "type": "text", "id": "pop_producto", "label": "Qué compró", "default": "Fórmula Rostro Juvenil" },
+    { "type": "textarea", "id": "pop_nombres", "label": "Nombres · Ciudad, separados por coma", "default": "Marcela · Bogotá, Diana · Cali, Sofía · Medellín, Valentina · Medellín, Carolina · Barranquilla, Andrea · Bucaramanga, Paola · Cartagena, Luisa · Pereira, Natalia · Bogotá, Juliana · Cúcuta" },
 
     { "type": "header", "content": "Cierre y barra fija" },
     { "type": "text", "id": "fin_eyebrow", "label": "Eyebrow", "default": "Lunea · Nida" },
