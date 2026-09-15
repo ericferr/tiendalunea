@@ -25,12 +25,32 @@
           <p class="lp-foryou__cta-text">{{ section.settings.cta_text }}</p>
         {%- endif -%}
         {%- if section.settings.cta_button_text != blank -%}
-          <a href="{{ section.settings.cta_button_url | default: '#MainProduct' }}" class="lp-foryou__cta-btn">{{ section.settings.cta_button_text }}</a>
+          <a href="{{ section.settings.cta_button_url | default: '#MainProduct' }}" class="lp-foryou__cta-btn" data-lp-foryou-cta>{{ section.settings.cta_button_text }}</a>
         {%- endif -%}
       </div>
     </div>
   </div>
 </div>
+
+{%- comment -%}
+  El ancla #MainProduct no existe (la seccion se llama MainProduct-<id>), asi que
+  el boton hacia scroll a ningun lado. Igual que el boton flotante: si hay un
+  link configurado se respeta; si no, lleva al formulario de compra.
+{%- endcomment -%}
+<script>
+  (function() {
+    var cta = document.querySelector('[data-lp-foryou-cta]');
+    if (!cta || cta.getAttribute('href') !== '#MainProduct') return;
+    cta.addEventListener('click', function(e) {
+      var form = document.querySelector('product-form form, form[action*="/cart/add"]');
+      if (!form) return;
+      e.preventDefault();
+      var addBtn = form.querySelector('[type="submit"], button[name="add"]');
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function() { if (addBtn) addBtn.focus(); }, 600);
+    });
+  })();
+</script>
 
 {% schema %}
 {
