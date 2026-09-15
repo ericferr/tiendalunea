@@ -14,21 +14,29 @@
   <section class="hg-products">
     <div class="hg-wrap">
       {%- if section.settings.products_title != blank -%}<h2 class="hg-h2">{{ section.settings.products_title }}</h2>{%- endif -%}
-      <div class="hg-carousel">
+      <div class="hg-grid">
         {%- for block in section.blocks -%}
-          <a href="{{ block.settings.url }}" class="hg-card" {{ block.shopify_attributes }}>
+          {%- comment -%} Si el bloque tiene producto elegido, nombre/imagen/precio salen de Shopify (nunca quedan desactualizados). {%- endcomment -%}
+          {%- assign pr = block.settings.product -%}
+          {%- if pr != blank -%}
+            {%- assign url = pr.url -%}{%- assign nombre = pr.title -%}{%- assign imagen = pr.featured_image | image_url: width: 600 -%}
+            {%- assign precio = pr.price | money_without_trailing_zeros -%}
+            {%- if pr.compare_at_price > pr.price -%}{%- assign tachado = pr.compare_at_price | money_without_trailing_zeros -%}{%- else -%}{%- assign tachado = '' -%}{%- endif -%}
+          {%- else -%}
+            {%- assign url = block.settings.url -%}{%- assign nombre = block.settings.name -%}{%- assign imagen = block.settings.image_url -%}
+            {%- assign precio = block.settings.price -%}{%- assign tachado = block.settings.anchor -%}
+          {%- endif -%}
+          <a href="{{ url }}" class="hg-card" {{ block.shopify_attributes }}>
             <div class="hg-card__media">
-              {%- if block.settings.image_url != blank -%}
-                <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
-              {%- endif -%}
+              {%- if imagen != blank -%}<img src="{{ imagen }}" alt="{{ nombre | escape }}" loading="lazy" width="600" height="600">{%- endif -%}
               {%- if block.settings.badge != blank -%}<span class="hg-card__badge">{{ block.settings.badge }}</span>{%- endif -%}
             </div>
             <div class="hg-card__body">
-              <p class="hg-card__name">{{ block.settings.name }}</p>
+              <p class="hg-card__name">{{ nombre }}</p>
               {%- if block.settings.tagline != blank -%}<p class="hg-card__tag">{{ block.settings.tagline }}</p>{%- endif -%}
               <div class="hg-card__prices">
-                {%- if block.settings.anchor != blank -%}<span class="hg-card__anchor">{{ block.settings.anchor }}</span>{%- endif -%}
-                <span class="hg-card__price">{{ block.settings.price }}</span>
+                {%- if tachado != blank -%}<span class="hg-card__anchor">{{ tachado }}</span>{%- endif -%}
+                <span class="hg-card__price">{{ precio }}</span>
               </div>
               <span class="hg-card__btn">Ver producto →</span>
             </div>
@@ -66,14 +74,10 @@
   /* PRODUCTOS */
   .hg-products { padding: 40px 0 16px; }
   .hg-h2 { text-align: center; font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #1a2e35; margin: 0 0 26px; }
-  .hg-carousel {
-    display: flex; gap: 18px; overflow-x: auto; padding: 6px 4px 18px;
-    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
-  }
-  .hg-carousel::-webkit-scrollbar { height: 6px; }
-  .hg-carousel::-webkit-scrollbar-thumb { background: #cde4ec; border-radius: 3px; }
+  .hg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 6px 0 18px; }
+  @media (max-width: 960px) { .hg-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 680px) { .hg-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
   .hg-card {
-    flex: 0 0 auto; width: 280px; scroll-snap-align: center;
     background: #fff; border: 1px solid #e6eef1; border-radius: 16px; overflow: hidden;
     text-decoration: none; color: inherit;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -87,6 +91,7 @@
     font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.04em;
   }
   .hg-card__body { padding: 16px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+  @media (max-width: 680px) { .hg-card__body { padding: 12px; } .hg-card__name { font-size: 14px; } .hg-card__price { font-size: 17px; } .hg-card__btn { font-size: 13px; padding: 9px 10px; } }
   .hg-card__name { font-size: 16px; font-weight: 700; color: #1a2e35; margin: 0; line-height: 1.25; }
   .hg-card__tag { font-size: 13px; color: #6b7e85; margin: 0; line-height: 1.4; }
   .hg-card__prices { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; }
@@ -125,7 +130,8 @@
       "type": "product_card",
       "name": "Producto",
       "settings": [
-        { "type": "text", "id": "image_url", "label": "URL de imagen" },
+        { "type": "product", "id": "product", "label": "Producto (nombre, foto y precio salen de Shopify)" },
+        { "type": "text", "id": "image_url", "label": "URL de imagen (solo si no hay producto elegido)" },
         { "type": "text", "id": "name", "label": "Nombre" },
         { "type": "text", "id": "tagline", "label": "Frase corta" },
         { "type": "text", "id": "anchor", "label": "Precio tachado (opcional)" },
