@@ -254,7 +254,7 @@
     function mostrar() {
       var partes = lista[i % lista.length].split('·'); i++;
       t.textContent = partes[0].trim() + (partes[1] ? ' de ' + partes[1].trim() : '') + ' compró ' + producto;
-      sub.textContent = 'hace ' + azar(2, 48) + ' minutos · pago contra entrega';
+      sub.textContent = 'hace ' + azar(2, 48) + ' minutos';
       pop.classList.add('on');
       setTimeout(function () { pop.classList.remove('on'); }, 5000);
       setTimeout(mostrar, azar(14000, 32000));
@@ -390,7 +390,7 @@
     { "type": "header", "content": "Aviso de compras recientes" },
     { "type": "checkbox", "id": "pop_activo", "label": "Mostrar aviso", "default": true },
     { "type": "text", "id": "pop_producto", "label": "Qué compró", "default": "Fórmula Rostro Juvenil" },
-    { "type": "textarea", "id": "pop_nombres", "label": "Nombres · Ciudad, separados por coma", "default": "Marcela · Bogotá, Diana · Cali, Sofía · Medellín, Valentina · Medellín, Carolina · Barranquilla, Andrea · Bucaramanga, Paola · Cartagena, Luisa · Pereira, Natalia · Bogotá, Juliana · Cúcuta" },
+    { "type": "textarea", "id": "pop_nombres", "label": "Nombres · Ciudad, separados por coma", "default": "Marcela · Bogotá, Diana · Cali, Sofía · Medellín, Carolina · Barranquilla, Andrea · Bucaramanga, Paola · Cartagena, Luisa · Pereira, Natalia · Santa Marta, Juliana · Cúcuta, Camila · Manizales, Laura · Ibagué, Daniela · Villavicencio, Ana · Armenia, Catalina · Pasto, Mariana · Neiva, Valeria · Montería" },
 
     { "type": "header", "content": "Cierre y barra fija" },
     { "type": "text", "id": "fin_eyebrow", "label": "Eyebrow", "default": "Lunea · Nida" },
