@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "landing": {
+      "type": "lunea-nida-v2",
+      "settings": {}
+    },
+    "whatsapp-float": {
+      "type": "lunea-whatsapp-float",
+      "settings": {
+        "phone": "5493764196664",
+        "message": "Hola, quiero más información sobre la Fórmula Rostro Juvenil."
+      }
+    }
+  },
+  "order": ["landing", "whatsapp-float"]
+}
